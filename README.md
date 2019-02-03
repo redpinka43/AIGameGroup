@@ -18,3 +18,7 @@ At this point, I just cloned my existing game so we have something to work with.
 <h2>Pet Warrior Types Strength/Weaknesses Chart</h2>
 
 <img src ="PetWarriorTypesChart.png">
+
+<h3>Pets Concept art Chart</h3>
+
+<img src ="/Images and Artwork/PetConcepts.png" height="512" width="512">
