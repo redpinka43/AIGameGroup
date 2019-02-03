@@ -13,6 +13,3 @@ Things you need to do to get set up:
 
 At this point, I just cloned my existing game so we have something to work with. I'm going to change all the art and stuff, so this is *not* just a copy of my other one. k cool
 
-# poop
-lol
-
