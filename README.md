@@ -1,5 +1,7 @@
 # AIGameGroup
 
+<h2>Getting Started</h2>
+
 Hey guys, here we've got the game happening. 
 
 Things you need to do to get set up:
@@ -13,3 +15,6 @@ Things you need to do to get set up:
 
 At this point, I just cloned my existing game so we have something to work with. I'm going to change all the art and stuff, so this is *not* just a copy of my other one. k cool
 
+<h2>Pet Warrior Types Strength/Weaknesses Chart</h2>
+
+<img src ="PetWarriorTypesChart.png">
