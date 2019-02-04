@@ -10,23 +10,27 @@ Things you need to do to get set up:
   * Basically you just need to do "git clone https://github.com/*USERNAME/REPOSITORY*.git"
   * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
 * Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
-* Press the big-ass triangle Play button at the top of the screen to run what we've got so far
+* Press the big triangle Play button at the top of the screen to run what we've got so far.
 
 <h1>Week 4: </h1>
 <h2>Pet Warrior Types Strength/Weaknesses Chart</h2>
 
 <img src ="PetWarriorTypesChart.png">
 
-<h3>Pets Concept art Chart</h3>
+<h3>Pet Concepts</h3>
 
-<img src ="/Images and Artwork/PetConcepts.png" height="512" width="512">
+<img src ="/Images and Artwork/pets_conceptart.png" height="512">
+
+<h3>Trainer Concepts</h3>
+
+<img src ="/Images and Artwork/people_conceptart.png" height="512">
 
 <h1>Week 3: </h1>
 We nail down all of the game mechanics we're going to work on and distribute the work load. Lucia will be working on the art and audio, Chris will be working on programming the AI of the NPCs and Battle System, Megan will work on putting the user interfaces and dialogue aspects in the game. We also finally decide to call the game Pet Warrior
 
 <h4>Pet Stats</h4>
 <p>A list of stats that will affect the outcome of a battle</p>
-<img src ="/Images and Artwork/Stats.png" height="512" width="512">
+<img src ="/Images and Artwork/Stats.png" height="512">
 
 
 
@@ -36,7 +40,7 @@ We met up and discussed what type of adventure the player might go on in our gam
 
 We have a basic level design and we begin to think about how many levels and rooms our player will be able to move around in.
 <h4>Sample level</h4>
-<img src ="/Images and Artwork/Sample_level.png" height="480" width="480">
+<img src ="/Images and Artwork/Sample_level.png" height="480">
 
 
 
