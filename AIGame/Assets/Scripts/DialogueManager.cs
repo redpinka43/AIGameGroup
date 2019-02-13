@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Print next line in dialogue box, when you press space
-		if (dialogActive && Input.GetKeyUp(KeyCode.Space))
+		if (dialogActive && (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonDown("Fire1")))
 		{
 			// Deactivate dialogue box, if end of string array is reached.
 			if (currentLine >= dialogLines.Length)
