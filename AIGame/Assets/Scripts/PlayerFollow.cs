@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerFollow : MonoBehaviour
@@ -24,11 +24,11 @@ public class PlayerFollow : MonoBehaviour
         yup = new Vector3(0.0f, -20.0f, 0.0f);
         ydown = new Vector3(0.0f, 20.0f, 0.0f);
         transform.position = Vector2.MoveTowards(transform.position, Player.transform.position + ypos, speed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxisRaw("Horizontal") < -0.1f)
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position + yplus, 900 * Time.deltaTime);
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxisRaw("Vertical") > 0.1f)
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position + yup, 900 * Time.deltaTime);
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxisRaw("Vertical") < -0.1f)
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position + ydown, 900 * Time.deltaTime);
 
     }
