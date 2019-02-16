@@ -14,7 +14,7 @@ Things you need to do to get set up:
 <h1>Week 5: </h1>
 <h2>First UI</h2>
 
-<img src ="firstStartMenu.png">
+<img src ="/Images and Artwork/firstStartMenu.PNG">
 This draft of the start menu uses placeholder images until we create our own artwork.
 
 <h1>Week 4: </h1>
