@@ -11,6 +11,11 @@ Things you need to do to get set up:
   * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
 * Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
 * Press the big triangle Play button at the top of the screen to run what we've got so far.
+<h1>Week 5: </h1>
+<h2>First UI</h2>
+
+<img src ="/Images and Artwork/firstStartMenu.PNG">
+This draft of the start menu uses placeholder images until we create our own artwork.
 
 <h1>Week 4: </h1>
 <h2>Pet Warrior Types Strength/Weaknesses Chart</h2>
