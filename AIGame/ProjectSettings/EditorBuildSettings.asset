@@ -15,18 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/testScene2.unity
     guid: bb3bcab5a31304449ac82ac0058061a8
   - enabled: 1
-    path: Assets/Scenes/battleScreenStart.unity
+    path: Assets/Scenes/battleScreen.unity
     guid: 392b531cdf89b5d4f83a3a23f38c3580
-  - enabled: 1
-    path: Assets/Scenes/battleScreenItems.unity
-    guid: 70997c3c5b87690438042b05ea5051cd
-  - enabled: 1
-    path: Assets/Scenes/battleScreenPets.unity
-    guid: 167e9d2b357a95b4e8f4c5d1485ffe13
-  - enabled: 1
-    path: Assets/Scenes/battleScreenFight.unity
-    guid: c08032d2028422f44b57c32235a967e4
-  - enabled: 1
-    path: Assets/Scenes/battleScreenRun.unity
-    guid: 244fd34202e861d4cbe67680978e1b73
   m_configObjects: {}
