@@ -11,6 +11,13 @@ Things you need to do to get set up:
   * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
 * Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
 * Press the big triangle Play button at the top of the screen to run what we've got so far.
+
+<h1>Week 7: </h1>
+<h2>Battle UI</h2>
+
+![](fightUIFunctionality.gif)
+The necessary UI mechanics for the battle screen and the fight screen are functional, but will be drastically changed visually with the addition of the pet sprites and different background images.
+
 <h1>Week 5: </h1>
 <h2>First UI</h2>
 
