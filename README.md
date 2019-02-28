@@ -16,7 +16,6 @@ Things you need to do to get set up:
 <h2>Battle UI</h2>
 
 <img src ="/Images and Artwork/fightUIFunctionality.gif">
-![](fightUIFunctionality.gif)
 The necessary UI mechanics for the battle screen and the fight screen are functional, but will be drastically changed visually with the addition of the pet sprites and different background images.
 
 <h1>Week 5: </h1>
