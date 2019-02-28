@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1821807826379696}
+  m_IsPrefabAsset: 1
+--- !u!1 &1821807826379696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4011060303475052}
+  - component: {fileID: 114220609955539288}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4011060303475052
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821807826379696}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114220609955539288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821807826379696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3438ecfa71d134381b3cbc0ba982b2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManPrefab: {fileID: 1026598977131434, guid: 8f1be452420fe4ef6970fe9ffd242a41,
+    type: 2}
+  eventManPrefab: {fileID: 1497198160857790, guid: 3fbf4206ca6464e569076475ac28c2af,
+    type: 2}
+  GUIManPrefab: {fileID: 1449148249237188, guid: ee1c91f4decb44b62a1289d69dc20e19,
+    type: 2}
+  inputManPrefab: {fileID: 1304962297255478, guid: 3be2da2eb2b5f4e52b1b10733d6e1ade,
+    type: 2}
+  sceneManPrefab: {fileID: 1720975360052620, guid: f513eb3638b2f464c8ee167da3930027,
+    type: 2}
