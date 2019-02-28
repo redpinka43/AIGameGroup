@@ -4,49 +4,14 @@
 Preset:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: SpriteAnimation
   m_TargetType:
     m_NativeTypeID: 1006
     m_ManagedTypePPtr: {fileID: 0}
     m_ManagedTypeFallback: 
   m_Properties:
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.size
-    value: 4
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[0].first
-    value: 21300000
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[0].second
-    value: player_left_0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[1].first
-    value: 21300002
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[1].second
-    value: player_left_1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[2].first
-    value: 21300004
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[2].second
-    value: player_left_2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[3].first
-    value: 21300006
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[3].second
-    value: player_left_3
-    objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_ExternalObjects.Array.size
     value: 0
