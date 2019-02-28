@@ -15,6 +15,7 @@ Things you need to do to get set up:
 <h1>Week 7: </h1>
 <h2>Battle UI</h2>
 
+<img src ="/Images and Artwork/fightUIFunctionality.gif">
 ![](fightUIFunctionality.gif)
 The necessary UI mechanics for the battle screen and the fight screen are functional, but will be drastically changed visually with the addition of the pet sprites and different background images.
 
@@ -27,7 +28,7 @@ This draft of the start menu uses placeholder images until we create our own art
 <h1>Week 4: </h1>
 <h2>Pet Warrior Types Strength/Weaknesses Chart</h2>
 
-<img src ="PetWarriorTypesChart.png">
+<img src ="/Images and Artwork/PetWarriorTypesChart.png">
 
 <h3>Pet Concepts</h3>
 
