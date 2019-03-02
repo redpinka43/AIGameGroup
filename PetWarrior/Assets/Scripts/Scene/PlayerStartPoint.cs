@@ -9,15 +9,17 @@ public class PlayerStartPoint : MonoBehaviour {
 
 	public Vector2 startDirection;
 
-	public string pointName;
+	private string pointName;
 
 
 	// Use this for initialization
 	void Start () {
-		thePlayer = PlayerController.instance;
+		pointName = this.name;
+
+		thePlayer = PlayerManager.instance.playerObject.GetComponent<PlayerController>();
 
 		if (thePlayer.startPoint == pointName) {
-			thePlayer.transform.position = transform.position;
+			thePlayer.transform.position = new Vector3(transform.position.x, transform.position.y, thePlayer.transform.position.z);
 			thePlayer.lastMove = startDirection;
 
 			theCamera = CameraController.instance;

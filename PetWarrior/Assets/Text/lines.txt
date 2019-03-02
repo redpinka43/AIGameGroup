@@ -1,42 +1,42 @@
-Hi, howie doin'. This is a sample spreadsheet which I'm using to test dialogue.											
-											
-ID	Speaker	Text	Links to	Dialogue Options	Notes	Dialog Type	Animation/Event	Thumbnail	Text type	Text sound	Box type
-0	Chad	Hi, how's it going.	1								
-1	Chad	Nice day, isn't it?	2								
-2	Chad	Lol this is line 3. The end. s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	3								
-3	Chad	Ok, do you like lemons or limes better?	4 | 5	Lemons | Limes							
-4	Chad	That's pretty stupid, ngl. Lemon pie sucks arse.	6		Lemons						
-5	Chad	Mmm. A man of culture, I see. Delicious. I like pie.	End		Limes						
-6	Chad	Can I tell you about a pie I had once?	7 | 9	Yes | No							
-7	Chad	Well, it was a really delicious pie. Here's the recipe: *writes it on your hand*	8		Yes						
-8	Chad	Lmao this sheet is really hard to follow. I'll get used to it, though.	End		No						
-9	Chad	Well, I don't wanna be friends with you anyway. >:(	End								
-10											
-11											
-12											
-13											
-14											
-15											
-16											
-17											
-18											
-19											
-20											
-21											
-22											
-23											
-24											
-25											
-26											
-27											
-28											
-29											
-30											
-31											
-32											
-33											
-34											
-35											
-36											
-37											
-38											
+Hi, howie doin'. This is a sample spreadsheet which I'm using to test dialogue.												
+												
+ID	Speaker	Text	Links to	Dialogue Options	Notes	Switch to Scene	Dialog Type	Animation/Event	Thumbnail	Text type	Text sound	Box type
+0	Chad	Hi, how's it going.	1									
+1	Chad	Nice day, isn't it?	2									
+2	Chad	Lol this is line 3. The end. s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	3									
+3	Chad	Ok, do you like lemons or limes better?	4 | 5	Lemons | Limes								
+4	Chad	That's pretty stupid, ngl. Lemon pie sucks arse.	6		Lemons							
+5	Chad	Mmm. A man of culture, I see. Delicious. I like pie.	End		Limes							
+6	Chad	Can I tell you about a pie I had once?	7 | 9	Yes | No								
+7	Chad	Well, it was a really delicious pie. Here's the recipe: *writes it on your hand*	8		Yes							
+8	Chad	Lmao this sheet is really hard to follow. I'll get used to it, though.	End		No	battleScreen						
+9	Chad	Well, I don't wanna be friends with you anyway. >:(	End									
+10												
+11												
+12												
+13												
+14												
+15												
+16												
+17												
+18												
+19												
+20												
+21												
+22												
+23												
+24												
+25												
+26												
+27												
+28												
+29												
+30												
+31												
+32												
+33												
+34												
+35												
+36												
+37												
+38												
