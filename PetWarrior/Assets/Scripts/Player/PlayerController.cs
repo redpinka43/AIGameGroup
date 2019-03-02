@@ -23,6 +23,17 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+	void Awake () {
+		// Object singleton
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(transform.gameObject);
+		} else {
+			Destroy (gameObject);
+		}
+	}
+
 	void OnDisable () {
 		// Remove events
 		GUIManager.OnDialogueStart -= stopPlayerMovement;
@@ -33,15 +44,6 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		myRigidbody = GetComponent<Rigidbody2D>();
-
-		// Object singleton
-		if (instance == null)
-		{
-			instance = this;
-			DontDestroyOnLoad(transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
 
 		lockedInPlace = false;
 	}

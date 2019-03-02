@@ -13,13 +13,15 @@ public class DialogueNode {
 	public string text;
 	public int[] nextNodes;
 	public string[] dialogueOptions;
+	public string nextScene;
 
 	public bool isEndNode;
 	public bool hasDialogueOptions;
+	public bool hasNextScene;
 
 
     public DialogueNode(string id, string speaker, string text, string nextNodeStr, 
-			   			string dialogueOptionsStr) {
+			   			string dialogueOptionsStr, string nextSceneStr) {
 		int.TryParse(id, out this.id);
 		
 		this.speaker = speaker;
@@ -59,6 +61,16 @@ public class DialogueNode {
 			dialogueOptions = dialogueOptionsStr.Split(new char[] {' ', '|'}, StringSplitOptions.RemoveEmptyEntries );
 			hasDialogueOptions = true;
 		}
+
+		// Switch to scene
+		if (String.IsNullOrEmpty( nextSceneStr.Replace(" ", String.Empty) )) {
+			hasNextScene = false;
+		}
+		else {
+			hasNextScene = true;
+			nextScene = nextSceneStr;
+		}
+
 	}
 
 }

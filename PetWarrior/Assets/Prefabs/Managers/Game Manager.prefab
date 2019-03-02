@@ -59,5 +59,7 @@ MonoBehaviour:
     type: 2}
   inputManPrefab: {fileID: 1304962297255478, guid: 3be2da2eb2b5f4e52b1b10733d6e1ade,
     type: 2}
+  playerManPrefab: {fileID: 1388577661790064, guid: d5a8efcb4b0934390b6b1c53b58aca9a,
+    type: 2}
   sceneManPrefab: {fileID: 1720975360052620, guid: f513eb3638b2f464c8ee167da3930027,
     type: 2}
