@@ -8,31 +8,17 @@ public class uiManagerScript : MonoBehaviour
 	
 	public void StartGame() 
 	{
-		SceneManager.LoadScene("SampleScene");
+		SceneManager.LoadScene("battleScreen");
 	}
 	
 	public void LoadGame()
 	{
-		SceneManager.LoadScene("testScene2");
+		
 	}
 	
-	public void battleScreenItems()
+	public void QuitGame()
 	{
-		SceneManager.LoadScene("battleScreenItems");
-	}
-	
-	public void battleScreenRun()
-	{
-		SceneManager.LoadScene("battleScreenRun");
-	}
-
-	public void battleScreenPets()
-	{
-		SceneManager.LoadScene("battleScreenPets");
-	}
-	
-	public void battleScreenFight()
-	{
-		SceneManager.LoadScene("battleScreenFight");
+		Debug.Log("Has quit game");
+		Application.Quit();
 	}
 }
