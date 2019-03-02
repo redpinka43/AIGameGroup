@@ -8,12 +8,12 @@ public class uiManagerScript : MonoBehaviour
 	
 	public void StartGame() 
 	{
-		SceneManager.LoadScene("SampleScene");
+		SceneManager.LoadScene("playersHouse_basement");
 	}
 	
 	public void LoadGame()
 	{
-		SceneManager.LoadScene("testScene2");
+		SceneManager.LoadScene("town_1");
 	}
 	
 	public void battleScreenItems()
