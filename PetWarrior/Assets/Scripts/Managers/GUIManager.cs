@@ -67,17 +67,20 @@ public class GUIManager : MonoBehaviour {
 		// Dialogue Box components
 		if (GameManager.instance.gameState == GameState.OVERWORLD 
 		 || GameManager.instance.gameState == GameState.BATTLE) {
-			guiCanvas = GameObject.Find("GUI Canvas");
+			guiCanvas = GameObject.FindWithTag("GUI Canvas");
 			dialogueBox = guiCanvas.transform.Find("Dialogue Box").gameObject;
 			dialogueNormal = dialogueBox.transform.Find("Dialogue Normal").gameObject;
 			dialogueChoice2 = dialogueBox.transform.Find("Dialogue Choice 2").gameObject;
 			dialogueChoice3 = dialogueBox.transform.Find("Dialogue Choice 3").gameObject;
+
+			guiCanvas.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+			
+			DialogueManager.instance.linkUp();
 		}
-
-		// Link GUI Canvas camera controller
-		guiCanvas.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-
-		DialogueManager.instance.linkUp();
+		else 
+			guiCanvas = null;
+			
+		
 	}
 
 
