@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	public enum Gender
+	{
+		DEFAULT,	// Fall-back state, should never happen
+		GIRL,
+		BOY
+	};
+
 	public static PlayerController instance = null;
 
 	public float moveSpeed;
@@ -15,12 +22,24 @@ public class PlayerController : MonoBehaviour {
 	private bool lockedInPlace;
 
 	public string startPoint;	
+	public Gender gender;
 
 	void OnEnable () {
 		// Assign events
 		GUIManager.OnDialogueStart += stopPlayerMovement;
 		GUIManager.OnDialogueEnd += enablePlayerMovement;
 
+	}
+
+	void Awake () {
+		// Object singleton
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(transform.gameObject);
+		} else {
+			Destroy (gameObject);
+		}
 	}
 
 	void OnDisable () {
@@ -33,15 +52,6 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		myRigidbody = GetComponent<Rigidbody2D>();
-
-		// Object singleton
-		if (instance == null)
-		{
-			instance = this;
-			DontDestroyOnLoad(transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
 
 		lockedInPlace = false;
 	}
@@ -100,12 +110,12 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// Called whenever GUIManager.OnDialogueStart() event is called
-	void stopPlayerMovement () {
+	public void stopPlayerMovement () {
 		lockedInPlace = true;
 	}
 
 	// Called whenever GUIManager.OnDialogueEnd() event is called
-	void enablePlayerMovement () {
+	public void enablePlayerMovement () {
 		lockedInPlace = false;
 	}
 	

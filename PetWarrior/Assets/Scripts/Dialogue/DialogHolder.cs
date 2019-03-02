@@ -47,7 +47,7 @@ public class DialogHolder : MonoBehaviour {
 	
 	void OnTriggerStay2D(Collider2D other) 
 	{
-		if(other.gameObject.name == "Player")
+		if(other.gameObject == PlayerManager.instance.playerObject)
 		{
 			if( InputManager.instance.getKeyUp("A") )
 			{
