@@ -11,6 +11,23 @@ Things you need to do to get set up:
   * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
 * Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
 * Press the big triangle Play button at the top of the screen to run what we've got so far.
+<h1>Week 7: </h1>
+<h2>Pause Menu</h2>
+
+<img src = "/Images and Artwork/firstPauseMenu.PNG">
+We created a basic pause menu for first playable that will later be given "Save Game" and "Quit and Save Game" functionality. The pause menu will also be given new artwork at a later date.
+
+<h2>Overworld Maps</h2>
+We added some maps for the overworld where the player can travel freely:
+ 
+<h3>Player house</h3>
+<h5><img src= "/Images and Artwork/playerHouseBasement.PNG" width = "375" height = "275"> 
+<img src = "/Images and Artwork/playerHouseFirstFloor.PNG" width = "375" height = "275"></h5>
+The player will start the game in the basement of their parents' house. They will have to go up the stairs to the first floor of the house to leave.
+ 
+<h3>Town One</h3>
+<img src = "/Images and Artwork/townOne.PNG">
+This is the player's hometown.
 
 <h1>Week 7: </h1>
 <h2>Battle UI</h2>
