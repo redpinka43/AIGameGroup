@@ -11,7 +11,7 @@ Things you need to do to get set up:
   * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
 * Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
 * Press the big triangle Play button at the top of the screen to run what we've got so far.
-<h1>Week 7: </h1>
+<h1>Week 8: </h1>
 <h2>Pause Menu</h2>
 
 <img src = "/Images and Artwork/firstPauseMenu.PNG">
@@ -28,6 +28,9 @@ The player will start the game in the basement of their parents' house. They wil
 <h3>Town One</h3>
 <img src = "/Images and Artwork/townOne.PNG">
 This is the player's hometown.
+
+<h2>Pet Moves</h2>
+<img src = "/Images and Artwork/petMoves.png>
 
 <h1>Week 7: </h1>
 <h2>Battle UI</h2>
