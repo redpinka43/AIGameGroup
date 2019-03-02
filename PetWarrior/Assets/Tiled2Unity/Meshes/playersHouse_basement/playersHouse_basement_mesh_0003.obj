@@ -1,0 +1,44 @@
+﻿# Tiled2Unity generated file. Do not modify by hand.
+# Wavefront file for 'playersHouse_basement_mesh_0003.obj'
+
+# Vertices (Count = 16)
+v -80 -64 0
+v -96 -64 0
+v -96 -48 0
+v -80 -48 0
+v -96 -64 0
+v -112 -64 0
+v -112 -48 0
+v -96 -48 0
+v -80 -80 0
+v -96 -80 0
+v -96 -64 0
+v -80 -64 0
+v -96 -80 0
+v -112 -80 0
+v -112 -64 0
+v -96 -64 0
+
+# Texture cooridinates (Count = 9)
+vt 0 0.6024845
+vt 0.05882353 0.6024845
+vt 0.05882353 0.7018633
+vt 0 0.7018633
+vt 0.1176471 0.6024845
+vt 0.1176471 0.7018633
+vt 0 0.5031056
+vt 0.05882353 0.5031056
+vt 0.1176471 0.5031056
+
+# Normal
+vn 0 0 -1
+
+# Mesh description
+g playersHouse_basement_mesh_0003
+
+# Faces
+f 1/1/1 2/2/1 3/3/1 4/4/1
+f 5/2/1 6/5/1 7/6/1 8/3/1
+f 9/7/1 10/8/1 11/2/1 12/1/1
+f 13/8/1 14/9/1 15/5/1 16/2/1
+

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // This script manages the dialogue box. It takes in a string array from DialogHolder
 // and print it until the end of the array is reached.
@@ -101,7 +102,7 @@ public class DialogueManager : MonoBehaviour {
 
 	// Update is called once per frame.
 	void Update () {
-		// Only update stuff if the user presses Space.
+		// Only update stuff if the user presses Space.using UnityEngine.SceneManagement;
 		if ( InputManager.instance.getKeyUp("A") && dialogueIsRunning) {
 			continueDialogue( true );
 		}
@@ -122,8 +123,14 @@ public class DialogueManager : MonoBehaviour {
 			GUIManager.instance.dialogueChoice3.SetActive(false);
 
 			GUIManager.instance.call_OnDialogueEnd();
+
+			// Change scene, if necessary
+			if (currentNode.hasNextScene) {
+				SceneManager.LoadScene( currentNode.nextScene );
+			}
 		}
 
+		// Continue rendering dialogue
 		else {
 			// Set GUIManager.guiState based on what the current node type is
 			if (currentNode.hasDialogueOptions) {
@@ -256,8 +263,9 @@ public class DialogueManager : MonoBehaviour {
 		var text = columns[2];
 		var links = columns[3];
 		var dOptions = columns[4];
+		var nextScene = columns[6];
 
-		return new DialogueNode(id, speaker, text, links, dOptions);
+		return new DialogueNode(id, speaker, text, links, dOptions, nextScene);
 	}
 
 
