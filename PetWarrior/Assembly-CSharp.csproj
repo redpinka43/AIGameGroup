@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\Battle\moveOneButtonText.cs" />
      <Compile Include="Assets\Scripts\Battle\moveThreeButtonText.cs" />
      <Compile Include="Assets\Scripts\Battle\moveTwoButtonText.cs" />
-     <Compile Include="Assets\Scripts\Battle\uiManagerScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Camera\EditorVsBuildFixes.cs" />
      <Compile Include="Assets\Scripts\Camera\ToggleFullscreen.cs" />
@@ -90,6 +89,8 @@
      <Compile Include="Assets\Scripts\Scene\LoadNewArea.cs" />
      <Compile Include="Assets\Scripts\Scene\PlayerStartPoint.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneInfo.cs" />
+     <Compile Include="Assets\Scripts\UI related\pauseToggle.cs" />
+     <Compile Include="Assets\Scripts\UI related\uiManagerScript.cs" />
      <Compile Include="Assets\Text\Project Info\Scene Prefab Guide.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
