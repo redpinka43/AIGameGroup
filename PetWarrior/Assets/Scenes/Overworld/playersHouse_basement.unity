@@ -155,12 +155,17 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &240562859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2057060546}
 --- !u!1001 &287720958
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 905004014}
     m_Modifications:
     - target: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -192,7 +197,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1209413986559350, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_Name
@@ -267,7 +272,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 905004014}
     m_Modifications:
     - target: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -299,7 +304,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1209413986559350, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_Name
@@ -308,7 +313,7 @@ Prefab:
     - target: {fileID: 114659459381656058, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: startNode
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
@@ -385,6 +390,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21.596085, y: 4.044945}
   m_EdgeRadius: 0
+--- !u!4 &721918258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 287720958}
+--- !u!4 &804236195 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 427212671}
+--- !u!1 &905004013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905004014}
+  m_Layer: 0
+  m_Name: Dialogue zones group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &905004014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 905004013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 721918258}
+  - {fileID: 240562859}
+  - {fileID: 804236195}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1002129757
 Prefab:
   m_ObjectHideFlags: 0
@@ -673,7 +719,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 905004014}
     m_Modifications:
     - target: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -705,7 +751,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1209413986559350, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
       propertyPath: m_Name

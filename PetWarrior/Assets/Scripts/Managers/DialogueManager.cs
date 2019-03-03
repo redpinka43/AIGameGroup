@@ -37,7 +37,6 @@ public class DialogueManager : MonoBehaviour {
 	public TextAsset txtFile;
 
 	public bool dialogueIsRunning = false;
-	public bool isRunning = true;
 	public bool dialogueSelectPending = false;
 
 
@@ -71,9 +70,9 @@ public class DialogueManager : MonoBehaviour {
 
 		// For debugging:
 
-		// for (int i = 0; i < dialogueNodes.Count; i++) {
-		// 	printNode(dialogueNodes[i]);
-		// }
+		for (int i = 0; i < dialogueNodes.Count; i++) {
+			printNode(dialogueNodes[i]);
+		}
 
     }
 
@@ -112,10 +111,20 @@ public class DialogueManager : MonoBehaviour {
 	// The dialogue box workhorse. Changes the displayed dialogue.
 	void continueDialogue (bool continueToNextNode) {
 
+		// If we're on a normal dialogue box, end node, and it hasn't been updated yet, call
+		// function again with continueToNextNode == false
+		Debug.Log("We're in continueDialogue.");
+
+		if ( continueToNextNode && !currentNode.hasDialogueOptions && currentNode.isEndNode && dialogueNormal_text.GetComponent<Text>().text != currentNode.text) {
+			continueDialogue(false);
+			Debug.Log("continueDialogue(false). Current node text is " + currentNode.text);
+		}
+
 		// Deactivate dialogue box, if the nextNode is the endNode
-		if (currentNode.isEndNode && continueToNextNode)
+		else if (currentNode.isEndNode && continueToNextNode)
 		{
 			dialogueIsRunning = false;
+			Debug.Log("dialogueIsRunning was set to false");
 			
 			// Disable all dialogue types
 			GUIManager.instance.dialogueNormal.SetActive(false);
@@ -128,6 +137,9 @@ public class DialogueManager : MonoBehaviour {
 			if (currentNode.hasNextScene) {
 				SceneManager.LoadScene( currentNode.nextScene );
 			}
+
+			// Set dialoguebox to empty
+			dialogueNormal_text.GetComponent<Text>().text = "";
 		}
 
 		// Continue rendering dialogue
@@ -159,9 +171,14 @@ public class DialogueManager : MonoBehaviour {
 
 					dialogueNormal_text.GetComponent<Text>().text = currentNode.text;
 
-					if (!currentNode.isEndNode) 
+					Debug.Log("text changed to: " + currentNode.text);
+
+					if (!currentNode.isEndNode) {
 						currentNode = dialogueNodes[currentNode.nextNodes[0]];
-					
+					}
+						
+					Debug.Log("Next text is: " + currentNode.text);
+
 					break;
 
 				case GUIState.DIALOGUE_CHOICE2:
@@ -243,6 +260,9 @@ public class DialogueManager : MonoBehaviour {
 	public void ActivateDialogue()
 	{
 		dialogueIsRunning = true;
+		
+		Debug.Log("In DialogueManager.cs: ActivateDialogue()");
+
 		GUIManager.instance.call_OnDialogueStart();
 	}
 

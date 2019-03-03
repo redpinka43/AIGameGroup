@@ -13,16 +13,17 @@ public class pauseState : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			pausePanel.SetActive(!pausePanel.activeSelf);
+
+			// Disable player movement
+			if (GameManager.instance.gameState == GameState.OVERWORLD) {
+
+				if (!pausePanel.activeSelf) 
+					PlayerManager.instance.playerObject.GetComponent<PlayerController>().enablePlayerMovement();
+				else 
+					PlayerManager.instance.playerObject.GetComponent<PlayerController>().stopPlayerMovement();
+
+			}	
 		}
 		
-		// Disable player movement
-		if (GameManager.instance.gameState == GameState.OVERWORLD) {
-
-			if (!pausePanel.activeSelf) 
-				PlayerManager.instance.playerObject.GetComponent<PlayerController>().enablePlayerMovement();
-			else 
-				PlayerManager.instance.playerObject.GetComponent<PlayerController>().stopPlayerMovement();
-
-		}	
 	}
 }

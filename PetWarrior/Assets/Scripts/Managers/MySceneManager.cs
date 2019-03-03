@@ -26,9 +26,10 @@ public class MySceneManager : MonoBehaviour {
 	// Whenever scene is loaded, the event OnSceneChange is triggered
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 
-		if (OnSceneChange != null)
+		if (OnSceneChange != null) {
 			GameManager.instance.onSceneChangePrep();
 			OnSceneChange();
+		}
 	}
 
 }

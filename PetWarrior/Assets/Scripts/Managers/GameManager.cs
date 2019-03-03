@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
 		if (MySceneManager.instance == null)  	{ Instantiate(sceneManPrefab, gameObject.transform); }
 		
 		// Assign events 
-		MySceneManager.OnSceneChange += checkSceneGameState;
+		MySceneManager.OnSceneChange += checkSceneGameState; // Perhaps this is unnecessary
 
 	}
 
