@@ -13,4 +13,4 @@ Examples:
     mono ./Tiled2UnityLite.exe "/home/susanna/Documents/coding projects/unity/LearningUnity/Assets/tiled/test2.tmx" "/home/susanna/Documents/coding projects/unity/LearningUnity/Assets/Tiled2Unity"
 
     cd "/home/susanna/Documents/coding projects/unity/Tiled2Unity"
-    mono ./Tiled2UnityLite.exe "/home/susanna/Documents/coding projects/unity/Tiled2Unity/maps/test_maps/testmap1.tmx" "/home/susanna/Documents/coding projects/unity/GBT/Assets/Tiled2Unity"
+    mono ./Tiled2UnityLite.exe "/home/susanna/Documents/coding projects/unity/AIGameGroup/Tiled/Tilemaps/playersHouse_basement.tmx" "/home/susanna/Documents/coding projects/unity/AIGameGroup/PetWarrior/Assets/Tiled2Unity"

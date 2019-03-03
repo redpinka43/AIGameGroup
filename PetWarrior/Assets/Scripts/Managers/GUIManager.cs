@@ -73,7 +73,7 @@ public class GUIManager : MonoBehaviour {
 			dialogueChoice2 = dialogueBox.transform.Find("Dialogue Choice 2").gameObject;
 			dialogueChoice3 = dialogueBox.transform.Find("Dialogue Choice 3").gameObject;
 
-			guiCanvas.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+			guiCanvas.GetComponent<Canvas>().worldCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 			
 			DialogueManager.instance.linkUp();
 		}
@@ -146,6 +146,8 @@ public class GUIManager : MonoBehaviour {
 	public void call_OnDialogueStart () {
 		// Enable the Dialogue Box, without any text in it. DialogueManager takes care of enabling the text.
 		dialogueBox.SetActive(true);
+
+		Debug.Log("In GUIManager.");
 
 		OnDialogueStart();
 	}

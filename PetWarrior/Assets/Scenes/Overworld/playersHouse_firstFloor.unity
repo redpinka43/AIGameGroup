@@ -260,6 +260,108 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa72f3720afe488289819c7ecde1e13, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &617111889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1971863207644762, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553047114}
+  - component: {fileID: 617111890}
+  m_Layer: 0
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &617111890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114875410878784210, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617111889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6656a2da948be49d492aff84ab359539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDirection: {x: -1, y: 0}
+--- !u!1 &903276734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1472457393460530, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903276735}
+  - component: {fileID: 903276737}
+  - component: {fileID: 903276736}
+  m_Layer: 0
+  m_Name: Stairs exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903276735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4436314795664560, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903276734}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 90.2, y: 82.7, z: 6.1875005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553047114}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903276736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114422769894146624, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903276734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15034c98fefd74a2ea973314840febf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: playersHouse_basement
+  exitPoint: Stairs startpoint
+--- !u!61 &903276737
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 61009819762312968, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903276734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 8.499023, y: 2.3647995}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20.857605, y: 7.5233}
+  m_EdgeRadius: 0
 --- !u!1001 &1145114685
 Prefab:
   m_ObjectHideFlags: 0
@@ -344,107 +446,68 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925953beffb0c4220859f1010bcccd69, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1553047113
-Prefab:
+--- !u!4 &1553047114
+Transform:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444065478696578, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_Name
-      value: Front Door StartPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680627725497214, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_Name
-      value: Front Door Exit
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817678668626896, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: levelToLoad
-      value: town_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817678668626896, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: exitPoint
-      value: Player's House StartPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 4525616711701330, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 118.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4525616711701330, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -130.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378833206387196, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 114.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378833206387196, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -153.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61989687950834166, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 5.9250717
-      objectReference: {fileID: 0}
-    - target: {fileID: 61989687950834166, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 15.709702
-      objectReference: {fileID: 0}
-    - target: {fileID: 114755003445899356, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: pointName
-      value: Front Door StartPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 114755003445899356, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: startDirection.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114755003445899356, guid: 554653d2c29fb4620bf5a51c8155b37c,
-        type: 2}
-      propertyPath: startDirection.y
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
-  m_IsPrefabAsset: 0
+  m_CorrespondingSourceObject: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617111889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 81, y: -135, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1618351640}
+  - {fileID: 1814223730}
+  - {fileID: 1987925050}
+  - {fileID: 903276735}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1618351639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1386421352019962, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618351640}
+  - component: {fileID: 1618351641}
+  m_Layer: 0
+  m_Name: Front door startpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618351640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4704914858518444, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1618351639}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37.6, y: 4.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553047114}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618351641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114851731167376614, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1618351639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6656a2da948be49d492aff84ab359539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDirection: {x: 0, y: 1}
 --- !u!1001 &1796939357
 Prefab:
   m_ObjectHideFlags: 0
@@ -487,3 +550,119 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f4f239e30e54735a50abfa0f3695a0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1814223729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1472457393460530, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814223730}
+  - component: {fileID: 1814223732}
+  - component: {fileID: 1814223731}
+  m_Layer: 0
+  m_Name: Front door exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814223730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4436314795664560, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814223729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41, y: -16.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553047114}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814223731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114422769894146624, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814223729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15034c98fefd74a2ea973314840febf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: town_1
+  exitPoint: Players house startpoint
+--- !u!61 &1814223732
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 61009819762312968, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814223729}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.1914139, y: 3.147194}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.188004, y: 9.088089}
+  m_EdgeRadius: 0
+--- !u!1 &1987925049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1386421352019962, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987925050}
+  - component: {fileID: 1987925051}
+  m_Layer: 0
+  m_Name: Stairs startpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987925050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4704914858518444, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987925049}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 97.4, y: 64.7, z: -4.724092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553047114}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1987925051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114851731167376614, guid: 554653d2c29fb4620bf5a51c8155b37c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987925049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6656a2da948be49d492aff84ab359539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDirection: {x: 0, y: -1}
