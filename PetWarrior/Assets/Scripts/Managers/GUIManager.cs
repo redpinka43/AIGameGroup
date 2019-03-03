@@ -148,8 +148,6 @@ public class GUIManager : MonoBehaviour {
 		// Enable the Dialogue Box, without any text in it. DialogueManager takes care of enabling the text.
 		dialogueBox.SetActive(true);
 
-		Debug.Log("In GUIManager.cs: set dialogueBox to " + dialogueBox.activeSelf);
-
 		OnDialogueStart();
 	}
 
