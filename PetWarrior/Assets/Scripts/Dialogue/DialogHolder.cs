@@ -53,6 +53,7 @@ public class DialogHolder : MonoBehaviour {
 			{
 				if(!DialogueManager.instance.dialogueIsRunning)
 				{
+					Debug.Log("In DialogHolder.cs: calling DialogueManager.instance.ActivateDialogue()");
 					DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startNode];
 					DialogueManager.instance.ActivateDialogue();
 				}
