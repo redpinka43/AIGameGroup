@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld/town_1.unity
     guid: 965444277234444a7a4eaf2b2aec3e8e
+  - enabled: 1
+    path: Assets/Scenes/Overworld/town_1_petStore.unity
+    guid: 95e3784f2b78c45af860c6295e171215
   m_configObjects: {}
