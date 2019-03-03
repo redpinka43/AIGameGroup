@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/home/susanna/Documents/coding projects/unity/AIGameGroup/PetWarrior/Assembly-CSharp-Editor.csproj",
+  "TargetFramework": "v4.7.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

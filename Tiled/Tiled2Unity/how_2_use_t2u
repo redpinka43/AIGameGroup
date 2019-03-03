@@ -1,0 +1,16 @@
+How to use tiled2unity (FOR LINUX ONLY; Windows and Mac (I think) both have better-looking converters):
+
+In case Tiled2UnityLite.cs isn't compiled, do:
+    mcs -r:System.Xml.Linq,System.Drawing Tiled2UnityLite.cs
+
+And now, just do:
+    cd <Tiled2Unity executable location>
+    mono ./Tiled2UnityLite.exe <tiled_map_file> <output_folder_in_project>
+
+
+Examples:
+    cd "/home/susanna/Documents/coding projects/unity/Tiled2Unity"
+    mono ./Tiled2UnityLite.exe "/home/susanna/Documents/coding projects/unity/LearningUnity/Assets/tiled/test2.tmx" "/home/susanna/Documents/coding projects/unity/LearningUnity/Assets/Tiled2Unity"
+
+    cd "/home/susanna/Documents/coding projects/unity/Tiled2Unity"
+    mono ./Tiled2UnityLite.exe "/home/susanna/Documents/coding projects/unity/AIGameGroup/Tiled/Tilemaps/playersHouse_basement.tmx" "/home/susanna/Documents/coding projects/unity/AIGameGroup/PetWarrior/Assets/Tiled2Unity"
