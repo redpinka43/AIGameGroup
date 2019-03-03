@@ -60,13 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Battle\battlePanelScript.cs" />
-    <Compile Include="Assets\Scripts\Battle\ButtonPress.cs" />
-    <Compile Include="Assets\Scripts\Battle\healthBarScript.cs" />
-    <Compile Include="Assets\Scripts\Battle\moveFourButtonText.cs" />
-    <Compile Include="Assets\Scripts\Battle\moveOneButtonText.cs" />
-    <Compile Include="Assets\Scripts\Battle\moveThreeButtonText.cs" />
-    <Compile Include="Assets\Scripts\Battle\moveTwoButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\battlePanelScript.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\ButtonPress.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\enemyHealthBarScript.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\moveFourButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\moveOneButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\moveThreeButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\moveTwoButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\petNameEnemyText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\petNamePlayerText.cs" />
+    <Compile Include="Assets\Scripts\Battle UI\playerHealthBarScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\EditorVsBuildFixes.cs" />
     <Compile Include="Assets\Scripts\Camera\ToggleFullscreen.cs" />
@@ -83,16 +86,15 @@
     <Compile Include="Assets\Scripts\Managers\Loader.cs" />
     <Compile Include="Assets\Scripts\Managers\MySceneManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\Misc\Example.cs" />
     <Compile Include="Assets\Scripts\NPC\ChadController.cs" />
     <Compile Include="Assets\Scripts\NPC\Npc_ChadController.cs" />
     <Compile Include="Assets\Scripts\NPC\NpcController.cs" />
     <Compile Include="Assets\Scripts\Overworld Behaviors\PlayerFollow.cs" />
     <Compile Include="Assets\Scripts\Overworld Behaviors\SpawnBehind.cs" />
-    <Compile Include="Assets\Scripts\Pet\pet.cs" />
     <Compile Include="Assets\Scripts\Pet\petLevelUI.cs" />
-    <Compile Include="Assets\Scripts\Pet\petNameUI.cs" />
-    <Compile Include="Assets\Scripts\Pet\petStat.cs" />
+    <Compile Include="Assets\Scripts\Pet\Stats\Pets.cs" />
+    <Compile Include="Assets\Scripts\Pet\Stats\Stat.cs" />
+    <Compile Include="Assets\Scripts\Player\LoadBattleScene.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadNewArea.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerStartPoint.cs" />
