@@ -13,6 +13,11 @@ Things you need to do to get set up:
 * Press the big triangle Play button at the top of the screen to run what we've got so far.
 <h1>Week 8: </h1>
 
+<h2>Pet Stats</h2>
+<h4>Information on the different stats between the pet breeds</h4>
+<img src = "/Images and Artwork/petStatInfo.PNG" height = "800">
+<img src = "/Images and Artwork/statRanges.PNG">
+
 <h2>Pet Moves</h2>
 <img src = "/Images and Artwork/petMoves.png" height = "800">
 This chart shows most of the information relating to pet moves. What moves each pet will learn and when they will learn them; the effects of the move; whether the move is considered a buff/debuff, physical attack, or special attack.
