@@ -31,7 +31,7 @@ We added some maps for the overworld where the player can travel freely:
 The player will start the game in the basement of their parents' house. They will have to go up the stairs to the first floor of the house to leave.
  
 <h3>Town One</h3>
-<img src = "/Images and Artwork/townOne.PNG">
+<img src = "/Images and Artwork/townOneWalkAround.gif">
 This is the player's hometown.
 
 <h1>Week 7: </h1>
