@@ -37,7 +37,6 @@ public class PlayerManager : MonoBehaviour {
 			  && GameManager.instance.gameState != GameState.OPTIONS) {
 
 			playerObject = GameObject.Find("Player");	
-			Debug.Log("In PlayerManager.cs: setting player to unable to move.");
 			playerObject.GetComponent<PlayerController>().lockedInPlace = true;
 
 
