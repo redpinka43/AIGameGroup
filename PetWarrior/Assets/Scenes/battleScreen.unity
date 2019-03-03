@@ -373,6 +373,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &169310795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169310797}
+  - component: {fileID: 169310796}
+  m_Layer: 0
+  m_Name: enemyPet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &169310796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169310795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Ratt
+  animal: Rat
+  health: 40
+  currentHealth: 40
+  attack: 10
+  defense: 10
+  special: 10
+  speed: 10
+  moves:
+  - Slash Attack
+--- !u!4 &169310797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169310795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 563.9813, y: 312.98962, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &409046723
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +615,7 @@ GameObject:
   - component: {fileID: 505268255}
   - component: {fileID: 505268254}
   m_Layer: 5
-  m_Name: filler
+  m_Name: fillerEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1557,7 +1607,7 @@ GameObject:
   - component: {fileID: 814195349}
   - component: {fileID: 814195348}
   m_Layer: 5
-  m_Name: Text HP
+  m_Name: textHPPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1757,7 @@ GameObject:
   - component: {fileID: 852494942}
   - component: {fileID: 852494941}
   m_Layer: 5
-  m_Name: filler
+  m_Name: fillerPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1791,8 +1841,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children:
-  - {fileID: 1108976598}
+  m_Children: []
   m_Father: {fileID: 1026365043}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1847,7 +1896,7 @@ GameObject:
   - component: {fileID: 906863161}
   - component: {fileID: 906863160}
   m_Layer: 5
-  m_Name: heatlhBarPlayer
+  m_Name: healthBarPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1883,10 +1932,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 906863158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca61323d7d9aab1428aa006f5ebae013, type: 3}
+  m_Script: {fileID: 11500000, guid: f00a80f70dbd52142aea34b522b0c072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmount: 1
+  fillAmount: 0
   filler: {fileID: 852494941}
 --- !u!114 &906863161
 MonoBehaviour:
@@ -2441,52 +2490,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1070700468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae506e0716fee94d9b4c0a213bcc7ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 29659710a3f74b14bac9c883ef0c456d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1108976596
+--- !u!1 &1170620973
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1108976598}
-  - component: {fileID: 1108976597}
+  - component: {fileID: 1170620975}
+  - component: {fileID: 1170620974}
   m_Layer: 0
-  m_Name: playerPetStat
+  m_Name: playerPet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1108976597
+--- !u!114 &1170620974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1108976596}
+  m_GameObject: {fileID: 1170620973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57ab6bdb5dc46347bb6af4998326c70, type: 3}
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health:
-    bar: {fileID: 0}
-    maxVal: 0
-    currentVal: 0
---- !u!4 &1108976598
+  name: Decko
+  animal: Gecko
+  health: 10
+  currentHealth: 10
+  attack: 10
+  defense: 10
+  special: 10
+  speed: 10
+  moves:
+  - Slash Attack
+--- !u!4 &1170620975
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1108976596}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 133.84846, y: 17.024572, z: -2.776121}
-  m_LocalScale: {x: 0.49912122, y: 0.49912122, z: 0.99824244}
+  m_GameObject: {fileID: 1170620973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 563.9813, y: 312.98962, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 852817544}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204517630
 GameObject:
@@ -2500,7 +2555,7 @@ GameObject:
   - component: {fileID: 1204517633}
   - component: {fileID: 1204517632}
   m_Layer: 5
-  m_Name: Text Name
+  m_Name: textNamePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2698,7 +2753,7 @@ GameObject:
   - component: {fileID: 1313191392}
   - component: {fileID: 1313191391}
   m_Layer: 5
-  m_Name: Text Level
+  m_Name: textLevelEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3205,7 +3260,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1487560208}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1559998548}
+        m_MethodName: useMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1487560208
@@ -3401,7 +3467,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1559998544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c312513bfaa5dd7448f8eb345d7a71f2, type: 3}
+  m_Script: {fileID: 11500000, guid: b42d54f25db6d0345a5c541b4511bc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1624991829
@@ -3717,7 +3783,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1740135950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4e30b130c221d4a991c123b8928ad1, type: 3}
+  m_Script: {fileID: 11500000, guid: 88729a0b7baeda542944dfeb82dfb135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 701632310}
@@ -3882,7 +3948,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831353478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57eb4c34bb0b8504da4a373698b16573, type: 3}
+  m_Script: {fileID: 11500000, guid: 43625d05f3e87e94288b78d9d33f1843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1842410124
@@ -3897,7 +3963,7 @@ GameObject:
   - component: {fileID: 1842410127}
   - component: {fileID: 1842410126}
   m_Layer: 5
-  m_Name: Text Level
+  m_Name: textLevelPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4129,7 +4195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1917660232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9d5d2c0d2902d4bb38edfa2f87c2b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 490eeb5528a8ec64ca92052c0de25164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1920553565
@@ -4213,7 +4279,7 @@ GameObject:
   - component: {fileID: 2020472635}
   - component: {fileID: 2020472634}
   m_Layer: 5
-  m_Name: heatlhBarOpponent
+  m_Name: heatlthBarOpponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,7 +4365,7 @@ GameObject:
   - component: {fileID: 2112747449}
   - component: {fileID: 2112747448}
   m_Layer: 5
-  m_Name: Text HP
+  m_Name: textHPEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4375,7 +4441,7 @@ GameObject:
   - component: {fileID: 2126854174}
   - component: {fileID: 2126854173}
   m_Layer: 5
-  m_Name: Text Name
+  m_Name: textNameEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
