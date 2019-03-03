@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6876610}
   - component: {fileID: 6876609}
   m_Layer: 0
-  m_Name: opponentPet
+  m_Name: opponentPetSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: RATT
 --- !u!222 &418812057
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 852817546}
   - component: {fileID: 852817545}
   m_Layer: 5
-  m_Name: playerPet
+  m_Name: playerPetSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2636,7 +2636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: DECKO
 --- !u!222 &1204517634
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3465,7 +3465,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: DECKO
 --- !u!222 &1527365092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4675,7 +4675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: RATT
 --- !u!222 &2126854175
 CanvasRenderer:
   m_ObjectHideFlags: 0

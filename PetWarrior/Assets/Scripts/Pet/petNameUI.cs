@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class petNameUI : MonoBehaviour
 {
 	Text txt;
-	string petName = "PURRTY";
+	string petName = "DECKO";
 	
     // Start is called before the first frame update
     void Start()
     {
-        txt = GetComponentInChildren<Text>();
-		txt.text = petName;
+        //txt = GetComponentInChildren<Text>();
+		//txt.text = petName;
     }
 }
