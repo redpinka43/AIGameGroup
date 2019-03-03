@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class petLevelUI : MonoBehaviour
 {
     Text txt;
-	int petLevel = 10;
+	int petLevel = 7;
 	
     // Start is called before the first frame update
     void Start()
