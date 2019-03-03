@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed;
 	private Animator anim;
 	private Rigidbody2D myRigidbody;
-
+    public static string PlayerName;
 	private bool playerMoving;
 	public Vector2 lastMove;
 
@@ -45,7 +45,13 @@ public class PlayerController : MonoBehaviour {
 			anim.SetBool("PlayerMoving", false);
 			return;
 		}
-
+        int i = 0;
+        if (Input.GetKey("n"))
+        {
+            Debug.Log(i);
+            i++;
+        }
+         
 		// Move horizontal
 		if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
 		{

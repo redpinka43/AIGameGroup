@@ -7,7 +7,9 @@ using UnityEngine;
 
 public class DialogHolder : MonoBehaviour {
 
-	private DialogueManager dMan;
+    public static string path = "C:\\Users\\Chris\\Documents\\GitHub\\AIGameGroup\\AIGame\\Assets\\Text\\test_lines1.csv";
+    string[] lines = System.IO.File.ReadAllLines(path);
+    private DialogueManager dMan;
 	public string[] dialogueLines;
 	// public int startLine;
 
@@ -25,10 +27,10 @@ public class DialogHolder : MonoBehaviour {
 	{
 		if(other.gameObject.name == "Player")
 		{
-			if(Input.GetKeyUp(KeyCode.Space))
+			if(Input.GetKeyUp(KeyCode.Space) || Input.GetButtonDown("Fire1"))
 			{
 				Debug.Log("dialogue should happen now.");
-
+                Debug.Log(lines[0]);
 				if(!dMan.dialogActive)
 				{
 					dMan.dialogLines = dialogueLines;
