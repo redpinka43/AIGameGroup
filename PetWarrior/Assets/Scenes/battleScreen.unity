@@ -2153,6 +2153,65 @@ Prefab:
       propertyPath: m_Name
       value: Dialogue Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224220599096780746, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401024635804668, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.0999756
+      objectReference: {fileID: 0}
+    - target: {fileID: 224186106639153870, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 120.79999
+      objectReference: {fileID: 0}
+    - target: {fileID: 224157616684820804, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -63.725006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326799419206496, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
   m_IsPrefabAsset: 0
