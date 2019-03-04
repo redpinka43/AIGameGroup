@@ -45,6 +45,12 @@ This is the player's hometown.
 <img src ="/Images and Artwork/fightUIFunctionality.gif">
 The necessary UI mechanics for the battle screen and the fight screen are functional, but will be drastically changed visually with the addition of the pet sprites and different background images.
 
+<h1>Week 6: </h1>
+<h2>Scripts!</h2>
+
+Chris: I wrote up the logic for a follower in the overworld. Right now it's just attatched to a placeholder until the sprite for the pets is finished. I also learned how triggers work in unity and set up one on an enemy sprite that activates if you walk in it's line of sight. He'll rush at you and the battle will appear.
+
+
 <h1>Week 5: </h1>
 <h2>First UI</h2>
 
