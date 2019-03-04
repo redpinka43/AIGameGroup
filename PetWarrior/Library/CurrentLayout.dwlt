@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 371}
   m_MaxSize: {x: 22012, y: 14021}
   vertical: 0
-  controlID: 150
+  controlID: 9
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 640, y: 371}
   m_MaxSize: {x: 18010, y: 14021}
   vertical: 1
-  controlID: 151
+  controlID: 10
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_MinSize: {x: 640, y: 271}
   m_MaxSize: {x: 18010, y: 10021}
   vertical: 0
-  controlID: 152
+  controlID: 11
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -392,23 +392,23 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: acf6f6ffaef6f6ffeadcfaffc8f5faff0c0afdff0e0afdffcefbffff00000000a2100000c61000000a110000241100002e110000441100004e110000c411000064120000741200008cd000002cd1000050d1000094d10000aed10000b8d10000d8d10000fad1000060d2000092d2000000d3000012d30000
+    m_SelectedIDs: 3c130000
+    m_LastClickedID: 4924
+    m_ExpandedIDs: e4fbffff00000000d41100000e130000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: enemyTextFeedBack
-      m_OriginalName: enemyTextFeedBack
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -592214
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -558,34 +558,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/Battle UI
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/Battle UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Chris\Desktop\AIGameGroup\PetWarrior
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 0a0a0000
-    m_LastClickedID: 2570
-    m_ExpandedIDs: 000000000a0a0000580a00006a0a0000700a0000f60a0000fe0a00000e0b0000180b00002a0b0000340b0000560b0000a20b0000c00b00003a0c0000be0c0000dc0c0000e60c0000140e0000400e0000600e00009c0e0000f80e0000c00f00004e34000000ca9a3b
+    m_SelectedIDs: 660c0000
+    m_LastClickedID: 3174
+    m_ExpandedIDs: 00000000080a0000560a0000680a00006e0a0000f40a0000fc0a00000c0b0000160b0000280b0000320b0000540b0000a00b0000be0b0000380c0000bc0c0000da0c0000e40c0000120e00003e0e00005e0e00009a0e0000f60e0000be0f00002e35000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Stats
-      m_OriginalName: Stats
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 3440
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -599,7 +599,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a0a0000580a00006a0a0000700a0000f60a0000fe0a00000e0b0000180b00002a0b0000340b0000560b0000a20b0000c00b00003a0c0000be0c0000dc0c0000e60c0000140e0000400e0000600e00009c0e0000f80e0000c00f00004e340000
+    m_ExpandedIDs: 00000000080a0000560a0000680a00006e0a0000f40a0000fc0a00000c0b0000160b0000280b0000320b0000540b0000a00b0000be0b0000380c0000bc0c0000da0c0000e40c0000120e00003e0e00005e0e00009a0e0000f60e0000be0f00002e350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -651,7 +651,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 65}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 187
 --- !u!114 &18
