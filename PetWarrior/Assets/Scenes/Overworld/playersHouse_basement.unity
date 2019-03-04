@@ -260,10 +260,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1940456497340926, guid: b2f4f239e30e54735a50abfa0f3695a0, type: 2}
-      propertyPath: m_Name
-      value: Placeholder Camera Target
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f4f239e30e54735a50abfa0f3695a0, type: 2}
   m_IsPrefabAsset: 0
@@ -664,6 +660,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223911268979531316, guid: a222eefb9fbbc42a7a4750b1053b420d,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2126119791}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
   m_IsPrefabAsset: 0
@@ -780,3 +781,8 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!20 &2126119791 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20592824660814368, guid: b2f4f239e30e54735a50abfa0f3695a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 361173162}
