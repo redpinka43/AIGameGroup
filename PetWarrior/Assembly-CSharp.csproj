@@ -60,7 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnableBattleScreen.cs" />
     <Compile Include="Assets\enableVictoryScreen.cs" />
+    <Compile Include="Assets\PetEncounter.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveFourButtonText.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveOneButtonText.cs" />
