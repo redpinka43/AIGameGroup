@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour {
 	private bool playerIsMoving;
 	public Vector2 lastMove;
 	public bool lockedInPlace;
-
-	public string startPoint;	
+    public bool canMove;
+    public string startPoint;	
 	public Gender gender;
 
 	void OnEnable () {
@@ -52,17 +52,19 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		myRigidbody = GetComponent<Rigidbody2D>();
-
-		lockedInPlace = false;
+        canMove = true;
+        lockedInPlace = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Reset components
 		playerIsMoving = false;
-		
 
-		float axisRaw_Horizontal = InputManager.instance.getAxisRaw("Horizontal");
+        if (!canMove)
+            lockedInPlace = true;
+
+        float axisRaw_Horizontal = InputManager.instance.getAxisRaw("Horizontal");
 		float axisRaw_Vertical = InputManager.instance.getAxisRaw("Vertical");
 
 		if(lockedInPlace)

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/battleScreen.unity
+- path: Assets/Scenes/Overworld/Test Scenes/TestScene_1.unity
   isLoaded: 1
   isActive: 1
