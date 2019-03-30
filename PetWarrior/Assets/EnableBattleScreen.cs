@@ -25,10 +25,11 @@ public class EnableBattleScreen : MonoBehaviour {
     // Update is called once per frame
     public void startBattleScreen () {
 
+        thePlayer.canMove = false;
         mainCamera.SetActive(false);
         battle.SetActive(true);
         battleCamera.SetActive(true);
-        thePlayer.canMove = false;
+        
         
     }
 }
