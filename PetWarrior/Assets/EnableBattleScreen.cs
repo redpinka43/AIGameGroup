@@ -30,6 +30,15 @@ public class EnableBattleScreen : MonoBehaviour {
         battle.SetActive(true);
         battleCamera.SetActive(true);
         
-        
+       
+    }
+
+    public void endBattle()
+    {
+        battleCamera.SetActive(false);
+
+        mainCamera.SetActive(true);
+        thePlayer.canMove = true;
+        battle.SetActive(false);
     }
 }

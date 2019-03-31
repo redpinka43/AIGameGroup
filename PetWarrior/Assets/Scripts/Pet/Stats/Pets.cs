@@ -7,6 +7,8 @@ public class Pets : MonoBehaviour
 {
     public string name;
     public string animal;
+    public Sprite image;
+    public Species species;
     public int health;
     public int currentHealth;
     public int attack;
@@ -15,11 +17,16 @@ public class Pets : MonoBehaviour
     public int speed;
     public List<string> moves = new List<string>();
 
-    public int SlashAttack(int attack, int defense)
+    public enum Species
     {
-
-        int damage = (attack / defense);
-        return damage;
-
+        Gecko,
+        Turtle,
+        Squirrel,
+        Bird,
+        Dog,
+        Cat,
+        Rat
     }
+
+
 }

@@ -13,6 +13,7 @@ public class enableVictoryScreen : MonoBehaviour {
     public GameObject panelEnemyFeedBack;
     private GameObject enemySprite;
 
+
     // Use this for initialization
     void Start () {
         panel2 = GameObject.Find("startBattlePanel");
@@ -26,6 +27,8 @@ public class enableVictoryScreen : MonoBehaviour {
         
         enemySprite = GameObject.Find("opponentPetSprite");
         panel.SetActive(false);
+
+
     }
 	
 	// Update is called once per frame
@@ -51,10 +54,5 @@ public class enableVictoryScreen : MonoBehaviour {
             enemySprite.SetActive(false);
             
         }
-    }
-
-    public void endBattle()
-    {
-        SceneManager.LoadScene("town_1_petStore");
     }
 }

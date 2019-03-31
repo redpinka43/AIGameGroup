@@ -7,12 +7,10 @@ public class PetEncounter : MonoBehaviour {
     public Collider2D coll;
     public EnableBattleScreen battleScreen;
 
-    private PlayerController thePlayer;
     public int min, max;
     // Use this for initialization
     void Start()
     {
-        thePlayer = FindObjectOfType<PlayerController>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +19,6 @@ public class PetEncounter : MonoBehaviour {
 
             if(RNG(min, max) == 1)
             {
-                Debug.Log("OKKKK");
                 battleScreen.startBattleScreen();
             }
         }
@@ -33,7 +30,6 @@ public class PetEncounter : MonoBehaviour {
     {
         int num;
         num = Random.Range(min, max + 1);
-        Debug.Log("num is: "+num);
         return num;
     }
 }

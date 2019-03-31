@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour {
 
         if (!canMove)
             lockedInPlace = true;
+        else
+            lockedInPlace = false;
 
         float axisRaw_Horizontal = InputManager.instance.getAxisRaw("Horizontal");
 		float axisRaw_Vertical = InputManager.instance.getAxisRaw("Vertical");
