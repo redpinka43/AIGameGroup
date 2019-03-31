@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\GroupCommand.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Editor\CreateBaseMenu.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Editor\CreateExtrasMenu.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Editor\CreateRoundedMenu.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Editor\CreateSquareMenu.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Editor\CreateTextMenu.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\CustomTiledImporterAttribute.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ICustomTiledImporter.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.cs" />
