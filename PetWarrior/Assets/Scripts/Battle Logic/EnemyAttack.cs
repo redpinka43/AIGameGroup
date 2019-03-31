@@ -56,4 +56,5 @@ public class EnemyAttack : MonoBehaviour
         playerPet.currentHealth -= damage;
         return damage;
     }
+
 }

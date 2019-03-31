@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\EnableBattleScreen.cs" />
     <Compile Include="Assets\enableVictoryScreen.cs" />
+    <Compile Include="Assets\GetEnemySprite.cs" />
     <Compile Include="Assets\PetEncounter.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveFourButtonText.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\Scripts\Pet\petLevelUI.cs" />
     <Compile Include="Assets\Scripts\Pet\Stats\Pets.cs" />
     <Compile Include="Assets\Scripts\Player\LoadBattleScene.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadNewArea.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerStartPoint.cs" />

@@ -8,16 +8,15 @@ public class firstButtonEnable : MonoBehaviour
 {
 	public GameObject firstSelectedButton;
 
+
     public void Start()
     {
        
         EventSystem.current.SetSelectedGameObject(firstSelectedButton);
-        
     }
 
     public void OnEnable()
 	{
-        
         EventSystem.current.SetSelectedGameObject(firstSelectedButton);
     }
 }
