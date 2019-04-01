@@ -116,12 +116,16 @@ public class PlayerController : MonoBehaviour {
 
 	// Called whenever GUIManager.OnDialogueStart() event is called
 	public void stopPlayerMovement () {
-		lockedInPlace = true;
+		
+		canMove = false;
+
 	}
 
 	// Called whenever GUIManager.OnDialogueEnd() event is called
 	public void enablePlayerMovement () {
-		lockedInPlace = false;
+
+		canMove = true;
+
 	}
 	
 }
