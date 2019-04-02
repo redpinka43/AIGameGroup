@@ -97,6 +97,11 @@ public class DialoguePanelTextScript : MonoBehaviour
                     }
                     
                 }
+                if(moveName == "Shed Skin")
+                {
+                    feedBackString = playerPet.name + " feels restored!";
+                }
+
                 txt.text = feedBackString;
                 callFlag = true;
             }
