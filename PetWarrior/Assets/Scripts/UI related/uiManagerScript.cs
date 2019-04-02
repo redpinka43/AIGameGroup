@@ -21,4 +21,9 @@ public class uiManagerScript : MonoBehaviour
 		Debug.Log("Has quit game");
 		Application.Quit();
 	}
+	
+	public void StartMenu()
+	{
+		SceneManager.LoadScene("startMenu");
+	}
 }
