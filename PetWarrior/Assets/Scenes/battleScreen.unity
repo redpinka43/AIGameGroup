@@ -1017,12 +1017,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1070700468}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1070700472}
+        m_MethodName: useMove
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4425,7 +4425,7 @@ MonoBehaviour:
   - Nip
   - Dance
   - Sticky Slap
-  - Dance
+  - Shed Skin
 --- !u!4 &1170620975
 Transform:
   m_ObjectHideFlags: 0
@@ -8365,6 +8365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: 
   feedBackString: 
+  callFlag: 0
 --- !u!114 &2113377008
 MonoBehaviour:
   m_ObjectHideFlags: 0

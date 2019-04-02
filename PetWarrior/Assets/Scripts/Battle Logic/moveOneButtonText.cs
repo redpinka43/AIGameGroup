@@ -55,6 +55,9 @@ public class moveOneButtonText : MonoBehaviour
                 break;
             case "Sticky Slap":
                 break;
+            case "Shed Skin":
+                ShedSkin();
+                break;
             default:
                 Debug.Log("No such move");
                 break;
@@ -103,7 +106,22 @@ public class moveOneButtonText : MonoBehaviour
         return damage;
     }
 
+    public void ShedSkin()
+    {
+        if (playerPet.currentHealth <= (playerPet.health - 5))
+        {
+            playerPet.currentHealth += 5;
+        }
+        else
+        {
+            playerPet.currentHealth = playerPet.health;
+        }
 
+        playerPet.attack = playerPet.maxAttack;
+        playerPet.defense = playerPet.maxDefense;
+
+
+    }
     int RNG(int min, int max)
     {
         int num;

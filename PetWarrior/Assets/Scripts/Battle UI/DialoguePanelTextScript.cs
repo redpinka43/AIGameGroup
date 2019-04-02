@@ -71,7 +71,6 @@ public class DialoguePanelTextScript : MonoBehaviour
     {
         moveNumberUsed = playerPet.moveNum;
         moveName = playerPet.moves[moveNumberUsed];
-        Debug.Log(moveName);
         if (ppLeft == 0)
         {
             txt.text = "Sorry bud, you can't use that move.";
@@ -97,6 +96,11 @@ public class DialoguePanelTextScript : MonoBehaviour
                     }
                     
                 }
+                if (moveName == "Shed Skin")
+                {
+                    feedBackString = playerPet.name + " feels restored!";
+                }
+
                 txt.text = feedBackString;
                 callFlag = true;
             }
