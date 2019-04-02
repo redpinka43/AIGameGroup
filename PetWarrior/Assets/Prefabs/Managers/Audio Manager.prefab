@@ -69,7 +69,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -167,7 +167,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365336278259152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a2b4081e109646d98135cd41e6ec6f1, type: 3}
   m_Name: 
@@ -263,11 +263,15 @@ MonoBehaviour:
   bgMusicArray:
   - {fileID: 8300000, guid: 972e5d5ab4f714bd3b118e2cef370995, type: 3}
   - {fileID: 8300000, guid: 17de7e984c2b0432dba3d74f9fa99114, type: 3}
+  - {fileID: 8300000, guid: c9efe2be46ba549e9b7d562f71829829, type: 3}
   bgMusicStrings:
   - town
   - route
+  - battle
   soundFxArray: []
   soundFxStrings: []
+  bgMusicVolume: 0
+  soundFxVolume: 0
 --- !u!224 &224379858238651184
 RectTransform:
   m_ObjectHideFlags: 1

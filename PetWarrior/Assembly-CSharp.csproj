@@ -96,6 +96,7 @@
      <Compile Include="Assets\Pixel UI\Scripts\UITabbedWindow.cs" />
      <Compile Include="Assets\Pixel UI\Scripts\UITooltip.cs" />
      <Compile Include="Assets\Pixel UI\Scripts\UITypewriter.cs" />
+     <Compile Include="Assets\Scripts\Audio\MusicTransition.cs" />
      <Compile Include="Assets\Scripts\Battle Logic\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\Battle Logic\moveFourButtonText.cs" />
      <Compile Include="Assets\Scripts\Battle Logic\moveOneButtonText.cs" />
