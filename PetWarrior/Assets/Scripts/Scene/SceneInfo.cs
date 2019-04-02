@@ -7,5 +7,6 @@ public class SceneInfo : MonoBehaviour {
 	// Put whatever info is needed for the scene, here.
 
 	public GameState sceneGameState;
+	public string bgMusic;
 
 }

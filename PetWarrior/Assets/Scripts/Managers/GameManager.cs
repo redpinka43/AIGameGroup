@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour {
 
 	
 	// Prefab managers to be loaded
+	public GameObject audioManPrefab;
 	public GameObject dialogueManPrefab; 
 	public GameObject eventManPrefab;
 	public GameObject GUIManPrefab;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		// Instantiate managers 
+		if (AudioManager.instance == null) 		{ Instantiate(audioManPrefab, gameObject.transform); }
 		if (DialogueManager.instance == null) 	{ Instantiate(dialogueManPrefab, gameObject.transform); }
 		if (EventManager.instance == null)  	{ Instantiate(eventManPrefab, gameObject.transform); }
 		if (GUIManager.instance == null)  		{ Instantiate(GUIManPrefab, gameObject.transform); }
