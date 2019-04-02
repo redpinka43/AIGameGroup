@@ -43,7 +43,7 @@ public class useItem : MonoBehaviour {
     void Update()
     {
         itemnumber = getNextItem.i;
-        itemName = player.items[itemnumber];
+        itemName = player.items[itemnumber % player.items.Count];
     }
 
     public void Potion()

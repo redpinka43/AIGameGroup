@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class DialoguePanelTextScript : MonoBehaviour
 {
 
@@ -12,20 +11,47 @@ public class DialoguePanelTextScript : MonoBehaviour
     private Pets playerPet;
     public int ppLeft;
     public string feedBackString;
+    public static int moveNumberUsed;
     public moveOneButtonText moveOne;
+    public moveOneButtonText moveTwo;
+    public moveOneButtonText moveThree;
+    public moveOneButtonText moveFour;
 
-   public bool callFlag = false;
+    public bool callFlag = false;
 
     private void Awake()
     {
 
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
-        moveName = playerPet.moves[0];
-
         moveOne = GameObject.Find("moveOneButtonTextObject").GetComponent<moveOneButtonText>();
+        moveNumberUsed = playerPet.moveNum;
+        moveName = playerPet.moves[moveNumberUsed];
+        Debug.Log(moveName);
+
         ppLeft = moveOne.ppLeft;
         
+
+    }
+
+    public void moveNumOne()
+    {
+        playerPet.moveNum = 0;
+    }
+    public void moveNumTwo()
+    {
+        playerPet.moveNum = 1;
+
+    }
+    public void moveNumThree()
+    {
+        playerPet.moveNum = 2;
+
+
+    }
+    public void moveNumFour()
+    {
+        playerPet.moveNum = 3;
 
     }
 
@@ -43,6 +69,9 @@ public class DialoguePanelTextScript : MonoBehaviour
 
     private void Update()
     {
+        moveNumberUsed = playerPet.moveNum;
+        moveName = playerPet.moves[moveNumberUsed];
+        Debug.Log(moveName);
         if (ppLeft == 0)
         {
             txt.text = "Sorry bud, you can't use that move.";
@@ -56,8 +85,18 @@ public class DialoguePanelTextScript : MonoBehaviour
                 if (moveName == "Dance")
                     feedBackString = playerPet.name + " did a little dance! Enemy Defense lowered by: " + moveOne.Dance();
                 if (moveName == "Sticky Slap")
-                    feedBackString = playerPet.name + " dealt " + moveOne.StickySlap() + " damage. Oh god, what was on it's hand?";
-
+                {
+                    int ssDam = moveOne.StickySlap();
+                    if(ssDam != 0)
+                    {
+                        feedBackString = playerPet.name + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+                    }
+                    else
+                    {
+                        feedBackString = playerPet.name + "'s Sticky Slap missed! Bet that feels bad.";
+                    }
+                    
+                }
                 txt.text = feedBackString;
                 callFlag = true;
             }
