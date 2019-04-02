@@ -8,7 +8,7 @@ public class pauseToggle : MonoBehaviour
 	
 	public void showPause()
 	{
-		pausePanel.SetActive(!pausePanel.activeSelf);
+		pausePanel.SetActive(false);
 	}
 	
 }
