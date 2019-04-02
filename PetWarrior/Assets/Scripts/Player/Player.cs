@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public List<PlayerPets> playerPets = new List<PlayerPets>();
+    public List<string> items = new List<string>();
 
     // Use this for initialization
     void Start () {
