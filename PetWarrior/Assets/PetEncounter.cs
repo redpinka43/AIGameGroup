@@ -1,15 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PetEncounter : MonoBehaviour {
 
     public Collider2D coll;
-    public string levelToLoad;
+    public EnableBattleScreen battleScreen;
 
-
-    private PlayerController thePlayer;
     public int min, max;
     // Use this for initialization
     void Start()
@@ -22,9 +19,7 @@ public class PetEncounter : MonoBehaviour {
 
             if(RNG(min, max) == 1)
             {
-                
-                    SceneManager.LoadScene(levelToLoad);
-                
+                battleScreen.startBattleScreen();
             }
         }
         else
@@ -35,7 +30,6 @@ public class PetEncounter : MonoBehaviour {
     {
         int num;
         num = Random.Range(min, max + 1);
-        Debug.Log(num);
         return num;
     }
 }
