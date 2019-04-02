@@ -4390,6 +4390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1170620975}
   - component: {fileID: 1170620974}
+  - component: {fileID: 1170620976}
   m_Layer: 0
   m_Name: playerPet
   m_TagString: Untagged
@@ -4439,6 +4440,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1170620976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170620973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dba5e5d3afd7f47ab93e48f3efb042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPet: {fileID: 0}
+  thisPet: {fileID: 0}
 --- !u!1 &1187306603
 GameObject:
   m_ObjectHideFlags: 0

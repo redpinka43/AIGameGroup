@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Player : MonoBehaviour {
 
-    public List<PlayerPets> playerPets = new List<PlayerPets>();
+    public List<Pets> playerPets = new List<Pets>();
     public List<string> items = new List<string>();
 
     // Use this for initialization
@@ -18,10 +19,4 @@ public class Player : MonoBehaviour {
 	}
 }
 
-[System.Serializable]
-public class PlayerPets
-{
-    public string Name;
-    public Pets pet;
-    public int level;
-}
+
