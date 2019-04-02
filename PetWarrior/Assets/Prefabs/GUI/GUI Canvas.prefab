@@ -1277,6 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1542773976526676}
+  firstSelectedButton: {fileID: 1266181832622838}
 --- !u!114 &114781721690320690
 MonoBehaviour:
   m_ObjectHideFlags: 1
