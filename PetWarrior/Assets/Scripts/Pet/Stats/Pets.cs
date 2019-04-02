@@ -11,15 +11,9 @@ public class Pets : MonoBehaviour
     public Species species;
     public int health;
     public int currentHealth;
-
-    public int maxAttack;
     public int attack;
-
-    public int maxDefense;
     public int defense;
-
     public int special;
-
     public int speed;
     public int moveNum;
     public List<string> moves = new List<string>();
