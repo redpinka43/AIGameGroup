@@ -58,6 +58,7 @@
      <Compile Include="Assets\GetEnemySprite.cs" />
      <Compile Include="Assets\getNextItem.cs" />
      <Compile Include="Assets\itemFeedBackScript.cs" />
+     <Compile Include="Assets\moveUsed.cs" />
      <Compile Include="Assets\PetEncounter.cs" />
      <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoDialogue.cs" />
      <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoWindow.cs" />
@@ -768,12 +769,12 @@
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
   -->
-
+  
 </Project>
