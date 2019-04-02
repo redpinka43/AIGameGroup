@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour {
 
 	// Child components
 	private GameObject bgMusicObject;
-	private GameObject fxSoundObject;
+	private GameObject soundFxObject;
 
 	// Background music list
 	public AudioClip[] bgMusicArray;
@@ -38,6 +38,8 @@ public class AudioManager : MonoBehaviour {
 
 	// Class variables
 	private string currentBgMusic = null;
+	public float bgMusicVolume;
+	public float soundFxVolume;
 
 
 	void Awake () {
@@ -48,17 +50,21 @@ public class AudioManager : MonoBehaviour {
 			instance.name = "Audio Man";
 		}
 
+		// Assign child components
+		bgMusicObject = gameObject.transform.Find("bgMusic").gameObject;
+		soundFxObject = gameObject.transform.Find("soundFx").gameObject;
+
 		// Assign events
-		// MySceneManager.OnSceneChange += checkSceneChange;
+		MySceneManager.OnSceneChange += checkSceneChange;
 
 	}
 
 	// Use this for initialization
 	void Start () {
-
-		// Assign child components
-		bgMusicObject = gameObject.transform.Find("bgMusic").gameObject;
-		fxSoundObject = gameObject.transform.Find("soundFx").gameObject;
+		
+		// Set volumes
+		bgMusicObject.GetComponent<AudioSource>().volume = bgMusicVolume;
+		soundFxObject.GetComponent<AudioSource>().volume = soundFxVolume;
 
 	}	
 
@@ -75,11 +81,12 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	// Changes background music to the music matching the string newBgMusic 
-	void changeBgMusic(string newBgMusicString) {
+	public void changeBgMusic(string newBgMusicString) {
 
 		AudioClip newMusic = bgMusicArray[ Array.IndexOf(bgMusicStrings, newBgMusicString) ];			
 		bgMusicObject.GetComponent<AudioSource>().clip = newMusic;
 		// Idk do i need to activate the music now?
+		bgMusicObject.GetComponent<AudioSource>().Play();
 
 	}
 
@@ -87,7 +94,7 @@ public class AudioManager : MonoBehaviour {
 	void activateSoundFx(string newSoundFxString) {
 		
 		AudioClip newSoundFx = soundFxArray[ Array.IndexOf(soundFxStrings, newSoundFxString) ];
-		fxSoundObject.GetComponent<AudioSource>().clip = newSoundFx;
+		soundFxObject.GetComponent<AudioSource>().clip = newSoundFx;
 		// Idk do i need to activate the music now?
 
 	}

@@ -63,6 +63,9 @@ public class InputManager : MonoBehaviour {
 		}
 
 		// Check external controller inputs here
+		if ( inputSwitchStatement ( keyString, "down" ) )
+			return true;
+
 		return getBinaryControllerInput(keyString);
 	}
 
@@ -78,7 +81,10 @@ public class InputManager : MonoBehaviour {
 			}
 		}
 
-		// Check external controller inputs here. idk if it really works here, but whatever
+		// Check external controller inputs here
+		if ( inputSwitchStatement ( keyString, "up" ) )
+			return true;
+
 		return getBinaryControllerInput(keyString); 
 	}
 	
@@ -120,6 +126,81 @@ public class InputManager : MonoBehaviour {
 				Debug.Log("ERROR (InputManager.cs): Invalid keyString passed to keySwitchStatement.");
 				return new KeyCode[] {};
 		}
+	}
+
+	bool inputSwitchStatement(string keyString, string direction) {
+
+		if (direction == "down") {
+			switch (keyString) {
+				case "a":
+					if (Input.GetButtonDown("Fire1")) {
+						return true;
+					}
+					return false;
+				case "b":
+					if (Input.GetButtonDown("Fire2")) {
+						return true;
+					}
+					return false;
+				case "c":
+					if (Input.GetButtonDown("Fire3")) {
+						return true;
+					}
+					return false;
+
+				case "exit":
+					if (Input.GetButtonDown("Jump")) {
+						return true;
+					}
+					return false;
+				case "fullscreen":
+					if (Input.GetButtonDown("Submit")) {
+						return true;
+					}
+					return false;		
+
+				default:
+					return false;
+			}
+		}
+
+		else if (direction == "up") {
+			switch (keyString) {
+				case "a":
+					if (Input.GetButtonUp("Fire1")) {
+						return true;
+					}
+					return false;
+				case "b":
+					if (Input.GetButtonUp("Fire2")) {
+						return true;
+					}
+					return false;
+				case "c":
+					if (Input.GetButtonUp("Fire3")) {
+						return true;
+					}
+					return false;
+
+				case "exit":
+					if (Input.GetButtonUp("Jump")) {
+						return true;
+					}
+					return false;
+				case "fullscreen":
+					if (Input.GetButtonUp("Submit")) {
+						return true;
+					}
+					return false;		
+
+				default:
+					return false;
+			}
+		}
+
+		else
+			Debug.Log("ERROR (InputManager.cs): inputSwitchStatement called without valid direction.");
+			return false;
 	}
 
 	// Checks the controller for if it pressed a direction. Returns true or false, and ignores axis subtleties.

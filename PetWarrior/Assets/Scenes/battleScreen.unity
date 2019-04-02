@@ -1413,7 +1413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570948521
@@ -5016,7 +5016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.495, y: 0.33}
-  m_AnchoredPosition: {x: 567.99976, y: -52.455}
+  m_AnchoredPosition: {x: 567.99976, y: -52.454956}
   m_SizeDelta: {x: 11.36, y: 104.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309942425
@@ -5693,6 +5693,11 @@ Prefab:
     - target: {fileID: 4460983654777332, guid: 925953beffb0c4220859f1010bcccd69, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114292057982560124, guid: 925953beffb0c4220859f1010bcccd69,
+        type: 2}
+      propertyPath: bgMusic
+      value: battle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925953beffb0c4220859f1010bcccd69, type: 2}
