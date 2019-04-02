@@ -28,6 +28,11 @@ public class uiManagerScript : MonoBehaviour
 	{
 		SceneManager.LoadScene("startMenu");
 		
-		PlayerManager.instance.playerObject.transform.position = new Vector3 ((float) 122.3, (float) -103.7, (float) 0);		
+		PlayerManager.instance.playerObject.transform.position = new Vector3 ((float) 122.3, (float) -103.7, (float) 0);
+		
+		
+		//GameObject newButton = GameObject.Find("newGameButton");
+		//EventSystem.current.SetSelectedGameObject(null);
+		//EventSystem.current.SetSelectedGameObject(newButton);
 	}
 }
