@@ -15,6 +15,7 @@ public class Pets : MonoBehaviour
     public int defense;
     public int special;
     public int speed;
+    public int moveNum;
     public List<string> moves = new List<string>();
 
     public enum Species

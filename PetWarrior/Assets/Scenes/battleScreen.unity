@@ -528,11 +528,12 @@ MonoBehaviour:
   image: {fileID: 0}
   species: 0
   health: 3
-  currentHealth: 2
+  currentHealth: 3
   attack: 10
   defense: 10
   special: 10
   speed: 10
+  moveNum: 0
   moves:
   - Nip
   - Growl
@@ -1413,7 +1414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570948521
@@ -1680,6 +1681,7 @@ GameObject:
   - component: {fileID: 614678319}
   - component: {fileID: 614678318}
   - component: {fileID: 614678317}
+  - component: {fileID: 614678320}
   m_Layer: 5
   m_Name: moveThree
   m_TagString: Untagged
@@ -1744,7 +1746,51 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 614678318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1917660236}
+        m_MethodName: useMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 701632310}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 858954763}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1978216564}
+        m_MethodName: moveNumThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &614678318
@@ -1781,6 +1827,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 614678315}
   m_CullTransparentMesh: 0
+--- !u!114 &614678320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614678315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490eeb5528a8ec64ca92052c0de25164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppLeft: 30
+  ppTotal: 30
 --- !u!1 &617920301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4305,9 +4364,12 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
+  moveNum: 0
   moves:
   - Nip
-  - Growl
+  - Dance
+  - Sticky Slap
+  - Dance
 --- !u!4 &1170620975
 Transform:
   m_ObjectHideFlags: 0
@@ -5806,6 +5868,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1978216564}
+        m_MethodName: moveNumOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1487560208
@@ -6428,6 +6501,7 @@ GameObject:
   - component: {fileID: 1704529142}
   - component: {fileID: 1704529141}
   - component: {fileID: 1704529140}
+  - component: {fileID: 1704529143}
   m_Layer: 5
   m_Name: moveTwo
   m_TagString: Untagged
@@ -6492,7 +6566,51 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704529141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1831353482}
+        m_MethodName: useMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 701632310}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 858954763}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1978216564}
+        m_MethodName: moveNumTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1704529141
@@ -6529,6 +6647,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704529138}
   m_CullTransparentMesh: 0
+--- !u!114 &1704529143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704529138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43625d05f3e87e94288b78d9d33f1843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppLeft: 10
+  ppTotal: 15
 --- !u!1 &1740135950
 GameObject:
   m_ObjectHideFlags: 0
@@ -6980,6 +7111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43625d05f3e87e94288b78d9d33f1843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ppLeft: 10
+  ppTotal: 15
 --- !u!1 &1832327360
 GameObject:
   m_ObjectHideFlags: 0
@@ -7382,6 +7515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490eeb5528a8ec64ca92052c0de25164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ppLeft: 30
+  ppTotal: 30
 --- !u!1 &1920553565
 GameObject:
   m_ObjectHideFlags: 0
@@ -7754,6 +7889,9 @@ MonoBehaviour:
   ppLeft: 0
   feedBackString: 
   moveOne: {fileID: 0}
+  moveTwo: {fileID: 0}
+  moveThree: {fileID: 0}
+  moveFour: {fileID: 0}
   callFlag: 0
 --- !u!1 &2012843258
 GameObject:

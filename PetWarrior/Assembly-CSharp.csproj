@@ -65,6 +65,7 @@
     <Compile Include="Assets\GetEnemySprite.cs" />
     <Compile Include="Assets\getNextItem.cs" />
     <Compile Include="Assets\itemFeedBackScript.cs" />
+    <Compile Include="Assets\moveUsed.cs" />
     <Compile Include="Assets\PetEncounter.cs" />
     <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoDialogue.cs" />
     <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoWindow.cs" />
