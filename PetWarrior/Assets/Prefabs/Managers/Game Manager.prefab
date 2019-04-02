@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438ecfa71d134381b3cbc0ba982b2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManPrefab: {fileID: 1365336278259152, guid: f9d48693dd7834561b887d7f9414e2fb,
+    type: 2}
   dialogueManPrefab: {fileID: 1026598977131434, guid: 8f1be452420fe4ef6970fe9ffd242a41,
     type: 2}
   eventManPrefab: {fileID: 1497198160857790, guid: 3fbf4206ca6464e569076475ac28c2af,
