@@ -73,6 +73,9 @@ public class enableVictoryScreen : MonoBehaviour {
 
     public void StartOver()
     {
+        playerPet.currentHealth = playerPet.health;
+        playerPet.defense = playerPet.maxDefense;
+        playerPet.attack = playerPet.maxAttack;
 
         SceneManager.LoadScene("startMenu");
     }
