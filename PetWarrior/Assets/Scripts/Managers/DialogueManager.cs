@@ -133,6 +133,9 @@ public class DialogueManager : MonoBehaviour {
 
 			// Change scene, if necessary
 			if (currentNode.hasNextScene) {
+				// Save overworld position
+				PlayerController.instance.saveOverworldPosition();
+
 				SceneManager.LoadScene( currentNode.nextScene );
 			}
 

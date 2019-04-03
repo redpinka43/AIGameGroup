@@ -20,6 +20,9 @@ public class PetEncounter : MonoBehaviour {
 
             if (RNG(min, max) == 1)
             {
+                // Save overworld position
+                PlayerController.instance.saveOverworldPosition();
+
                 SceneManager.LoadScene("battleScreen");
             }
         }

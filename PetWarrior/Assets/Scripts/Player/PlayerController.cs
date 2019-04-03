@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 		BOY
 	};
 
+	// Singleton
 	public static PlayerController instance = null;
 
 	public float moveSpeed;
@@ -24,6 +25,10 @@ public class PlayerController : MonoBehaviour {
     public bool canMove;
     public string startPoint;	
 	public Gender gender;
+
+	// Save position
+	Vector3 lastOverworldPosition;
+	private GameObject playerObject;
 
 	void OnEnable () {
 		// Assign events
@@ -41,6 +46,8 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			Destroy (gameObject);
 		}
+
+		playerObject = PlayerManager.instance.playerObject;
 	}
 
 	void OnDisable () {
@@ -129,5 +136,17 @@ public class PlayerController : MonoBehaviour {
 
 	}
 	
+	public void saveOverworldPosition () {
+
+		lastOverworldPosition = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z);
+
+	}
+
+	public void restoreOverworldPosition() {
+
+		playerObject.transform.position = new Vector3(lastOverworldPosition.x, lastOverworldPosition.y, lastOverworldPosition.z);
+
+	}
+
 }
  
