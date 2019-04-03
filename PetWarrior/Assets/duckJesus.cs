@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class duckJesus : MonoBehaviour {
 
-    void OnTriggerStay(Collider other)
+    public Collider2D coll;
+    private Pets playerPet;
+
+    // Use this for initialization
+    void Start()
     {
-        Debug.Log("This will be called every frame");
-        if (Input.GetKeyDown("space") && other.tag == "TalkCylinder")
+        playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
+
+    }
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Player")
         {
-            Debug.Log("Talking");
+            if (Input.GetKeyDown("space"))
+                HealPets();
+
         }
+
+    }
+
+    public void HealPets()
+    {
+        playerPet.currentHealth = playerPet.health;
+        playerPet.defense = playerPet.maxDefense;
+        playerPet.attack = playerPet.maxAttack;
     }
 }
