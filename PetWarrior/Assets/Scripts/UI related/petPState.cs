@@ -4,34 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-// by meaghan and lucia
-public class pauseState : MonoBehaviour 
-{
-
-	public GameObject pausePanel;
+//by meaghan
+public class petPState : MonoBehaviour {
+	
+	public GameObject petPanel;
 	public GameObject firstSelectedButton;
 	
 	// Update is called once per frame
 	void Update () 
-	{		
-		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
+	{
+		if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 6"))
 		{
-			//  activate panel
-			pausePanel.SetActive(!pausePanel.activeSelf);
+			// activate panel
+			petPanel.SetActive(!petPanel.activeSelf);
 			
 			// set first selected button
 			EventSystem.current.SetSelectedGameObject(firstSelectedButton);
-
-			// Disable player movement
-			if (GameManager.instance.gameState == GameState.OVERWORLD) {
-
-				if (!pausePanel.activeSelf) 
+			
+			// Disable player Movement
+			if (GameManager.instance.gameState == GameState.OVERWORLD) 
+			{
+				if (!petPanel.activeSelf) 
 					PlayerManager.instance.playerObject.GetComponent<PlayerController>().enablePlayerMovement();
 				else 
 					PlayerManager.instance.playerObject.GetComponent<PlayerController>().stopPlayerMovement();
-
 			}	
 		}
-		
 	}
 }
