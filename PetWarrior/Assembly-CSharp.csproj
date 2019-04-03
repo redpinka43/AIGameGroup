@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_19;UNITY_2018_2;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_LINUX;PLATFORM_STANDALONE;UNITY_STANDALONE_LINUX;UNITY_STANDALONE;UNITY_STANDALONE_LINUX_API;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_SPATIALTRACKING;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_LINUX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_19;UNITY_2018_2;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_LINUX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -53,14 +53,68 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Battle\battlePanelScript.cs" />
-     <Compile Include="Assets\Scripts\Battle\ButtonPress.cs" />
-     <Compile Include="Assets\Scripts\Battle\healthBarScript.cs" />
-     <Compile Include="Assets\Scripts\Battle\moveFourButtonText.cs" />
-     <Compile Include="Assets\Scripts\Battle\moveOneButtonText.cs" />
-     <Compile Include="Assets\Scripts\Battle\moveThreeButtonText.cs" />
-     <Compile Include="Assets\Scripts\Battle\moveTwoButtonText.cs" />
-     <Compile Include="Assets\Scripts\Battle\uiManagerScript.cs" />
+     <Compile Include="Assets\canMoveScript.cs" />
+     <Compile Include="Assets\duckJesus.cs" />
+     <Compile Include="Assets\EnableBattleScreen.cs" />
+     <Compile Include="Assets\enableVictoryScreen.cs" />
+     <Compile Include="Assets\Enemies.cs" />
+     <Compile Include="Assets\getEnemyPet.cs" />
+     <Compile Include="Assets\GetEnemySprite.cs" />
+     <Compile Include="Assets\getNextItem.cs" />
+     <Compile Include="Assets\getPlayerPet.cs" />
+     <Compile Include="Assets\getPlayerSprite.cs" />
+     <Compile Include="Assets\itemFeedBackScript.cs" />
+     <Compile Include="Assets\moveUsed.cs" />
+     <Compile Include="Assets\PetEncounter.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoDialogue.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoWindow.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\ExperienceButton.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\ExperienceLabel.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\IconDemo.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\LoadScene.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\ActionButton.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\AutoTooltip.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\EndOfDayPanel.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\GameClock.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\GameManager.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\Global.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\InformationWindow.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\LocationProfile.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\MoneyLabel.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\PlayerData.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\StatBarTooltip.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\TimeControlButton.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\TravelButton.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\UIManager.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\VisualClock.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\WeatherProfile.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\MakeAGame\WeatherSystem.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\PingPong.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\SwatchButton.cs" />
+     <Compile Include="Assets\Pixel UI\Demo\Scripts\SwatchHandler.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Range.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UIClock.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UIDialogueWindow.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UIExperienceBar.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UIFader.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UIRescaler.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UIStatBar.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UITabbedWindow.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UITooltip.cs" />
+     <Compile Include="Assets\Pixel UI\Scripts\UITypewriter.cs" />
+     <Compile Include="Assets\Scripts\Audio\MusicTransition.cs" />
+     <Compile Include="Assets\Scripts\Battle Logic\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\Battle Logic\moveFourButtonText.cs" />
+     <Compile Include="Assets\Scripts\Battle Logic\moveOneButtonText.cs" />
+     <Compile Include="Assets\Scripts\Battle Logic\moveThreeButtonText.cs" />
+     <Compile Include="Assets\Scripts\Battle Logic\moveTwoButtonText.cs" />
+     <Compile Include="Assets\Scripts\Battle UI\DialoguePanelTextScript.cs" />
+     <Compile Include="Assets\Scripts\Battle UI\enemyHealthBarScript.cs" />
+     <Compile Include="Assets\Scripts\Battle UI\firstButtonEnable.cs" />
+     <Compile Include="Assets\Scripts\Battle UI\petNameEnemyText.cs" />
+     <Compile Include="Assets\Scripts\Battle UI\petNamePlayerText.cs" />
+     <Compile Include="Assets\Scripts\Battle UI\playerHealthBarScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Camera\EditorVsBuildFixes.cs" />
      <Compile Include="Assets\Scripts\Camera\ToggleFullscreen.cs" />
@@ -69,6 +123,7 @@
      <Compile Include="Assets\Scripts\Dialogue\DialogueNode.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueOptions.cs" />
      <Compile Include="Assets\Scripts\GUI\GUIGameScreen.cs" />
+     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Managers\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
@@ -76,20 +131,30 @@
      <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
      <Compile Include="Assets\Scripts\Managers\Loader.cs" />
      <Compile Include="Assets\Scripts\Managers\MySceneManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\PartyManager.cs" />
      <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\Misc\Example.cs" />
      <Compile Include="Assets\Scripts\NPC\ChadController.cs" />
      <Compile Include="Assets\Scripts\NPC\Npc_ChadController.cs" />
+     <Compile Include="Assets\Scripts\NPC\NpcController.cs" />
      <Compile Include="Assets\Scripts\Overworld Behaviors\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\Overworld Behaviors\SpawnBehind.cs" />
-     <Compile Include="Assets\Scripts\Pet\pet.cs" />
      <Compile Include="Assets\Scripts\Pet\petLevelUI.cs" />
-     <Compile Include="Assets\Scripts\Pet\petNameUI.cs" />
-     <Compile Include="Assets\Scripts\Pet\petStat.cs" />
+     <Compile Include="Assets\Scripts\Pet\Stats\Pets.cs" />
+     <Compile Include="Assets\Scripts\Player\LoadBattleScene.cs" />
+     <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Scene\LoadNewArea.cs" />
      <Compile Include="Assets\Scripts\Scene\PlayerStartPoint.cs" />
+     <Compile Include="Assets\Scripts\Scene\Progression\CheckPetOrTurnBack.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneInfo.cs" />
+     <Compile Include="Assets\Scripts\UI related\pauseState.cs" />
+     <Compile Include="Assets\Scripts\UI related\pauseToggle.cs" />
+     <Compile Include="Assets\Scripts\UI related\petHealthUI.cs" />
+     <Compile Include="Assets\Scripts\UI related\petNameUI.cs" />
+     <Compile Include="Assets\Scripts\UI related\petPState.cs" />
+     <Compile Include="Assets\Scripts\UI related\petPToggle.cs" />
+     <Compile Include="Assets\Scripts\UI related\petSpriteUI.cs" />
+     <Compile Include="Assets\Scripts\UI related\uiManagerScript.cs" />
      <Compile Include="Assets\Text\Project Info\Scene Prefab Guide.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
@@ -109,23 +174,27 @@
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileLayer.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs" />
+     <Compile Include="Assets\useItem.cs" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth-Instanced.shader" />
+     <None Include="Assets\Tiled2Unity\Imported\overworld.tiled2unity.xml" />
+     <None Include="Assets\Pixel UI\Changelog.txt" />
      <None Include="Assets\Tiled2Unity\Imported\testmap.tiled2unity.xml" />
      <None Include="Assets\Text\lines.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDepth-Instanced.shader" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\testmap1.tiled2unity.xml" />
-     <None Include="Assets\Text\Test text spreadsheet - Sheet1.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\Tiled2Unity.cginc" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDepth.shader" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth.shader" />
      <None Include="Assets\Tiled2Unity\Imported\testmap2.tiled2unity.xml" />
-     <None Include="Assets\Tiled2Unity\Imported\playersHouse_basement.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\town1_store.tiled2unity.xml" />
+     <None Include="Assets\Pixel UI\Make a Game Roadmap.txt" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDefault-Instanced.shader" />
+     <None Include="Assets\Tiled2Unity\Imported\playersHouse_basement.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Shaders\shaColorKey-Instanced.shader" />
      <None Include="Assets\Tiled2Unity\Shaders\shaColorKey.shader" />
      <None Include="Assets\Tiled2Unity\Imported\town1.tiled2unity.xml" />
@@ -248,9 +317,6 @@
  </Reference>
  <Reference Include="UnityEngine.SharedInternalsModule">
  <HintPath>/home/susanna/Unity/Hub/Editor/2018.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTrackingModule">
- <HintPath>/home/susanna/Unity/Hub/Editor/2018.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpriteMaskModule">
  <HintPath>/home/susanna/Unity/Hub/Editor/2018.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>

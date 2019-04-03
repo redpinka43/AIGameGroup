@@ -11,12 +11,45 @@ Things you need to do to get set up:
   * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
 * Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
 * Press the big triangle Play button at the top of the screen to run what we've got so far.
+<h1>Week 8: </h1>
+
+<h2>Pet Stats</h2>
+<h4>Information on the different stats between the pet breeds</h4>
+<img src = "/Images and Artwork/petStatInfo.PNG" height = "800">
+<img src = "/Images and Artwork/statRanges.PNG">
+
+<h2>Pet Moves</h2>
+<img src = "/Images and Artwork/petMoves.png" height = "800">
+This chart shows most of the information relating to pet moves. What moves each pet will learn and when they will learn them; the effects of the move; whether the move is considered a buff/debuff, physical attack, or special attack.
+
+<h2>Pause Menu</h2>
+
+<img src = "/Images and Artwork/firstPauseMenu.PNG">
+We created a basic pause menu for first playable that will later be given "Save Game" and "Quit and Save Game" functionality. The pause menu will also be given new artwork at a later date.
+
+<h2>Overworld Maps</h2>
+We added some maps for the overworld where the player can travel freely:
+ 
+<h3>Player house</h3>
+<h5><img src= "/Images and Artwork/playerHouseBasement.PNG" width = "375" height = "275"> 
+<img src = "/Images and Artwork/playerHouseFirstFloor.PNG" width = "375" height = "275"></h5>
+The player will start the game in the basement of their parents' house. They will have to go up the stairs to the first floor of the house to leave.
+ 
+<h3>Town One</h3>
+<img src = "/Images and Artwork/townOneWalkAround.gif">
+This is the player's hometown.
 
 <h1>Week 7: </h1>
 <h2>Battle UI</h2>
 
 <img src ="/Images and Artwork/fightUIFunctionality.gif">
 The necessary UI mechanics for the battle screen and the fight screen are functional, but will be drastically changed visually with the addition of the pet sprites and different background images.
+
+<h1>Week 6: </h1>
+<h2>Scripts!</h2>
+
+Chris: I wrote up the logic for a follower in the overworld. Right now it's just attatched to a placeholder until the sprite for the pets is finished. I also learned how triggers work in unity and set up one on an enemy sprite that activates if you walk in it's line of sight. He'll rush at you and the battle will appear.
+
 
 <h1>Week 5: </h1>
 <h2>First UI</h2>
