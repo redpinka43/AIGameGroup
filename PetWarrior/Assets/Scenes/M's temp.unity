@@ -394,8 +394,9 @@ GameObject:
   - component: {fileID: 270263430}
   - component: {fileID: 270263429}
   - component: {fileID: 270263428}
+  - component: {fileID: 270263431}
   m_Layer: 5
-  m_Name: mask
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,6 +467,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 270263426}
   m_CullTransparentMesh: 0
+--- !u!114 &270263431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 270263426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmount: 0
+  filler: {fileID: 980677028}
+  i: 3
 --- !u!1 &284968866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1381,7 @@ GameObject:
   - component: {fileID: 595629232}
   - component: {fileID: 595629231}
   m_Layer: 5
-  m_Name: fillerPlayer
+  m_Name: filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1403,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 30}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595629231
 MonoBehaviour:
@@ -1510,8 +1525,9 @@ GameObject:
   - component: {fileID: 698614524}
   - component: {fileID: 698614523}
   - component: {fileID: 698614522}
+  - component: {fileID: 698614525}
   m_Layer: 5
-  m_Name: mask
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1582,6 +1598,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 698614520}
   m_CullTransparentMesh: 0
+--- !u!114 &698614525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698614520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmount: 0
+  filler: {fileID: 595629231}
+  i: 1
 --- !u!1 &707581407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,8 +1623,9 @@ GameObject:
   - component: {fileID: 707581411}
   - component: {fileID: 707581410}
   - component: {fileID: 707581409}
+  - component: {fileID: 707581412}
   m_Layer: 5
-  m_Name: mask
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1665,6 +1696,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707581407}
   m_CullTransparentMesh: 0
+--- !u!114 &707581412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707581407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmount: 0.5
+  filler: {fileID: 1658196397}
+  i: 0
 --- !u!1 &738400996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,8 +1988,9 @@ GameObject:
   - component: {fileID: 815991642}
   - component: {fileID: 815991641}
   - component: {fileID: 815991640}
+  - component: {fileID: 815991643}
   m_Layer: 5
-  m_Name: mask
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2015,6 +2061,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 815991638}
   m_CullTransparentMesh: 0
+--- !u!114 &815991643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815991638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmount: 0
+  filler: {fileID: 1762004338}
+  i: 4
 --- !u!1 &865404573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,8 +2398,9 @@ GameObject:
   - component: {fileID: 940773452}
   - component: {fileID: 940773451}
   - component: {fileID: 940773450}
+  - component: {fileID: 940773453}
   m_Layer: 5
-  m_Name: mask
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2410,6 +2471,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940773448}
   m_CullTransparentMesh: 0
+--- !u!114 &940773453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940773448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmount: 0
+  filler: {fileID: 1252036587}
+  i: 2
 --- !u!1 &980677026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2496,7 @@ GameObject:
   - component: {fileID: 980677029}
   - component: {fileID: 980677028}
   m_Layer: 5
-  m_Name: fillerPlayer
+  m_Name: filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2443,7 +2518,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 30}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980677028
 MonoBehaviour:
@@ -3233,7 +3308,7 @@ GameObject:
   - component: {fileID: 1252036588}
   - component: {fileID: 1252036587}
   m_Layer: 5
-  m_Name: fillerPlayer
+  m_Name: filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3255,7 +3330,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 30}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252036587
 MonoBehaviour:
@@ -3323,7 +3398,7 @@ MonoBehaviour:
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 0
   health: 25
-  currentHealth: 1
+  currentHealth: 20
   maxAttack: 10
   attack: 10
   maxDefense: 10
@@ -3944,7 +4019,7 @@ GameObject:
   - component: {fileID: 1658196398}
   - component: {fileID: 1658196397}
   m_Layer: 5
-  m_Name: fillerPlayer
+  m_Name: filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3966,7 +4041,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 30}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1658196397
 MonoBehaviour:
@@ -3989,7 +4064,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 68bc611340525a941a97e7f8a7d7e8a3, type: 3}
   m_Type: 3
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
   m_FillAmount: 1
@@ -4196,7 +4271,7 @@ GameObject:
   - component: {fileID: 1762004339}
   - component: {fileID: 1762004338}
   m_Layer: 5
-  m_Name: fillerPlayer
+  m_Name: filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4218,7 +4293,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 30}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762004338
 MonoBehaviour:
@@ -4409,8 +4484,9 @@ GameObject:
   - component: {fileID: 1808459627}
   - component: {fileID: 1808459626}
   - component: {fileID: 1808459625}
+  - component: {fileID: 1808459628}
   m_Layer: 5
-  m_Name: mask
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4481,6 +4557,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1808459623}
   m_CullTransparentMesh: 0
+--- !u!114 &1808459628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808459623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmount: 0
+  filler: {fileID: 2015918757}
+  i: 5
 --- !u!1 &1847095901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,7 +4817,7 @@ GameObject:
   - component: {fileID: 2015918758}
   - component: {fileID: 2015918757}
   m_Layer: 5
-  m_Name: fillerPlayer
+  m_Name: filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4749,7 +4839,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 30}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015918757
 MonoBehaviour:
