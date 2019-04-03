@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Overworld/playersHouse_basement.unity
+- path: Assets/Scenes/battleScreen.unity
   isLoaded: 1
   isActive: 1

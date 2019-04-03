@@ -9,7 +9,7 @@ public class petPToggle : MonoBehaviour {
 	
 	public void showPets()
 	{
-		petPanel.SetActive(false);
+		petPanel.SetActive(!petPanel.activeSelf);
 		
 		if (GameManager.instance.gameState == GameState.OVERWORLD)
 		{
