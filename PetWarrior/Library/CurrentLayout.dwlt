@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 35
+  controlID: 83
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -114,14 +114,14 @@ MonoBehaviour:
     y: 573
     width: 1531
     height: 374
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,10 +206,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 947
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 36
+  controlID: 84
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 37
+  controlID: 52
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,20 +323,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Battle UI
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Battle UI
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\meaga\OneDrive\Documents\AI Game\AIGameGroup\PetWarrior
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 528}
-    m_SelectedIDs: 0e470000
-    m_LastClickedID: 18190
-    m_ExpandedIDs: 0000000098440000b4440000f6440000fc44000006450000c24500005c4700007c4700008247000090470000b44800002c4a0000
+    scrollPos: {x: 0, y: 320}
+    m_SelectedIDs: 260b0000
+    m_LastClickedID: 2854
+    m_ExpandedIDs: 000000007c0a0000a20a00001c0b0000260b0000380b0000ac0c0000ce0f00002c10000074110000861100007a1400002e170000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000098440000b4440000f6440000fc44000006450000c24500005c4700007c47000082470000b44800002c4a0000
+    m_ExpandedIDs: 000000007c0a0000a20a00001c0b0000260b0000380b0000ac0c0000ce0f00002c10000074110000861100007a1400002e170000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,8 +389,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d8070000
-    m_LastClickedInstanceID: 2008
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c80b0000b80c0000
     m_RenameOverlay:
@@ -480,20 +480,20 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f44f0000
-    m_LastClickedID: 20468
-    m_ExpandedIDs: d2d8ffff70dcffff00000000c44e0000de4e0000004f0000844f0000bc4f000024500000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 66c7fefface4feffd060ffff9465ffff4e66ffff9472ffff3a74ffff9c81ffff6694ffffc89affff64a6ffff20a7ffffbaa9ffffb8ceffffacd6ffffa6dcffffe4fbffff00000000664e00007c500000bc500000e05000004251000068510000c4560000245700005a5700006c590000ac590000d0590000325a0000585a0000445c0000a45c0000da5c0000ee5e00002e5f0000b45f0000da5f00006e640000ae640000346500005a650000166b00004c6b00005e6d00009e6d0000c26d0000246e00004a6e00005e6e0000ee6e0000de7c0000e87c0000767e0000da7e0000fa7e00003a7f0000547f00005e7f0000847f0000b07f0000c27f00008c800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: fight
-      m_OriginalName: fight
+      m_Name: healthBar
+      m_OriginalName: healthBar
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 20210
+      m_UserData: 32596
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -531,14 +531,14 @@ MonoBehaviour:
     height: 552
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1731.8684001455406
+  lastFramingTime: 1547.5250945284324
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 690.14343, y: 282.78616, z: 6.5}
+    m_Target: {x: 551.83185, y: 223.40701, z: -2.1590016}
     speed: 2
-    m_Value: {x: 690.14343, y: 282.78616, z: 6.5}
+    m_Value: {x: 551.83185, y: 223.40701, z: -2.1590016}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -570,9 +570,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 372.74222
+    m_Target: 353.45154
     speed: 2
-    m_Value: 372.74222
+    m_Value: 353.45154
   m_Ortho:
     m_Target: 1
     speed: 2

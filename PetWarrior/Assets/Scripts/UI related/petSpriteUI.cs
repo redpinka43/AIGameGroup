@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// by meaghan
 public class petSpriteUI : MonoBehaviour {
 	
 	public int i;
