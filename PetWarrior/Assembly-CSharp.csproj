@@ -143,6 +143,7 @@
      <Compile Include="Assets\Scripts\Scene\SceneInfo.cs" />
      <Compile Include="Assets\Scripts\UI related\pauseState.cs" />
      <Compile Include="Assets\Scripts\UI related\pauseToggle.cs" />
+     <Compile Include="Assets\Scripts\UI related\petNameUI.cs" />
      <Compile Include="Assets\Scripts\UI related\petSpriteUI.cs" />
      <Compile Include="Assets\Scripts\UI related\uiManagerScript.cs" />
      <Compile Include="Assets\Text\Project Info\Scene Prefab Guide.cs" />

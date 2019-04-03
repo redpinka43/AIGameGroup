@@ -16,8 +16,9 @@ public class petSpriteUI : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.Find("Player").GetComponent<Player>();
-		playerPet = player.playerPets[i];
 		
+		// i indicates the placeholder for pet array
+		playerPet = player.playerPets[i];
 		
 		myImage = GetComponent<Image>();
         myImage.sprite = playerPet.image;
