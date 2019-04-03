@@ -37,8 +37,8 @@ public class DialogueManager : MonoBehaviour {
 	public TextAsset txtFile;
 
 	public bool dialogueIsRunning = false;
-	public bool isRunning = true;
 	public bool dialogueSelectPending = false;
+	public bool forceDialogueLoad = false;
 
 
 	void Awake () {
@@ -112,8 +112,15 @@ public class DialogueManager : MonoBehaviour {
 	// The dialogue box workhorse. Changes the displayed dialogue.
 	void continueDialogue (bool continueToNextNode) {
 
+		// If we're on a normal dialogue box, end node, and it hasn't been updated yet, call
+		// function again with continueToNextNode == false
+
+		if ( continueToNextNode && !currentNode.hasDialogueOptions && currentNode.isEndNode && dialogueNormal_text.GetComponent<Text>().text != currentNode.text) {
+			continueDialogue(false);
+		}
+
 		// Deactivate dialogue box, if the nextNode is the endNode
-		if (currentNode.isEndNode && continueToNextNode)
+		else if (currentNode.isEndNode && continueToNextNode)
 		{
 			dialogueIsRunning = false;
 			
@@ -126,8 +133,14 @@ public class DialogueManager : MonoBehaviour {
 
 			// Change scene, if necessary
 			if (currentNode.hasNextScene) {
+				// Save overworld position
+				PlayerController.instance.saveOverworldPosition();
+
 				SceneManager.LoadScene( currentNode.nextScene );
 			}
+
+			// Set dialoguebox to empty
+			dialogueNormal_text.GetComponent<Text>().text = "";
 		}
 
 		// Continue rendering dialogue
@@ -159,9 +172,10 @@ public class DialogueManager : MonoBehaviour {
 
 					dialogueNormal_text.GetComponent<Text>().text = currentNode.text;
 
-					if (!currentNode.isEndNode) 
+					if (!currentNode.isEndNode) {
 						currentNode = dialogueNodes[currentNode.nextNodes[0]];
-					
+					}
+
 					break;
 
 				case GUIState.DIALOGUE_CHOICE2:
@@ -243,6 +257,7 @@ public class DialogueManager : MonoBehaviour {
 	public void ActivateDialogue()
 	{
 		dialogueIsRunning = true;
+
 		GUIManager.instance.call_OnDialogueStart();
 	}
 
