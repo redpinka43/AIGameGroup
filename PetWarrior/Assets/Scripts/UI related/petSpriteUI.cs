@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// by meaghan
 public class petSpriteUI : MonoBehaviour {
 	
-	//Image myImage;
 	public int i;
+	Image myImage;
 	private Player player;
 	public Pets playerPet;
-
+	public Sprite thisImage;
+    public Sprite image;
+	
 	// Use this for initialization
 	void Start () 
 	{
 		player = GameObject.Find("Player").GetComponent<Player>();
+		
+		// i indicates the placeholder for pet array
 		playerPet = player.playerPets[i];
 		
-		
-		//myImage = GetComponent<Image>();
-        //myImage.sprite = playerPet.image;
+		myImage = GetComponent<Image>();
+        myImage.sprite = playerPet.image;
 		
 	}
 	
