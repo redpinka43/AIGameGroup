@@ -5,6 +5,7 @@
   <terrain name="rug" tile="18"/>
   <terrain name="water" tile="18"/>
   <terrain name="light grass" tile="26"/>
+  <terrain name="trees" tile="380"/>
  </terraintypes>
  <tile id="0" terrain=",,,0"/>
  <tile id="1" terrain=",,0,0"/>
@@ -672,7 +673,7 @@
  <tile id="254" terrain="2,,2,"/>
  <tile id="255">
   <objectgroup draworder="index">
-   <object id="2" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="256">
@@ -690,7 +691,7 @@
  <tile id="279" terrain="2,,,"/>
  <tile id="280">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="281">
@@ -700,7 +701,7 @@
  </tile>
  <tile id="282">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="283">
@@ -771,7 +772,7 @@
  </tile>
  <tile id="305">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="306">
@@ -781,7 +782,7 @@
  </tile>
  <tile id="307">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="308">
@@ -798,14 +799,14 @@
    </object>
   </objectgroup>
  </tile>
- <tile id="310">
+ <tile id="310" terrain=",,,3">
   <objectgroup draworder="index">
    <object id="1" x="2" y="0">
     <polygon points="0,0 -2,11 14,16"/>
    </object>
   </objectgroup>
  </tile>
- <tile id="311">
+ <tile id="311" terrain=",,3,">
   <objectgroup draworder="index">
    <object id="1" x="0" y="0">
     <polygon points="0,0 12,0 16,9 13,16"/>
@@ -890,6 +891,9 @@
    </object>
   </objectgroup>
  </tile>
+ <tile id="334" terrain=",,,3"/>
+ <tile id="335" terrain=",3,3,3"/>
+ <tile id="336" terrain="3,,3,"/>
  <tile id="339">
   <objectgroup draworder="index">
    <object id="1" x="12" y="0">
@@ -923,17 +927,17 @@
  </tile>
  <tile id="355">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="356">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="357">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="358">
@@ -943,6 +947,9 @@
    </object>
   </objectgroup>
  </tile>
+ <tile id="359" terrain=",3,,3"/>
+ <tile id="360" terrain="3,3,3,"/>
+ <tile id="361" terrain="3,,,"/>
  <tile id="364">
   <objectgroup draworder="index">
    <object id="1" x="16" y="3">
@@ -980,17 +987,17 @@
  </tile>
  <tile id="380">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="381">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="382">
   <objectgroup draworder="index">
-   <object id="1" x="0" y="0" width="16" height="16"/>
+   <object id="1" x="0" y="1" width="16" height="15"/>
   </objectgroup>
  </tile>
  <tile id="383">
@@ -1000,6 +1007,8 @@
    </object>
   </objectgroup>
  </tile>
+ <tile id="384" terrain=",3,,"/>
+ <tile id="385" terrain="3,,,"/>
  <tile id="387">
   <objectgroup draworder="index">
    <object id="1" x="2" y="0">
