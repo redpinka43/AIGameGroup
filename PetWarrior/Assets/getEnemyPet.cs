@@ -7,7 +7,7 @@ public class getEnemyPet : MonoBehaviour {
     private Enemies enemies;
     public Pets enemyPet;
     public Pets thisPet;
-
+    bool petFlag = false;
     // Use this for initialization
     void Start()
     {
@@ -16,6 +16,30 @@ public class getEnemyPet : MonoBehaviour {
         Debug.Log(thisPet.name);
 
         enemyPet = enemies.enemyPets[Random.Range(0, 7)];
+        thisPet = getPet(enemyPet);
+        Debug.Log(thisPet.name);
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (petFlag == false)
+        {
+            enemyPet = enemies.enemyPets[Random.Range(0, 7)];
+            thisPet = getPet(enemyPet);
+            petFlag = true;
+        }
+
+    }
+
+    public void falseflag()
+    {
+        petFlag = false;
+    }
+
+    public Pets getPet(Pets enemyPet)
+    {
         thisPet.name = enemyPet.name;
         thisPet.animal = enemyPet.animal;
         thisPet.image = enemyPet.image;
@@ -33,13 +57,7 @@ public class getEnemyPet : MonoBehaviour {
         thisPet.speed = enemyPet.speed;
         thisPet.moveNum = enemyPet.moveNum;
         thisPet.moves = enemyPet.moves;
-        Debug.Log(thisPet.name);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        thisPet = enemyPet;
-
+        return thisPet;
     }
 }

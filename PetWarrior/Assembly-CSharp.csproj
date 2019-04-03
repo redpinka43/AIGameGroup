@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\canMoveScript.cs" />
     <Compile Include="Assets\duckJesus.cs" />
     <Compile Include="Assets\EnableBattleScreen.cs" />
     <Compile Include="Assets\enableVictoryScreen.cs" />

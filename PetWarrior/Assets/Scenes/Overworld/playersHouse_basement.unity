@@ -194,7 +194,10 @@ MonoBehaviour:
   - {fileID: 1113864150}
   - {fileID: 1451106920}
   - {fileID: 353461731}
-  items: []
+  items:
+  - Potion
+  - Antidote
+  - Gun
 --- !u!1 &137175395
 GameObject:
   m_ObjectHideFlags: 0

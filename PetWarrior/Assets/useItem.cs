@@ -7,6 +7,7 @@ public class useItem : MonoBehaviour {
 
     private Player player;
     private Pets playerPet;
+    private Pets enemyPet;
 
     private GameObject item;
     private getNextItem getNextItem;
@@ -17,6 +18,7 @@ public class useItem : MonoBehaviour {
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
         getNextItem = GameObject.Find("nextItemButton").GetComponent<getNextItem>();
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
     }
@@ -31,7 +33,8 @@ public class useItem : MonoBehaviour {
             case "Antidote":
                 ;
                 break;
-            case "Attack Boost":
+            case "Gun":
+                Gun();
                 break;
             default:
                 Debug.Log("No such item");
@@ -43,7 +46,9 @@ public class useItem : MonoBehaviour {
     void Update()
     {
         itemnumber = getNextItem.i;
+
         itemName = player.items[itemnumber % player.items.Count];
+        Debug.Log(itemName);
     }
 
     public void Potion()
@@ -56,5 +61,12 @@ public class useItem : MonoBehaviour {
         {
             playerPet.currentHealth = playerPet.health;
         }
+    }
+
+    public void Gun()
+    {
+       
+            enemyPet.currentHealth = 0;
+        
     }
 }
