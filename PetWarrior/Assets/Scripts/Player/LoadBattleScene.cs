@@ -9,6 +9,9 @@ public class LoadBattleScene : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            // Save overworld position
+            PlayerController.instance.saveOverworldPosition();
+
             SceneManager.LoadScene("battleScreen");
         }
           

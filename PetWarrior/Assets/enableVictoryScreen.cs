@@ -85,6 +85,9 @@ public class enableVictoryScreen : MonoBehaviour
 
     public void EndBattle()
     {
+        // Resets coordinates of player to where they last were loaded
+        PlayerController.instance.restoreOverworldPosition();
+
         SceneManager.LoadScene("town_1");
         getenemypet.falseflag();
 
