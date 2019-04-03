@@ -226,8 +226,8 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 0
-  health: 25
-  currentHealth: 1
+  health: 10
+  currentHealth: 10
   maxAttack: 10
   attack: 10
   maxDefense: 10
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Turtle
   animal: Turtle
-  image: {fileID: 0}
+  image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 1
   health: 10
   currentHealth: 10
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sparrow
   animal: Sparrow
-  image: {fileID: 0}
+  image: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 3
   health: 10
   currentHealth: 10
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Squirrel
   animal: Squirrel
-  image: {fileID: 0}
+  image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 2
   health: 10
   currentHealth: 10
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Dog
   animal: Dog
-  image: {fileID: 0}
+  image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 4
   health: 10
   currentHealth: 10
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cat
   animal: Cat
-  image: {fileID: 0}
+  image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 5
   health: 10
   currentHealth: 10
