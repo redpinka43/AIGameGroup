@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+// by meaghan and lucia
 public class pauseState : MonoBehaviour 
 {
 
