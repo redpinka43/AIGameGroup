@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class duckJesus : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void OnTriggerStay(Collider other)
+    {
+        Debug.Log("This will be called every frame");
+        if (Input.GetKeyDown("space") && other.tag == "TalkCylinder")
+        {
+            Debug.Log("Talking");
+        }
+    }
 }
