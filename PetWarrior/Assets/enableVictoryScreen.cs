@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class enableVictoryScreen : MonoBehaviour {
+public class enableVictoryScreen : MonoBehaviour
+{
 
     private Pets enemyPet;
     private Pets playerPet;
@@ -14,15 +15,25 @@ public class enableVictoryScreen : MonoBehaviour {
     public GameObject panelPetDeath;
     private GameObject enemySprite;
     private GameObject playerSprite;
+    private Transform playerTransform;
+    private Player player;
+    private getEnemyPet getenemypet;
+
+    public PlayerController playerController;
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         panel2 = GameObject.Find("startBattlePanel");
+        playerTransform =  GameObject.Find("Player").GetComponent<Transform>();
+        getenemypet = GameObject.Find("enemyPet").GetComponent<getEnemyPet>();
+        player = GameObject.Find("Player").GetComponent<Player>();
         panel2.SetActive(false);
         panel2.SetActive(true);
         panelEnemyFeedBack.SetActive(false);
-
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController.canMove = false;
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
         panel = GameObject.Find("victoryFeedBackPanel");
@@ -34,18 +45,19 @@ public class enableVictoryScreen : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     public void LiveCheck()
     {
         if (enemyPet.currentHealth >= 1)
         {
 
             panelEnemyFeedBack.SetActive(true);
-            
+
 
         }
     }
@@ -56,7 +68,7 @@ public class enableVictoryScreen : MonoBehaviour {
 
             panel.SetActive(true);
             enemySprite.SetActive(false);
-            
+
         }
     }
 
@@ -69,6 +81,13 @@ public class enableVictoryScreen : MonoBehaviour {
             playerSprite.SetActive(false);
 
         }
+    }
+
+    public void EndBattle()
+    {
+        SceneManager.LoadScene("town_1");
+        getenemypet.falseflag();
+
     }
 
     public void StartOver()

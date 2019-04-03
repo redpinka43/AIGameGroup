@@ -306,7 +306,7 @@ MonoBehaviour:
   image: {fileID: 21300010, guid: 802877e667a634c65aea43b8a468ccad, type: 3}
   species: 0
   health: 3
-  currentHealth: 3
+  currentHealth: 1
   maxAttack: 10
   attack: 10
   maxDefense: 10

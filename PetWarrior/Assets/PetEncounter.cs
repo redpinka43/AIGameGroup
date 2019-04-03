@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class PetEncounter : MonoBehaviour {
 
     public Collider2D coll;
-
     public int min, max;
     // Use this for initialization
     void Start()
     {
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +21,6 @@ public class PetEncounter : MonoBehaviour {
             if (RNG(min, max) == 1)
             {
                 SceneManager.LoadScene("battleScreen");
-                
             }
         }
         else
