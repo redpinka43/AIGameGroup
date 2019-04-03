@@ -62,18 +62,19 @@ public class GUIManager : MonoBehaviour {
 	// Called whenever new scene is loaded
 	void linkUp() {
 
-
 		// Link up components in scene	
 		// Dialogue Box components
 		if (GameManager.instance.gameState == GameState.OVERWORLD 
 		 || GameManager.instance.gameState == GameState.BATTLE) {
+
+			// guiCanvas = GameObject.FindWithTag("GUI Canvas");
 			guiCanvas = GameObject.FindWithTag("GUI Canvas");
 			dialogueBox = guiCanvas.transform.Find("Dialogue Box").gameObject;
 			dialogueNormal = dialogueBox.transform.Find("Dialogue Normal").gameObject;
 			dialogueChoice2 = dialogueBox.transform.Find("Dialogue Choice 2").gameObject;
 			dialogueChoice3 = dialogueBox.transform.Find("Dialogue Choice 3").gameObject;
 
-			guiCanvas.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+			guiCanvas.GetComponent<Canvas>().worldCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 			
 			DialogueManager.instance.linkUp();
 		}
