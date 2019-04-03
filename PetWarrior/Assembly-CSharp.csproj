@@ -53,13 +53,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>/home/susanna/Unity/Hub/Editor/2018.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>/home/susanna/Unity/Hub/Editor/2018.2.19f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\duckJesus.cs" />
     <Compile Include="Assets\EnableBattleScreen.cs" />
     <Compile Include="Assets\enableVictoryScreen.cs" />
     <Compile Include="Assets\Enemies.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Loader.cs" />
     <Compile Include="Assets\Scripts\Managers\MySceneManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\PartyManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\NPC\ChadController.cs" />
     <Compile Include="Assets\Scripts\NPC\Npc_ChadController.cs" />
@@ -149,9 +151,12 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadNewArea.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerStartPoint.cs" />
+    <Compile Include="Assets\Scripts\Scene\Progression\CheckPetOrTurnBack.cs" />
     <Compile Include="Assets\Scripts\Scene\SceneInfo.cs" />
     <Compile Include="Assets\Scripts\UI related\pauseState.cs" />
     <Compile Include="Assets\Scripts\UI related\pauseToggle.cs" />
+    <Compile Include="Assets\Scripts\UI related\petHealthUI.cs" />
+    <Compile Include="Assets\Scripts\UI related\petNameUI.cs" />
     <Compile Include="Assets\Scripts\UI related\petSpriteUI.cs" />
     <Compile Include="Assets\Scripts\UI related\uiManagerScript.cs" />
     <Compile Include="Assets\Text\Project Info\Scene Prefab Guide.cs" />
@@ -782,7 +787,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
