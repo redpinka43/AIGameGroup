@@ -16,10 +16,12 @@ public class PetEncounter : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
+            Debug.Log("Entered Trigger");
 
-            if(RNG(min, max) == 1)
+            if (RNG(min, max) == 1)
             {
                 SceneManager.LoadScene("battleScreen");
+                
             }
         }
         else
@@ -30,6 +32,8 @@ public class PetEncounter : MonoBehaviour {
     {
         int num;
         num = Random.Range(min, max + 1);
+        Debug.Log(num);
+
         return num;
     }
 }

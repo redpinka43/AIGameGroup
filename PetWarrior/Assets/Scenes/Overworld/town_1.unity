@@ -113,6 +113,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &65606008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1277230512688144, guid: e90dd14d9fb1748b6811b8036683bfcb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1240286613}
+--- !u!114 &65606010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 65606008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00defafa86c61145b2fb62107612b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coll: {fileID: 65606011}
+  min: 1
+  max: 10
+--- !u!60 &65606011 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 60936465429728618, guid: e90dd14d9fb1748b6811b8036683bfcb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1240286613}
 --- !u!1001 &147155148
 Prefab:
   m_ObjectHideFlags: 0
@@ -1097,6 +1121,11 @@ Prefab:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 60078891093683176, guid: e90dd14d9fb1748b6811b8036683bfcb,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60936465429728618, guid: e90dd14d9fb1748b6811b8036683bfcb,
         type: 2}
       propertyPath: m_IsTrigger
       value: 1
