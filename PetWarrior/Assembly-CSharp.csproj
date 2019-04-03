@@ -65,6 +65,7 @@
     <Compile Include="Assets\GetEnemySprite.cs" />
     <Compile Include="Assets\getNextItem.cs" />
     <Compile Include="Assets\getPlayerPet.cs" />
+    <Compile Include="Assets\getPlayerSprite.cs" />
     <Compile Include="Assets\itemFeedBackScript.cs" />
     <Compile Include="Assets\moveUsed.cs" />
     <Compile Include="Assets\PetEncounter.cs" />

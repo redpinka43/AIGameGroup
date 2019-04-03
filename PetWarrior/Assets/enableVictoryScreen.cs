@@ -11,7 +11,9 @@ public class enableVictoryScreen : MonoBehaviour {
     private GameObject panel;
     private GameObject panel2;
     public GameObject panelEnemyFeedBack;
+    public GameObject panelPetDeath;
     private GameObject enemySprite;
+    private GameObject playerSprite;
 
 
     // Use this for initialization
@@ -24,8 +26,10 @@ public class enableVictoryScreen : MonoBehaviour {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
         panel = GameObject.Find("victoryFeedBackPanel");
-        
         enemySprite = GameObject.Find("opponentPetSprite");
+        playerSprite = GameObject.Find("playerPetSprite");
+        panelPetDeath.SetActive(false);
+
         panel.SetActive(false);
 
 
@@ -54,5 +58,22 @@ public class enableVictoryScreen : MonoBehaviour {
             enemySprite.SetActive(false);
             
         }
+    }
+
+    public void CheckPetLife()
+    {
+        if (playerPet.currentHealth < 1)
+        {
+
+            panelPetDeath.SetActive(true);
+            playerSprite.SetActive(false);
+
+        }
+    }
+
+    public void StartOver()
+    {
+
+        SceneManager.LoadScene("startMenu");
     }
 }

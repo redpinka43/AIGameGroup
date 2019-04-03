@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Decko
   animal: Gecko
-  image: {fileID: 0}
+  image: {fileID: 21300010, guid: c2b5538346c03477a8b19668d6167bb3, type: 3}
   species: 0
   health: 25
   currentHealth: 10
