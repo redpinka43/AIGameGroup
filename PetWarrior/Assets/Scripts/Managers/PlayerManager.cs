@@ -31,12 +31,14 @@ public class PlayerManager : MonoBehaviour {
 
 	void linkUp() {
 		// Basically, if Gamestate = OVERWORLD, then we search the hierarchy for a "Player"
-		
+
 		if (playerObject == null && GameManager.instance.gameState != GameState.INTRO
 			  && GameManager.instance.gameState != GameState.MAIN_MENU
 			  && GameManager.instance.gameState != GameState.OPTIONS) {
 
 			playerObject = GameObject.Find("Player");	
+			playerObject.GetComponent<PlayerController>().lockedInPlace = true;
+
 
 			if (playerObject == null) {
 				Debug.Log("ERROR (PlayerManager.cs): \"Player)\" is not in scene.");

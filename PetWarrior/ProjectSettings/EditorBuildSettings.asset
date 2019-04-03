@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/battleScreen.unity
-    guid: 392b531cdf89b5d4f83a3a23f38c3580
-  - enabled: 0
-    path: Assets/Scenes/Overworld/TestScene_1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/Overworld/TestScene_2.unity
-    guid: bb3bcab5a31304449ac82ac0058061a8
-  - enabled: 1
     path: Assets/Scenes/startMenu.unity
     guid: 2736d6f669d0c004897fbfbe5e101227
   - enabled: 1
@@ -26,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld/town_1.unity
     guid: 965444277234444a7a4eaf2b2aec3e8e
+  - enabled: 1
+    path: Assets/Scenes/Overworld/town_1_petStore.unity
+    guid: 95e3784f2b78c45af860c6295e171215
+  - enabled: 1
+    path: Assets/Scenes/battleScreen.unity
+    guid: 392b531cdf89b5d4f83a3a23f38c3580
   m_configObjects: {}

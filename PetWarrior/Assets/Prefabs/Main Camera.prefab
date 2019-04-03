@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4538030360831950}
   m_Layer: 0
-  m_Name: Dummy Camera Target
+  m_Name: Placeholder Camera Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 108
+  orthographic size: 72
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
