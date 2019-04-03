@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class petSpriteUI : MonoBehaviour {
 	
-	Image myImage;
+	//Image myImage;
 	public int i;
+	private Player player;
+	public Pets playerPet;
 
 	// Use this for initialization
 	void Start () 
 	{
 		player = GameObject.Find("Player").GetComponent<Player>();
-		playerPet = player.playerPets[i]
+		playerPet = player.playerPets[i];
 		
 		
-		myImage = GetComponent<Image>();
-        myImage.sprite = playerPet.image;
+		//myImage = GetComponent<Image>();
+        //myImage.sprite = playerPet.image;
 		
 	}
 	

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Overworld/town_1.unity
+- path: Assets/Scenes/M's temp.unity
   isLoaded: 1
   isActive: 1
