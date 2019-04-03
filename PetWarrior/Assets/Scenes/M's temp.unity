@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 64105288}
   - component: {fileID: 64105290}
   - component: {fileID: 64105289}
+  - component: {fileID: 64105291}
   m_Layer: 5
   m_Name: petName
   m_TagString: Untagged
@@ -188,6 +189,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64105287}
   m_CullTransparentMesh: 0
+--- !u!114 &64105291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64105287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 2
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &141216436
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +213,7 @@ GameObject:
   - component: {fileID: 141216437}
   - component: {fileID: 141216439}
   - component: {fileID: 141216438}
+  - component: {fileID: 141216440}
   m_Layer: 5
   m_Name: petName
   m_TagString: Untagged
@@ -263,6 +279,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141216436}
   m_CullTransparentMesh: 0
+--- !u!114 &141216440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141216436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 0
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &231404370
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +303,7 @@ GameObject:
   - component: {fileID: 231404371}
   - component: {fileID: 231404373}
   - component: {fileID: 231404372}
+  - component: {fileID: 231404374}
   m_Layer: 5
   m_Name: petName
   m_TagString: Untagged
@@ -338,6 +369,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 231404370}
   m_CullTransparentMesh: 0
+--- !u!114 &231404374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 231404370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 1
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &270263426
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +605,7 @@ GameObject:
   - component: {fileID: 328990421}
   - component: {fileID: 328990423}
   - component: {fileID: 328990422}
+  - component: {fileID: 328990424}
   m_Layer: 5
   m_Name: petSprite
   m_TagString: Untagged
@@ -619,6 +665,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 328990420}
   m_CullTransparentMesh: 0
+--- !u!114 &328990424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328990420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 2
+  playerPet: {fileID: 0}
+  thisImage: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &345021178
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +911,7 @@ GameObject:
   - component: {fileID: 390574257}
   - component: {fileID: 390574256}
   - component: {fileID: 390574259}
+  - component: {fileID: 390574260}
   m_Layer: 5
   m_Name: bottomLeft
   m_TagString: Untagged
@@ -967,6 +1029,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &390574260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 390574254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 5
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &394335330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1180,7 @@ GameObject:
   - component: {fileID: 411061651}
   - component: {fileID: 411061653}
   - component: {fileID: 411061652}
+  - component: {fileID: 411061654}
   m_Layer: 5
   m_Name: petName
   m_TagString: Untagged
@@ -1169,6 +1246,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 411061650}
   m_CullTransparentMesh: 0
+--- !u!114 &411061654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411061650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 3
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &509372655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2100,7 @@ GameObject:
   - component: {fileID: 891768390}
   - component: {fileID: 891768392}
   - component: {fileID: 891768391}
+  - component: {fileID: 891768393}
   m_Layer: 5
   m_Name: petSprite
   m_TagString: Untagged
@@ -2068,6 +2160,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 891768389}
   m_CullTransparentMesh: 0
+--- !u!114 &891768393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 891768389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 3
+  playerPet: {fileID: 0}
+  thisImage: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &918632805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,6 +2578,7 @@ GameObject:
   - component: {fileID: 1007532639}
   - component: {fileID: 1007532641}
   - component: {fileID: 1007532640}
+  - component: {fileID: 1007532642}
   m_Layer: 5
   m_Name: petName
   m_TagString: Untagged
@@ -2536,6 +2644,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1007532638}
   m_CullTransparentMesh: 0
+--- !u!114 &1007532642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1007532638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 4
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1001 &1054593045
 Prefab:
   m_ObjectHideFlags: 0
@@ -2960,6 +3082,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPets:
   - {fileID: 1297538055}
+  - {fileID: 1672005723}
+  - {fileID: 2067946693}
+  - {fileID: 410579023}
+  - {fileID: 1550866837}
+  - {fileID: 1778262413}
   items: []
 --- !u!4 &1197862300 stripped
 Transform:
@@ -3232,6 +3359,7 @@ GameObject:
   - component: {fileID: 1316178334}
   - component: {fileID: 1316178336}
   - component: {fileID: 1316178335}
+  - component: {fileID: 1316178337}
   m_Layer: 5
   m_Name: petSprite
   m_TagString: Untagged
@@ -3291,6 +3419,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1316178333}
   m_CullTransparentMesh: 0
+--- !u!114 &1316178337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1316178333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 4
+  playerPet: {fileID: 0}
+  thisImage: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1520089063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,7 +3626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: yeet
+  name: Yeet
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 0
@@ -3640,6 +3783,7 @@ GameObject:
   - component: {fileID: 1572956937}
   - component: {fileID: 1572956939}
   - component: {fileID: 1572956938}
+  - component: {fileID: 1572956940}
   m_Layer: 5
   m_Name: petSprite
   m_TagString: Untagged
@@ -3699,6 +3843,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1572956936}
   m_CullTransparentMesh: 0
+--- !u!114 &1572956940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572956936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 5
+  playerPet: {fileID: 0}
+  thisImage: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1594662603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4105,6 +4264,7 @@ GameObject:
   - component: {fileID: 1763805427}
   - component: {fileID: 1763805429}
   - component: {fileID: 1763805428}
+  - component: {fileID: 1763805430}
   m_Layer: 5
   m_Name: petName
   m_TagString: Untagged
@@ -4170,6 +4330,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763805426}
   m_CullTransparentMesh: 0
+--- !u!114 &1763805430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1763805426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 5
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &1778262411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4180,7 +4354,7 @@ GameObject:
   - component: {fileID: 1778262412}
   - component: {fileID: 1778262413}
   m_Layer: 0
-  m_Name: Rattatat
+  m_Name: Rattata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4210,7 +4384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Rattatat
+  name: Rattata
   animal: rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 0
@@ -4538,7 +4712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 0
+  i: 1
   playerPet: {fileID: 0}
   thisImage: {fileID: 0}
   image: {fileID: 0}
