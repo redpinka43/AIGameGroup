@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public bool dialogueIsRunning = false;
 	public bool dialogueSelectPending = false;
+	public bool forceDialogueLoad = false;
 
 
 	void Awake () {
