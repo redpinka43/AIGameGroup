@@ -14,23 +14,23 @@ public class ToggleFullscreen : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if ( InputManager.instance.getKeyUp("fullscreen") )
-		{
-			if (!Screen.fullScreen)
-			{
-				// Save current resolution in case they want to un-fullscreen 
-				width = Screen.width;
-				height = Screen.height;
+	//void Update () {
+	//	if ( InputManager.instance.getKeyUp("fullscreen") )
+	//	{
+	//		if (!Screen.fullScreen)
+	//		{
+	//			// Save current resolution in case they want to un-fullscreen 
+	//			width = Screen.width;
+	//			height = Screen.height;
 
-				Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
-				Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-				Cursor.visible = false;
-			} else {
-				Screen.SetResolution(width, height, false);
-				Screen.fullScreenMode = FullScreenMode.Windowed;
-				Cursor.visible = true;
-			}
-		}
-	}
+	//			Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
+	//			Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+	//			Cursor.visible = false;
+	//		} else {
+	//			Screen.SetResolution(width, height, false);
+	//			Screen.fullScreenMode = FullScreenMode.Windowed;
+	//			Cursor.visible = true;
+	//		}
+	//	}
+	//}
 }
