@@ -85,7 +85,10 @@ public class enableVictoryScreen : MonoBehaviour
 
     public void EndBattle()
     {
-        SceneManager.LoadScene("town_1");
+        SceneManager.LoadScene("startMenu");
+        float newX = 122.3F;
+        float newY = -103.7F;
+        player.transform.position = new Vector2(newX, newY);
         getenemypet.falseflag();
 
     }
@@ -95,7 +98,10 @@ public class enableVictoryScreen : MonoBehaviour
         playerPet.currentHealth = playerPet.health;
         playerPet.defense = playerPet.maxDefense;
         playerPet.attack = playerPet.maxAttack;
-
         SceneManager.LoadScene("startMenu");
+        float newX  = 122.3F;
+        float newY  = -103.7F;
+        player.transform.position = new Vector2(newX, newY);
+        getenemypet.falseflag();
     }
 }

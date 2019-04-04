@@ -130,9 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coll: {fileID: 65606011}
-  player: {fileID: 0}
   min: 1
-  max: 7
+  max: 5
 --- !u!60 &65606011 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 60936465429728618, guid: e90dd14d9fb1748b6811b8036683bfcb,
@@ -1387,6 +1386,14 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1864359778191896, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326799419206496, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191261142398190, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
