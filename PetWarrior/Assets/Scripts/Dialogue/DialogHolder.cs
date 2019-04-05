@@ -32,11 +32,25 @@ using UnityEngine;
 
 public class DialogHolder : MonoBehaviour {
 
-	public string[] dialogueLines;
 	public int startNode;
+	public Vector2 centerOfZone;
+	public bool debugging;
+
+	private float viewConeAngle;
 
 	// Use this for initialization
 	void Start () {
+
+		// Calculate center of zone
+		float xPos = gameObject.GetComponent<Transform>().position.x;
+		float yPos = gameObject.GetComponent<Transform>().position.y;
+		float xOffset = gameObject.GetComponent<BoxCollider2D>().offset.x;
+		float yOffset = gameObject.GetComponent<BoxCollider2D>().offset.y;
+
+		centerOfZone = new Vector2( xPos + xOffset, yPos + yOffset );
+
+		// Set debugging
+		debugging = false;
 
 	}
 	
@@ -51,12 +65,137 @@ public class DialogHolder : MonoBehaviour {
 		{
 			if( InputManager.instance.getKeyUp("A") )
 			{
-				if(!DialogueManager.instance.dialogueIsRunning)
+				if (playerFacingObject()) 
 				{
-					DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startNode];
-					DialogueManager.instance.ActivateDialogue();
+					if(!DialogueManager.instance.dialogueIsRunning)
+					{
+						DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startNode];
+						DialogueManager.instance.ActivateDialogue();
+					}
 				}
 			}
 		}
 	}
+
+	// Checks if the player is facing the center of the collision box / object
+	bool playerFacingObject() {
+		
+		// Get player object info
+		float playerX = PlayerManager.instance.playerObject.GetComponent<Transform>().position.x;
+		float playerY = PlayerManager.instance.playerObject.GetComponent<Transform>().position.y;
+		float playerAngle = findPlayerAngle();
+		viewConeAngle = PlayerManager.instance.playerObject.GetComponent<PlayerController>().viewAngle;
+
+		// This is the x component of the distance from the player 
+		// to the center of the dialogue holder
+		float playerObjectXOffset = centerOfZone.x - playerX;
+		float playerObjectYOffset = centerOfZone.y - playerY;
+
+		// Find inverse tangent of that and adjust for direction
+		float objectViewCone = calcObjectViewCone(playerObjectXOffset, playerObjectYOffset, playerAngle);
+
+		if (debugging)
+			Debug.Log("playerAngle: " + playerAngle + ", objectViewCone: " + objectViewCone + ", viewConeAngle: " + viewConeAngle);
+
+		// If object is within the viewcone
+		if ( Mathf.Abs(objectViewCone) < viewConeAngle ) {
+			return true;
+		}
+		return false;
+
+	}
+
+	// This finds the angle that the player is facing
+	float findPlayerAngle() {
+
+		Vector2 playerFacingVector = PlayerManager.instance.playerObject.GetComponent<PlayerController>().lastMove;
+		
+		if (playerFacingVector == Vector2.up) {
+			return 90;
+		}
+		else if (playerFacingVector == Vector2.left) {
+			return 180;
+		}
+		else if (playerFacingVector == Vector2.down) {
+			return 270;
+		}
+		else if (playerFacingVector == Vector2.right) {
+			return 0;
+		}
+
+		else {
+			Debug.Log("ERROR (DialogHolder.cs): findPlayerAngle returned wrong angle.");
+			return -1;
+		}
+
+	}
+
+	// Calculates the object view cone angle, aka the angle of the object to the direction the
+	// player is facing.
+	float calcObjectViewCone(float playerX, float playerY, float playerAngle) {
+		
+		// For the record, playerX and playerY represent 
+		// playerObjectXOffset and playerObjectYOffset
+		float objectViewCone = Mathf.Atan2( playerY, playerX ) * Mathf.Rad2Deg;
+		objectViewCone = (objectViewCone + 360) % 360;
+
+		if (debugging)
+			Debug.Log("before calculation: objectViewCone = " + objectViewCone);
+
+		// Now make adjustments based on the direction the player is facing
+		if (playerAngle == 0) {		// Facing right
+
+			// If angle is greater than 180, find its supplement
+			if (objectViewCone >= 180) {
+				objectViewCone = 360 - objectViewCone;
+			}
+
+		}
+
+		else {	// Do some fancy calculations to account for the change in perspective
+
+			if (playerAngle == 90) {	// Facing up
+			
+				// No adjustment needed
+			}
+
+			else if (playerAngle == 180) {		// Facing left
+
+			// Just rotate the code for "Facing up" by 90 degrees clockwise
+			objectViewCone = (objectViewCone + 360 - 90) % 360;
+			}
+
+			else if (playerAngle == 270) {		// Facing down
+
+			// Just rotate the code for "Facing up" by 180 degrees clockwise
+			objectViewCone = (objectViewCone + 360 - 180) % 360;
+			}
+
+			else {
+				Debug.Log("ERROR (DialogHolder.cs): calcObjectViewCone() not detecting playerAngle correctly.");
+			}
+
+			// Quadrant 4
+			if (playerX >= 0 && playerY < 0)
+				objectViewCone = 180 - objectViewCone;
+
+			// Quadrant 1, 2, 3
+			else
+				objectViewCone = 90 - objectViewCone;
+		}
+		
+		objectViewCone = Mathf.Abs(objectViewCone);
+		
+		// If angle is greater than 180, find its supplement
+		if (objectViewCone >= 180) {
+			objectViewCone = 360 - objectViewCone;
+		}
+
+		if (debugging)
+			Debug.Log("after calculation: objectViewCone = " + objectViewCone);
+
+		return objectViewCone;
+
+	}
+
 }

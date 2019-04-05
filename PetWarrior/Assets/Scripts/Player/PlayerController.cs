@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     public bool canMove;
     public string startPoint;	
 	public Gender gender;
+	public float viewAngle; // 70 seems to be a good angle.
 
 	void OnEnable () {
 		// Assign events
