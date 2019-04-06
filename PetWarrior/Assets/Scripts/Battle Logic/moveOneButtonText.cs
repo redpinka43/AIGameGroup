@@ -60,7 +60,12 @@ public class moveOneButtonText : MonoBehaviour
                 ShedSkin();
                 break;
             case "Shell":
-                Shell();
+                break;
+            case "Growl":
+                break;
+            case "Acorn Throw":
+                break;
+            case "Fury Swipes":
                 break;
             default:
                 Debug.Log("No such move");
@@ -132,6 +137,13 @@ public class moveOneButtonText : MonoBehaviour
         int boost = (int)Math.Ceiling((double)playerPet.defense * .2);
         playerPet.defense += boost;
         return boost;
+    }
+
+    public int Growl()
+    {
+        int val = (int)Math.Ceiling((double)enemyPet.defense * .1);
+        enemyPet.defense -= val;
+        return val;
     }
     int RNG(int min, int max)
     {

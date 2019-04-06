@@ -1118,9 +1118,9 @@ MonoBehaviour:
   speed: 10
   moveNum: 0
   moves:
-  - Nip
-  - Nip
-  - Nip
+  - Acorn Throw
+  - Acorn Throw
+  - Acorn Throw
 --- !u!4 &169310797
 Transform:
   m_ObjectHideFlags: 0
@@ -6989,7 +6989,7 @@ MonoBehaviour:
   speed: 15
   moveNum: 0
   moves:
-  - Shed Skin
+  - Acorn Throw
   - Dance
   - Sticky Slap
   - Shed Skin
@@ -12185,6 +12185,7 @@ MonoBehaviour:
   moveTwo: {fileID: 0}
   moveThree: {fileID: 0}
   moveFour: {fileID: 0}
+  feedBackTextButton: {fileID: 1978216561}
   callFlag: 0
 --- !u!1 &2012843258
 GameObject:
@@ -12628,6 +12629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: 
   feedBackString: 
+  enemyFeedBackTextButton: {fileID: 2113377008}
   callFlag: 0
 --- !u!114 &2113377008
 MonoBehaviour:

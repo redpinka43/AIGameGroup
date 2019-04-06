@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
     private Pets playerPet;
     public string feedBackString;
     private moveOneButtonText moveOne;
+    public Button enemyFeedBackTextButton;
 
     public bool callFlag = false;
     private void Awake()
@@ -45,30 +46,40 @@ public class EnemyAttack : MonoBehaviour
         if (callFlag == false)
         {
             if (moveName == "Nip")
-                feedBackString = enemyPet.name + " nipped " + playerPet.name + " for " + Nip() + " damage! ";
+                txt.text = enemyPet.name + " nipped " + playerPet.name + " for " + Nip() + " damage! ";
             if (moveName == "Dance")
-                feedBackString = enemyPet.name + " did a little dance! Enemy Defense lowered by: " + Dance();
+                txt.text = enemyPet.name + " did a little dance! Enemy Defense lowered by: " + Dance();
             if (moveName == "Sticky Slap")
             {
                 int ssDam = StickySlap();
                 if (ssDam != 0)
                 {
-                    feedBackString = enemyPet.name + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+                    txt.text = enemyPet.name + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
                 }
                 else
                 {
-                    feedBackString = enemyPet.name + "'s Sticky Slap missed! Bet that feels bad.";
+                    txt.text = enemyPet.name + "'s Sticky Slap missed! Bet that feels bad.";
                 }
 
             }
             if (moveName == "Shed Skin")
             {
-                feedBackString = enemyPet.name + " feels restored!";
+                txt.text = enemyPet.name + " feels restored!";
+            }
+            if (moveName == "Acorn Throw")
+            {
+                Debug.Log("here");
+                AcornThrow();
+            }
+            if (moveName == "Fury Swipes")
+            {
+                Debug.Log("here");
+
+                FurySwipes();
             }
         }
 
         callFlag = true;
-        txt.text = feedBackString;
     }
 
 
@@ -128,6 +139,178 @@ public class EnemyAttack : MonoBehaviour
 
     }
 
+    public void AcornThrow()
+    {
+        StartCoroutine(GamePauserAT());
+    }
+    public IEnumerator GamePauserAT()
+    {
+        int damage = (int)(Math.Ceiling((double)playerPet.attack / (double)enemyPet.defense));
+        int total = 0;
+        enemyFeedBackTextButton.interactable = false;
+
+
+        txt.text = enemyPet.name + " begins throwing acorns!";
+      
+        // first acorn
+        yield return new WaitForSeconds(1.0f);
+
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " First acorn dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+
+        else
+            txt.text = enemyPet.name + " First acorn missed!";
+
+        if (playerPet.currentHealth < 1)
+        {
+            enemyFeedBackTextButton.interactable = true;
+            yield break;
+        }
+
+        // second acorn
+        yield return new WaitForSeconds(1.0f);
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " Second acorn dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+        else
+            txt.text = enemyPet.name + " Second acorn missed!";
+
+        if (playerPet.currentHealth < 1)
+        {
+            enemyFeedBackTextButton.interactable = true;
+            yield break;
+        }
+
+        // third acorn
+        yield return new WaitForSeconds(1.0f);
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " 's Third acorn dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+        else
+            txt.text = enemyPet.name + " 's Third acorn missed!";
+
+        if (playerPet.currentHealth < 1)
+        {
+            enemyFeedBackTextButton.interactable = true;
+            yield break;
+        }
+
+        // fourth acorn
+        yield return new WaitForSeconds(1.0f);
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " 's Fourth acorn dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+        else
+            txt.text = enemyPet.name + " 's Fourth acorn missed!";
+
+        // total damage
+        yield return new WaitForSeconds(1.0f);
+        txt.text = enemyPet.name + " dealt " + total + " total damage!";
+
+        yield return new WaitForSeconds(.5f);
+        enemyFeedBackTextButton.interactable = true;
+
+    }
+
+
+    public void FurySwipes()
+    {
+        StartCoroutine(GamePauserFS());
+    }
+    public IEnumerator GamePauserFS()
+    {
+        int damage = (int)(Math.Ceiling((double)playerPet.attack / (double)enemyPet.defense));
+        int total = 0;
+        enemyFeedBackTextButton.interactable = false;
+
+
+        txt.text = enemyPet.name + " begins throwing swiping with it's claws!";
+
+        // first acorn
+        yield return new WaitForSeconds(1.0f);
+
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " 's First swipe dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+
+        else
+            txt.text = enemyPet.name + " 's First swipe missed!";
+
+        if (playerPet.currentHealth < 1)
+        {
+            enemyFeedBackTextButton.interactable = true;
+            yield break;
+        }
+
+        // second acorn
+        yield return new WaitForSeconds(1.0f);
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " 's Second swipe dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+        else
+            txt.text = enemyPet.name + " 's Second swipe missed!";
+
+        if (playerPet.currentHealth < 1)
+        {
+            enemyFeedBackTextButton.interactable = true;
+            yield break;
+        }
+
+        // third acorn
+        yield return new WaitForSeconds(1.0f);
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " 's Third swipe dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+        else
+            txt.text = enemyPet.name + " 's Third swipe missed!";
+
+        if (playerPet.currentHealth < 1)
+        {
+            enemyFeedBackTextButton.interactable = true;
+            yield break;
+        }
+
+        // fourth acorn
+        yield return new WaitForSeconds(1.0f);
+        if (RNG(1, 2) == 1)
+        {
+            txt.text = enemyPet.name + " 's Fourth swipe dealt " + damage + " damage!";
+            playerPet.currentHealth -= damage;
+            total += damage;
+        }
+        else
+            txt.text = enemyPet.name + " 's Fourth swipe missed!";
+
+        // total damage
+        yield return new WaitForSeconds(1.0f);
+        txt.text = enemyPet.name + " dealt " + total + " total damage!";
+
+        yield return new WaitForSeconds(.5f);
+        enemyFeedBackTextButton.interactable = true;
+
+    }
 
     int RNG(int min, int max)
     {
