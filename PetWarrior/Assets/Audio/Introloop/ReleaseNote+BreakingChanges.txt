@@ -1,0 +1,74 @@
+﻿# Release Note
+
+## (20/05/2018) Version 3.0 - New functions includes :
+
+### Multiple singleton players
+
+With `IntroloopPlayer.Instance.Play`, it refers to the same "Instance" throughout your game. Meaning that you cannot have 2 concurrent Introloop player playing+looping at the same time.
+
+With `MySubClassOfIntroloopPlayer.Get`, it will spawns different set of player. This means you can now have many Introloop playing at the same. It is useful for dividing the players into several parts. Like BGMPlayer, AmbientPlayer, etc. 
+
+Moreover, you can then define your own methods on your subclass to be more suitable for your game. Like `FieldBGMPlayer.Get.PlayDesertTheme()` instead of `IntroloopPlayer.Instance.Play(desertTheme);`.
+
+The template's name was hardcoded as the same as your class name. If your class name is FieldBGMPlayer then you must have FieldBGMPlayer.prefab in the same location as IntroloopPlayer.prefab in Resources folder. (Defined in IntroloopSettings.cs constant fields.)
+
+See the new **IntroloopDemoSubclass** demo scene for how this works.
+
+### IntroloopPlayer.InternalAudioSources property
+
+You can `foreach` on this property to make changes to all 4 `AudioSource` that Introloop uses at once.
+You should not use this in `Awake`, as Introloop might be still not yet spawn the `AudioSource`.
+
+### Local Introloop
+
+You can now have non-static IntroloopPlayer anywhere in the scene as many instances as you like.
+If you do, you need to keep and access it with normal `IntroloopPlayer` variable. 
+
+How to get one is easy, just attach `IntroloopPlayer` (and optionally with `IntroloopSetting`) to one of your game object.
+All of the required `AudioSource` will be spawned directly as a child of this game object.
+
+Or an anothey way, you could `gameObject.AddComponent<IntroloopPlayer>()` anytime. The next frame all of the required audio sources
+will be ready for play.
+
+These local Introloop does not automatically get `DontDestroyOnLoad` like `IntroloopPlayer.Instance` or `Subclass.Get` ones, 
+thus they will stop playing if you change scene with `LoadSceneMode.Single`, etc. Also, it will be positional by default. (Spatial blend is 1, or full 3D.)
+
+### Positional Introloop
+
+The point of having a local Introloop is that you would like it to be positional. Imagine you have 10 bushes with an individual seamlessly looping leaf sound. And you also want these to get louder as the player approaches it.
+You could spawn a local Introloop and position them on each bush. Note that each one will uses 4 `AudioSource`.
+
+The following functions was added : 
+
+`IntroloopPlayer.Set/MatchAudioSourceCurve` - Set audio curve with `AnimationCurve` or copy audio curvesfrom an another `AudioSource`.
+`IntroloopPlayer.Set2DSpatialBlend` - `IntroloopPlayer.Instance` and `Subclass.Get` automatically get this. Hear full sound independent of `AudioListener` position.
+`IntroloopPlayer.Set3DSpatialBlend` - Local Introloop automatocally get this. Introloop is now dependent on positioning.
+`IntroloopPlayer.SetSpatialBlend` - Set spatial blend to any number to make it semi 2D-3D.
+
+See the new **IntroloopDemoLocalPositional** demo scene for how this works.
+
+= Breaking Changes =
+
+- Introloop now use a `namespace` coding practice like all other plugins. The `namespace` is `using E7.Introloop`.
+
+- Minimum supported version now moved to 2017.1.3f1, the lowest version available on Unity Hub. Technically, it should still mostly works from 5.0 onwards but I won't be checking integrity on those versions anymore.
+
+- When right click creating `IntroloopAudio` file, it was at `Asset > Create IntroloopAudio` but now it is now properly in `Asset > Create > IntroloopAudio`.
+
+- Some class which is not intended for you to use has been changed to `internal`.
+
+## (14/04/2017) Version 2.0 - New functions includes :
+
+### Pitch
+
+    You can now specify a pitch in an IntroloopAudio asset file. If you would like to use multiple pitches of the same audio, you can just copy the asset file and have different pitches. It can reference to the same actual audio file. Works fine with pause, resume, automatic memory management.
+
+### Preload
+
+    A feature where critical precision of starting an Introloop Audio is needed. Load the audio by calling IntroloopAudio.Instance.Preload(yourIntroloopAudio) beforehand to pre-consume memory, and then call Play as usual afterwards.
+
+### Ogg Streaming as Introloop on iOS/Android
+
+    In Unity 5.5.2 they added support for choosing "Streaming" with OGG on iOS/Android. I am happy to inform that this option works with Introloop. Everthing will be the same except it will not cost you as much memory of an entire audio on Play as before in an exchange for some CPU workload.
+
+## (15/12/2015) Version 1.0 - The first version

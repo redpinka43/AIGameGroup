@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224479081923149084}
-  - component: {fileID: 114744836628062854}
+  - component: {fileID: 114140961701928058}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -249,29 +249,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114744836628062854
+--- !u!114 &114140961701928058
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365336278259152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a2b4081e109646d98135cd41e6ec6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bgMusicArray:
-  - {fileID: 8300000, guid: 972e5d5ab4f714bd3b118e2cef370995, type: 3}
-  - {fileID: 8300000, guid: 17de7e984c2b0432dba3d74f9fa99114, type: 3}
-  - {fileID: 8300000, guid: c9efe2be46ba549e9b7d562f71829829, type: 3}
+  - {fileID: 11400000, guid: c0577d8c6ad6047eda70f1b5626d287f, type: 2}
+  - {fileID: 11400000, guid: 6f8ce845192884d99ac9396da09158ed, type: 2}
+  - {fileID: 11400000, guid: 0e8c7095a4d5b46f18126fb0bf78e6d9, type: 2}
+  - {fileID: 11400000, guid: 25c9fb0327b36462f802daa920b65b20, type: 2}
+  - {fileID: 11400000, guid: 25e5bf44ee55c4730a237a76f816c6db, type: 2}
+  - {fileID: 11400000, guid: 307d27fae13984be49c1db562b7876ef, type: 2}
+  - {fileID: 11400000, guid: 6f9f0cefb0da94ad180f92b3f89cd7ce, type: 2}
   bgMusicStrings:
-  - town
+  - title
+  - town_1
   - route
+  - town_2
   - battle
+  - battle_final
+  - ending
   soundFxArray: []
   soundFxStrings: []
   bgMusicVolume: 0
   soundFxVolume: 0
+  currentMusicHasIntro: 0
+  currentBgMusic: {fileID: 0}
 --- !u!224 &224379858238651184
 RectTransform:
   m_ObjectHideFlags: 1

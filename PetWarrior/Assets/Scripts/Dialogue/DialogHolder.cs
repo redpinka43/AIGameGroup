@@ -50,7 +50,7 @@ public class DialogHolder : MonoBehaviour {
 		centerOfZone = new Vector2( xPos + xOffset, yPos + yOffset );
 
 		// Set debugging
-		debugging = false;
+		debugging = true;
 
 	}
 	
@@ -161,14 +161,14 @@ public class DialogHolder : MonoBehaviour {
 
 			else if (playerAngle == 180) {		// Facing left
 
-			// Just rotate the code for "Facing up" by 90 degrees clockwise
-			objectViewCone = (objectViewCone + 360 - 90) % 360;
+				// Just rotate the code for "Facing up" by 90 degrees clockwise
+				objectViewCone = (objectViewCone + 360 - 90) % 360;
 			}
 
 			else if (playerAngle == 270) {		// Facing down
 
-			// Just rotate the code for "Facing up" by 180 degrees clockwise
-			objectViewCone = (objectViewCone + 360 - 180) % 360;
+				// Just rotate the code for "Facing up" by 180 degrees clockwise
+				objectViewCone = (objectViewCone + 360 - 180) % 360;
 			}
 
 			else {
@@ -185,10 +185,16 @@ public class DialogHolder : MonoBehaviour {
 		}
 		
 		objectViewCone = Mathf.Abs(objectViewCone);
-		
+
 		// If angle is greater than 180, find its supplement
 		if (objectViewCone >= 180) {
 			objectViewCone = 360 - objectViewCone;
+		}
+
+		// Fix a bug with facing down
+		if (playerAngle == 270 && playerX > 0) {
+			objectViewCone = 90 - objectViewCone;
+
 		}
 
 		if (debugging)
