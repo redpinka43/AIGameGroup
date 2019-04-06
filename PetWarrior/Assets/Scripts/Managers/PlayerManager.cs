@@ -29,7 +29,8 @@ public class PlayerManager : MonoBehaviour {
 	void Start () {
 		
 		// Set player's viewcone angle
-		playerObject.GetComponent<PlayerController>().viewAngle = viewAngle;
+		if (playerObject)
+			playerObject.GetComponent<PlayerController>().viewAngle = viewAngle;
 
 	}
 

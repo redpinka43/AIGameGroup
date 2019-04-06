@@ -489,7 +489,7 @@ Prefab:
     - target: {fileID: 114292057982560124, guid: 925953beffb0c4220859f1010bcccd69,
         type: 2}
       propertyPath: bgMusic
-      value: town
+      value: town_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925953beffb0c4220859f1010bcccd69, type: 2}
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6ab4c5d2f79434c86c3923119618cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMusic: town
+  newMusic: town_1
 --- !u!61 &358665179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6ab4c5d2f79434c86c3923119618cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMusic: town
+  newMusic: town_2
 --- !u!61 &684324419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1682,12 +1682,12 @@ Prefab:
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Offset.x
-      value: -0.7201996
+      value: 2.6779785
       objectReference: {fileID: 0}
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Size.x
-      value: 48.06595
+      value: 35.44452
       objectReference: {fileID: 0}
     - target: {fileID: 114659459381656058, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
@@ -1741,7 +1741,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 738291383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 317.1284, y: -218.88882, z: 12.4375}
+  m_LocalPosition: {x: 315.7, y: -1502, z: 12.4375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 639102460}
@@ -2148,11 +2148,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 272
+      value: 405
       objectReference: {fileID: 0}
     - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1651
+      value: -1417.9
       objectReference: {fileID: 0}
     - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6641,12 +6641,12 @@ Prefab:
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Size.y
-      value: 79.02881
+      value: 74.454346
       objectReference: {fileID: 0}
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Offset.y
-      value: -20.673706
+      value: -22.960938
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
@@ -7666,7 +7666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Decko
   animal: Gecko
-  image: {fileID: 0}
+  image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   species: 0
   health: 25
   currentHealth: 1
@@ -8031,7 +8031,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2131404865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 127, y: 172, z: 0}
+  m_LocalPosition: {x: 128.3, y: 171.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 639102460}

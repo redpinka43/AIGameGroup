@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using E7.Introloop;
 
 /*
 	AudioManager manages the following:
@@ -29,18 +30,20 @@ public class AudioManager : MonoBehaviour {
 	private GameObject soundFxObject;
 
 	// Background music list
-	public AudioClip[] bgMusicArray;
+	public IntroloopAudio[] bgMusicArray;
 	public string[] bgMusicStrings;
 
 	// Sound effects lists
-	public AudioClip[] soundFxArray;
+	public IntroloopAudio[] soundFxArray;
 	public string[] soundFxStrings;
 
 	// Class variables
-	private string currentBgMusic = null;
+	private string currentBgMusicStr = null;
 	public float bgMusicVolume;
 	public float soundFxVolume;
+	public bool currentMusicHasIntro;
 
+	public IntroloopAudio currentBgMusic;
 
 	void Awake () {
 
@@ -68,39 +71,38 @@ public class AudioManager : MonoBehaviour {
 
 	}	
 
-	// New scene function. Changes background music 
+	// New scene function. Changes background music when scene is changed
 	void checkSceneChange () {
 
 		string newBgMusic = GameObject.Find("Scene Info").GetComponent<SceneInfo>().bgMusic;
-		if (newBgMusic != currentBgMusic) {
-			currentBgMusic = newBgMusic;
-			// Change bg music
-			changeBgMusic(newBgMusic);
-		}
+		// Change bg music
+		changeBgMusic(newBgMusic);
+
 
 	}
 
-	// Changes background music to the music matching the string newBgMusic 
+	// Changes background music to the music matching the string newBgMusic. 
 	public void changeBgMusic(string newBgMusicString) {
 
-		AudioClip newMusic = bgMusicArray[ Array.IndexOf(bgMusicStrings, newBgMusicString) ];			
-		bgMusicObject.GetComponent<AudioSource>().clip = newMusic;
-		// Idk do i need to activate the music now?
-		bgMusicObject.GetComponent<AudioSource>().Play();
+		// Only change to new music
+		if (newBgMusicString != currentBgMusicStr) {
+			
+			currentBgMusicStr = newBgMusicString;
+
+			currentBgMusic = bgMusicArray[ Array.IndexOf(bgMusicStrings, newBgMusicString) ];			
+			IntroloopPlayer.Instance.Play(currentBgMusic);
+
+		}
 
 	}
 
 	// Plays a sound effect matching the string newSoundFx
 	void activateSoundFx(string newSoundFxString) {
 		
-		AudioClip newSoundFx = soundFxArray[ Array.IndexOf(soundFxStrings, newSoundFxString) ];
-		soundFxObject.GetComponent<AudioSource>().clip = newSoundFx;
+		IntroloopAudio newSoundFx = soundFxArray[ Array.IndexOf(soundFxStrings, newSoundFxString) ];
+		// soundFxObject.GetComponent<AudioSource>().clip = newSoundFx;
 		// Idk do i need to activate the music now?
 
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
