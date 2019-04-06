@@ -162,6 +162,11 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 114556160993012470, guid: 21614fad1a348425f8c35e91da4a0ae3,
+        type: 2}
+      propertyPath: viewAngle
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
   m_IsPrefabAsset: 0
@@ -318,6 +323,11 @@ Prefab:
         type: 2}
       propertyPath: startNode
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659459381656058, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+        type: 2}
+      propertyPath: viewConeAngle
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
