@@ -1119,8 +1119,8 @@ MonoBehaviour:
   moveNum: 0
   moves:
   - Nip
-  - Sticky Slap
-  - Dance
+  - Nip
+  - Nip
 --- !u!4 &169310797
 Transform:
   m_ObjectHideFlags: 0
@@ -1691,6 +1691,7 @@ GameObject:
   - component: {fileID: 409046727}
   - component: {fileID: 409046726}
   - component: {fileID: 409046725}
+  - component: {fileID: 409046728}
   m_Layer: 5
   m_Name: moveFour
   m_TagString: Untagged
@@ -1755,51 +1756,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 409046726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1070700472}
-        m_MethodName: useMove
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 701632310}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 858954763}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1978216564}
-        m_MethodName: moveNumFour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &409046726
@@ -1836,6 +1793,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 409046723}
   m_CullTransparentMesh: 0
+--- !u!114 &409046728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409046723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73fdd9da86802d459441fc16acd9291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveFour: {fileID: 409046725}
+  turnCheck: {fileID: 0}
 --- !u!1 &439875963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,6 +3027,7 @@ GameObject:
   - component: {fileID: 614678318}
   - component: {fileID: 614678317}
   - component: {fileID: 614678320}
+  - component: {fileID: 614678321}
   m_Layer: 5
   m_Name: moveThree
   m_TagString: Untagged
@@ -3121,51 +3092,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 614678318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1917660236}
-        m_MethodName: useMove
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 701632310}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 858954763}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1978216564}
-        m_MethodName: moveNumThree
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &614678318
@@ -3215,6 +3142,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppLeft: 30
   ppTotal: 30
+--- !u!114 &614678321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614678315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87978d7d091a4614ab85f11be036e9f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveThree: {fileID: 614678317}
+  turnCheck: {fileID: 0}
 --- !u!1 &615808268
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,10 +6986,10 @@ MonoBehaviour:
   maxDefense: 10
   defense: 10
   special: 10
-  speed: 10
+  speed: 15
   moveNum: 0
   moves:
-  - Nip
+  - Shed Skin
   - Dance
   - Sticky Slap
   - Shed Skin
@@ -8939,6 +8879,7 @@ GameObject:
   - component: {fileID: 1487560209}
   - component: {fileID: 1487560208}
   - component: {fileID: 1487560207}
+  - component: {fileID: 1487560210}
   m_Layer: 5
   m_Name: moveOne
   m_TagString: Untagged
@@ -9003,51 +8944,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1487560208}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1559998548}
-        m_MethodName: useMove
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 701632310}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 858954763}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1978216564}
-        m_MethodName: moveNumOne
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1487560208
@@ -9084,6 +8981,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1487560205}
   m_CullTransparentMesh: 0
+--- !u!114 &1487560210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1487560205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866bdbc503a288d4792afd81cd88f434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveOne: {fileID: 1487560207}
+  turnCheck: {fileID: 0}
 --- !u!1 &1494272654
 GameObject:
   m_ObjectHideFlags: 0
@@ -10309,6 +10219,7 @@ GameObject:
   - component: {fileID: 1704529141}
   - component: {fileID: 1704529140}
   - component: {fileID: 1704529143}
+  - component: {fileID: 1704529144}
   m_Layer: 5
   m_Name: moveTwo
   m_TagString: Untagged
@@ -10373,51 +10284,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704529141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1831353482}
-        m_MethodName: useMove
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 701632310}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 858954763}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1978216564}
-        m_MethodName: moveNumTwo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1704529141
@@ -10467,6 +10334,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppLeft: 10
   ppTotal: 15
+--- !u!114 &1704529144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704529138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6544027b4eba2f848b8a0328fe358d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveTwo: {fileID: 1704529140}
+  turnCheck: {fileID: 0}
 --- !u!1 &1738318255
 GameObject:
   m_ObjectHideFlags: 0
@@ -12187,7 +12067,7 @@ GameObject:
   - component: {fileID: 1978216561}
   - component: {fileID: 1978216564}
   m_Layer: 5
-  m_Name: textButton
+  m_Name: feedBackTextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12250,40 +12130,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978216562}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2012843260}
-        m_MethodName: DeathCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 858954763}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2012843260}
-        m_MethodName: LiveCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1978216562
@@ -12348,6 +12195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012843259}
   - component: {fileID: 2012843260}
+  - component: {fileID: 2012843261}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -12381,6 +12229,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelEnemyFeedBack: {fileID: 439875963}
   panelPetDeath: {fileID: 670969580}
+  playerController: {fileID: 0}
+--- !u!114 &2012843261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012843258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba6713ea66e5d54b89009b94e6e7427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnState: 0
+  moveOneButtonText: {fileID: 1559998548}
+  moveTwoButtonText: {fileID: 0}
+  moveThreeButtonText: {fileID: 0}
+  moveFourButtonText: {fileID: 0}
+  enableVictoryScreen: {fileID: 2012843260}
+  feedBackTextButton: {fileID: 1978216561}
+  enemyFeedBackTextButton: {fileID: 2113377008}
+  fightPanel: {fileID: 701632310}
+  feedBackPanel: {fileID: 858954763}
+  enemyFeedBackPanel: {fileID: 439875963}
+  startBattlePanel: {fileID: 916987452}
 --- !u!1 &2020472632
 GameObject:
   m_ObjectHideFlags: 0
@@ -12737,7 +12609,7 @@ GameObject:
   - component: {fileID: 2113377008}
   - component: {fileID: 2113377007}
   m_Layer: 5
-  m_Name: textButton
+  m_Name: enemyFeedBackTextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12795,51 +12667,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2113377009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 439875963}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 916987452}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2113377007}
-        m_MethodName: useMove
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2012843260}
-        m_MethodName: CheckPetLife
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2113377009

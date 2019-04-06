@@ -100,6 +100,10 @@ public class DialoguePanelTextScript : MonoBehaviour
                 {
                     feedBackString = playerPet.name + " feels restored!";
                 }
+                if (moveName == "Shell")
+                {
+                    feedBackString = playerPet.name + " used shell";
+                }
 
                 txt.text = feedBackString;
                 callFlag = true;

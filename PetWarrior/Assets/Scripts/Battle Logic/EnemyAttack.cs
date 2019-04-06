@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,13 +39,13 @@ public class EnemyAttack : MonoBehaviour
     }
     private void Update()
     {
-        int dam = enemyPet.attack / playerPet.defense;
-        
+
+
 
         if (callFlag == false)
         {
             if (moveName == "Nip")
-                feedBackString = enemyPet.name + " nipped " + playerPet.name + " for " + dam + " damage! ";
+                feedBackString = enemyPet.name + " nipped " + playerPet.name + " for " + Nip() + " damage! ";
             if (moveName == "Dance")
                 feedBackString = enemyPet.name + " did a little dance! Enemy Defense lowered by: " + Dance();
             if (moveName == "Sticky Slap")
@@ -70,16 +71,10 @@ public class EnemyAttack : MonoBehaviour
         txt.text = feedBackString;
     }
 
-    public void useMove(string move)
-    {
-        if (moveName == "Nip" && enemyPet.currentHealth >= 1)
-            Nip();
-
-    }
 
     public int Nip()
     {
-        int damage = (enemyPet.attack / playerPet.defense);
+        int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
         playerPet.currentHealth -= damage;
         return damage;
     }

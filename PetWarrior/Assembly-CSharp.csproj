@@ -71,6 +71,9 @@
     <Compile Include="Assets\getPlayerPet.cs" />
     <Compile Include="Assets\getPlayerSprite.cs" />
     <Compile Include="Assets\itemFeedBackScript.cs" />
+    <Compile Include="Assets\moveFourClicked.cs" />
+    <Compile Include="Assets\moveThreeClicked.cs" />
+    <Compile Include="Assets\moveTwoClicked.cs" />
     <Compile Include="Assets\moveUsed.cs" />
     <Compile Include="Assets\PetEncounter.cs" />
     <Compile Include="Assets\Pixel UI\Demo\Scripts\DemoDialogue.cs" />
@@ -114,8 +117,11 @@
     <Compile Include="Assets\Scripts\Battle Logic\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveFourButtonText.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveOneButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle Logic\moveOneClicked.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveThreeButtonText.cs" />
     <Compile Include="Assets\Scripts\Battle Logic\moveTwoButtonText.cs" />
+    <Compile Include="Assets\Scripts\Battle Logic\turnCheck.cs" />
+    <Compile Include="Assets\Scripts\Battle Logic\turnTimer.cs" />
     <Compile Include="Assets\Scripts\Battle UI\DialoguePanelTextScript.cs" />
     <Compile Include="Assets\Scripts\Battle UI\enemyHealthBarScript.cs" />
     <Compile Include="Assets\Scripts\Battle UI\firstButtonEnable.cs" />

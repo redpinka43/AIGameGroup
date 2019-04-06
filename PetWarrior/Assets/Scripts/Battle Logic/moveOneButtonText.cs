@@ -8,15 +8,15 @@ using System;
 [System.Serializable]
 public class moveOneButtonText : MonoBehaviour
 {
-	string moveName;
-	public int ppLeft = 30;
-	public int ppTotal = 30;
+    string moveName;
+    public int ppLeft = 30;
+    public int ppTotal = 30;
     private Pets playerPet;
     private Pets enemyPet;
     Text txt;
-    
 
-    private void Awake ()
+
+    private void Awake()
     {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
@@ -26,11 +26,11 @@ public class moveOneButtonText : MonoBehaviour
     {
         moveName = playerPet.moves[0];
         txt = GetComponentInChildren<Text>();
-		txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
-	}
+        txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
+    }
 
     private void Update()
-    { 
+    {
         // avoids division by 0
         if (enemyPet.defense == 0)
             enemyPet.defense = 1;
@@ -40,7 +40,8 @@ public class moveOneButtonText : MonoBehaviour
 
     public void useMove(string move)
     {
-        if(ppLeft == 0)
+        moveName = playerPet.moves[playerPet.moveNum];
+        if (ppLeft == 0)
         {
             return;
         }
@@ -51,12 +52,15 @@ public class moveOneButtonText : MonoBehaviour
                 enemyPet.currentHealth -= Nip();
                 break;
             case "Dance":
-                enemyPet.defense -= Dance(); 
+                enemyPet.defense -= Dance();
                 break;
             case "Sticky Slap":
                 break;
             case "Shed Skin":
                 ShedSkin();
+                break;
+            case "Shell":
+                Shell();
                 break;
             default:
                 Debug.Log("No such move");
@@ -67,11 +71,11 @@ public class moveOneButtonText : MonoBehaviour
 
 
     }
- 
+
     public int Nip()
     {
-        int damage = (playerPet.attack / enemyPet.defense);
-       
+        int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
+
         return damage;
     }
 
@@ -121,6 +125,13 @@ public class moveOneButtonText : MonoBehaviour
         playerPet.defense = playerPet.maxDefense;
 
 
+    }
+
+    public int Shell()
+    {
+        int boost = (int)Math.Ceiling((double)playerPet.defense * .2);
+        playerPet.defense += boost;
+        return boost;
     }
     int RNG(int min, int max)
     {
