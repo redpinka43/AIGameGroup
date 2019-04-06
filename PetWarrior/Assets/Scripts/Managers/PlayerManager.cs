@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
 
 	public static PlayerManager instance = null;
+	public float viewAngle;
 
 	public GameObject playerObject;
 
@@ -27,6 +28,9 @@ public class PlayerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+		// Set player's viewcone angle
+		playerObject.GetComponent<PlayerController>().viewAngle = viewAngle;
+
 	}
 
 	void linkUp() {
