@@ -13,6 +13,7 @@ public class moveOneButtonText : MonoBehaviour
     public int ppTotal = 30;
     private Pets playerPet;
     private Pets enemyPet;
+    public string usedMove;
     Text txt;
 
 
@@ -40,13 +41,14 @@ public class moveOneButtonText : MonoBehaviour
 
     public void useMove(string move)
     {
-        moveName = playerPet.moves[playerPet.moveNum];
+        
+        usedMove = playerPet.moves[playerPet.moveNum];
         if (ppLeft == 0)
         {
             return;
         }
 
-        switch (moveName)
+        switch (usedMove)
         {
             case "Nip":
                 enemyPet.currentHealth -= Nip();
