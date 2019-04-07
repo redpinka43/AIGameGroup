@@ -13,7 +13,7 @@ public class useItem : MonoBehaviour {
     private getNextItem getNextItem;
     public string itemName;
     private int itemnumber;
-
+    public turnCheck turnCheck;
     // Use this for initialization
     void Start()
     {
@@ -40,6 +40,8 @@ public class useItem : MonoBehaviour {
                 Debug.Log("No such item");
                 break;
         }
+
+        turnCheck.turnState = 1;
     }
 
     // Update is called once per frame

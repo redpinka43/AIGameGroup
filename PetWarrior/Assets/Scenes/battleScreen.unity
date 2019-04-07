@@ -1118,9 +1118,9 @@ MonoBehaviour:
   speed: 10
   moveNum: 0
   moves:
-  - Acorn Throw
-  - Acorn Throw
-  - Acorn Throw
+  - nip
+  - nip
+  - nip
 --- !u!4 &169310797
 Transform:
   m_ObjectHideFlags: 0
@@ -3357,6 +3357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppLeft: 30
   ppTotal: 30
+  usedMove: 
 --- !u!114 &617986891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7464,6 +7465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
+  turnCheck: {fileID: 2012843261}
 --- !u!114 &1222211633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9473,6 +9475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppLeft: 30
   ppTotal: 30
+  usedMove: 
 --- !u!1 &1561186978
 GameObject:
   m_ObjectHideFlags: 0
