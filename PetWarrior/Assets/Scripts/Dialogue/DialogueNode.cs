@@ -25,7 +25,7 @@ public class DialogueNode {
 		int.TryParse(id, out this.id);
 		
 		this.speaker = speaker;
-        this.text = text;
+        this.text = addLineBreaks(text, DialogueManager.instance.maxCharsPerLine_dialogueText);
 		
 		// Parse the nextNodeStr for multiple links
         // this.nextNode = nextNode;
@@ -71,6 +71,75 @@ public class DialogueNode {
 			nextScene = nextSceneStr;
 		}
 
+	}
+
+
+	// Adds '\n' every maxCharsPerLine characters.
+	string addLineBreaks(string text, int maxCharsPerLine) {
+
+		if (String.IsNullOrEmpty(text)) {
+			return "";
+		}
+
+		int appendedCharacters = 0;
+		string newText = "";
+
+		while (appendedCharacters < text.Length - (text.Length % maxCharsPerLine)) {
+
+			string nextLineChars = findNextLineChars( text.Substring(appendedCharacters), maxCharsPerLine );			
+			newText = newText + nextLineChars + "\n";
+			appendedCharacters += nextLineChars.Length;
+
+			// Get rid of a single space at the start of new lines
+			if (appendedCharacters < text.Length && text[appendedCharacters] == ' ') {
+				appendedCharacters++;
+			}
+		}
+
+		// Append the remainder
+		newText = newText + text.Substring(appendedCharacters, text.Length - appendedCharacters);
+
+		return newText;
+	}
+
+
+	// Finds the string that contains the most whole words in the next line
+	string findNextLineChars(string text, int maxCharsPerLine) {
+		
+		// Check for empty strings and maxCharsPerLine errors
+		if (String.IsNullOrEmpty(text) || maxCharsPerLine <= 0) {
+			return "";
+		}
+
+		// Check for 1-character long strings
+		if (text.Length == 1) {
+			return text;
+		}
+
+		// Check if the text is shorter than maxCharsPerLine
+		if (text.Length <= maxCharsPerLine) {
+			return text;
+		}
+
+		// Check if the last character in the line has another character following it
+		if (text[maxCharsPerLine - 1] != ' ' && text[maxCharsPerLine] != ' ') {
+			
+			// Check if the entire line has any spaces in it 
+			if ( !text.Substring(0, maxCharsPerLine).Contains(" ")) {
+				return text.Substring(0, maxCharsPerLine);
+			}
+
+			// Keep stepping back to find the index of the space closest to the end of the line
+			int spaceCharIndex = maxCharsPerLine - 1;
+			while (text[spaceCharIndex] != ' ') {
+				spaceCharIndex--;
+			}
+
+			return text.Substring(0, spaceCharIndex);
+		}
+
+		// The last character of the line is a space ' ', so return the string before that space
+		return text.Substring(0, maxCharsPerLine);
 	}
 
 }

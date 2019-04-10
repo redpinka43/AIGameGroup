@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour {
 
 		else {  // Player can move 
 			// Move horizontal
-			if (InputManager.instance.getKeyDown("left") || InputManager.instance.getKeyDown("right"))
+			if (InputManager.instance.getKeyDownUndebounced("left") || InputManager.instance.getKeyDownUndebounced("right"))
 			{
 				myRigidbody.velocity = new Vector2(axisRaw_Horizontal * moveSpeed, myRigidbody.velocity.y);
 				playerIsMoving = true;
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 			}
 
 			// Move vertical
-			if (InputManager.instance.getKeyDown("up") || InputManager.instance.getKeyDown("down"))
+			if (InputManager.instance.getKeyDownUndebounced("up") || InputManager.instance.getKeyDownUndebounced("down"))
 			{
 				myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, axisRaw_Vertical * moveSpeed);
 				playerIsMoving = true;
@@ -97,13 +97,13 @@ public class PlayerController : MonoBehaviour {
 			}
 
 			// Stay in place horizontal
-			if ( !InputManager.instance.getKeyDown("left") && !InputManager.instance.getKeyDown("right"))
+			if ( !InputManager.instance.getKeyDownUndebounced("left") && !InputManager.instance.getKeyDownUndebounced("right"))
 			{
 				myRigidbody.velocity = new Vector2(0f, myRigidbody.velocity.y);
 			}
 
 			// Stay in place vertical
-			if ( !InputManager.instance.getKeyDown("up") && !InputManager.instance.getKeyDown("down") )
+			if ( !InputManager.instance.getKeyDownUndebounced("up") && !InputManager.instance.getKeyDownUndebounced("down") )
 			{
 				myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0f);
 			}

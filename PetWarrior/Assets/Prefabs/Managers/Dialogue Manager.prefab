@@ -39,11 +39,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d77419984ea4be09a1e16f3cd7b6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dBox: {fileID: 0}
-  dText: {fileID: 0}
+  dialogueNormal_text: {fileID: 0}
+  dialogueChoice2_questionText: {fileID: 0}
+  dialogueChoice2_choice1: {fileID: 0}
+  dialogueChoice2_choice2: {fileID: 0}
+  dialogueChoice2_selector1: {fileID: 0}
+  dialogueChoice2_selector2: {fileID: 0}
+  dialogueChoice3_questionText: {fileID: 0}
+  dialogueChoice3_choice1: {fileID: 0}
+  dialogueChoice3_choice2: {fileID: 0}
+  dialogueChoice3_choice3: {fileID: 0}
+  dialogueChoice3_selector1: {fileID: 0}
+  dialogueChoice3_selector2: {fileID: 0}
+  dialogueChoice3_selector3: {fileID: 0}
   txtFile: {fileID: 4900000, guid: ddfe6821e86d641c3a5cfcbebd8b09db, type: 3}
-  dialogActive: 0
-  isRunning: 1
+  dialogueIsRunning: 0
+  dialogueSelectPending: 0
+  forceDialogueLoad: 0
+  printTimeInterval: 0.02
+  maxCharsPerLine_dialogueText: 32
+  punctuationPauseTime: 0.1
 --- !u!114 &114633123718914010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934f7b66ecabc421b9397f70b40c64f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedOption: 0
 --- !u!224 &224957679967556968
 RectTransform:
   m_ObjectHideFlags: 1

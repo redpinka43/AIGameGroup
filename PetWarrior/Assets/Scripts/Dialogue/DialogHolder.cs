@@ -50,7 +50,7 @@ public class DialogHolder : MonoBehaviour {
 		centerOfZone = new Vector2( xPos + xOffset, yPos + yOffset );
 
 		// Set debugging
-		debugging = true;
+		debugging = false;
 
 	}
 	
@@ -63,7 +63,7 @@ public class DialogHolder : MonoBehaviour {
 	{
 		if(other.gameObject == PlayerManager.instance.playerObject)
 		{
-			if( InputManager.instance.getKeyUp("A") )
+			if( InputManager.instance.getKeyDown("A") )
 			{
 				if (playerFacingObject()) 
 				{

@@ -7,6 +7,9 @@ public class InputManager : MonoBehaviour {
 	public static InputManager instance;
 	public float axisSensitivity;
 
+	private bool debouncing = false;
+	private List<string> debouncingStrList;
+
 	// Keycode arrays
 	KeyCode[] AButton;
 	KeyCode[] BButton;
@@ -20,6 +23,7 @@ public class InputManager : MonoBehaviour {
 	KeyCode[] exit;
 	KeyCode[] fullScreen;
 
+
 	void Awake () {
 		// Singleton pattern
 		if (instance == null) {
@@ -28,9 +32,11 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
+
 	// Use this for initialization
 	void Start () {
 		axisSensitivity = 0.5f;
+		debouncingStrList = new List<string>();
 
 		// Set keycode arrays
 		AButton = new KeyCode[] { KeyCode.Z, KeyCode.J, KeyCode.Return, KeyCode.Space };
@@ -48,7 +54,71 @@ public class InputManager : MonoBehaviour {
 	}
 
 
+	// Update is called once per frame
+	void Update () {
+
+		// Checks if key has gone up if debouncing
+		if (debouncing) {
+			bool canDisableDebouncing = true;
+
+			List<string> listCopy = new List<string>(debouncingStrList);
+
+			foreach (string keyString in listCopy) {
+				if ( getKeyUp(keyString) ) {
+					debouncingStrList.Remove(keyString);
+				}
+				else {
+					canDisableDebouncing = false;
+				}
+			}
+
+			if (canDisableDebouncing) 
+				debouncing = false;
+		}
+
+	}
+
+
+	// This is a DEBOUNCED get key down function, meaning if it the key has been pressed down once,
+	// but is held down, it will return false until the key has gone up and been pressed again.
 	public bool getKeyDown(string keyString) {
+
+		keyString = keyString.ToLower();
+		KeyCode[] key = keySwitchStatement( keyString );
+	
+		if (!debouncing) {
+
+			// Check keyboard inputs here
+			for (int i = 0; i < key.Length; i++) {
+				if (Input.GetKeyDown(key[i])) {
+					// Debug.Log("Key " + keyString + " is pressed DOWN.");
+					return true;
+				}		
+			}
+
+			// Check external controller inputs here
+			if ( inputSwitchStatement ( keyString, "down" ) )
+				return true;
+
+			if ( getBinaryControllerInput(keyString) ) {
+				debouncing = true;
+				
+				// Add string to debouncing list, if it isn't there already
+				if ( !debouncingStrList.Contains(keyString) ) {
+					debouncingStrList.Add(keyString);
+				}
+
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+
+	
+	// Gets key down WITHOUT debouncing 
+	public bool getKeyDownUndebounced(string keyString) {
 
 		keyString = keyString.ToLower();
 		KeyCode[] key = keySwitchStatement( keyString );
@@ -68,6 +138,8 @@ public class InputManager : MonoBehaviour {
 
 		return getBinaryControllerInput(keyString);
 	}
+
+
 
 	public bool getKeyUp(string keyString) {
 		keyString = keyString.ToLower();
