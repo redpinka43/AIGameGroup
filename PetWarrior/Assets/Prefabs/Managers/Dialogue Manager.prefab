@@ -58,7 +58,7 @@ MonoBehaviour:
   forceDialogueLoad: 0
   printTimeInterval: 0.02
   maxCharsPerLine_dialogueText: 32
-  punctuationPauseTime: 0.1
+  punctuationPauseTime: 0.2
 --- !u!114 &114633123718914010
 MonoBehaviour:
   m_ObjectHideFlags: 1

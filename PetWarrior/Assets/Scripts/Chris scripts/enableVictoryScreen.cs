@@ -85,10 +85,13 @@ public class enableVictoryScreen : MonoBehaviour
 
     public void EndBattle()
     {
-        SceneManager.LoadScene("startMenu");
-        float newX = 122.3F;
-        float newY = -103.7F;
-        player.transform.position = new Vector2(newX, newY);
+        // Return to overworld
+        SceneManager.LoadScene(MySceneManager.instance.lastOverworldScene);
+
+        // SceneManager.LoadScene("startMenu");
+        // float newX = 122.3F;
+        // float newY = -103.7F;
+        // player.transform.position = new Vector2(newX, newY);
         getenemypet.falseflag();
 
     }
@@ -99,6 +102,8 @@ public class enableVictoryScreen : MonoBehaviour
         playerPet.defense = playerPet.maxDefense;
         playerPet.attack = playerPet.maxAttack;
         SceneManager.LoadScene("startMenu");
+
+
         float newX  = 122.3F;
         float newY  = -103.7F;
         player.transform.position = new Vector2(newX, newY);

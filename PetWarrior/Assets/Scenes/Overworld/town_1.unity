@@ -1480,6 +1480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 685757089}
   - component: {fileID: 685757090}
+  - component: {fileID: 685757091}
   m_Layer: 0
   m_Name: route_1 reeds
   m_TagString: Untagged
@@ -1626,6 +1627,20 @@ PolygonCollider2D:
       - {x: 368, y: -1104}
       - {x: 368, y: -1089}
       - {x: 304, y: -1089}
+--- !u!114 &685757091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685757088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00defafa86c61145b2fb62107612b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coll: {fileID: 685757090}
+  min: 0
+  max: 1
 --- !u!1001 &716474299
 Prefab:
   m_ObjectHideFlags: 0
@@ -2148,11 +2163,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 405
+      value: 427
       objectReference: {fileID: 0}
     - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1417.9
+      value: -1425
       objectReference: {fileID: 0}
     - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2482,18 +2497,6 @@ Prefab:
     - target: {fileID: 224091828115666400, guid: a222eefb9fbbc42a7a4750b1053b420d,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864359778191896, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326799419206496, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191261142398190, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3989,6 +3992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1453084671}
   - component: {fileID: 1453084672}
+  - component: {fileID: 1453084673}
   m_Layer: 0
   m_Name: town_1 reeds
   m_TagString: Untagged
@@ -4115,6 +4119,20 @@ PolygonCollider2D:
       - {x: 496, y: -1712}
       - {x: 496, y: -1697}
       - {x: 416, y: -1697}
+--- !u!114 &1453084673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453084670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00defafa86c61145b2fb62107612b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coll: {fileID: 1453084672}
+  min: 0
+  max: 1
 --- !u!1001 &1465942143
 Prefab:
   m_ObjectHideFlags: 0
@@ -4391,11 +4409,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4704914858518444, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 326.9
+      value: 327.5
       objectReference: {fileID: 0}
     - target: {fileID: 4704914858518444, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1624.8
+      value: -1638.3
       objectReference: {fileID: 0}
     - target: {fileID: 4704914858518444, guid: 554653d2c29fb4620bf5a51c8155b37c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7667,7 +7685,6 @@ MonoBehaviour:
   name: Decko
   animal: Gecko
   image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 1
   maxAttack: 10
@@ -7677,6 +7694,11 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance

@@ -29,6 +29,7 @@ public class GUIManager : MonoBehaviour {
 	public GameObject dialogueNormal;
 	public GameObject dialogueChoice2;
 	public GameObject dialogueChoice3;
+	public GameObject fadeToBlackObj;
 
 	// Events
 	public delegate void OnDialogueStartHandler();
@@ -36,6 +37,14 @@ public class GUIManager : MonoBehaviour {
 	public delegate void OnDialogueEndHandler();
 	public static event OnDialogueEndHandler OnDialogueEnd;
 
+	// Other variables
+	public enum FadeState {
+		DEFAULT,		// Fall-back state, should never happen
+		NOTHING,		// No fade is happening
+		FADING_IN,		// We're starting to turn the screen black
+		FADING_OUT		// We need to start fading out the image. Screen is black right now.
+	}
+	public FadeState fadeState;
 
 	void Awake () {
 		// Singleton Pattern
@@ -53,6 +62,7 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		// Initialize guiState stack
 		guiState = GUIState.NOTHING;
+		fadeState = FadeState.NOTHING;
 		previousGuiStates = new Stack<GUIState>();
 		previousGuiStates.Push(GUIState.NOTHING); // This should never be removed from the stack
 
@@ -80,7 +90,11 @@ public class GUIManager : MonoBehaviour {
 		}
 		else 
 			guiCanvas = null;
-			
+
+		// Link up Fade To Black Image
+		if (GameManager.instance.gameState == GameState.OVERWORLD) {
+			fadeToBlackObj = guiCanvas.transform.Find("Fade To Black Image").gameObject;
+		}
 		
 	}
 
@@ -118,6 +132,23 @@ public class GUIManager : MonoBehaviour {
 
 	}
 
+	public void setFadeState (FadeState newFadeState) {
+		fadeState = newFadeState;
+
+		switch(fadeState) {
+			case FadeState.FADING_OUT:
+				PlayerController.instance.stopPlayerMovement();
+				PlayerController.instance.enablePlayerDirectionChanging = false;
+				break;
+
+			case FadeState.NOTHING:
+				PlayerController.instance.enablePlayerMovement();
+				break;
+			default:
+				break;
+		}
+	}
+	
 
 	// What you want to use when going from NOTHING to something
 	public void loadNewGUIState (GUIState newGuiState) {

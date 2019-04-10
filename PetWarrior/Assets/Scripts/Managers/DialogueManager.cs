@@ -114,7 +114,7 @@ public class DialogueManager : MonoBehaviour {
 	void Update () {
 
 		if (dialogueIsRunning) {
-
+			
 			if (printingDialogue) {
 				progressDialogue();
 			}
@@ -341,7 +341,14 @@ public class DialogueManager : MonoBehaviour {
 
 		// Change scene, if necessary
 		if (currentNode.hasNextScene) {
-			SceneManager.LoadScene( currentNode.nextScene );
+			// If changing to battle scene
+			if (currentNode.nextScene == "battleScreen") {
+				MySceneManager.instance.loadBattleScene();
+			}
+			else {
+				SceneManager.LoadScene( currentNode.nextScene );
+			}
+			
 		}
 
 		// Set dialoguebox to empty

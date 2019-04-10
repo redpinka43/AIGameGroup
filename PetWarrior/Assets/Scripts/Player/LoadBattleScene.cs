@@ -9,7 +9,7 @@ public class LoadBattleScene : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            SceneManager.LoadScene("battleScreen");
+            MySceneManager.instance.loadBattleScene();
         }
           
     }

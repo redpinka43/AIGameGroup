@@ -303,8 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ratt
   animal: Rat
-  image: {fileID: 21300010, guid: 802877e667a634c65aea43b8a468ccad, type: 3}
-  species: 0
+  image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 3
   currentHealth: 1
   maxAttack: 10
@@ -314,6 +313,11 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Sticky Slap
@@ -352,8 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Decko
   animal: Gecko
-  image: {fileID: 21300010, guid: c2b5538346c03477a8b19668d6167bb3, type: 3}
-  species: 0
+  image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 25
   currentHealth: 10
   maxAttack: 10
@@ -363,6 +366,11 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Dance
   - Dance

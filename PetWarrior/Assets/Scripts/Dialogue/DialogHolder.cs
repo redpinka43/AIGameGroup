@@ -193,9 +193,14 @@ public class DialogHolder : MonoBehaviour {
 
 		// Fix a bug with facing down
 		if (playerAngle == 270 && playerX > 0) {
-			objectViewCone = 90 - objectViewCone;
-
+			if (playerY > 0) {
+				objectViewCone = 90 - objectViewCone * -1;
+			}
+			else {
+				objectViewCone = 90 - objectViewCone;
+			}
 		}
+		Debug.Log("playerX = " + playerX + ", playerY = " + playerY);
 
 		if (debugging)
 			Debug.Log("after calculation: objectViewCone = " + objectViewCone);

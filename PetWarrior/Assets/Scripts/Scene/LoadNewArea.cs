@@ -11,19 +11,13 @@ public class LoadNewArea : MonoBehaviour {
 
 	private PlayerController thePlayer;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject == PlayerManager.instance.playerObject)
 		{
+			// Fade to black and switch scenes
+			GUIManager.instance.setFadeState(GUIManager.FadeState.FADING_OUT);
+
+			// Load the next scene
 			SceneManager.LoadScene(levelToLoad);
 			PlayerController.instance.startPoint = exitPoint;
 		}
