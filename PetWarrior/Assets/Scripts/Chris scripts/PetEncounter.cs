@@ -20,7 +20,7 @@ public class PetEncounter : MonoBehaviour {
 
             if (RNG(min, max) == 1)
             {
-                SceneManager.LoadScene("battleScreen");
+                MySceneManager.instance.loadBattleScene();
             }
         }
         else

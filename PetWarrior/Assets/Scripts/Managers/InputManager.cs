@@ -91,7 +91,6 @@ public class InputManager : MonoBehaviour {
 			// Check keyboard inputs here
 			for (int i = 0; i < key.Length; i++) {
 				if (Input.GetKeyDown(key[i])) {
-					// Debug.Log("Key " + keyString + " is pressed DOWN.");
 					return true;
 				}		
 			}
@@ -126,7 +125,6 @@ public class InputManager : MonoBehaviour {
 		// Check keyboard inputs here
 		for (int i = 0; i < key.Length; i++) {
 			if (Input.GetKeyDown(key[i])) {
-				// Debug.Log("Key " + keyString + " is pressed DOWN.");
 				return true;
 			}
 				
