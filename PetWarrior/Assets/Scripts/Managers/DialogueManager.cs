@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,14 @@ public class DialogueManager : MonoBehaviour {
 	public bool dialogueIsRunning = false;
 	public bool dialogueSelectPending = false;
 	public bool forceDialogueLoad = false;
+	private bool printingDialogue = false;
+
+	// Printing dialogue variables
+	private int printedChars;
+	private float timeSinceLastPrint;
+	public float printTimeInterval;
+	public int maxCharsPerLine_dialogueText = 32; // Default
+	public float punctuationPauseTime = 0.1f;
 
 
 	void Awake () {
@@ -77,6 +86,7 @@ public class DialogueManager : MonoBehaviour {
 
     }
 
+
 	// Link up components when new scene is loaded. Called by GUIManager.linkUp()
 	public void linkUp () {
 		// Dialogue Normal
@@ -102,10 +112,21 @@ public class DialogueManager : MonoBehaviour {
 
 	// Update is called once per frame.
 	void Update () {
-		// Only update stuff if the user presses Space.using UnityEngine.SceneManagement;
-		if ( InputManager.instance.getKeyUp("A") && dialogueIsRunning) {
-			continueDialogue( true );
+
+		if (dialogueIsRunning) {
+
+			if (printingDialogue) {
+				progressDialogue();
+			}
+			else {
+				// Only update stuff if the user presses Space.using UnityEngine.SceneManagement;
+				if ( InputManager.instance.getKeyDown("A") ) {
+					continueDialogue( true );
+					resetPrintingVariables();
+				}
+			}			
 		}
+
 	}
 
 
@@ -114,7 +135,6 @@ public class DialogueManager : MonoBehaviour {
 
 		// If we're on a normal dialogue box, end node, and it hasn't been updated yet, call
 		// function again with continueToNextNode == false
-
 		if ( continueToNextNode && !currentNode.hasDialogueOptions && currentNode.isEndNode && dialogueNormal_text.GetComponent<Text>().text != currentNode.text) {
 			continueDialogue(false);
 		}
@@ -122,46 +142,12 @@ public class DialogueManager : MonoBehaviour {
 		// Deactivate dialogue box, if the nextNode is the endNode
 		else if (currentNode.isEndNode && continueToNextNode)
 		{
-			dialogueIsRunning = false;
-			
-			// Disable all dialogue types
-			GUIManager.instance.dialogueNormal.SetActive(false);
-			GUIManager.instance.dialogueChoice2.SetActive(false);
-			GUIManager.instance.dialogueChoice3.SetActive(false);
-
-			GUIManager.instance.call_OnDialogueEnd();
-
-			// Change scene, if necessary
-			if (currentNode.hasNextScene) {
-				SceneManager.LoadScene( currentNode.nextScene );
-			}
-
-			// Set dialoguebox to empty
-			dialogueNormal_text.GetComponent<Text>().text = "";
+			deactivateDialogueBox();
 		}
 
 		// Continue rendering dialogue
 		else {
-			// Set GUIManager.guiState based on what the current node type is
-			if (currentNode.hasDialogueOptions) {
-				// See how many options currentNode has 
-				switch (currentNode.dialogueOptions.Length) {
-					case 2:
-						GUIManager.instance.setGUIState(GUIState.DIALOGUE_CHOICE2);
-						break;
-					case 3:
-						GUIManager.instance.setGUIState(GUIState.DIALOGUE_CHOICE3);
-						break;
-					default:
-						Debug.Log("In DialogueManager.cs: current node doesn't have 2 or 3 dialogue options, when it" 
-								+ "said there would be dialogueOptions.");
-						printNode(currentNode);
-						break;
-				}
-			} 
-			else {
-				GUIManager.instance.setGUIState(GUIState.DIALOGUE_NORMAL);
-			}
+			setGUIState();
 
 			// Check GUI State, and run the type of Dialogue Box that is called for.
 			switch (GUIManager.instance.guiState) {
@@ -177,6 +163,7 @@ public class DialogueManager : MonoBehaviour {
 
 				case GUIState.DIALOGUE_CHOICE2:
 
+					// If we haven't set the text yet
 					if (dialogueSelectPending == false) {
 						// Set the option component texts
 						dialogueChoice2_questionText.GetComponent<Text>().text = currentNode.text;
@@ -193,9 +180,10 @@ public class DialogueManager : MonoBehaviour {
 						GetComponent<DialogueOptions>().selectedOption = 0;
 					}
 
+					// If the text has been set and we're just waiting for the submit button
 					else {
 						// Set next node based off the selected option in DialogueOptions.cs
-						if (continueToNextNode)
+						if (InputManager.instance.getKeyDown("A"))
 							currentNode = dialogueNodes[currentNode.nextNodes[ GetComponent<DialogueOptions>().selectedOption ]];
 						
 						// Disable DialogueOptions.cs
@@ -207,6 +195,7 @@ public class DialogueManager : MonoBehaviour {
 					break;
 
 				case GUIState.DIALOGUE_CHOICE3:
+
 					if (dialogueSelectPending == false) {
 						// Set the option component texts
 						dialogueChoice3_questionText.GetComponent<Text>().text = currentNode.text;
@@ -227,7 +216,8 @@ public class DialogueManager : MonoBehaviour {
 
 					else {
 						// Set next node based off the selected option in DialogueOptions.cs
-						currentNode = dialogueNodes[currentNode.nextNodes[ GetComponent<DialogueOptions>().selectedOption ]];
+						if (InputManager.instance.getKeyDown("A"))
+							currentNode = dialogueNodes[currentNode.nextNodes[ GetComponent<DialogueOptions>().selectedOption ]];
 						
 						// Disable DialogueOptions.cs
 						GetComponent<DialogueOptions>().enabled = false;
@@ -244,19 +234,155 @@ public class DialogueManager : MonoBehaviour {
 		}	
 	}
 
+
+	// This function runs when the dialogue hasn't finished printing.
+	void progressDialogue() {
+		
+		// Check for player B input, in which case skip to the end of the current printing process.
+		if (InputManager.instance.getKeyDown("B") ) {
+			
+			// Make dialogue text match that of the node's text
+			replaceText(currentNode.text);
+			printingDialogue = false;
+
+			return;
+		}
+
+		// Check if it's time to print another character.
+		else if ( Time.time - timeSinceLastPrint >= printTimeInterval ) {
+
+			timeSinceLastPrint = Time.time;
+
+			if (printedChars >= currentNode.text.Length) {
+				printingDialogue = false;
+				return;
+			}
+			
+			// Set the volume
+			float volume = 0.5f; 
+			if (currentNode.text[printedChars] == ' ')
+			{
+				volume = 0;
+			}
+			printedChars++; // Change text to include 1 more character
+			
+			// If the character being printed is a punctuation mark, create a small pause.
+			char[] punctuationArr = { '.', ',', '?', '!'};
+
+			if ( punctuationArr.Contains( currentNode.text[printedChars - 1]) ) {
+				timeSinceLastPrint += punctuationPauseTime;
+			}
+
+
+			// Replace the text
+			if (printedChars > 0) {
+				replaceText( currentNode.text.Substring(0, printedChars) );
+			}
+			else 
+				Debug.Log("ERROR (DialogueManager.cs): In progressDialogue(), printedChars should be > 0.");
+
+			// Activate character-printing sound fx
+			AudioManager.instance.activateSoundFx("dialogue_print", volume);
+
+		}
+
+		// Check if we've reached the end of the dialogue printing process
+		if (printedChars == currentNode.text.Length) {
+			printingDialogue = false;
+		}
+
+	}
+
+
+	// Replaces the dialogue box's text with newString
+	void replaceText(string newString) {
+
+		setGUIState();
+		switch (GUIManager.instance.guiState) {
+
+			case GUIState.DIALOGUE_NORMAL:
+				dialogueNormal_text.GetComponent<Text>().text = newString;
+				break;
+
+			default:
+				break;
+		}
+	}
+
+
 	// This isn't called from anywhere. Perhaps delete in future
 	public void ShowBox(string dialogue)
 	{
 		dialogueIsRunning = true;
 	}
 
+
 	// This activates the dialogue box. Called from DialogHolder.cs.
 	public void ActivateDialogue()
 	{
 		dialogueIsRunning = true;
+		resetPrintingVariables();
 
 		GUIManager.instance.call_OnDialogueStart();
 	}
+
+
+	// Deactivates all dialogue box components
+	void deactivateDialogueBox() {
+
+		dialogueIsRunning = false;
+			
+		// Disable all dialogue types
+		GUIManager.instance.dialogueNormal.SetActive(false);
+		GUIManager.instance.dialogueChoice2.SetActive(false);
+		GUIManager.instance.dialogueChoice3.SetActive(false);
+
+		GUIManager.instance.call_OnDialogueEnd();
+
+		// Change scene, if necessary
+		if (currentNode.hasNextScene) {
+			SceneManager.LoadScene( currentNode.nextScene );
+		}
+
+		// Set dialoguebox to empty
+		dialogueNormal_text.GetComponent<Text>().text = "";
+
+	}
+
+
+	// Sets the GUI state based on the current node
+	void setGUIState() {
+		// Set GUIManager.guiState based on what the current node type is
+		if (currentNode.hasDialogueOptions) {
+			// See how many options currentNode has 
+			switch (currentNode.dialogueOptions.Length) {
+				case 2:
+					GUIManager.instance.setGUIState(GUIState.DIALOGUE_CHOICE2);
+					break;
+				case 3:
+					GUIManager.instance.setGUIState(GUIState.DIALOGUE_CHOICE3);
+					break;
+				default:
+					Debug.Log("In DialogueManager.cs: current node doesn't have 2 or 3 dialogue options, when it" 
+							+ "said there would be dialogueOptions.");
+					printNode(currentNode);
+					break;
+			}
+		} 
+		else {
+			GUIManager.instance.setGUIState(GUIState.DIALOGUE_NORMAL);
+		}
+	}
+
+
+	// Prepares for printing a new node
+	void resetPrintingVariables() {
+
+		printingDialogue = true;
+		timeSinceLastPrint = Time.time;
+		printedChars = 0;
+	}
+
 
 	// Takes a row from the spreadsheet (as a string), and converts it to a dialogue node.
 	DialogueNode newDialogueNode(string line) 

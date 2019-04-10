@@ -15,7 +15,7 @@ public class ToggleFullscreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	//void Update () {
-	//	if ( InputManager.instance.getKeyUp("fullscreen") )
+	//	if ( InputManager.instance.getKeyDown("fullscreen") )
 	//	{
 	//		if (!Screen.fullScreen)
 	//		{

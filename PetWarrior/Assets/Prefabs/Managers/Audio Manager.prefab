@@ -276,10 +276,12 @@ MonoBehaviour:
   - battle
   - battle_final
   - ending
-  soundFxArray: []
-  soundFxStrings: []
-  bgMusicVolume: 0
-  soundFxVolume: 0
+  soundFxArray:
+  - {fileID: 8300000, guid: 1d235b24398a74434b04a65c8a20936a, type: 3}
+  soundFxStrings:
+  - dialogue_print
+  bgMusicVolume: 1
+  soundFxVolume: 0.7
   currentMusicHasIntro: 0
   currentBgMusic: {fileID: 0}
 --- !u!224 &224379858238651184
