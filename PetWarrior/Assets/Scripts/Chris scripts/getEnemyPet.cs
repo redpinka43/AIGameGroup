@@ -43,7 +43,6 @@ public class getEnemyPet : MonoBehaviour {
         thisPet.name = enemyPet.name;
         thisPet.animal = enemyPet.animal;
         thisPet.image = enemyPet.image;
-        thisPet.species = enemyPet.species;
         thisPet.health = enemyPet.health;
         thisPet.currentHealth = enemyPet.currentHealth;
 
