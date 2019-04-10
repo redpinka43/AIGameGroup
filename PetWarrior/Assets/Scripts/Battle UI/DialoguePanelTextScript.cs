@@ -82,7 +82,12 @@ public class DialoguePanelTextScript : MonoBehaviour
             if (callFlag == false)
             {
                 if (moveName == "Nip")
-                    txt.text = playerPet.name + " nipped the opponent for " + moveOne.Nip() + " damage";
+                {
+                    txt.text = playerPet.name + " nipped the opponent for " + moveOne.Nip() + " damage.";
+
+                    
+                }
+
                 if (moveName == "Dance")
                     txt.text = playerPet.name + " did a little dance! Enemy Defense lowered by: " + moveOne.Dance();
                 if (moveName == "Sticky Slap")
@@ -122,7 +127,21 @@ public class DialoguePanelTextScript : MonoBehaviour
                 {
                     FurySwipes();
                 }
-                
+
+                if (playerPet.hasAdvanatage == true)
+                {
+                    
+                    txt.text += "\n\n<color=green>(btw..." +playerPet.animal +"s are obviously strong against " +enemyPet.animal +"s "+ "so that attack dealt more damage than usual.)</color>";
+                    playerPet.hasAdvanatage = false;
+
+                }
+                if (playerPet.hasDisadvantage == true)
+                {
+
+                    txt.text += "\n\n<color=red>(btw..." + playerPet.animal + "s are obviously weak against " + enemyPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+                    playerPet.hasDisadvantage = false;
+
+                }
 
                 callFlag = true;
             }
@@ -138,6 +157,7 @@ public class DialoguePanelTextScript : MonoBehaviour
         int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
         int total = 0;
         feedBackTextButton.interactable = false;
+        damage = moveOne.AnimalAdvantage(damage);
 
 
         txt.text = playerPet.name + " begins throwing acorns!";
@@ -210,6 +230,20 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         txt.text = playerPet.name + " dealt " + total + " total damage!";
 
+        if (playerPet.hasAdvanatage == true)
+        {
+
+            txt.text += "\n\n<color=green>(btw..." + playerPet.animal + "s are obviously strong against " + enemyPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            playerPet.hasAdvanatage = false;
+
+        }
+        if (playerPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + playerPet.animal + "s are obviously weak against " + enemyPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            playerPet.hasDisadvantage = false;
+
+        }
         yield return new WaitForSeconds(.5f);
         feedBackTextButton.interactable = true;
 
@@ -223,6 +257,7 @@ public class DialoguePanelTextScript : MonoBehaviour
     public IEnumerator GamePauserFS()
     {
         int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
+        damage = moveOne.AnimalAdvantage(damage);
         int total = 0;
         feedBackTextButton.interactable = false;
 
@@ -296,6 +331,20 @@ public class DialoguePanelTextScript : MonoBehaviour
         // total damage
         yield return new WaitForSeconds(1.0f);
         txt.text = playerPet.name + " dealt " + total + " total damage!";
+        if (playerPet.hasAdvanatage == true)
+        {
+
+            txt.text += "\n\n<color=green>(btw..." + playerPet.animal + "s are obviously strong against " + enemyPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            playerPet.hasAdvanatage = false;
+
+        }
+        if (playerPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + playerPet.animal + "s are obviously weak against " + enemyPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            playerPet.hasDisadvantage = false;
+
+        }
 
         yield return new WaitForSeconds(.5f);
         feedBackTextButton.interactable = true;

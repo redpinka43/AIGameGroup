@@ -243,6 +243,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 5
   moves:
   - Nip
   - Dance
@@ -372,6 +375,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance
@@ -540,6 +546,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance
@@ -720,6 +729,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance
@@ -864,6 +876,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance
@@ -921,6 +936,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance
@@ -1082,6 +1100,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Sticky Slap
@@ -1139,6 +1160,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance
@@ -1419,6 +1443,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   moveNum: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
   moves:
   - Nip
   - Dance

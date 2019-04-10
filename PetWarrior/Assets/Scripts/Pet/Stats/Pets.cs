@@ -8,7 +8,6 @@ public class Pets : MonoBehaviour
     public string name;
     public string animal;
     public Sprite image;
-    public Species species;
     public int health;
     public int currentHealth;
 
@@ -20,19 +19,16 @@ public class Pets : MonoBehaviour
 
     public int special;
     public int speed;
+
     public int moveNum;
+
+    public int level;
+    public int currentXP;
+    public int xpNeeded;
+
+    public bool hasAdvanatage;
+    public bool hasDisadvantage;
+
     public List<string> moves = new List<string>();
-
-    public enum Species
-    {
-        Gecko,
-        Turtle,
-        Squirrel,
-        Bird,
-        Dog,
-        Cat,
-        Rat
-    }
-
 
 }

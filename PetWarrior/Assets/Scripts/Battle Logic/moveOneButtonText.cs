@@ -82,7 +82,8 @@ public class moveOneButtonText : MonoBehaviour
     public int Nip()
     {
         int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
-
+        damage = AnimalAdvantage(damage);
+        Debug.Log("ACTUAL DAMAGE:" + damage);
         return damage;
     }
 
@@ -112,8 +113,8 @@ public class moveOneButtonText : MonoBehaviour
             damage = 0;
 
         }
+        damage = AnimalAdvantage(damage);
         enemyPet.currentHealth -= damage;
-
         return damage;
     }
 
@@ -153,4 +154,144 @@ public class moveOneButtonText : MonoBehaviour
         num = UnityEngine.Random.Range(min, max + 1);
         return num;
     }
+
+    public int AnimalAdvantage(int damage)
+    {
+        int newVal = damage;
+        int newValAdvantage = (int)Math.Ceiling((double)damage * 1.5);
+        int newValDisadvantage = (int)Math.Ceiling((double)damage * 0.5);
+        string pet1 = playerPet.animal;
+        string pet2 = enemyPet.animal;
+        
+        if(pet1 == "Gecko" && pet2 == "Bird")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+            
+        }
+        if (pet1 == "Gecko" && pet2 == "Dog")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Gecko" && pet2 == "Cat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Turtle" && pet2 == "Bird")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Turtle" && pet2 == "Rat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Bird" && pet2 == "Gecko")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Bird" && pet2 == "Turtle")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+
+        }
+        if (pet1 == "Bird" && pet2 == "Cat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Bird" && pet2 == "Rat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Dog" && pet2 == "Gecko")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Dog" && pet2 == "Cat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Gecko")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Bird")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Dog")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Rat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Rat" && pet2 == "Turtle")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValAdvantage;
+            playerPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Rat" && pet2 == "Bird")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Rat" && pet2 == "Cat")
+        {
+            Debug.Log(pet1 + "is fighting a " + pet2);
+            newVal = newValDisadvantage;
+            playerPet.hasDisadvantage = true;
+
+        }
+
+        return newVal;
+    }
+        
 }

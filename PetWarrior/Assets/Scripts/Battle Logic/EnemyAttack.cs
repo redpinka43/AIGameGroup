@@ -78,7 +78,20 @@ public class EnemyAttack : MonoBehaviour
                 FurySwipes();
             }
         }
+        if (enemyPet.hasAdvanatage == true)
+        {
 
+            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are obviously strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            enemyPet.hasAdvanatage = false;
+
+        }
+        if (enemyPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are obviously weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            enemyPet.hasDisadvantage = false;
+
+        }
         callFlag = true;
     }
 
@@ -86,6 +99,7 @@ public class EnemyAttack : MonoBehaviour
     public int Nip()
     {
         int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
+        damage = AnimalAdvantage(damage);
         playerPet.currentHealth -= damage;
         return damage;
     }
@@ -117,6 +131,7 @@ public class EnemyAttack : MonoBehaviour
             damage = 0;
 
         }
+        damage = AnimalAdvantage(damage);
         playerPet.currentHealth -= damage;
 
         return damage;
@@ -147,6 +162,7 @@ public class EnemyAttack : MonoBehaviour
     {
         int damage = (int)(Math.Ceiling((double)playerPet.attack / (double)enemyPet.defense));
         int total = 0;
+        damage = AnimalAdvantage(damage);
         enemyFeedBackTextButton.interactable = false;
 
 
@@ -219,7 +235,20 @@ public class EnemyAttack : MonoBehaviour
         // total damage
         yield return new WaitForSeconds(1.0f);
         txt.text = enemyPet.name + " dealt " + total + " total damage!";
+        if (enemyPet.hasAdvanatage == true)
+        {
 
+            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are obviously strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            enemyPet.hasAdvanatage = false;
+
+        }
+        if (enemyPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are obviously weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            enemyPet.hasDisadvantage = false;
+
+        }
         yield return new WaitForSeconds(.5f);
         enemyFeedBackTextButton.interactable = true;
 
@@ -234,6 +263,7 @@ public class EnemyAttack : MonoBehaviour
     {
         int damage = (int)(Math.Ceiling((double)playerPet.attack / (double)enemyPet.defense));
         int total = 0;
+        damage = AnimalAdvantage(damage);
         enemyFeedBackTextButton.interactable = false;
 
 
@@ -306,11 +336,26 @@ public class EnemyAttack : MonoBehaviour
         // total damage
         yield return new WaitForSeconds(1.0f);
         txt.text = enemyPet.name + " dealt " + total + " total damage!";
+        if (enemyPet.hasAdvanatage == true)
+        {
 
+            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are obviously strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            enemyPet.hasAdvanatage = false;
+
+        }
+        if (enemyPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are obviously weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            enemyPet.hasDisadvantage = false;
+
+        }
         yield return new WaitForSeconds(.5f);
         enemyFeedBackTextButton.interactable = true;
 
     }
+
+
 
     int RNG(int min, int max)
     {
@@ -319,4 +364,124 @@ public class EnemyAttack : MonoBehaviour
         return num;
     }
 
+    public int AnimalAdvantage(int damage)
+    {
+        int newVal = damage;
+        int newValAdvantage = (int)Math.Ceiling((double)damage * 1.5);
+        int newValDisadvantage = (int)Math.Ceiling((double)damage * 0.5);
+        string pet2 = playerPet.animal;
+        string pet1 = enemyPet.animal;
+
+        if (pet1 == "Gecko" && pet2 == "Bird")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Gecko" && pet2 == "Dog")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Gecko" && pet2 == "Cat")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Turtle" && pet2 == "Bird")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Turtle" && pet2 == "Rat")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Bird" && pet2 == "Gecko")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Bird" && pet2 == "Turtle")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+
+        }
+        if (pet1 == "Bird" && pet2 == "Cat")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Bird" && pet2 == "Rat")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Dog" && pet2 == "Gecko")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Dog" && pet2 == "Cat")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Gecko")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Bird")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Dog")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Cat" && pet2 == "Rat")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Rat" && pet2 == "Turtle")
+        {
+            newVal = newValAdvantage;
+            enemyPet.hasAdvanatage = true;
+
+        }
+        if (pet1 == "Rat" && pet2 == "Bird")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+        if (pet1 == "Rat" && pet2 == "Cat")
+        {
+            newVal = newValDisadvantage;
+            enemyPet.hasDisadvantage = true;
+
+        }
+
+        return newVal;
+    }
 }
