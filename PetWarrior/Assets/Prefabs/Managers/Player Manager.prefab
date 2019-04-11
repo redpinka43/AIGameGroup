@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3d8765f7e4d411fb043f7e66e17e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewAngle: 70
+  viewAngle: 60
   playerObject: {fileID: 0}

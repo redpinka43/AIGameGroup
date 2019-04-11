@@ -8732,6 +8732,11 @@ Prefab:
       propertyPath: bgMusic
       value: battle
       objectReference: {fileID: 0}
+    - target: {fileID: 114292057982560124, guid: 925953beffb0c4220859f1010bcccd69,
+        type: 2}
+      propertyPath: sceneGameState
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925953beffb0c4220859f1010bcccd69, type: 2}
   m_IsPrefabAsset: 0

@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour {
 
 	private bool playerIsMoving;
 	public Vector2 lastMove;
+	public Vector2 lastMoveBeforeSceneChange;
 	public bool lockedInPlace;
-    public bool canMove;
+    public bool canMove; // This is the variable to set if you want to disable movement
+	public bool enablePlayerDirectionChanging = true;
     public string startPoint;	
 	public Gender gender;
 	public float viewAngle; // 70 seems to be a good angle.
@@ -38,9 +40,10 @@ public class PlayerController : MonoBehaviour {
 		if (instance == null)
 		{
 			instance = this;
-			DontDestroyOnLoad(transform.gameObject);
+			DontDestroyOnLoad(gameObject);
 		} else {
 			Destroy (gameObject);
+			return;
 		}
 	}
 
@@ -54,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		myRigidbody = GetComponent<Rigidbody2D>();
-        canMove = true;
+		canMove = true;
         lockedInPlace = false;
 	}
 	
@@ -79,9 +82,59 @@ public class PlayerController : MonoBehaviour {
 			anim.SetBool("PlayerMoving", false);
 		}
 
+		// If you just loaded a new scene and the startPoint's start direction is different from the direction
+		// you were just moving in, then wait for that direction's keys to come up/stop.
+		else if (!enablePlayerDirectionChanging) {
+			
+			if (lastMoveBeforeSceneChange == new Vector2(0, -1)) { // Facing down
+				if (InputManager.instance.getKeyUp("down")) {
+					enablePlayerDirectionChanging = true;
+				}
+				else if (InputManager.instance.getKeyDown("up") 
+					  || InputManager.instance.getKeyDown("right") 
+					  || InputManager.instance.getKeyDown("left")) {
+					enablePlayerDirectionChanging = true;
+				}
+			}
+			else if (lastMoveBeforeSceneChange == new Vector2(0, 1)) { // Facing up
+				if (InputManager.instance.getKeyUp("up")) {
+					enablePlayerDirectionChanging = true;
+				}
+				else if (InputManager.instance.getKeyDown("down") 
+					  || InputManager.instance.getKeyDown("right") 
+					  || InputManager.instance.getKeyDown("left")) {
+					enablePlayerDirectionChanging = true;
+				}
+			}
+			else if (lastMoveBeforeSceneChange == new Vector2(-1, 0)) { // Facing left
+				if (InputManager.instance.getKeyUp("left")) {
+					enablePlayerDirectionChanging = true;
+				}
+				else if (InputManager.instance.getKeyDown("up") 
+					  || InputManager.instance.getKeyDown("right") 
+					  || InputManager.instance.getKeyDown("down")) {
+					enablePlayerDirectionChanging = true;
+				}
+			}
+			else if (lastMoveBeforeSceneChange == new Vector2(1, 0)) { // Facing right
+				if (InputManager.instance.getKeyUp("right")) {
+					enablePlayerDirectionChanging = true;
+				}
+				else if (InputManager.instance.getKeyDown("up") 
+					  || InputManager.instance.getKeyDown("down") 
+					  || InputManager.instance.getKeyDown("left")) {
+					enablePlayerDirectionChanging = true;
+				}
+			}
+			else {
+				Debug.Log("ERROR (PlayerController.cs): lastMoveBeforeSceneChange is invalid Vector2 value.");
+			}
+
+		}
+
 		else {  // Player can move 
 			// Move horizontal
-			if (InputManager.instance.getKeyDown("left") || InputManager.instance.getKeyDown("right"))
+			if (InputManager.instance.getKeyDownUndebounced("left") || InputManager.instance.getKeyDownUndebounced("right"))
 			{
 				myRigidbody.velocity = new Vector2(axisRaw_Horizontal * moveSpeed, myRigidbody.velocity.y);
 				playerIsMoving = true;
@@ -89,7 +142,7 @@ public class PlayerController : MonoBehaviour {
 			}
 
 			// Move vertical
-			if (InputManager.instance.getKeyDown("up") || InputManager.instance.getKeyDown("down"))
+			if (InputManager.instance.getKeyDownUndebounced("up") || InputManager.instance.getKeyDownUndebounced("down"))
 			{
 				myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, axisRaw_Vertical * moveSpeed);
 				playerIsMoving = true;
@@ -97,13 +150,13 @@ public class PlayerController : MonoBehaviour {
 			}
 
 			// Stay in place horizontal
-			if ( !InputManager.instance.getKeyDown("left") && !InputManager.instance.getKeyDown("right"))
+			if ( !InputManager.instance.getKeyDownUndebounced("left") && !InputManager.instance.getKeyDownUndebounced("right"))
 			{
 				myRigidbody.velocity = new Vector2(0f, myRigidbody.velocity.y);
 			}
 
 			// Stay in place vertical
-			if ( !InputManager.instance.getKeyDown("up") && !InputManager.instance.getKeyDown("down") )
+			if ( !InputManager.instance.getKeyDownUndebounced("up") && !InputManager.instance.getKeyDownUndebounced("down") )
 			{
 				myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0f);
 			}
@@ -111,9 +164,14 @@ public class PlayerController : MonoBehaviour {
 			anim.SetFloat("MoveX", axisRaw_Horizontal);
 			anim.SetFloat("MoveY", axisRaw_Vertical);
 			anim.SetBool("PlayerMoving", playerIsMoving);
-			anim.SetFloat("LastMoveX", lastMove.x);
-			anim.SetFloat("LastMoveY", lastMove.y);
+			setFacingDirection(lastMove);
 		}		
+	}
+
+	public void setFacingDirection (Vector2 direction) {
+		
+		anim.SetFloat("LastMoveX", direction.x);
+		anim.SetFloat("LastMoveY", direction.y);
 	}
 
 	// Called whenever GUIManager.OnDialogueStart() event is called

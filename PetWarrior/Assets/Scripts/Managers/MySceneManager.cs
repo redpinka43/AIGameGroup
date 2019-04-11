@@ -11,6 +11,9 @@ public class MySceneManager : MonoBehaviour {
 	public delegate void OnSceneChangeHandler();
 	public static event OnSceneChangeHandler OnSceneChange;
 
+	// Battle scene saving variables
+	public string lastOverworldScene;
+
 	void Awake() {
 		// Singleton Pattern
 		if (instance == null) {
@@ -30,6 +33,14 @@ public class MySceneManager : MonoBehaviour {
 			GameManager.instance.onSceneChangePrep();
 			OnSceneChange();
 		}
+	}
+
+	// Loads a battle scene while saving important variables about the player
+	public void loadBattleScene() {
+		
+		// Save current scene. Player direction and player position should stay the same, I'm pretty sure.
+		lastOverworldScene = SceneManager.GetActiveScene().name;
+		SceneManager.LoadScene("battleScreen");
 	}
 
 }

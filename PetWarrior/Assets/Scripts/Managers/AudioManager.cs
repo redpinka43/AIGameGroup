@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour {
 	public string[] bgMusicStrings;
 
 	// Sound effects lists
-	public IntroloopAudio[] soundFxArray;
+	public AudioClip[] soundFxArray;
 	public string[] soundFxStrings;
 
 	// Class variables
@@ -97,12 +97,13 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	// Plays a sound effect matching the string newSoundFx
-	void activateSoundFx(string newSoundFxString) {
+	public void activateSoundFx(string newSoundFxString, float volume) {
 		
-		IntroloopAudio newSoundFx = soundFxArray[ Array.IndexOf(soundFxStrings, newSoundFxString) ];
-		// soundFxObject.GetComponent<AudioSource>().clip = newSoundFx;
-		// Idk do i need to activate the music now?
+		AudioClip newSoundFx = soundFxArray[ Array.IndexOf(soundFxStrings, newSoundFxString) ];
+		soundFxObject.GetComponent<AudioSource>().clip = newSoundFx;
+		soundFxObject.GetComponent<AudioSource>().volume = volume;
 
+		soundFxObject.GetComponent<AudioSource>().Play();
 	}
 
 }
