@@ -15,7 +15,7 @@ public class moveOneButtonText : MonoBehaviour
     private Pets enemyPet;
     public string usedMove;
     Text txt;
-
+    public StatusEffects effect;
 
     private void Awake()
     {
@@ -48,31 +48,6 @@ public class moveOneButtonText : MonoBehaviour
             return;
         }
 
-        switch (usedMove)
-        {
-            case "Nip":
-                enemyPet.currentHealth -= Nip();
-                break;
-            case "Dance":
-                enemyPet.defense -= Dance();
-                break;
-            case "Sticky Slap":
-                break;
-            case "Shed Skin":
-                ShedSkin();
-                break;
-            case "Shell":
-                break;
-            case "Growl":
-                break;
-            case "Acorn Throw":
-                break;
-            case "Fury Swipes":
-                break;
-            default:
-                Debug.Log("No such move");
-                break;
-        }
         ppLeft--;
 
 
@@ -148,6 +123,17 @@ public class moveOneButtonText : MonoBehaviour
         enemyPet.defense -= val;
         return val;
     }
+
+    public void Cringe()
+    {
+        effect = new StatusEffects();
+        effect.effectType = "Cringe";
+        effect.endAfter = 3;
+        enemyPet.statusEffects.Add(effect);
+        
+    }
+
+
     int RNG(int min, int max)
     {
         int num;

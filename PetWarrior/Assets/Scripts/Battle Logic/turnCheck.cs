@@ -19,6 +19,12 @@ public class turnCheck : MonoBehaviour
     public GameObject feedBackPanel;
     public GameObject enemyFeedBackPanel;
     public GameObject startBattlePanel;
+
+
+    public int turnNumber;
+    public int startStatusEffectTurn;
+    public int endStatusEffectTurn;
+
     private void Start()
     {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
