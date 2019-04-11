@@ -36,10 +36,10 @@ public class DialogHolder : MonoBehaviour {
 	public Vector2 centerOfZone;
 	public bool debugging;
 
-	private float viewConeAngle;
+	protected float viewConeAngle;
 
 	// Use this for initialization
-	void Start () {
+	protected void Start () {
 
 		// Calculate center of zone
 		float xPos = gameObject.GetComponent<Transform>().position.x;
@@ -54,11 +54,7 @@ public class DialogHolder : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-	}
-	
+	// When player is in the collider area and presses A, activate the dialogue box
 	void OnTriggerStay2D(Collider2D other) 
 	{
 		if(other.gameObject == PlayerManager.instance.playerObject)
@@ -78,7 +74,7 @@ public class DialogHolder : MonoBehaviour {
 	}
 
 	// Checks if the player is facing the center of the collision box / object
-	bool playerFacingObject() {
+	protected bool playerFacingObject() {
 		
 		// Get player object info
 		float playerX = PlayerManager.instance.playerObject.GetComponent<Transform>().position.x;
@@ -106,7 +102,7 @@ public class DialogHolder : MonoBehaviour {
 	}
 
 	// This finds the angle that the player is facing
-	float findPlayerAngle() {
+	protected float findPlayerAngle() {
 
 		Vector2 playerFacingVector = PlayerManager.instance.playerObject.GetComponent<PlayerController>().lastMove;
 		
@@ -132,7 +128,7 @@ public class DialogHolder : MonoBehaviour {
 
 	// Calculates the object view cone angle, aka the angle of the object to the direction the
 	// player is facing.
-	float calcObjectViewCone(float playerX, float playerY, float playerAngle) {
+	protected float calcObjectViewCone(float playerX, float playerY, float playerAngle) {
 		
 		// For the record, playerX and playerY represent 
 		// playerObjectXOffset and playerObjectYOffset
@@ -200,7 +196,6 @@ public class DialogHolder : MonoBehaviour {
 				objectViewCone = 90 - objectViewCone;
 			}
 		}
-		Debug.Log("playerX = " + playerX + ", playerY = " + playerY);
 
 		if (debugging)
 			Debug.Log("after calculation: objectViewCone = " + objectViewCone);

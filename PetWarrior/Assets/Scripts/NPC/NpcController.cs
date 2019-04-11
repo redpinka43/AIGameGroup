@@ -1,56 +1,176 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NpcController : MonoBehaviour {
 
+	public enum NpcSkin
+	{
+		DEFAULT, 	// Fall-back state, should never happen
+		BOY,		// 1
+		GENTLEMAN,	// 2
+		GOTHGIRL,	// 3
+		LADY,
+		MARY,
+		NERD,
+		SHOPKEEP
+	}
+	public NpcSkin npcSkin;
+	public string spriteSheetName;
+	private string[] spriteSheetNames;
+
+	private Rigidbody2D myRigidbody;
 	public float moveSpeed;
+	private Animator anim;
 
-	private Rigidbody2D myRigidBody;
+	// Movement
+	Vector2 currentWalkDistance;
+	Vector2 walkStartPosition;
 
-	private bool moving;
+	// Debug
+	public bool testingMovement = false;
+	public Vector2 testVector;
 
-	public float timeBetweenMove;
-	private float timeBetweenMoveCounter;
-	public float timeToMove;
-	private float timeToMoveCounter;
 
-	private Vector3 moveDirection;
+	#region MONOBEHAVIOR
 
 	// Use this for initialization
 	void Start () {
-		myRigidBody = GetComponent<Rigidbody2D>();
 
-		timeBetweenMoveCounter = timeBetweenMove;
-		timeToMoveCounter = timeToMove;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (moving)
-		{
-			timeToMoveCounter -= Time.deltaTime;
-			myRigidBody.velocity = moveDirection;
+		// Initialize based on the npcSkin value
+		spriteSheetNames = new string[] {"npc_boy",
+									 	 "npc_gentleman",
+										 "npc_gothgirl",
+										 "npc_lady",
+										 "npc_mary",
+										 "npc_nerd",
+										 "npc_shopkeep" };
 
-			if (timeToMoveCounter < 0f)
-			{
-				moving = false;
-				timeBetweenMoveCounter = timeBetweenMove;
-			}
-			
-		} else {
-			timeBetweenMoveCounter -= Time.deltaTime;
-			myRigidBody.velocity = Vector2.zero; 
-			
-			if (timeBetweenMoveCounter < 0f)
-			{
-				moving = true;
-				timeToMoveCounter = timeToMove;
+		if (npcSkin == NpcSkin.DEFAULT) {
+			Debug.Log("ERROR (NpcController.cs): npcSkin hasn't been set to a valid value.");
 
-				moveDirection = new Vector3(Random.Range (-1f, 1f) * moveSpeed, Random.Range(-1, 1f) * moveSpeed, 0f);
-			}				
+		}
+		else {
+			spriteSheetName = spriteSheetNames[(int) npcSkin - 1];
 		}
 
+		myRigidbody = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
+	
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+		// Test function
+		if (testingMovement) {
+			if (walk( testVector )) {
+				Debug.Log("Walked " + testVector.x + " in X axis, and " + testVector.y + " in Y axis.");
+			}
+			
+			testingMovement = false;
+		}
+
+		// If walking
+		if (currentWalkDistance != Vector2.zero) {
+
+			// Check if we're done walking
+			if ( Mathf.Abs( transform.position.x - walkStartPosition.x ) >= Mathf.Abs(currentWalkDistance.x)
+			  && Mathf.Abs( transform.position.y - walkStartPosition.y ) >= Mathf.Abs(currentWalkDistance.y) ) {
+
+				// Set direction to face
+				anim.SetFloat("LastMoveX", currentWalkDistance.normalized.x);
+				anim.SetFloat("LastMoveY", currentWalkDistance.normalized.y);
+				anim.SetBool("PlayerMoving", false);
+
+				// Stop movement
+				currentWalkDistance = Vector2.zero;
+				myRigidbody.velocity = Vector2.zero;
+				anim.SetFloat("MoveX", 0f);
+				anim.SetFloat("MoveY", 0f);
+			}
+		}
 
 	}
+
+	// This is where the spritesheet is corrected to fit the type of NPC
+	void LateUpdate() {
+		
+		if (npcSkin != NpcSkin.DEFAULT) {
+			var newSprites = Resources.LoadAll<Sprite>("NPCs/" + spriteSheetName);
+
+			foreach (var renderer in GetComponentsInChildren<SpriteRenderer>()) {
+				string spriteName = renderer.sprite.name;
+				var newSprite = Array.Find(newSprites, item => item.name == spriteName);
+
+				if (newSprite) {
+					renderer.sprite = newSprite;
+				}
+			}
+		}
+		
+	}
+
+	#endregion
+
+
+	#region MOVEMENT
+
+	// Walks a distance specified like "new Vector2(0, 200)"
+	public bool walk(Vector2 distance) {
+
+		// Check if we still need to finish a current walk
+		if (distance == Vector2.zero || currentWalkDistance != Vector2.zero) {
+			return false;
+		}
+
+		currentWalkDistance = distance;
+		walkStartPosition = new Vector2(transform.position.x, transform.position.y);
+
+		// Set velocity
+		distance.Normalize();
+		myRigidbody.velocity = new Vector2( distance.x * moveSpeed, distance.y * moveSpeed );
+
+		anim.SetFloat("MoveX", distance.x);
+		anim.SetFloat("MoveY", distance.y);
+		anim.SetBool("PlayerMoving", true);
+
+		return true;
+	}
+
+	#endregion
+
+	// Sets the direction the NPC is facing
+	public void setNpcAngle(float angle) {
+
+		Vector2 NpcDirection;
+
+		switch((int)angle) {
+			case 0:
+				NpcDirection = new Vector2(1f, 0f);
+				break;
+			case 90:
+				NpcDirection = new Vector2(0f, 1f);
+				break;
+			case 180:
+				NpcDirection = new Vector2(-1f, 0f);
+				break;
+			case 270:
+				NpcDirection = new Vector2(0f, -1f);
+				break;
+
+			default:
+				Debug.Log("ERROR (NpcController.cs): angle passed to setNpcAngle not valid.");
+				NpcDirection = new Vector2(0f, 0f);
+				break;
+		}
+
+		anim.SetFloat("LastMoveX", NpcDirection.x);
+		anim.SetFloat("LastMoveY", NpcDirection.y);
+
+	}
+
+	
+
 }
