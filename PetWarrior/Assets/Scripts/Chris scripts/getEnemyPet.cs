@@ -56,6 +56,7 @@ public class getEnemyPet : MonoBehaviour {
         thisPet.speed = enemyPet.speed;
         thisPet.moveNum = enemyPet.moveNum;
         thisPet.moves = enemyPet.moves;
+        thisPet.statusEffects.Clear();
         RandomizeStatsForPet(thisPet);
 
         return thisPet;

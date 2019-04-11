@@ -14,7 +14,8 @@ public class EnemyAttack : MonoBehaviour
     public string feedBackString;
     private moveOneButtonText moveOne;
     public Button enemyFeedBackTextButton;
-
+    public StatusEffects effect;
+    private bool hasStatus = false;
     public bool callFlag = false;
     private void Awake()
     {
@@ -35,8 +36,81 @@ public class EnemyAttack : MonoBehaviour
     {
         callFlag = false;
         moveName = enemyPet.moves[UnityEngine.Random.Range(0, 3)];
-        Debug.Log(moveName);
 
+    }
+    public void AvoidDuplicateStatus()
+    {
+        foreach (StatusEffects status in playerPet.statusEffects)
+        {
+            // the enemy is trying to use a status effect that already exists on the player pet
+            if (status.effectType == moveName)
+            {
+                // look through the other moves, if it's NOT that duplicate effect, just use that instead
+                for(int i = 0;i < enemyPet.moves.Count; i++)
+                {
+                    if (enemyPet.moves[i] != moveName)
+                    {
+                        moveName = enemyPet.moves[i];
+                        break;
+                    }
+                }
+            }
+    }
+   
+
+        foreach (StatusEffects status in enemyPet.statusEffects)
+        {
+            if (status.effectType == "Cringe")
+            {
+
+                status.endAfter--;
+                if (status.endAfter < 1)
+                {
+                    moveName = "";
+                    txt.text = enemyPet.name + " completely forgets why it was cringing.";
+                    StatusRemoved();
+                    playerPet.statusEffects.Remove(status);
+                    break;
+                }
+
+                if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                {
+                    moveName = "";
+                    txt.text = "Oh god..." + enemyPet.name + " remembers the cringe. It can't move!";
+                    StatusEffectOccurs();
+                }
+            }
+        }
+
+    }
+
+    public void StatusEffectOccurs()
+    {
+        StartCoroutine(StatusFeedback(2));
+    }
+    public void StatusRemoved()
+    {
+        StartCoroutine(StatusFeedback(3));
+    }
+    public IEnumerator StatusFeedback(int val)
+    {
+        if (val == 2)
+        {
+            enemyFeedBackTextButton.interactable = false;
+
+            yield return new WaitForSeconds(1.0f);
+
+            enemyFeedBackTextButton.interactable = true;
+        }
+        if (val == 3)
+        {
+            enemyFeedBackTextButton.interactable = false;
+
+            yield return new WaitForSeconds(1.5f);
+            callFlag = false;
+
+            enemyFeedBackTextButton.interactable = true;
+        }
     }
     private void Update()
     {
@@ -45,6 +119,9 @@ public class EnemyAttack : MonoBehaviour
 
         if (callFlag == false)
         {
+            // checks that it doesn't try to pointlessly add a status effect twice
+            AvoidDuplicateStatus();
+
             if (moveName == "Nip")
                 txt.text = enemyPet.name + " nipped " + playerPet.name + " for " + Nip() + " damage! ";
             if (moveName == "Dance")
@@ -76,6 +153,32 @@ public class EnemyAttack : MonoBehaviour
                 Debug.Log("here");
 
                 FurySwipes();
+            }
+            if (moveName == "Shell")
+            {
+                txt.text = enemyPet.name + " hid inside it's shell! It's defense rose by " + Shell();
+            }
+
+            if (moveName == "Cringe")
+            {
+                // already has cringe effect
+                foreach (StatusEffects status in playerPet.statusEffects)
+                {
+                    if (status.effectType == "Cringe")
+                    {
+                        txt.text = "The enemy " +enemyPet.name +" tries to make " +playerPet.name +" cringe, but " +playerPet.name +" is still cringing from the last time..";
+                        hasStatus = true;
+                    }
+                }
+
+                if (hasStatus == false)
+                {
+
+                    Cringe();
+                    CringeText();
+                }
+
+                hasStatus = false;
             }
         }
         if (enemyPet.hasAdvanatage == true)
@@ -116,6 +219,50 @@ public class EnemyAttack : MonoBehaviour
         playerPet.defense -= val;
 
         return val;
+    }
+
+    public int Shell()
+    {
+        int boost = (int)Math.Ceiling((double)enemyPet.defense * .2);
+        enemyPet.defense += boost;
+        return boost;
+    }
+
+    public void Cringe()
+    {
+        effect = new StatusEffects();
+        effect.effectType = "Cringe";
+        effect.endAfter = 3;
+        playerPet.statusEffects.Add(effect);
+
+    }
+    public void CringeText()
+    {
+        int rngval = RNG(1, 4);
+
+
+        switch (rngval)
+        {
+            case (1):
+                txt.text = enemyPet.name + " says \"#all lives matter\"...\n\n";
+                break;
+            case (2):
+                txt.text = enemyPet.name + " reminds " + playerPet.name + " they responded \"you too\" to a waiter that said to enjoy their meal.\n\n";
+                break;
+            case (3):
+                txt.text = enemyPet.name + " tells a bad joke. It wasn't even close to being funny.\n\n";
+                break;
+            case (4):
+                txt.text = enemyPet.name + " says that they honestly believe the moon landing was faked.\n\n";
+                break;
+            default:
+                break;
+
+        }
+
+        txt.text += playerPet.name + " can't help but cringe for a few turns.";
+
+
     }
 
     public int StickySlap()

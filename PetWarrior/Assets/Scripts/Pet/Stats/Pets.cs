@@ -29,6 +29,8 @@ public class Pets : MonoBehaviour
     public bool hasAdvanatage;
     public bool hasDisadvantage;
 
+    public List<StatusEffects> statusEffects = new List<StatusEffects>();
+
     public List<string> moves = new List<string>();
 
 }

@@ -1121,10 +1121,11 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  statusEffects: []
   moves:
+  - Cringe
   - Nip
-  - Nip
-  - Nip
+  - Cringe
 --- !u!4 &169310797
 Transform:
   m_ObjectHideFlags: 0
@@ -3362,6 +3363,7 @@ MonoBehaviour:
   ppLeft: 30
   ppTotal: 30
   usedMove: 
+  effect: {fileID: 0}
 --- !u!114 &617986891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6962,6 +6964,7 @@ GameObject:
   - component: {fileID: 1170620975}
   - component: {fileID: 1170620974}
   - component: {fileID: 1170620976}
+  - component: {fileID: 1170620977}
   m_Layer: 0
   m_Name: playerPet
   m_TagString: Untagged
@@ -6984,7 +6987,7 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 0}
   health: 25
-  currentHealth: 5
+  currentHealth: 20
   maxAttack: 10
   attack: 10
   maxDefense: 10
@@ -6997,8 +7000,9 @@ MonoBehaviour:
   xpNeeded: 5
   hasAdvanatage: 0
   hasDisadvantage: 0
+  statusEffects: []
   moves:
-  - Nip
+  - Cringe
   - Dance
   - Sticky Slap
   - Shed Skin
@@ -7028,6 +7032,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPet: {fileID: 0}
   thisPet: {fileID: 0}
+--- !u!114 &1170620977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170620973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5192c17b87047a3489bd9ef6d76e2797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 
+  endAfter: 0
 --- !u!1 &1176117796
 GameObject:
   m_ObjectHideFlags: 0
@@ -9484,6 +9501,7 @@ MonoBehaviour:
   ppLeft: 30
   ppTotal: 30
   usedMove: 
+  effect: {fileID: 1170620977}
 --- !u!1 &1561186978
 GameObject:
   m_ObjectHideFlags: 0
@@ -12265,6 +12283,9 @@ MonoBehaviour:
   feedBackPanel: {fileID: 858954763}
   enemyFeedBackPanel: {fileID: 439875963}
   startBattlePanel: {fileID: 916987452}
+  turnNumber: 0
+  startStatusEffectTurn: 0
+  endStatusEffectTurn: 0
 --- !u!1 &2020472632
 GameObject:
   m_ObjectHideFlags: 0
@@ -12641,6 +12662,7 @@ MonoBehaviour:
   moveName: 
   feedBackString: 
   enemyFeedBackTextButton: {fileID: 2113377008}
+  effect: {fileID: 0}
   callFlag: 0
 --- !u!114 &2113377008
 MonoBehaviour:

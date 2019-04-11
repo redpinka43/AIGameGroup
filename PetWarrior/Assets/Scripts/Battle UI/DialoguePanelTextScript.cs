@@ -11,6 +11,7 @@ public class DialoguePanelTextScript : MonoBehaviour
     private Pets enemyPet;
     private Pets playerPet;
     public int ppLeft;
+    private int damage;
     public string feedBackString;
     public static int moveNumberUsed;
     public moveOneButtonText moveOne;
@@ -20,7 +21,7 @@ public class DialoguePanelTextScript : MonoBehaviour
 
     public Button feedBackTextButton;
     public bool callFlag = false;
-
+    private bool hasStatus = false;
     private void Awake()
     {
 
@@ -29,10 +30,7 @@ public class DialoguePanelTextScript : MonoBehaviour
         moveOne = GameObject.Find("moveOneButtonTextObject").GetComponent<moveOneButtonText>();
         moveNumberUsed = playerPet.moveNum;
         moveName = playerPet.moves[moveNumberUsed];
-        Debug.Log(moveName);
-
         ppLeft = moveOne.ppLeft;
-        
 
     }
 
@@ -64,15 +62,73 @@ public class DialoguePanelTextScript : MonoBehaviour
     void Start()
     {
         txt = GetComponentInChildren<Text>();
-        txt.text = "life left is " + enemyPet.currentHealth + " click to continue...";
+        txt.text = "";
 
         //feedBackPanel.SetActive(false);
     }
 
+    public void CheckStatus()
+    {
+
+        foreach (StatusEffects status in playerPet.statusEffects)
+        {
+            if (status.effectType == "Cringe")
+            {
+
+                status.endAfter--;
+                if (status.endAfter < 1)
+                {
+                    moveName = "";
+                    txt.text = playerPet.name + " completely forgets why it was cringing.";
+                    StatusRemoved();
+                    playerPet.statusEffects.Remove(status);
+                    break;
+                }
+
+                if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                {
+                    moveName = "";
+                    txt.text = "Oh god..." + playerPet.name + " remembers the cringe. It can't move!";
+                    StatusEffectOccurs();
+                }
+            }
+        }
+
+    }
+
+    public void StatusEffectOccurs()
+    {
+        StartCoroutine(StatusFeedback(2));
+    }
+    public void StatusRemoved()
+    {
+        StartCoroutine(StatusFeedback(3));
+    }
+    public IEnumerator StatusFeedback(int val)
+    {
+        if (val == 2)
+        {
+            feedBackTextButton.interactable = false;
+
+            yield return new WaitForSeconds(1.0f);
+
+            feedBackTextButton.interactable = true;
+        }
+        if (val == 3)
+        {
+            feedBackTextButton.interactable = false;
+
+            yield return new WaitForSeconds(1.5f);
+            callFlag = false;
+
+            feedBackTextButton.interactable = true;
+        }
+    }
+
+
+
     private void Update()
     {
-        moveNumberUsed = playerPet.moveNum;
-        moveName = playerPet.moves[moveNumberUsed];
         if (ppLeft == 0)
         {
             txt.text = "Sorry bud, you can't use that move.";
@@ -81,19 +137,34 @@ public class DialoguePanelTextScript : MonoBehaviour
         {
             if (callFlag == false)
             {
+                callFlag = true;
+
+                moveNumberUsed = playerPet.moveNum;
+                moveName = playerPet.moves[moveNumberUsed];
+
+                CheckStatus();
+
+
                 if (moveName == "Nip")
                 {
-                    txt.text = playerPet.name + " nipped the opponent for " + moveOne.Nip() + " damage.";
+                    damage = moveOne.Nip();
+                    enemyPet.currentHealth -= damage;
+                    txt.text = playerPet.name + " nipped the opponent for " + damage + " damage.";
 
-                    
+
                 }
 
                 if (moveName == "Dance")
-                    txt.text = playerPet.name + " did a little dance! Enemy Defense lowered by: " + moveOne.Dance();
+                {
+                    // damage is just an int value in this context
+                    damage = moveOne.Dance();
+                    enemyPet.defense -= damage;
+                    txt.text = playerPet.name + " did a little dance! Enemy Defense lowered by: " + damage;
+                }
                 if (moveName == "Sticky Slap")
                 {
                     int ssDam = moveOne.StickySlap();
-                    if(ssDam != 0)
+                    if (ssDam != 0)
                     {
                         txt.text = playerPet.name + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
                     }
@@ -101,10 +172,11 @@ public class DialoguePanelTextScript : MonoBehaviour
                     {
                         txt.text = playerPet.name + "'s Sticky Slap missed! Bet that feels bad.";
                     }
-                    
+
                 }
                 if (moveName == "Shed Skin")
                 {
+                    moveOne.ShedSkin();
                     txt.text = playerPet.name + " feels restored!";
                 }
                 if (moveName == "Shell")
@@ -113,7 +185,7 @@ public class DialoguePanelTextScript : MonoBehaviour
                 }
                 if (moveName == "Growl")
                 {
-                    txt.text = playerPet.name + " growled at " +enemyPet.name +" it's attack decreased by " +moveOne.Growl();
+                    txt.text = playerPet.name + " growled at " + enemyPet.name + " it's attack decreased by " + moveOne.Growl();
                 }
                 if (moveName == "Hiss")
                 {
@@ -128,10 +200,34 @@ public class DialoguePanelTextScript : MonoBehaviour
                     FurySwipes();
                 }
 
+                if (moveName == "Cringe")
+                {
+                    // already has cringe effect
+                    foreach (StatusEffects status in enemyPet.statusEffects)
+                    {
+                        if (status.effectType == "Cringe")
+                        {
+                            txt.text = "Woah there, your opponent is already cringing hard enough. Give them a break for God's sake. ";
+                            hasStatus = true;
+                        }
+                    }
+
+                    if(hasStatus == false)
+                    {
+
+                    moveOne.Cringe();
+                    CringeText();
+                    }
+
+                    hasStatus = false;
+                }
+
+
+
                 if (playerPet.hasAdvanatage == true)
                 {
-                    
-                    txt.text += "\n\n<color=green>(btw..." +playerPet.animal +"s are obviously strong against " +enemyPet.animal +"s "+ "so that attack dealt more damage than usual.)</color>";
+
+                    txt.text += "\n\n<color=green>(btw..." + playerPet.animal + "s are obviously strong against " + enemyPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
                     playerPet.hasAdvanatage = false;
 
                 }
@@ -143,11 +239,40 @@ public class DialoguePanelTextScript : MonoBehaviour
 
                 }
 
-                callFlag = true;
+
+
             }
         }
     }
 
+    public void CringeText()
+    {
+        int rngval = RNG(1, 4);
+
+
+        switch (rngval)
+        {
+            case (1):
+                txt.text = playerPet.name + " says \"#all lives matter\"...\n\n";
+                break;
+            case (2):
+                txt.text = playerPet.name + " reminds " + enemyPet.name + " they responded \"you too\" to a waiter that said to enjoy their meal.\n\n";
+                break;
+            case (3):
+                txt.text = playerPet.name + " tells a bad joke. It wasn't even close to being funny.\n\n";
+                break;
+            case (4):
+                txt.text = playerPet.name + " says that they honestly believe the moon landing was faked.\n\n";
+                break;
+            default:
+                break;
+
+        }
+
+        txt.text += enemyPet.name + " can't help but cringe for a few turns.";
+
+
+    }
     public void AcornThrow()
     {
         StartCoroutine(GamePauserAT());
@@ -357,7 +482,9 @@ public class DialoguePanelTextScript : MonoBehaviour
         num = UnityEngine.Random.Range(min, max + 1);
         return num;
     }
+
+
 }
 
-   
+
 
