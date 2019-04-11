@@ -233,7 +233,6 @@ MonoBehaviour:
   name: Decko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -246,6 +245,8 @@ MonoBehaviour:
   level: 1
   currentXP: 0
   xpNeeded: 5
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -315,12 +316,12 @@ Prefab:
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Offset.x
-      value: -14.618266
+      value: -19.711208
       objectReference: {fileID: 0}
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Size.x
-      value: 20.763468
+      value: 13.794167
       objectReference: {fileID: 0}
     - target: {fileID: 114659459381656058, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
@@ -331,6 +332,16 @@ Prefab:
         type: 2}
       propertyPath: viewConeAngle
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -5.342186
+      objectReference: {fileID: 0}
+    - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 42.993088
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
@@ -365,7 +376,6 @@ MonoBehaviour:
   name: Rat
   animal: Rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 6
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -378,6 +388,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -536,7 +548,6 @@ MonoBehaviour:
   name: Turtle
   animal: Turtle
   image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 1
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -549,6 +560,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -719,7 +732,6 @@ MonoBehaviour:
   name: Sparrow
   animal: Sparrow
   image: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 3
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -732,6 +744,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -866,7 +880,6 @@ MonoBehaviour:
   name: Squirrel
   animal: Squirrel
   image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 2
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -879,6 +892,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -926,7 +941,6 @@ MonoBehaviour:
   name: Dog
   animal: Dog
   image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 4
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -939,6 +953,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -1090,7 +1106,6 @@ MonoBehaviour:
   name: Ratt
   animal: Rat
   image: {fileID: 0}
-  species: 0
   health: 3
   currentHealth: 3
   maxAttack: 10
@@ -1103,6 +1118,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Sticky Slap
@@ -1150,7 +1167,6 @@ MonoBehaviour:
   name: Cat
   animal: Cat
   image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 5
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -1163,6 +1179,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance
@@ -1433,7 +1451,6 @@ MonoBehaviour:
   name: Gecko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -1446,6 +1463,8 @@ MonoBehaviour:
   level: 0
   currentXP: 0
   xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
   moves:
   - Nip
   - Dance

@@ -50,7 +50,7 @@ public class DialogHolder : MonoBehaviour {
 		centerOfZone = new Vector2( xPos + xOffset, yPos + yOffset );
 
 		// Set debugging
-		debugging = true;
+		debugging = false;
 
 	}
 	
@@ -63,7 +63,7 @@ public class DialogHolder : MonoBehaviour {
 	{
 		if(other.gameObject == PlayerManager.instance.playerObject)
 		{
-			if( InputManager.instance.getKeyUp("A") )
+			if( InputManager.instance.getKeyDown("A") )
 			{
 				if (playerFacingObject()) 
 				{
@@ -193,9 +193,14 @@ public class DialogHolder : MonoBehaviour {
 
 		// Fix a bug with facing down
 		if (playerAngle == 270 && playerX > 0) {
-			objectViewCone = 90 - objectViewCone;
-
+			if (playerY > 0) {
+				objectViewCone = 90 - objectViewCone * -1;
+			}
+			else {
+				objectViewCone = 90 - objectViewCone;
+			}
 		}
+		Debug.Log("playerX = " + playerX + ", playerY = " + playerY);
 
 		if (debugging)
 			Debug.Log("after calculation: objectViewCone = " + objectViewCone);

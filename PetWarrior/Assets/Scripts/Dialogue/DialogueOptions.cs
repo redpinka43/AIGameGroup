@@ -54,7 +54,7 @@ public class DialogueOptions : MonoBehaviour {
 
 	private void handleButtonPressChoice2() {
 		// If button is being pressed left, move selector if possible
-		if ( InputManager.instance.getKeyUp("left") ) {
+		if ( InputManager.instance.getKeyDown("left") ) {
 			switch (selectedOption) {
 				case 0:
 					// Do nothing
@@ -72,7 +72,7 @@ public class DialogueOptions : MonoBehaviour {
 		}
 
 		// If button is being pressed right, move selector if possible
-		if ( InputManager.instance.getKeyUp("right") ) {
+		if ( InputManager.instance.getKeyDown("right") ) {
 			switch (selectedOption) {
 				case 0:
 					// Make selected option 'option 0'.
