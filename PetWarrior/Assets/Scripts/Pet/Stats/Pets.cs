@@ -31,6 +31,6 @@ public class Pets : MonoBehaviour
 
     public List<StatusEffects> statusEffects = new List<StatusEffects>();
 
-    public List<string> moves = new List<string>();
+    public List<Moves> moves = new List<Moves>();
 
 }

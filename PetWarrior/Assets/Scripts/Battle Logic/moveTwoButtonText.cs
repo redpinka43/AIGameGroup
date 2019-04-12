@@ -8,11 +8,12 @@ public class moveTwoButtonText : MonoBehaviour
 {
 
     string moveName;
-    public int ppLeft = 30;
-    public int ppTotal = 30;
+    public int ppLeft;
+    public int ppTotal;
     private Pets playerPet;
     private Pets enemyPet;
     Text txt;
+    public Button moveTwoButton;
 
 
     private void Awake()
@@ -23,7 +24,10 @@ public class moveTwoButtonText : MonoBehaviour
     }
     void Start()
     {
-        moveName = playerPet.moves[1];
+        moveName = playerPet.moves[1].moveName;
+        ppLeft = playerPet.moves[1].ppCurrent;
+        ppTotal = playerPet.moves[1].ppMax;      
+
         txt = GetComponentInChildren<Text>();
         txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
     }
@@ -35,31 +39,28 @@ public class moveTwoButtonText : MonoBehaviour
         if (enemyPet.defense == 0)
             enemyPet.defense = 1;
 
+
+        if (ppLeft == 0)
+        {
+            moveTwoButton.interactable = false;
+        }
+        else
+            moveTwoButton.interactable = true;
+
         txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
     }
 
-    public void useMove(string move)
+    public void useMove()
     {
+
         if (ppLeft == 0)
         {
+            Debug.Log("ovetwopp=0");
             return;
         }
-
-        switch (moveName)
-        {
-            case "Nip":
-                enemyPet.currentHealth -= Nip();
-                break;
-            case "Dance":
-                enemyPet.defense -= Dance();
-                break;
-            case "Sticky Slap":
-                break;
-            default:
-                Debug.Log("No such move");
-                break;
-        }
+        Debug.Log("pp--");
         ppLeft--;
+        Debug.Log(ppLeft);
 
 
 

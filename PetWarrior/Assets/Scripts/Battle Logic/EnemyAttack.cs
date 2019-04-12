@@ -11,21 +11,18 @@ public class EnemyAttack : MonoBehaviour
     public string moveName;
     private Pets enemyPet;
     private Pets playerPet;
-    public string feedBackString;
-    private moveOneButtonText moveOne;
     public Button enemyFeedBackTextButton;
     public StatusEffects effect;
     private bool hasStatus = false;
     public bool callFlag = false;
+
+
     private void Awake()
     {
 
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
-        
-        moveOne = GameObject.Find("moveOneButtonTextObject").GetComponent<moveOneButtonText>();
-
-
+       
     }
     void Start()
     {
@@ -35,7 +32,8 @@ public class EnemyAttack : MonoBehaviour
     private void OnEnable()
     {
         callFlag = false;
-        moveName = enemyPet.moves[UnityEngine.Random.Range(0, 3)];
+        moveName = enemyPet.moves[UnityEngine.Random.Range(0, 3)].moveName;
+
 
     }
     public void AvoidDuplicateStatus()
@@ -48,28 +46,31 @@ public class EnemyAttack : MonoBehaviour
                 // look through the other moves, if it's NOT that duplicate effect, just use that instead
                 for(int i = 0;i < enemyPet.moves.Count; i++)
                 {
-                    if (enemyPet.moves[i] != moveName)
+                    if (enemyPet.moves[i].moveName != moveName)
                     {
-                        moveName = enemyPet.moves[i];
+                        moveName = enemyPet.moves[i].moveName;
                         break;
                     }
                 }
             }
     }
    
+    }
+
+    public void CheckStatus()
+    {
 
         foreach (StatusEffects status in enemyPet.statusEffects)
         {
             if (status.effectType == "Cringe")
             {
-
                 status.endAfter--;
                 if (status.endAfter < 1)
                 {
                     moveName = "";
                     txt.text = enemyPet.name + " completely forgets why it was cringing.";
                     StatusRemoved();
-                    playerPet.statusEffects.Remove(status);
+                    enemyPet.statusEffects.Remove(status);
                     break;
                 }
 
@@ -81,7 +82,6 @@ public class EnemyAttack : MonoBehaviour
                 }
             }
         }
-
     }
 
     public void StatusEffectOccurs()
@@ -115,12 +115,19 @@ public class EnemyAttack : MonoBehaviour
     private void Update()
     {
 
-
-
         if (callFlag == false)
         {
+            callFlag = true;
+            moveName = enemyPet.moves[UnityEngine.Random.Range(0, 3)].moveName;
+
+            CheckStatus();
+
+            // apply status effects
+
+
             // checks that it doesn't try to pointlessly add a status effect twice
             AvoidDuplicateStatus();
+
 
             if (moveName == "Nip")
                 txt.text = enemyPet.name + " nipped " + playerPet.name + " for " + Nip() + " damage! ";
@@ -184,18 +191,17 @@ public class EnemyAttack : MonoBehaviour
         if (enemyPet.hasAdvanatage == true)
         {
 
-            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are obviously strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are <i>obviously</i> strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
             enemyPet.hasAdvanatage = false;
 
         }
         if (enemyPet.hasDisadvantage == true)
         {
 
-            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are obviously weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are <i>obviously</i> weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
             enemyPet.hasDisadvantage = false;
 
         }
-        callFlag = true;
     }
 
 

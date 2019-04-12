@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class petLevelUI : MonoBehaviour
 {
     Text txt;
-	int petLevel = 10;
-	
+    public Pets pet;
+
     // Start is called before the first frame update
     void Start()
     {
         txt = GetComponentInChildren<Text>();
-		txt.text = "LVL:" + petLevel;
+        txt.text = "LVL:" +pet.level.ToString();
     }
 }

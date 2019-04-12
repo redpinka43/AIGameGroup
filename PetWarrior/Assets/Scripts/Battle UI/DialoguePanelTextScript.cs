@@ -10,27 +10,29 @@ public class DialoguePanelTextScript : MonoBehaviour
     public string moveName;
     private Pets enemyPet;
     private Pets playerPet;
-    public int ppLeft;
+
     private int damage;
     public string feedBackString;
     public static int moveNumberUsed;
+    private int ppLeft;
     public moveOneButtonText moveOne;
-    public moveOneButtonText moveTwo;
-    public moveOneButtonText moveThree;
-    public moveOneButtonText moveFour;
+
 
     public Button feedBackTextButton;
     public bool callFlag = false;
     private bool hasStatus = false;
+
     private void Awake()
     {
 
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
+
         moveOne = GameObject.Find("moveOneButtonTextObject").GetComponent<moveOneButtonText>();
+
         moveNumberUsed = playerPet.moveNum;
-        moveName = playerPet.moves[moveNumberUsed];
-        ppLeft = moveOne.ppLeft;
+        moveName = playerPet.moves[moveNumberUsed].moveName;
+        ppLeft = playerPet.moves[moveNumberUsed].ppCurrent;
 
     }
 
@@ -140,7 +142,7 @@ public class DialoguePanelTextScript : MonoBehaviour
                 callFlag = true;
 
                 moveNumberUsed = playerPet.moveNum;
-                moveName = playerPet.moves[moveNumberUsed];
+                moveName = playerPet.moves[moveNumberUsed].moveName;
 
                 CheckStatus();
 
@@ -199,8 +201,13 @@ public class DialoguePanelTextScript : MonoBehaviour
                 {
                     FurySwipes();
                 }
+                if (moveName == "Speed Swap")
+                {
+                    moveOne.SpeedSwap();
+                    txt.text = playerPet.name + " swapped speeds with the enemy! I hope it knows what it's doing! \n\n<b>(speed determines which pet goes first!)</b>"; 
+                }
 
-                if (moveName == "Cringe")
+                    if (moveName == "Cringe")
                 {
                     // already has cringe effect
                     foreach (StatusEffects status in enemyPet.statusEffects)
@@ -227,14 +234,14 @@ public class DialoguePanelTextScript : MonoBehaviour
                 if (playerPet.hasAdvanatage == true)
                 {
 
-                    txt.text += "\n\n<color=green>(btw..." + playerPet.animal + "s are obviously strong against " + enemyPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+                    txt.text += "\n\n<color=green>(btw..." + playerPet.animal + "s are <i>obviously</i> strong against " + enemyPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
                     playerPet.hasAdvanatage = false;
 
                 }
                 if (playerPet.hasDisadvantage == true)
                 {
 
-                    txt.text += "\n\n<color=red>(btw..." + playerPet.animal + "s are obviously weak against " + enemyPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+                    txt.text += "\n\n<color=red>(btw..." + playerPet.animal + "s are <i>obviously</i> weak against " + enemyPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
                     playerPet.hasDisadvantage = false;
 
                 }

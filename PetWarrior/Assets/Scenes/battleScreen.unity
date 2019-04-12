@@ -1086,6 +1086,10 @@ GameObject:
   - component: {fileID: 169310797}
   - component: {fileID: 169310796}
   - component: {fileID: 169310798}
+  - component: {fileID: 169310799}
+  - component: {fileID: 169310802}
+  - component: {fileID: 169310801}
+  - component: {fileID: 169310800}
   m_Layer: 0
   m_Name: enemyPet
   m_TagString: Untagged
@@ -1123,9 +1127,9 @@ MonoBehaviour:
   hasDisadvantage: 0
   statusEffects: []
   moves:
-  - Cringe
-  - Nip
-  - Cringe
+  - {fileID: 169310799}
+  - {fileID: 169310799}
+  - {fileID: 169310799}
 --- !u!4 &169310797
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,6 +1156,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPet: {fileID: 0}
   thisPet: {fileID: 0}
+--- !u!114 &169310799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169310795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &169310800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169310795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: 
+  ppMax: 0
+  ppCurrent: 0
+--- !u!114 &169310801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169310795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: 
+  ppMax: 0
+  ppCurrent: 0
+--- !u!114 &169310802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169310795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: 
+  ppMax: 0
+  ppCurrent: 0
 --- !u!1 &209591075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,7 +1870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveFour: {fileID: 409046725}
-  turnCheck: {fileID: 0}
+  turnCheck: {fileID: 2012843261}
 --- !u!1 &439875963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,7 +3091,6 @@ GameObject:
   - component: {fileID: 614678319}
   - component: {fileID: 614678318}
   - component: {fileID: 614678317}
-  - component: {fileID: 614678320}
   - component: {fileID: 614678321}
   m_Layer: 5
   m_Name: moveThree
@@ -3134,19 +3193,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 614678315}
   m_CullTransparentMesh: 0
---- !u!114 &614678320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 614678315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490eeb5528a8ec64ca92052c0de25164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ppLeft: 30
-  ppTotal: 30
 --- !u!114 &614678321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3159,7 +3205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveThree: {fileID: 614678317}
-  turnCheck: {fileID: 0}
+  turnCheck: {fileID: 2012843261}
 --- !u!1 &615808268
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,6 +3410,7 @@ MonoBehaviour:
   ppTotal: 30
   usedMove: 
   effect: {fileID: 0}
+  moveOneButton: {fileID: 1487560207}
 --- !u!114 &617986891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6648,7 +6695,7 @@ GameObject:
   - component: {fileID: 1070700470}
   - component: {fileID: 1070700472}
   m_Layer: 5
-  m_Name: Text
+  m_Name: moveFourButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6725,6 +6772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppLeft: 20
   ppTotal: 30
+  moveFourButton: {fileID: 409046725}
 --- !u!1 &1083539962
 GameObject:
   m_ObjectHideFlags: 0
@@ -6965,6 +7013,10 @@ GameObject:
   - component: {fileID: 1170620974}
   - component: {fileID: 1170620976}
   - component: {fileID: 1170620977}
+  - component: {fileID: 1170620978}
+  - component: {fileID: 1170620981}
+  - component: {fileID: 1170620980}
+  - component: {fileID: 1170620979}
   m_Layer: 0
   m_Name: playerPet
   m_TagString: Untagged
@@ -6995,17 +7047,17 @@ MonoBehaviour:
   special: 10
   speed: 15
   moveNum: 0
-  level: 1
+  level: 3
   currentXP: 0
   xpNeeded: 5
   hasAdvanatage: 0
   hasDisadvantage: 0
   statusEffects: []
   moves:
-  - Cringe
-  - Dance
-  - Sticky Slap
-  - Shed Skin
+  - {fileID: 1170620978}
+  - {fileID: 1170620981}
+  - {fileID: 1170620978}
+  - {fileID: 1170620978}
 --- !u!4 &1170620975
 Transform:
   m_ObjectHideFlags: 0
@@ -7045,6 +7097,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectType: 
   endAfter: 0
+--- !u!114 &1170620978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170620973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shell
+  ppMax: 10
+  ppCurrent: 0
+--- !u!114 &1170620979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170620973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: 
+  ppMax: 0
+  ppCurrent: 0
+--- !u!114 &1170620980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170620973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: 
+  ppMax: 0
+  ppCurrent: 0
+--- !u!114 &1170620981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170620973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Speed Swap
+  ppMax: 10
+  ppCurrent: 4
 --- !u!1 &1176117796
 GameObject:
   m_ObjectHideFlags: 0
@@ -8084,6 +8192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pet: {fileID: 169310796}
 --- !u!114 &1313191392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9025,7 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveOne: {fileID: 1487560207}
-  turnCheck: {fileID: 0}
+  turnCheck: {fileID: 2012843261}
 --- !u!1 &1494272654
 GameObject:
   m_ObjectHideFlags: 0
@@ -9507,6 +9616,7 @@ MonoBehaviour:
   ppTotal: 30
   usedMove: 
   effect: {fileID: 1170620977}
+  moveOneButton: {fileID: 1487560207}
 --- !u!1 &1561186978
 GameObject:
   m_ObjectHideFlags: 0
@@ -10252,7 +10362,6 @@ GameObject:
   - component: {fileID: 1704529142}
   - component: {fileID: 1704529141}
   - component: {fileID: 1704529140}
-  - component: {fileID: 1704529143}
   - component: {fileID: 1704529144}
   m_Layer: 5
   m_Name: moveTwo
@@ -10355,19 +10464,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704529138}
   m_CullTransparentMesh: 0
---- !u!114 &1704529143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1704529138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43625d05f3e87e94288b78d9d33f1843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ppLeft: 10
-  ppTotal: 15
 --- !u!114 &1704529144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10380,7 +10476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTwo: {fileID: 1704529140}
-  turnCheck: {fileID: 0}
+  turnCheck: {fileID: 2012843261}
 --- !u!1 &1738318255
 GameObject:
   m_ObjectHideFlags: 0
@@ -11252,7 +11348,7 @@ GameObject:
   - component: {fileID: 1831353480}
   - component: {fileID: 1831353482}
   m_Layer: 5
-  m_Name: Text
+  m_Name: moveTwoButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11327,8 +11423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43625d05f3e87e94288b78d9d33f1843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ppLeft: 10
+  ppLeft: 0
   ppTotal: 15
+  moveTwoButton: {fileID: 1704529140}
 --- !u!1 &1832327360
 GameObject:
   m_ObjectHideFlags: 0
@@ -11530,6 +11627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pet: {fileID: 1170620974}
 --- !u!114 &1842410127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11800,7 +11898,7 @@ GameObject:
   - component: {fileID: 1917660234}
   - component: {fileID: 1917660236}
   m_Layer: 5
-  m_Name: Text
+  m_Name: moveThreeButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11877,6 +11975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppLeft: 30
   ppTotal: 30
+  moveThreeButton: {fileID: 614678317}
 --- !u!1 &1920553565
 GameObject:
   m_ObjectHideFlags: 0
@@ -12213,12 +12312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: 
-  ppLeft: 0
   feedBackString: 
   moveOne: {fileID: 0}
-  moveTwo: {fileID: 0}
-  moveThree: {fileID: 0}
-  moveFour: {fileID: 0}
   feedBackTextButton: {fileID: 1978216561}
   callFlag: 0
 --- !u!1 &2012843258
@@ -12231,6 +12326,7 @@ GameObject:
   - component: {fileID: 2012843259}
   - component: {fileID: 2012843260}
   - component: {fileID: 2012843261}
+  - component: {fileID: 2012843262}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -12278,9 +12374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnState: 0
   moveOneButtonText: {fileID: 1559998548}
-  moveTwoButtonText: {fileID: 0}
-  moveThreeButtonText: {fileID: 0}
-  moveFourButtonText: {fileID: 0}
+  moveTwoButtonText: {fileID: 1831353482}
+  moveThreeButtonText: {fileID: 1917660236}
+  moveFourButtonText: {fileID: 1070700472}
   enableVictoryScreen: {fileID: 2012843260}
   feedBackTextButton: {fileID: 1978216561}
   enemyFeedBackTextButton: {fileID: 2113377008}
@@ -12291,6 +12387,20 @@ MonoBehaviour:
   turnNumber: 0
   startStatusEffectTurn: 0
   endStatusEffectTurn: 0
+--- !u!114 &2012843262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012843258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537913547e0ac334d920b275529bf49a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fightPanel: {fileID: 701632310}
+  itemsPanel: {fileID: 1083539962}
+  startBattlePanel: {fileID: 916987452}
 --- !u!1 &2020472632
 GameObject:
   m_ObjectHideFlags: 0
@@ -12665,7 +12775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: 
-  feedBackString: 
   enemyFeedBackTextButton: {fileID: 2113377008}
   effect: {fileID: 0}
   callFlag: 0

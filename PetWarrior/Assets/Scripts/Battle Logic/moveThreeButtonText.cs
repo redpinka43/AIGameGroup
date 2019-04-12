@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class moveThreeButtonText : MonoBehaviour
 {
     string moveName;
-    public int ppLeft = 30;
-    public int ppTotal = 30;
+    public int ppLeft;
+    public int ppTotal;
     private Pets playerPet;
     private Pets enemyPet;
     Text txt;
+    public Button moveThreeButton;
 
 
     private void Awake()
@@ -21,7 +22,12 @@ public class moveThreeButtonText : MonoBehaviour
     }
     void Start()
     {
-        moveName = playerPet.moves[2];
+        moveName = playerPet.moves[2].moveName;
+        ppLeft = playerPet.moves[2].ppCurrent;
+        ppTotal = playerPet.moves[2].ppMax;
+
+      
+
         txt = GetComponentInChildren<Text>();
         txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
     }
@@ -29,6 +35,14 @@ public class moveThreeButtonText : MonoBehaviour
 
     private void Update()
     {
+        // can't click if 0 pp
+        if (ppLeft == 0)
+        {
+            moveThreeButton.interactable = false;
+        }
+        else
+            moveThreeButton.interactable = true;
+
         // avoids division by 0
         if (enemyPet.defense == 0)
             enemyPet.defense = 1;
@@ -36,28 +50,18 @@ public class moveThreeButtonText : MonoBehaviour
         txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
     }
 
-    public void useMove(string move)
+    public void useMove()
     {
+        ppLeft = playerPet.moves[playerPet.moveNum].ppCurrent;
+
         if (ppLeft == 0)
         {
+            Debug.Log("ovetwopp=0");
             return;
         }
 
-        switch (moveName)
-        {
-            case "Nip":
-                enemyPet.currentHealth -= Nip();
-                break;
-            case "Dance":
-                enemyPet.defense -= Dance();
-                break;
-            case "Sticky Slap":
-                break;
-            default:
-                Debug.Log("No such move");
-                break;
-        }
         ppLeft--;
+
 
 
 
