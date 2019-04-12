@@ -1,5 +1,14 @@
 # AIGameGroup
 <h1>Week 13: </h1>
+
+<h2>Added More NPCs to the Game</h2>
+
+The NPC's will serve as guides (like a tutorial), trainers, or just another immersive aspect of the world. 
+
+Example (youtube):
+
+[![NPCs](http://img.youtube.com/vi/7pKXGhMa5b0/0.jpg)](https://www.youtube.com/watch?v=7pKXGhMa5b0)
+
 <h2>Added a "Typing" Effect to the Text (and Sound Effects)</h2>
 
 This change really makes the game feel more polished.
