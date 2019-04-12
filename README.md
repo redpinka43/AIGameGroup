@@ -11,7 +11,11 @@ Example (youtube):
 
 <h2>Implemented Pet Breed Advantages and Disadvantages</h2>
 
+This will make the battles more interesting. Strategy will need to be used to defeat trainers who have pets with advantages over yours. It will also make the "Pets" option in battle more useful/necessary.
+
 <h2>Leveling and XP Mechanics added to the Game</h2>
+
+A necessary part of the game that will give the player's pet expereince after defeating an enemy. With enough experience, a pet will level up and its stats will increase. This allows the player to make their favorite pet stronger and defeat enemies that might have an advantage over them.
 
 <h1>Week 12: </h1>
 <h2> Basic Random Pet Encounters Added to Game</h2>
@@ -54,6 +58,8 @@ OverWorld Music:
 [![OverWorld Music](http://img.youtube.com/vi/ej5w6cEBiig/0.jpg)](https://www.youtube.com/watch?v=ej5w6cEBiig)
 
 <h2>Added Items to Battle Screen and the Ability to Use Some Items</h2>
+<img src = "/Images and Artwork/BattleItems.PNG">
+
 
 <h1>Week 10: </h1>
 <h2>Added a Pet Party Menu</h2>
