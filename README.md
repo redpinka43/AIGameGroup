@@ -4,6 +4,8 @@
 
 <h2>Implemented Pet Breed Advantages and Disadvantages</h2>
 
+<h2>Leveling and XP Mechanics added to the Game</h2>
+
 <h1>Week 12: </h1>
 <h2> Basic Random Pet Encounters Added to Game</h2>
 
