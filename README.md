@@ -2,6 +2,13 @@
 <h1>Week 13: </h1>
 <h2>Added a "Typing" Effect to the Text (and Sound Effects)</h2>
 
+This change really makes the game feel more polished.
+
+Example (youtube):
+
+[![Typing Effect](http://img.youtube.com/vi/F6MRBvw820s/0.jpg)](https://www.youtube.com/watch?v=F6MRBvw820s)
+
+
 <h2>Implemented Pet Breed Advantages and Disadvantages</h2>
 
 <h2>Leveling and XP Mechanics added to the Game</h2>
@@ -9,11 +16,42 @@
 <h1>Week 12: </h1>
 <h2> Basic Random Pet Encounters Added to Game</h2>
 
+Example (youtube):
+
+[![Random Encounter](http://img.youtube.com/vi/RTid9hsoDAw/0.jpg)](https://www.youtube.com/watch?v=RTid9hsoDAw)
+
 <h2> Testing Day! </h2>
 
-<h1>Week 11: </h1>
-<h2>Added Music</h2>
+[This is the Survey](https://www.surveymonkey.com/r/Preview/?sm=PyaiQzRqxgYWHOoblVWUjZpizrp6UT7XssqQ4RPCuxUqebx4J0i4zYy2RxH_2Fr9mq)
 
+[These are the Results](https://www.surveymonkey.com/results/SM-P9LVBR5FV/?manage=true)
+
+<h4>Iteration Plan:</h4>
+
+  * Change Pet Stats
+  * Make Differences in Pets More Significant
+  * Allow Switching Pets in Battle
+  * NPC Walk-Through Dialogue
+  * Add Area Transitions
+  * More Battles
+  * Better Wild Pet Encounters
+  * Add "Back" Buttons to Battle Menus
+
+
+<h1>Week 11: </h1>
+<h2>Added Music (click pictures for youtube video)</h2>
+
+Start Music:
+
+[![Start Music](http://img.youtube.com/vi/dfWCNalfNbs/0.jpg)](https://www.youtube.com/watch?v=dfWCNalfNbs)
+
+Battle Music:
+
+[![Battle Music](http://img.youtube.com/vi/TRzVJ9HnMaA/0.jpg)](https://www.youtube.com/watch?v=TRzVJ9HnMaA)
+
+OverWorld Music:
+
+[![OverWorld Music](http://img.youtube.com/vi/ej5w6cEBiig/0.jpg)](https://www.youtube.com/watch?v=ej5w6cEBiig)
 
 <h2>Added Items to Battle Screen and the Ability to Use Some Items</h2>
 
