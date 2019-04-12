@@ -13,6 +13,7 @@ public class turnCheck : MonoBehaviour
     public moveThreeButtonText moveThreeButtonText;
     public moveFourButtonText moveFourButtonText;
     public enableVictoryScreen enableVictoryScreen;
+
     public Button feedBackTextButton;
     public Button enemyFeedBackTextButton;
     public GameObject fightPanel;
@@ -60,15 +61,19 @@ public class turnCheck : MonoBehaviour
         switch(playerPet.moveNum)
         {
             case (0):
+                moveOneButtonText.ppLeft--;
                 moveNumOne();
                 break;
             case (1):
+                moveTwoButtonText.useMove();
                 moveNumTwo();
                 break;
             case (2):
+                moveThreeButtonText.useMove();
                 moveNumThree();
                 break;
             case (3):
+                moveFourButtonText.useMove();
                 moveNumFour();
                 break;
             default:break;
@@ -101,19 +106,19 @@ public class turnCheck : MonoBehaviour
 
     public void moveNumOne()
     {
-        moveOneButtonText.useMove(playerPet.moves[0]);
+       // moveOneButtonText.useMove(playerPet.moves[0].moveName);
     }
     public void moveNumTwo()
     {
-        moveOneButtonText.useMove(playerPet.moves[1]);
+       // moveOneButtonText.useMove(playerPet.moves[1].moveName);
     }
     public void moveNumThree()
     {
-        moveOneButtonText.useMove(playerPet.moves[2]);
+        //moveOneButtonText.useMove(playerPet.moves[2].moveName);
     }
     public void moveNumFour()
     {
-        moveOneButtonText.useMove(playerPet.moves[3]);
+       // moveOneButtonText.useMove(playerPet.moves[3].moveName);
     }
     public void enemyFeedBackTextButton_Click()
     {

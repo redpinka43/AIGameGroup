@@ -9,13 +9,14 @@ using System;
 public class moveOneButtonText : MonoBehaviour
 {
     string moveName;
-    public int ppLeft = 30;
-    public int ppTotal = 30;
+    public int ppLeft;
+    public int ppTotal;
     private Pets playerPet;
     private Pets enemyPet;
     public string usedMove;
     Text txt;
     public StatusEffects effect;
+    public Button moveOneButton;
 
     private void Awake()
     {
@@ -25,13 +26,27 @@ public class moveOneButtonText : MonoBehaviour
     }
     void Start()
     {
-        moveName = playerPet.moves[0];
+        moveName = playerPet.moves[0].moveName;
+        ppLeft = playerPet.moves[0].ppCurrent;
+        ppTotal = playerPet.moves[0].ppMax;
+
+       
+
         txt = GetComponentInChildren<Text>();
         txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
+
     }
 
     private void Update()
     {
+        // can't click if 0 pp
+        if (ppLeft == 0)
+        {
+            moveOneButton.interactable = false;
+        }
+        else
+            moveOneButton.interactable = true;
+
         // avoids division by 0
         if (enemyPet.defense == 0)
             enemyPet.defense = 1;
@@ -39,26 +54,17 @@ public class moveOneButtonText : MonoBehaviour
         txt.text = moveName + "  PP: " + ppLeft + "/" + ppTotal;
     }
 
-    public void useMove(string move)
+    public void SpeedSwap()
     {
-        
-        usedMove = playerPet.moves[playerPet.moveNum];
-        if (ppLeft == 0)
-        {
-            return;
-        }
-
-        ppLeft--;
-
-
-
+        int temp = playerPet.speed;
+        playerPet.speed = enemyPet.speed;
+        enemyPet.speed = temp;
     }
 
     public int Nip()
     {
         int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
         damage = AnimalAdvantage(damage);
-        Debug.Log("ACTUAL DAMAGE:" + damage);
         return damage;
     }
 
