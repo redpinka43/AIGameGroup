@@ -14,15 +14,22 @@
 <h1>Week 11: </h1>
 <h2>Added Music</h2>
 
+
 <h2>Added Items to Battle Screen and the Ability to Use Some Items</h2>
 
 <h1>Week 10: </h1>
 <h2>Added a Pet Party Menu</h2>
+<img src = "/Images and Artwork/petPartyMenu.PNG">
 
 <h2>Added basic AI to the Game</h2>
+The AI will randomly pick a move to use based on the pet's moveset. This will be the easiest AI foe in the game. The increasingly difficult AI will involve more strategic battle decisions which will take breed advantages into account along with buff and debuff moves.
 
 <h1>Week 9: </h1>
 <h2>Update the UI to Look more Professional</h2>
+<h4>New Battle UI:</h4>
+<img src = "/Images and Artwork/moreProfessionalUI.PNG">
+<h4>New Pause UI:</h4>
+<img src = "/Images and Artwork/moreProfessionalUI2.PNG">
 
 <h1>Week 8: </h1>
 <h2>Pet Stats</h2>
