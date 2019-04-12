@@ -1,18 +1,28 @@
 # AIGameGroup
+<h1>Week 13: </h1>
+<h2>Added a "Typing" Effect to the Text (and Sound Effects)</h2>
 
-<h2>Getting Started</h2>
+<h2>Implemented Pet Breed Advantages and Disadvantages</h2>
 
-Hey guys, here we've got the game happening. 
+<h1>Week 12: </h1>
+<h2> Basic Random Pet Encounters Added to Game</h2>
 
-Things you need to do to get set up:
-* Install Unity https://unity3d.com/get-unity/download
-* Clone the repository to your computer (see this page) https://help.github.com/articles/fetching-a-remote/
-  * Basically you just need to do "git clone https://github.com/*USERNAME/REPOSITORY*.git"
-  * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
-* Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
-* Press the big triangle Play button at the top of the screen to run what we've got so far.
+<h2> Testing Day! </h2>
+
+<h1>Week 11: </h1>
+<h2>Added Music</h2>
+
+<h2>Added Items to Battle Screen and the Ability to Use Some Items</h2>
+
+<h1>Week 10: </h1>
+<h2>Added a Pet Party Menu</h2>
+
+<h2>Added basic AI to the Game</h2>
+
+<h1>Week 9: </h1>
+<h2>Update the UI to Look more Professional</h2>
+
 <h1>Week 8: </h1>
-
 <h2>Pet Stats</h2>
 <h4>Information on the different stats between the pet breeds</h4>
 <img src = "/Images and Artwork/petStatInfo.PNG" height = "800">
@@ -96,3 +106,16 @@ We all met up to discuss what type of game we wanted to create. We decided on a 
 
 <h4>NPC Prototype sprite</h4>
 <img src ="/Images and Artwork/NPC_Sprite_Model.png">
+
+
+<h2>Getting Started</h2>
+
+Hey guys, here we've got the game happening. 
+
+Things you need to do to get set up:
+* Install Unity https://unity3d.com/get-unity/download
+* Clone the repository to your computer (see this page) https://help.github.com/articles/fetching-a-remote/
+  * Basically you just need to do "git clone https://github.com/*USERNAME/REPOSITORY*.git"
+  * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
+* Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
+* Press the big triangle Play button at the top of the screen to run what we've got so far.
