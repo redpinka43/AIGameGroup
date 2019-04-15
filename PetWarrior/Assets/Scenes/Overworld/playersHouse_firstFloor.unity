@@ -1024,22 +1024,22 @@ Prefab:
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Offset.y
-      value: 11.793549
+      value: 9.122442
       objectReference: {fileID: 0}
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Size.y
-      value: 36.861847
+      value: 42.20406
       objectReference: {fileID: 0}
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Offset.x
-      value: -6.8996677
+      value: -1.905901
       objectReference: {fileID: 0}
     - target: {fileID: 61840543570743514, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}
       propertyPath: m_Size.x
-      value: 22.268692
+      value: 32.25623
       objectReference: {fileID: 0}
     - target: {fileID: 114659459381656058, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
         type: 2}

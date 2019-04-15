@@ -273,7 +273,6 @@ public class DialogueManager : MonoBehaviour {
 				timeSinceLastPrint += punctuationPauseTime;
 			}
 
-
 			// Replace the text
 			if (printedChars > 0) {
 				replaceText( currentNode.text.Substring(0, printedChars) );
@@ -326,6 +325,13 @@ public class DialogueManager : MonoBehaviour {
 		GUIManager.instance.call_OnDialogueStart();
 	}
 
+	// Prepares for printing a new node
+	void resetPrintingVariables() {
+
+		printingDialogue = true;
+		timeSinceLastPrint = Time.time;
+		printedChars = 0;
+	}
 
 	// Deactivates all dialogue box components
 	void deactivateDialogueBox() {
@@ -382,15 +388,6 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 
-	// Prepares for printing a new node
-	void resetPrintingVariables() {
-
-		printingDialogue = true;
-		timeSinceLastPrint = Time.time;
-		printedChars = 0;
-	}
-
-
 	// Takes a row from the spreadsheet (as a string), and converts it to a dialogue node.
 	DialogueNode newDialogueNode(string line) 
 	{
@@ -414,7 +411,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 
-
+	#region DEBUG
 
 	/* -------- DEBUG -------- */
 
@@ -449,6 +446,8 @@ public class DialogueManager : MonoBehaviour {
 				+ "isEndNode: " + node.isEndNode + "\n"
 				+ "hasDialogueOptions: " + node.hasDialogueOptions + "\n"
 		);
+
+		#endregion
 	}
 
 
