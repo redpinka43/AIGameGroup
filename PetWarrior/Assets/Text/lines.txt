@@ -51,10 +51,10 @@ ID	Speaker	Text	Links to	Dialogue Options	Notes	Switch to Scene	Dialog Type	Anim
 47	Pets	Assorted pets. You'll be able to adopt one eventually.	End									
 48	Poster	Ratt is empirically the best pet. 	49									
 49		Long live Ratt.	End									
-50												
-51												
-52												
-53												
+50	Turn back no pet	You don't have any pets. You're going to die out there.	51		town_1							
+51		Go like, find a pet or something. Hint: go to the petstore.	End									
+52					Battle texts							
+53	Generic NPC	Your smell filled me with the need to BATTLE!	End			battleScreen						
 54												
 55												
 56												

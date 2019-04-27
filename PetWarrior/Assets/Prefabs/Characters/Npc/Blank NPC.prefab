@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 95388525388202136}
   - component: {fileID: 50114292498600016}
   - component: {fileID: 61870122366326588}
+  - component: {fileID: 58312076484372584}
   m_Layer: 0
   m_Name: Blank NPC
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1259326059066398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 247.1, y: -1643.3, z: 0}
+  m_LocalPosition: {x: 175.8, y: -1475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4208462145270346}
@@ -95,6 +96,21 @@ Rigidbody2D:
   m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58312076484372584
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259326059066398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 40
 --- !u!61 &61065628659247156
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -177,6 +193,14 @@ MonoBehaviour:
   npcSkin: 0
   spriteSheetName: 
   moveSpeed: 70
+  isWandering: 0
+  minWaitTime: 0
+  maxWaitTime: 5
+  wanderRadius: 5
+  wanderBoundsRadius: 50
+  personalBubbleRadius: 17
+  challengeable: 0
+  startBattleDialogueNode: 53
   testingMovement: 0
   testVector: {x: 0, y: 50}
 --- !u!114 &114161459382455168

@@ -89,7 +89,8 @@ public class AudioManager : MonoBehaviour {
 			
 			currentBgMusicStr = newBgMusicString;
 
-			currentBgMusic = bgMusicArray[ Array.IndexOf(bgMusicStrings, newBgMusicString) ];			
+			currentBgMusic = bgMusicArray[ Array.IndexOf(bgMusicStrings, newBgMusicString) ];		
+			currentBgMusic.Volume = bgMusicVolume;	
 			IntroloopPlayer.Instance.Play(currentBgMusic);
 
 		}
