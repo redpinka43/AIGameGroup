@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class turnCheck : MonoBehaviour
 {
     public int turnState = 0;
+
     private Pets playerPet;
     private Pets enemyPet;
     public moveOneButtonText moveOneButtonText;
@@ -21,11 +22,6 @@ public class turnCheck : MonoBehaviour
     public GameObject enemyFeedBackPanel;
     public GameObject startBattlePanel;
 
-
-    public int turnNumber;
-    public int startStatusEffectTurn;
-    public int endStatusEffectTurn;
-
     private void Start()
     {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
@@ -35,6 +31,7 @@ public class turnCheck : MonoBehaviour
         enemyFeedBackTextButton.onClick.AddListener(enemyFeedBackTextButton_Click);
 
     }
+
     public void speedCheck()
     {
         if (playerPet.speed >= enemyPet.speed)
@@ -58,25 +55,21 @@ public class turnCheck : MonoBehaviour
 
     public void PlayerTurn()
     {
-        switch(playerPet.moveNum)
+        switch (playerPet.moveNum)
         {
             case (0):
                 moveOneButtonText.ppLeft--;
-                moveNumOne();
                 break;
             case (1):
                 moveTwoButtonText.useMove();
-                moveNumTwo();
                 break;
             case (2):
                 moveThreeButtonText.useMove();
-                moveNumThree();
                 break;
             case (3):
                 moveFourButtonText.useMove();
-                moveNumFour();
                 break;
-            default:break;
+            default: break;
         }
 
         feedBackPanel.SetActive(true);
@@ -85,15 +78,14 @@ public class turnCheck : MonoBehaviour
         // turn state 0 means this was the first move in the turn
         if (turnState == 0)
         {
-            // turn state 1 means one attack has occured in the turn.
+            // turn state 1 means one attack has occured in the turn. 
+            // Enemy goes next
             turnState = 1;
-            // if this PlayerTurn was the first move then the EnemyTurn is next
-           
-            
-        }else
+
+        }
+        else
         {
             // turn the state back to 0, meaning the turn is over.
-            Debug.Log('d');
             turnState = 0;
             EndTurn();
         }
@@ -104,28 +96,12 @@ public class turnCheck : MonoBehaviour
         enemyFeedBackPanel.SetActive(true);
     }
 
-    public void moveNumOne()
-    {
-       // moveOneButtonText.useMove(playerPet.moves[0].moveName);
-    }
-    public void moveNumTwo()
-    {
-       // moveOneButtonText.useMove(playerPet.moves[1].moveName);
-    }
-    public void moveNumThree()
-    {
-        //moveOneButtonText.useMove(playerPet.moves[2].moveName);
-    }
-    public void moveNumFour()
-    {
-       // moveOneButtonText.useMove(playerPet.moves[3].moveName);
-    }
     public void enemyFeedBackTextButton_Click()
     {
 
         enemyFeedBackPanel.SetActive(false);
         enableVictoryScreen.CheckPetLife();
-        if(playerPet.currentHealth < 1)
+        if (playerPet.currentHealth < 1)
         {
             turnState = 1;
         }
@@ -137,7 +113,8 @@ public class turnCheck : MonoBehaviour
 
             PlayerTurn();
 
-        }else
+        }
+        else
         {
             // turn the state back to 0, meaning the turn is over.
             turnState = 0;
@@ -145,12 +122,12 @@ public class turnCheck : MonoBehaviour
         }
 
     }
-   public void feedBackTextButton_Click()
+    public void feedBackTextButton_Click()
     {
         enableVictoryScreen.DeathCheck();
         feedBackPanel.SetActive(false);
 
-        if(turnState == 1)
+        if (turnState == 1)
             enableVictoryScreen.LiveCheck();
     }
     public void EndTurn()

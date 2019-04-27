@@ -5,9 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class Pets : MonoBehaviour
 {
-    public string name;
+    public new string name;
     public string animal;
+
     public Sprite image;
+
     public int health;
     public int currentHealth;
 
@@ -18,9 +20,9 @@ public class Pets : MonoBehaviour
     public int defense;
 
     public int special;
-    public int speed;
 
-    public int moveNum;
+    public int speed;
+    public int currentSpeed;
 
     public int level;
     public int currentXP;
@@ -32,5 +34,5 @@ public class Pets : MonoBehaviour
     public List<StatusEffects> statusEffects = new List<StatusEffects>();
 
     public List<Moves> moves = new List<Moves>();
-
+    public int moveNum;
 }

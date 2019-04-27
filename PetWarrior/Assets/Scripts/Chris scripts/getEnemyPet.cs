@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class getEnemyPet : MonoBehaviour {
+public class getEnemyPet : MonoBehaviour
+{
 
     private Enemies enemies;
     public Pets enemyPet;
@@ -17,13 +18,14 @@ public class getEnemyPet : MonoBehaviour {
 
         enemyPet = enemies.enemyPets[Random.Range(0, 7)];
         thisPet = getPet(enemyPet);
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        // check if an enemy pet has been chosen, if not get one and randomize it's stats
         if (petFlag == false)
         {
             enemyPet = enemies.enemyPets[Random.Range(0, 7)];
@@ -32,12 +34,7 @@ public class getEnemyPet : MonoBehaviour {
         }
 
     }
-
-    public void falseflag()
-    {
-        petFlag = false;
-    }
-
+    // Grab the stats of the enemy pet that is chosen(specifically it's moves and sprite)
     public Pets getPet(Pets enemyPet)
     {
         thisPet.name = enemyPet.name;
@@ -57,6 +54,8 @@ public class getEnemyPet : MonoBehaviour {
         thisPet.moveNum = enemyPet.moveNum;
         thisPet.moves = enemyPet.moves;
         thisPet.statusEffects.Clear();
+
+
         RandomizeStatsForPet(thisPet);
 
         return thisPet;
@@ -64,6 +63,7 @@ public class getEnemyPet : MonoBehaviour {
 
     public void RandomizeStatsForPet(Pets thisPet)
     {
+        // return stats based on a range of  particular values
         int veryLow = RNG(3, 10);
         int low = RNG(11, 19);
         int med = RNG(20, 27);
@@ -72,67 +72,72 @@ public class getEnemyPet : MonoBehaviour {
 
         switch (thisPet.animal)
         {
-           
-            
+
+
             case ("Gecko"):
                 thisPet.maxAttack = thisPet.attack = high;
                 thisPet.defense = thisPet.maxDefense = low;
                 thisPet.special = med;
                 thisPet.health = thisPet.currentHealth = low;
                 thisPet.speed = high;
-                    break;
+                break;
             case ("Turtle"):
                 thisPet.maxAttack = thisPet.attack = med;
                 thisPet.defense = thisPet.maxDefense = high;
                 thisPet.special = med;
                 thisPet.health = high;
                 thisPet.speed = low;
-    break;
+                break;
             case ("Squirrel"):
                 thisPet.maxAttack = thisPet.attack = high;
                 thisPet.defense = thisPet.maxDefense = high;
                 thisPet.special = low;
                 thisPet.health = thisPet.currentHealth = med;
                 thisPet.speed = med;
-    break;
+                break;
             case ("Bird"):
                 thisPet.maxAttack = thisPet.attack = low;
                 thisPet.defense = thisPet.maxDefense = low;
                 thisPet.special = high;
                 thisPet.health = thisPet.currentHealth = med;
                 thisPet.speed = med;
-    break;
+                break;
             case ("Dog"):
                 thisPet.maxAttack = thisPet.attack = med;
                 thisPet.defense = thisPet.maxDefense = med;
                 thisPet.special = med;
                 thisPet.health = thisPet.currentHealth = med;
                 thisPet.speed = med;
-    break;
+                break;
             case ("Cat"):
                 thisPet.maxAttack = thisPet.attack = veryLow;
                 thisPet.defense = thisPet.maxDefense = veryLow;
                 thisPet.special = veryHigh;
                 thisPet.health = thisPet.currentHealth = med;
                 thisPet.speed = med;
-    break;
+                break;
             case ("Rat"):
                 thisPet.maxAttack = thisPet.attack = high;
                 thisPet.defense = thisPet.maxDefense = low;
                 thisPet.special = med;
                 thisPet.health = thisPet.currentHealth = low;
                 thisPet.speed = high;
-    break;
+                break;
 
             default:
                 break;
         }
 
     }
-int RNG(int min, int max)
-{
-    int num;
-    num = UnityEngine.Random.Range(min, max + 1);
-    return num;
-}
+    int RNG(int min, int max)
+    {
+        int num;
+        num = UnityEngine.Random.Range(min, max + 1);
+        return num;
+    }
+
+    public void falseflag()
+    {
+        petFlag = false;
+    }
 }
