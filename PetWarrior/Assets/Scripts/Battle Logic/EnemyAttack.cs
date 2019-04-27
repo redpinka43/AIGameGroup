@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
 
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
-       
+
     }
     void Start()
     {
@@ -44,7 +44,7 @@ public class EnemyAttack : MonoBehaviour
             if (status.effectType == moveName)
             {
                 // look through the other moves, if it's NOT that duplicate effect, just use that instead
-                for(int i = 0;i < enemyPet.moves.Count; i++)
+                for (int i = 0; i < enemyPet.moves.Count; i++)
                 {
                     if (enemyPet.moves[i].moveName != moveName)
                     {
@@ -53,8 +53,8 @@ public class EnemyAttack : MonoBehaviour
                     }
                 }
             }
-    }
-   
+        }
+
     }
 
     public void CheckStatus()
@@ -173,7 +173,7 @@ public class EnemyAttack : MonoBehaviour
                 {
                     if (status.effectType == "Cringe")
                     {
-                        txt.text = "The enemy " +enemyPet.name +" tries to make " +playerPet.name +" cringe, but " +playerPet.name +" is still cringing from the last time..";
+                        txt.text = "The enemy " + enemyPet.name + " tries to make " + playerPet.name + " cringe, but " + playerPet.name + " is still cringing from the last time..";
                         hasStatus = true;
                     }
                 }
@@ -320,7 +320,7 @@ public class EnemyAttack : MonoBehaviour
 
 
         txt.text = enemyPet.name + " begins throwing acorns!";
-      
+
         // first acorn
         yield return new WaitForSeconds(1.0f);
 

@@ -125,7 +125,7 @@ public class moveOneButtonText : MonoBehaviour
 
     public int Growl()
     {
-        int val = (int)Math.Ceiling((double)enemyPet.defense * .1);
+        int val = (int)Math.Ceiling(((double)enemyPet.defense * .1) + ((double)playerPet.special * .1));
         enemyPet.defense -= val;
         return val;
     }

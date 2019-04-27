@@ -36,27 +36,6 @@ public class DialoguePanelTextScript : MonoBehaviour
 
     }
 
-    public void moveNumOne()
-    {
-        playerPet.moveNum = 0;
-    }
-    public void moveNumTwo()
-    {
-        playerPet.moveNum = 1;
-
-    }
-    public void moveNumThree()
-    {
-        playerPet.moveNum = 2;
-
-
-    }
-    public void moveNumFour()
-    {
-        playerPet.moveNum = 3;
-
-    }
-
     private void OnEnable()
     {
         callFlag = false;
@@ -71,13 +50,14 @@ public class DialoguePanelTextScript : MonoBehaviour
 
     public void CheckStatus()
     {
-
         foreach (StatusEffects status in playerPet.statusEffects)
         {
             if (status.effectType == "Cringe")
             {
-
+                // Lower the timer
                 status.endAfter--;
+
+                // End of status effect
                 if (status.endAfter < 1)
                 {
                     moveName = "";
@@ -87,6 +67,7 @@ public class DialoguePanelTextScript : MonoBehaviour
                     break;
                 }
 
+                // Status Effect triggers
                 if (status.endAfter >= 1 && (RNG(1, 2) == 2))
                 {
                     moveName = "";
@@ -108,6 +89,7 @@ public class DialoguePanelTextScript : MonoBehaviour
     }
     public IEnumerator StatusFeedback(int val)
     {
+        // Status Effect occuring
         if (val == 2)
         {
             feedBackTextButton.interactable = false;
@@ -116,6 +98,8 @@ public class DialoguePanelTextScript : MonoBehaviour
 
             feedBackTextButton.interactable = true;
         }
+
+        // Status effect removed
         if (val == 3)
         {
             feedBackTextButton.interactable = false;
@@ -152,8 +136,6 @@ public class DialoguePanelTextScript : MonoBehaviour
                     damage = moveOne.Nip();
                     enemyPet.currentHealth -= damage;
                     txt.text = playerPet.name + " nipped the opponent for " + damage + " damage.";
-
-
                 }
 
                 if (moveName == "Dance")
@@ -396,7 +378,7 @@ public class DialoguePanelTextScript : MonoBehaviour
 
         txt.text = playerPet.name + " begins throwing swiping with it's claws!";
 
-        // first acorn
+        // first swipe
         yield return new WaitForSeconds(1.0f);
 
         if (RNG(1, 2) == 1)
@@ -415,7 +397,7 @@ public class DialoguePanelTextScript : MonoBehaviour
             yield break;
         }
 
-        // second acorn
+        // second swipe
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
@@ -432,7 +414,7 @@ public class DialoguePanelTextScript : MonoBehaviour
             yield break;
         }
 
-        // third acorn
+        // third swipe
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
@@ -449,7 +431,7 @@ public class DialoguePanelTextScript : MonoBehaviour
             yield break;
         }
 
-        // fourth acorn
+        // fourth swipe
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
