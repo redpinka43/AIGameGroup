@@ -27,6 +27,24 @@ public class NpcController : MonoBehaviour {
 	// Movement
 	Vector2 currentWalkDistance;
 	Vector2 walkStartPosition;
+	public bool isWandering = false;
+
+	// Wander
+	Vector2 npcStartPosition;
+	public float minWaitTime;
+	public float maxWaitTime;
+	public float wanderRadius;
+	public float wanderBoundsRadius;
+	float timeWhenWaitingIsDone;
+
+
+	// Challenging to battle
+	public float personalBubbleRadius;  // This determines how far away from you the NPC 
+							// stops when they walk up to you. 
+							// Your personal space "bubble"
+	public bool challengeable = false;
+	public int startBattleDialogueNode;
+	bool aboutToBattle = false;
 
 	// Debug
 	public bool testingMovement = false;
@@ -57,6 +75,7 @@ public class NpcController : MonoBehaviour {
 
 		myRigidbody = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		npcStartPosition = new Vector2(transform.position.x, transform.position.y);
 	
 	}
 
@@ -92,9 +111,20 @@ public class NpcController : MonoBehaviour {
 			}
 		}
 
+		else if (aboutToBattle) {
+			// Start battle dialogue
+			DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startBattleDialogueNode];
+			DialogueManager.instance.ActivateDialogue();
+			aboutToBattle = false;
+		}
+
+		else if (isWandering) {
+			wander();
+		}
+
 	}
 
-	// This is where the spritesheet is corrected to fit the type of NPC
+	// This is where the spritesheet is swapped out to fit the type of NPC
 	void LateUpdate() {
 		
 		if (npcSkin != NpcSkin.DEFAULT) {
@@ -112,8 +142,16 @@ public class NpcController : MonoBehaviour {
 		
 	}
 
-	#endregion
+	void OnTriggerEnter2D(Collider2D other) {
 
+		if (challengeable) {
+			if(other.gameObject == PlayerManager.instance.playerObject) {
+				Debug.Log("In the zone");
+				approachAndChallengePlayer();
+			}
+		}
+	}
+	#endregion
 
 	#region MOVEMENT
 
@@ -138,8 +176,6 @@ public class NpcController : MonoBehaviour {
 
 		return true;
 	}
-
-	#endregion
 
 	// Sets the direction the NPC is facing
 	public void setNpcAngle(float angle) {
@@ -171,6 +207,66 @@ public class NpcController : MonoBehaviour {
 
 	}
 
+	// Has the NPC move around randomly in Pokemon-type style
+	void wander() {
+		
+		// public float minWaitTime;
+		// public float maxWaitTime;
+		// public float wanderRadius;
+		// public float wanderBoundsRadius;
+
+		// If still waiting, do nothing 
+		if (Time.time < timeWhenWaitingIsDone) {
+			return;
+		}
+		// Else, start a new wander
+		else {
+			timeWhenWaitingIsDone = Time.time + UnityEngine.Random.Range(minWaitTime, maxWaitTime);
+
+			bool newWanderTargetFound = false;
+			while (!newWanderTargetFound) {
+				
+				// Generate a new wander target position within wanderRadius
+				float wanderTargetX = UnityEngine.Random.Range(-wanderRadius, wanderRadius);
+				float wanderTargetY = UnityEngine.Random.Range(-wanderRadius, wanderRadius);
+				Vector2 newWanderTarget = new Vector2(transform.position.x + wanderTargetX, transform.position.y + wanderTargetY);
+
+				// If it's not in wanderBoundsRadius though, it doesn't count
+				if ( (Mathf.Abs(newWanderTarget.x - npcStartPosition.x) < wanderBoundsRadius) 
+				  && (Mathf.Abs(newWanderTarget.y - npcStartPosition.y) < wanderBoundsRadius)) {
+					// It counts!
+					newWanderTargetFound = true;
+					walk( new Vector2(transform.position.x - newWanderTarget.x, transform.position.y - newWanderTarget.y) );
+				}
+
+			}
+
+		}
+	}
+	#endregion
+
+	#region CHALLENGE_TO_BATTLE
+
+	// Function that has NPC approach you and start battle
+	void approachAndChallengePlayer() {
+
+		Vector2 playerPosition = PlayerManager.instance.playerObject.transform.position;
+		Vector2 moveToPlayerVector = new Vector2( playerPosition.x - transform.position.x, playerPosition.y - transform.position.y );
+
+		// Adjust vector so NPC stops within a certain radius of the player
+		Vector2 stopShortVector = new Vector2( moveToPlayerVector.normalized.x * personalBubbleRadius, moveToPlayerVector.normalized.y * personalBubbleRadius );
+		Vector2 newMoveToPlayerVector = moveToPlayerVector - stopShortVector;
+		
+		// Stop player's movement
+		PlayerController.instance.stopPlayerMovement();
+		walk(newMoveToPlayerVector);
+		aboutToBattle = true;
+
+	}
+	#endregion
+
 	
+
+
 
 }

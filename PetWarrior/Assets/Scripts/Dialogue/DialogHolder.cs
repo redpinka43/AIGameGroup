@@ -73,6 +73,8 @@ public class DialogHolder : MonoBehaviour {
 		}
 	}
 
+	#region VIEWCONE
+	
 	// Checks if the player is facing the center of the collision box / object
 	protected bool playerFacingObject() {
 		
@@ -204,4 +206,5 @@ public class DialogHolder : MonoBehaviour {
 
 	}
 
+	#endregion
 }

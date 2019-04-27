@@ -1,18 +1,103 @@
 # AIGameGroup
+<h1>Week 15: </h1>
 
-<h2>Getting Started</h2>
+<h1>Week 14: </h1>
 
-Hey guys, here we've got the game happening. 
+<h2> AI Presentation </h2>
+We had a presentation in class and wrote a paper on the AI aspects of PetWarrior as well as other significant technical aspects of the game.
 
-Things you need to do to get set up:
-* Install Unity https://unity3d.com/get-unity/download
-* Clone the repository to your computer (see this page) https://help.github.com/articles/fetching-a-remote/
-  * Basically you just need to do "git clone https://github.com/*USERNAME/REPOSITORY*.git"
-  * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
-* Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
-* Press the big triangle Play button at the top of the screen to run what we've got so far.
+[Here is the Presentation](https://docs.google.com/presentation/d/1jxB51A9Oj6W3ggRXTP8gdp6JHUXPiaJ09A7ik0uzKq8/edit?usp=sharing)
+
+[Here is the Paper](https://docs.google.com/document/d/1nscY5IZfQWvj8TnIyMArZdkngTG7ZmvBb5go9YuKR3M/edit?usp=sharing)
+
+In the presentation and paper we discuss in detail the pets, battle system, user interface, NPCs, dialogue system, and our iteration and plans since testing day.
+
+<h1>Week 13: </h1>
+
+<h2>Added More NPCs to the Game</h2>
+
+The NPC's will serve as guides (like a tutorial), trainers, or just another immersive aspect of the world. 
+
+Example (youtube):
+
+[![NPCs](http://img.youtube.com/vi/7pKXGhMa5b0/0.jpg)](https://www.youtube.com/watch?v=7pKXGhMa5b0)
+
+<h2>Added a "Typing" Effect to the Text (and Sound Effects)</h2>
+
+This change really makes the game feel more polished.
+
+Example (youtube):
+
+[![Typing Effect](http://img.youtube.com/vi/F6MRBvw820s/0.jpg)](https://www.youtube.com/watch?v=F6MRBvw820s)
+
+
+<h2>Implemented Pet Breed Advantages and Disadvantages</h2>
+
+This will make the battles more interesting. Strategy will need to be used to defeat trainers who have pets with advantages over yours. It will also make the "Pets" option in battle more useful/necessary.
+
+<h2>Leveling and XP Mechanics added to the Game</h2>
+
+A necessary part of the game that will give the player's pet expereince after defeating an enemy. With enough experience, a pet will level up and its stats will increase. This allows the player to make their favorite pet stronger and defeat enemies that might have an advantage over them.
+
+<h1>Week 12: </h1>
+<h2> Basic Random Pet Encounters Added to Game</h2>
+
+Example (youtube):
+
+[![Random Encounter](http://img.youtube.com/vi/RTid9hsoDAw/0.jpg)](https://www.youtube.com/watch?v=RTid9hsoDAw)
+
+<h2> Testing Day! </h2>
+
+[This is the Survey](https://www.surveymonkey.com/r/Preview/?sm=PyaiQzRqxgYWHOoblVWUjZpizrp6UT7XssqQ4RPCuxUqebx4J0i4zYy2RxH_2Fr9mq)
+
+[These are the Results](https://www.surveymonkey.com/results/SM-P9LVBR5FV/?manage=true)
+
+<h4>Iteration Plan:</h4>
+
+  * Change Pet Stats
+  * Make Differences in Pets More Significant
+  * Allow Switching Pets in Battle
+  * NPC Walk-Through Dialogue
+  * Add Area Transitions
+  * More Battles
+  * Better Wild Pet Encounters
+  * Add "Back" Buttons to Battle Menus
+
+
+<h1>Week 11: </h1>
+<h2>Added Music (click pictures for youtube video)</h2>
+
+Start Music:
+
+[![Start Music](http://img.youtube.com/vi/dfWCNalfNbs/0.jpg)](https://www.youtube.com/watch?v=dfWCNalfNbs)
+
+Battle Music:
+
+[![Battle Music](http://img.youtube.com/vi/TRzVJ9HnMaA/0.jpg)](https://www.youtube.com/watch?v=TRzVJ9HnMaA)
+
+OverWorld Music:
+
+[![OverWorld Music](http://img.youtube.com/vi/ej5w6cEBiig/0.jpg)](https://www.youtube.com/watch?v=ej5w6cEBiig)
+
+<h2>Added Items to Battle Screen and the Ability to Use Some Items</h2>
+<img src = "/Images and Artwork/BattleItems.PNG">
+
+
+<h1>Week 10: </h1>
+<h2>Added a Pet Party Menu</h2>
+<img src = "/Images and Artwork/petPartyMenu.PNG">
+
+<h2>Added basic AI to the Game</h2>
+The AI will randomly pick a move to use based on the pet's moveset. This will be the easiest AI foe in the game. The increasingly difficult AI will involve more strategic battle decisions which will take breed advantages into account along with buff and debuff moves.
+
+<h1>Week 9: </h1>
+<h2>Update the UI to Look more Professional</h2>
+<h4>New Battle UI:</h4>
+<img src = "/Images and Artwork/moreProfessionalUI.PNG">
+<h4>New Pause UI:</h4>
+<img src = "/Images and Artwork/moreProfessionalUI2.PNG">
+
 <h1>Week 8: </h1>
-
 <h2>Pet Stats</h2>
 <h4>Information on the different stats between the pet breeds</h4>
 <img src = "/Images and Artwork/petStatInfo.PNG" height = "800">
@@ -96,3 +181,16 @@ We all met up to discuss what type of game we wanted to create. We decided on a 
 
 <h4>NPC Prototype sprite</h4>
 <img src ="/Images and Artwork/NPC_Sprite_Model.png">
+
+
+<h2>Getting Started</h2>
+
+Hey guys, here we've got the game happening. 
+
+Things you need to do to get set up:
+* Install Unity https://unity3d.com/get-unity/download
+* Clone the repository to your computer (see this page) https://help.github.com/articles/fetching-a-remote/
+  * Basically you just need to do "git clone https://github.com/*USERNAME/REPOSITORY*.git"
+  * Another great Git tutorial is http://rogerdudler.github.io/git-guide/
+* Open Unity, and open an existing project. Navigate to the AIGame folder which you've cloned to your computer in the previous step
+* Press the big triangle Play button at the top of the screen to run what we've got so far.
