@@ -1,4 +1,17 @@
 # AIGameGroup
+<h1>Week 15: </h1>
+
+<h1>Week 14: </h1>
+
+<h2> AI Presentation </h2>
+We had a presentation in class and wrote a paper on the AI aspects of PetWarrior as well as other significant technical aspects of the game.
+
+[Here is the Presentation](https://docs.google.com/presentation/d/1jxB51A9Oj6W3ggRXTP8gdp6JHUXPiaJ09A7ik0uzKq8/edit?usp=sharing)
+
+[Here is the Paper](https://docs.google.com/document/d/1nscY5IZfQWvj8TnIyMArZdkngTG7ZmvBb5go9YuKR3M/edit?usp=sharing)
+
+In the presentation and paper we discuss in detail the pets, battle system, user interface, NPCs, dialogue system, and our iteration and plans since testing day.
+
 <h1>Week 13: </h1>
 
 <h2>Added More NPCs to the Game</h2>
