@@ -26,6 +26,7 @@ public class SwapPets : MonoBehaviour {
 				// should not end
                 break;
             case (2):
+				Debug.Log("will try to swap");
 				swap(1);
                 break;
             case (3):
@@ -50,5 +51,6 @@ public class SwapPets : MonoBehaviour {
 		Pets temp = player.playerPets[0];
 		player.playerPets[0] = player.playerPets[newPetIndex];
 		player.playerPets[newPetIndex] = temp;
+		Debug.Log("swapped pets");
 	}
 }

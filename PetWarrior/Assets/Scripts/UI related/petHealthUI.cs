@@ -18,14 +18,13 @@ public class petHealthUI : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.Find("Player").GetComponent<Player>();
-		
-		// i indicates the placeholder for pet array
-		playerPet = player.playerPets[i];
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		// i indicates the placeholder for pet array
+		playerPet = player.playerPets[i];
 		HandleBar();
 	}
 	
