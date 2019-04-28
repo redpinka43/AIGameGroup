@@ -20,7 +20,7 @@ public class petNameUI : MonoBehaviour {
 		playerPet = player.playerPets[i];
 		
 		myText = GetComponentInChildren<Text>();
-		myText.text = playerPet.name;
+		myText.text = playerPet.petName;
 	}
 	
 	// Update is called once per frame
