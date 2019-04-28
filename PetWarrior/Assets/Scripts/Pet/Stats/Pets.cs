@@ -30,6 +30,7 @@ public class Pets : MonoBehaviour
 
     public bool hasAdvanatage;
     public bool hasDisadvantage;
+    public bool owned;
 
     public List<StatusEffects> statusEffects = new List<StatusEffects>();
 

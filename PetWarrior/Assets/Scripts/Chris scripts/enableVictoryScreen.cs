@@ -19,6 +19,7 @@ public class enableVictoryScreen : MonoBehaviour
     private Player player;
     private getEnemyPet getenemypet;
 
+
     public PlayerController playerController;
 
 
@@ -65,10 +66,9 @@ public class enableVictoryScreen : MonoBehaviour
     {
         if (enemyPet.currentHealth < 1)
         {
-            XPGain();
+        
+            // You killed the pet, it goes to the victoryFeedBackPanel and display the necessary text
             panel.SetActive(true);
-            enemySprite.SetActive(false);
-
         }
     }
 
@@ -76,7 +76,6 @@ public class enableVictoryScreen : MonoBehaviour
     {
         if (playerPet.currentHealth < 1)
         {
-
             panelPetDeath.SetActive(true);
             playerSprite.SetActive(false);
 
@@ -110,27 +109,4 @@ public class enableVictoryScreen : MonoBehaviour
         getenemypet.falseflag();
     }
 
-    public void XPGain()
-    {
-        int xp = enemyPet.level * 5;
-
-        playerPet.currentXP += 5;
-        if (playerPet.currentXP >= playerPet.xpNeeded)
-        {
-            playerPet.level++;
-            StatsGain();
-        }
-        Debug.Log(playerPet.name + " gained " + xp + "xp!");
-        Debug.Log(playerPet.level);
-    }
-
-    public void StatsGain()
-    {
-        playerPet.maxAttack += 5;
-        playerPet.attack += 5;
-        playerPet.defense = playerPet.maxDefense += 5;
-        playerPet.special += 5;
-        playerPet.health = playerPet.currentHealth += 5;
-        playerPet.speed += 5;
-    }
 }

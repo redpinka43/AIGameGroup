@@ -10,30 +10,52 @@ public class ShowPetParty : MonoBehaviour {
 
     public GameObject thisObject;
 
-    public GameObject petSprite;
-    public GameObject petName;
-    public GameObject healthBar;
+    public GameObject pet1;
+    public GameObject pet2;
+    public GameObject pet3;
+    public GameObject pet4;
+    public GameObject pet5;
+    public GameObject pet6;
 
-    public Image myImageComponent;
-    public Sprite thisImage;
-    public Sprite image;
+    public int i;
 
-    public int petNum;
+    
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
-        if(player.playerPets.Count < 100)
-        {
-            thisObject.SetActive(false);
-            return;
-        }
-        playerPet = player.playerPets[petNum];
-    }
+        pet2.SetActive(false);
+        pet3.SetActive(false);
+        pet4.SetActive(false);
+        pet5.SetActive(false);
+        pet6.SetActive(false);
 
-    private void OnEnable()
-    {
-       myImageComponent.sprite = playerPet.image;
+        player = GameObject.Find("Player").GetComponent<Player>();
+
+        if(player.playerPets.Count > 1)
+        {
+            pet2.SetActive(true);
+            
+        }
+        if (player.playerPets.Count > 2)
+        {
+            pet3.SetActive(true);
+
+        }
+        if (player.playerPets.Count > 3)
+        {
+            pet4.SetActive(true);
+
+        }
+        if (player.playerPets.Count > 4)
+        {
+            pet5.SetActive(true);
+
+        }
+        if (player.playerPets.Count > 5)
+        {
+            pet6.SetActive(true);
+
+        }
 
     }
 }
