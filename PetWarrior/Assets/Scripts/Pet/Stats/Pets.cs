@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Pets : MonoBehaviour
 {
-    public new string name;
+    public string petName;
     public string animal;
 
     public Sprite image;

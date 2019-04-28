@@ -13,6 +13,6 @@ public class petNameEnemyText : MonoBehaviour
     {
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
         txt = GetComponentInChildren<Text>();
-        txt.text = enemyPet.name;
+        txt.text = enemyPet.petName;
     }
 }
