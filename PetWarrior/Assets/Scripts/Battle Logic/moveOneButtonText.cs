@@ -77,7 +77,13 @@ public class moveOneButtonText : MonoBehaviour
         }
         return val;
     }
-
+    public void Burn()
+    {
+        effect = new StatusEffects();
+        effect.effectType = "Burn";
+        effect.endAfter = 3;
+        enemyPet.statusEffects.Add(effect);
+    }
     public int StickySlap()
     {
         int rand = RNG(1, 100);

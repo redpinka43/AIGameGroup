@@ -60,6 +60,8 @@ public class EnemyAttack : MonoBehaviour
 
     public void CheckStatus()
     {
+        if (enemyPet.statusEffects.Count < 1)
+            return;
 
         foreach (StatusEffects status in enemyPet.statusEffects)
         {
@@ -72,18 +74,75 @@ public class EnemyAttack : MonoBehaviour
                     txt.text = enemyPet.petName + " completely forgets why it was cringing.";
                     StatusRemoved();
                     enemyPet.statusEffects.Remove(status);
-                    break;
                 }
-
-                if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
                 {
                     moveName = "";
                     txt.text = "Oh god..." + enemyPet.petName + " remembers the cringe. It can't move!";
                     StatusEffectOccurs();
                 }
             }
+
+            if (status.effectType == "Burn")
+            {
+                // Lower the timer
+                status.endAfter--;
+
+                // End of status effect
+                if (status.endAfter < 1)
+                {
+                    Debug.Log("burnremove");
+                    moveName = "";
+                    txt.text = enemyPet.petName + " No longer feels the burn.";
+                    enemyPet.statusEffects.Remove(status);
+
+                    StartCoroutine(BurnEffect(false));
+
+                }
+                else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                {
+                    Debug.Log("burn");
+
+                    moveName = "";
+                    txt.text = enemyPet.petName + " gets stung by the burn!";
+                    StartCoroutine(BurnEffect(true));
+                }
+            }
+
         }
     }
+
+    public IEnumerator BurnEffect(bool damage)
+    {
+        enemyFeedBackTextButton.interactable = false;
+
+        if (damage == true)
+        {
+
+            yield return new WaitForSeconds(1.0f);
+
+            EnemyMove();
+
+            yield return new WaitForSeconds(1.0f);
+            enemyFeedBackTextButton.interactable = true;
+
+        }
+        else
+        {
+            yield return new WaitForSeconds(1.0f);
+
+
+            yield return new WaitForSeconds(1.0f);
+
+            EnemyMove();
+
+            yield return new WaitForSeconds(1.0f);
+            enemyFeedBackTextButton.interactable = true;
+
+        }
+    }
+
+
 
     public void StatusEffectOccurs()
     {
@@ -188,7 +247,30 @@ public class EnemyAttack : MonoBehaviour
 
                 hasStatus = false;
             }
+
+            if (moveName == "Burn")
+            {
+                // already has Burn effect
+                foreach (StatusEffects status in playerPet.statusEffects)
+                {
+                    if (status.effectType == "Burn")
+                    {
+                        txt.text = enemyPet +" Tries to reapply a burn! What a poorly programmed idiot! ";
+                        hasStatus = true;
+                    }
+                }
+
+                if (hasStatus == false)
+                {
+                    Burn();
+                    BurnText();
+                }
+
+                hasStatus = false;
+            }
         }
+
+        
         if (enemyPet.hasAdvanatage == true)
         {
 
@@ -243,10 +325,17 @@ public class EnemyAttack : MonoBehaviour
         playerPet.statusEffects.Add(effect);
 
     }
+    public void Burn()
+    {
+        effect = new StatusEffects();
+        effect.effectType = "Burn";
+        effect.endAfter = 3;
+        playerPet.statusEffects.Add(effect);
+    }
+
     public void CringeText()
     {
         int rngval = RNG(1, 4);
-
 
         switch (rngval)
         {
@@ -266,10 +355,32 @@ public class EnemyAttack : MonoBehaviour
                 break;
 
         }
-
         txt.text += playerPet.petName + " can't help but cringe for a few turns.";
+    }
 
+    public void BurnText()
+    {
+        int rngval = RNG(1, 4);
 
+        switch (rngval)
+        {
+            case (1):
+                txt.text = enemyPet.petName + " says \"Yo momma is so fat, I took a picture of her last Christmas and it's still printing.\"...\n\n";
+                break;
+            case (2):
+                txt.text = enemyPet.petName + " says \"Yo momma is so stupid she brought a spoon to the super bowl.\"...\n\n";
+                break;
+            case (3):
+                txt.text = enemyPet.petName + " says \"Yo momma is so stupid she took a ruler to bed to see how long she slept.\"...\n\n";
+                break;
+            case (4):
+                txt.text = enemyPet.petName + " says \"Yo mamma is so ugly when she took a bath the water jumped out.\"...\n\n";
+                break;
+            default:
+                break;
+
+        }
+        txt.text += enemyPet.petName + " will be reeling from that burn!";
     }
 
     public int StickySlap()
@@ -637,5 +748,85 @@ public class EnemyAttack : MonoBehaviour
         }
 
         return newVal;
+    }
+
+    public void EnemyMove()
+    {
+        moveName = enemyPet.moves[UnityEngine.Random.Range(0, enemyPet.moves.Count - 1)].moveName;
+
+        if (moveName == "Nip")
+            txt.text = enemyPet.petName + " nipped " + playerPet.petName + " for " + Nip() + " damage! ";
+        if (moveName == "Dance")
+            txt.text = enemyPet.petName + " did a little dance! Enemy Defense lowered by: " + Dance();
+        if (moveName == "Sticky Slap")
+        {
+            int ssDam = StickySlap();
+            if (ssDam != 0)
+            {
+                txt.text = enemyPet.petName + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+            }
+            else
+            {
+                txt.text = enemyPet.petName + "'s Sticky Slap missed! Bet that feels bad.";
+            }
+
+        }
+        if (moveName == "Shed Skin")
+        {
+            txt.text = enemyPet.petName + " feels restored!";
+        }
+        if (moveName == "Acorn Throw")
+        {
+            Debug.Log("here");
+            AcornThrow();
+        }
+        if (moveName == "Fury Swipes")
+        {
+            Debug.Log("here");
+
+            FurySwipes();
+        }
+        if (moveName == "Shell")
+        {
+            txt.text = enemyPet.petName + " hid inside it's shell! It's defense rose by " + Shell();
+        }
+
+        if (moveName == "Cringe")
+        {
+            // already has cringe effect
+            foreach (StatusEffects status in playerPet.statusEffects)
+            {
+                if (status.effectType == "Cringe")
+                {
+                    txt.text = "The enemy " + enemyPet.petName + " tries to make " + playerPet.petName + " cringe, but " + playerPet.petName + " is still cringing from the last time..";
+                    hasStatus = true;
+                }
+            }
+
+            if (hasStatus == false)
+            {
+
+                Cringe();
+                CringeText();
+            }
+
+            hasStatus = false;
+        }
+
+
+        if (enemyPet.hasAdvanatage == true)
+        {
+
+            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are <i>obviously</i> strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            enemyPet.hasAdvanatage = false;
+
+        }
+        if (enemyPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are <i>obviously</i> weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            enemyPet.hasDisadvantage = false;
+
+        }
     }
 }
