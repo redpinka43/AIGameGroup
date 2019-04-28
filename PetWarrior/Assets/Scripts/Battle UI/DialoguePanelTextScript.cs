@@ -50,6 +50,9 @@ public class DialoguePanelTextScript : MonoBehaviour
 
     public void CheckStatus()
     {
+        if (playerPet.statusEffects.Count < 1)
+            return;
+
         foreach (StatusEffects status in playerPet.statusEffects)
         {
             if (status.effectType == "Cringe")
@@ -61,22 +64,77 @@ public class DialoguePanelTextScript : MonoBehaviour
                 if (status.endAfter < 1)
                 {
                     moveName = "";
-                    txt.text = playerPet.name + " completely forgets why it was cringing.";
+                    txt.text = playerPet.petName + " completely forgets why it was cringing.";
                     StatusRemoved();
                     playerPet.statusEffects.Remove(status);
-                    break;
-                }
 
-                // Status Effect triggers
-                if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                }
+                else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
                 {
                     moveName = "";
-                    txt.text = "Oh god..." + playerPet.name + " remembers the cringe. It can't move!";
+                    txt.text = "Oh god..." + playerPet.petName + " remembers the cringe. It can't move!";
                     StatusEffectOccurs();
+                }
+
+
+            }
+
+            if (status.effectType == "Burn")
+            {
+                // Lower the timer
+                status.endAfter--;
+
+                // End of status effect
+                if (status.endAfter < 1)
+                {
+                    Debug.Log("burnremove");
+                    moveName = "";
+                    txt.text = playerPet.petName + " No longer feels the burn.";
+                    playerPet.statusEffects.Remove(status);
+
+                    StartCoroutine(BurnEffect(false));
+
+                }
+                else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                {
+                    Debug.Log("burn");
+
+                    moveName = "";
+                    txt.text = playerPet.petName + " gets stung by the burn!";
+                    StartCoroutine(BurnEffect(true));
                 }
             }
         }
+    }
 
+    public IEnumerator BurnEffect(bool damage)
+    {
+        feedBackTextButton.interactable = false;
+
+        if (damage == true)
+        {
+
+            yield return new WaitForSeconds(1.0f);
+
+            PlayerMove();
+
+            yield return new WaitForSeconds(1.0f);
+            feedBackTextButton.interactable = true;
+
+        }
+        else
+        {
+            yield return new WaitForSeconds(1.0f);
+
+
+            yield return new WaitForSeconds(1.0f);
+
+            PlayerMove();
+
+            yield return new WaitForSeconds(1.0f);
+            feedBackTextButton.interactable = true;
+
+        }
     }
 
     public void StatusEffectOccurs()
@@ -135,7 +193,7 @@ public class DialoguePanelTextScript : MonoBehaviour
                 {
                     damage = moveOne.Nip();
                     enemyPet.currentHealth -= damage;
-                    txt.text = playerPet.name + " nipped the opponent for " + damage + " damage.";
+                    txt.text = playerPet.petName + " nipped the opponent for " + damage + " damage.";
                 }
 
                 if (moveName == "Dance")
@@ -143,37 +201,37 @@ public class DialoguePanelTextScript : MonoBehaviour
                     // damage is just an int value in this context
                     damage = moveOne.Dance();
                     enemyPet.defense -= damage;
-                    txt.text = playerPet.name + " did a little dance! Enemy Defense lowered by: " + damage;
+                    txt.text = playerPet.petName + " did a little dance! Enemy Defense lowered by: " + damage;
                 }
                 if (moveName == "Sticky Slap")
                 {
                     int ssDam = moveOne.StickySlap();
                     if (ssDam != 0)
                     {
-                        txt.text = playerPet.name + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+                        txt.text = playerPet.petName + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
                     }
                     else
                     {
-                        txt.text = playerPet.name + "'s Sticky Slap missed! Bet that feels bad.";
+                        txt.text = playerPet.petName + "'s Sticky Slap missed! Bet that feels bad.";
                     }
 
                 }
                 if (moveName == "Shed Skin")
                 {
                     moveOne.ShedSkin();
-                    txt.text = playerPet.name + " feels restored!";
+                    txt.text = playerPet.petName + " feels restored!";
                 }
                 if (moveName == "Shell")
                 {
-                    txt.text = playerPet.name + " hid inside it's shell! It's defense rose by " + moveOne.Shell();
+                    txt.text = playerPet.petName + " hid inside it's shell! It's defense rose by " + moveOne.Shell();
                 }
                 if (moveName == "Growl")
                 {
-                    txt.text = playerPet.name + " growled at " + enemyPet.name + " it's attack decreased by " + moveOne.Growl();
+                    txt.text = playerPet.petName + " growled at " + enemyPet.petName + " it's attack decreased by " + moveOne.Growl();
                 }
                 if (moveName == "Hiss")
                 {
-                    txt.text = playerPet.name + " hissed at " + enemyPet.name + " it's attack decreased by " + moveOne.Growl();
+                    txt.text = playerPet.petName + " hissed at " + enemyPet.petName + " it's attack decreased by " + moveOne.Growl();
                 }
                 if (moveName == "Acorn Throw")
                 {
@@ -186,10 +244,10 @@ public class DialoguePanelTextScript : MonoBehaviour
                 if (moveName == "Speed Swap")
                 {
                     moveOne.SpeedSwap();
-                    txt.text = playerPet.name + " swapped speeds with the enemy! I hope it knows what it's doing! \n\n<b>(speed determines which pet goes first!)</b>"; 
+                    txt.text = playerPet.petName + " swapped speeds with the enemy! I hope it knows what it's doing! \n\n<b>(speed determines which pet goes first!)</b>";
                 }
 
-                    if (moveName == "Cringe")
+                if (moveName == "Cringe")
                 {
                     // already has cringe effect
                     foreach (StatusEffects status in enemyPet.statusEffects)
@@ -201,11 +259,33 @@ public class DialoguePanelTextScript : MonoBehaviour
                         }
                     }
 
-                    if(hasStatus == false)
+                    if (hasStatus == false)
                     {
 
-                    moveOne.Cringe();
-                    CringeText();
+                        moveOne.Cringe();
+                        CringeText();
+                    }
+
+                    hasStatus = false;
+                }
+
+                if (moveName == "Burn")
+                {
+                    // already has Burn effect
+                    foreach (StatusEffects status in enemyPet.statusEffects)
+                    {
+                        if (status.effectType == "Burn")
+                        {
+                            txt.text = "They're already looking kinda crispy, don't overdo it. ";
+                            hasStatus = true;
+                        }
+                    }
+
+                    if (hasStatus == false)
+                    {
+
+                        moveOne.Burn();
+                        BurnText();
                     }
 
                     hasStatus = false;
@@ -238,29 +318,50 @@ public class DialoguePanelTextScript : MonoBehaviour
     {
         int rngval = RNG(1, 4);
 
-
         switch (rngval)
         {
             case (1):
-                txt.text = playerPet.name + " says \"#all lives matter\"...\n\n";
+                txt.text = playerPet.petName + " says \"#all lives matter\"...\n\n";
                 break;
             case (2):
-                txt.text = playerPet.name + " reminds " + enemyPet.name + " they responded \"you too\" to a waiter that said to enjoy their meal.\n\n";
+                txt.text = playerPet.petName + " reminds " + enemyPet.petName + " they responded \"you too\" to a waiter that said to enjoy their meal.\n\n";
                 break;
             case (3):
-                txt.text = playerPet.name + " tells a bad joke. It wasn't even close to being funny.\n\n";
+                txt.text = playerPet.petName + " tells a bad joke. It wasn't even close to being funny.\n\n";
                 break;
             case (4):
-                txt.text = playerPet.name + " says that they honestly believe the moon landing was faked.\n\n";
+                txt.text = playerPet.petName + " says that they honestly believe the moon landing was faked.\n\n";
                 break;
             default:
                 break;
 
         }
+        txt.text += enemyPet.petName + " can't help but cringe for a few turns.";
+    }
 
-        txt.text += enemyPet.name + " can't help but cringe for a few turns.";
+    public void BurnText()
+    {
+        int rngval = RNG(1, 4);
 
+        switch (rngval)
+        {
+            case (1):
+                txt.text = playerPet.petName + " says \"Yo momma is so fat, I took a picture of her last Christmas and it's still printing.\"...\n\n";
+                break;
+            case (2):
+                txt.text = playerPet.petName + " says \"Yo momma is so stupid she brought a spoon to the super bowl.\"...\n\n";
+                break;
+            case (3):
+                txt.text = playerPet.petName + " says \"Yo momma is so stupid she took a ruler to bed to see how long she slept.\"...\n\n";
+                break;
+            case (4):
+                txt.text = playerPet.petName + " says \"Yo mamma is so ugly when she took a bath the water jumped out.\"...\n\n";
+                break;
+            default:
+                break;
 
+        }
+        txt.text += enemyPet.petName + " will be reeling from that burn!";
     }
     public void AcornThrow()
     {
@@ -274,20 +375,20 @@ public class DialoguePanelTextScript : MonoBehaviour
         damage = moveOne.AnimalAdvantage(damage);
 
 
-        txt.text = playerPet.name + " begins throwing acorns!";
+        txt.text = playerPet.petName + " begins throwing acorns!";
 
         // first acorn
         yield return new WaitForSeconds(1.0f);
 
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's First acorn dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's First acorn dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
 
         else
-            txt.text = playerPet.name + " 's First acorn missed!";
+            txt.text = playerPet.petName + " 's First acorn missed!";
 
         if (enemyPet.currentHealth < 1)
         {
@@ -299,12 +400,12 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's Second acorn dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's Second acorn dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = playerPet.name + " 's Second acorn missed!";
+            txt.text = playerPet.petName + " 's Second acorn missed!";
 
         if (enemyPet.currentHealth < 1)
         {
@@ -316,12 +417,12 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's Third acorn dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's Third acorn dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = playerPet.name + " 's Third acorn missed!";
+            txt.text = playerPet.petName + " 's Third acorn missed!";
 
         if (enemyPet.currentHealth < 1)
         {
@@ -333,16 +434,16 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's Fourth acorn dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's Fourth acorn dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = playerPet.name + " 's Fourth acorn missed!";
+            txt.text = playerPet.petName + " 's Fourth acorn missed!";
 
         // total damage
         yield return new WaitForSeconds(1.0f);
-        txt.text = playerPet.name + " dealt " + total + " total damage!";
+        txt.text = playerPet.petName + " dealt " + total + " total damage!";
 
         if (playerPet.hasAdvanatage == true)
         {
@@ -376,20 +477,20 @@ public class DialoguePanelTextScript : MonoBehaviour
         feedBackTextButton.interactable = false;
 
 
-        txt.text = playerPet.name + " begins throwing swiping with it's claws!";
+        txt.text = playerPet.petName + " begins throwing swiping with it's claws!";
 
         // first swipe
         yield return new WaitForSeconds(1.0f);
 
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's First swipe dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's First swipe dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
 
         else
-            txt.text = playerPet.name + " 's First swipe missed!";
+            txt.text = playerPet.petName + " 's First swipe missed!";
 
         if (enemyPet.currentHealth < 1)
         {
@@ -401,12 +502,12 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's Second swipe dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's Second swipe dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = playerPet.name + " 's Second swipe missed!";
+            txt.text = playerPet.petName + " 's Second swipe missed!";
 
         if (enemyPet.currentHealth < 1)
         {
@@ -418,12 +519,12 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's Third swipe dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's Third swipe dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = playerPet.name + " 's Third swipe missed!";
+            txt.text = playerPet.petName + " 's Third swipe missed!";
 
         if (enemyPet.currentHealth < 1)
         {
@@ -435,16 +536,16 @@ public class DialoguePanelTextScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = playerPet.name + " 's Fourth swipe dealt " + damage + " damage!";
+            txt.text = playerPet.petName + " 's Fourth swipe dealt " + damage + " damage!";
             enemyPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = playerPet.name + " 's Fourth swipe missed!";
+            txt.text = playerPet.petName + " 's Fourth swipe missed!";
 
         // total damage
         yield return new WaitForSeconds(1.0f);
-        txt.text = playerPet.name + " dealt " + total + " total damage!";
+        txt.text = playerPet.petName + " dealt " + total + " total damage!";
         if (playerPet.hasAdvanatage == true)
         {
 
@@ -472,6 +573,134 @@ public class DialoguePanelTextScript : MonoBehaviour
         return num;
     }
 
+    public void PlayerMove()
+    {
+
+        moveNumberUsed = playerPet.moveNum;
+        moveName = playerPet.moves[moveNumberUsed].moveName;
+
+
+        if (moveName == "Nip")
+        {
+            damage = moveOne.Nip();
+            enemyPet.currentHealth -= damage;
+            txt.text = playerPet.petName + " nipped the opponent for " + damage + " damage.";
+        }
+
+        if (moveName == "Dance")
+        {
+            // damage is just an int value in this context
+            damage = moveOne.Dance();
+            enemyPet.defense -= damage;
+            txt.text = playerPet.petName + " did a little dance! Enemy Defense lowered by: " + damage;
+        }
+        if (moveName == "Sticky Slap")
+        {
+            int ssDam = moveOne.StickySlap();
+            if (ssDam != 0)
+            {
+                txt.text = playerPet.petName + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+            }
+            else
+            {
+                txt.text = playerPet.petName + "'s Sticky Slap missed! Bet that feels bad.";
+            }
+
+        }
+        if (moveName == "Shed Skin")
+        {
+            moveOne.ShedSkin();
+            txt.text = playerPet.petName + " feels restored!";
+        }
+        if (moveName == "Shell")
+        {
+            txt.text = playerPet.petName + " hid inside it's shell! It's defense rose by " + moveOne.Shell();
+        }
+        if (moveName == "Growl")
+        {
+            txt.text = playerPet.petName + " growled at " + enemyPet.petName + " it's attack decreased by " + moveOne.Growl();
+        }
+        if (moveName == "Hiss")
+        {
+            txt.text = playerPet.petName + " hissed at " + enemyPet.petName + " it's attack decreased by " + moveOne.Growl();
+        }
+        if (moveName == "Acorn Throw")
+        {
+            AcornThrow();
+        }
+        if (moveName == "Fury Swipes")
+        {
+            FurySwipes();
+        }
+        if (moveName == "Speed Swap")
+        {
+            moveOne.SpeedSwap();
+            txt.text = playerPet.petName + " swapped speeds with the enemy! I hope it knows what it's doing! \n\n<b>(speed determines which pet goes first!)</b>";
+        }
+
+        if (moveName == "Cringe")
+        {
+            // already has cringe effect
+            foreach (StatusEffects status in enemyPet.statusEffects)
+            {
+                if (status.effectType == "Cringe")
+                {
+                    txt.text = "Woah there, your opponent is already cringing hard enough. Give them a break for God's sake. ";
+                    hasStatus = true;
+                }
+            }
+
+            if (hasStatus == false)
+            {
+
+                moveOne.Cringe();
+                CringeText();
+            }
+
+            hasStatus = false;
+        }
+
+        if (moveName == "Burn")
+        {
+            // already has Burn effect
+            foreach (StatusEffects status in enemyPet.statusEffects)
+            {
+                if (status.effectType == "Burn")
+                {
+                    txt.text = "They're already looking kinda crispy, don't overdo it. ";
+                    hasStatus = true;
+                }
+            }
+
+            if (hasStatus == false)
+            {
+
+                moveOne.Burn();
+                BurnText();
+            }
+
+            hasStatus = false;
+        }
+
+
+
+        if (playerPet.hasAdvanatage == true)
+        {
+
+            txt.text += "\n\n<color=green>(btw..." + playerPet.animal + "s are <i>obviously</i> strong against " + enemyPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            playerPet.hasAdvanatage = false;
+
+        }
+        if (playerPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + playerPet.animal + "s are <i>obviously</i> weak against " + enemyPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            playerPet.hasDisadvantage = false;
+
+        }
+
+
+    }
 
 }
 

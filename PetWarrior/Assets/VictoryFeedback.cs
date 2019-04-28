@@ -19,7 +19,12 @@ public class VictoryFeedback : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        txt.text = "The enemy " + enemyPet.name + " has fainted!";
+
+        enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
+        player = GameObject.Find("Player").GetComponent<Player>();
+        playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
+        enableVictoryScreen = GameObject.Find("BattleManager").GetComponent<enableVictoryScreen>();
+        txt.text = "The enemy " + enemyPet.petName + " has fainted!";
         textFeedBackButton.onClick.AddListener(ShowXP);
     }
 
@@ -32,11 +37,11 @@ public class VictoryFeedback : MonoBehaviour
     private void ShowXP()
     {
         textFeedBackButton.onClick.RemoveAllListeners();
-        txt.text = playerPet.name + " gains ";
+        txt.text = playerPet.petName + " gains ";
         XPGain();
 
 
-
+        
         // check if you own that particular animal yet
         foreach (var pet in player.playerPets)
         {
@@ -49,11 +54,15 @@ public class VictoryFeedback : MonoBehaviour
         // if the pet is not owned yet, you attempt to catch it
         if (enemyPet.owned == false && playerOwned == false)
         {
+            Debug.Log("Catch turned on");
             textFeedBackButton.onClick.AddListener(CatchAttempt);
         }
-        
+
+        Debug.Log("player owns" +playerOwned);
+        Debug.Log("owned by enemy" +enemyPet.owned);
+
         // check if there's more pets to fight, you're in a trainer battle
-        if(enemyPet.owned == true)
+        if (enemyPet.owned == true)
         {
             // battle either ends or next trainer pet comes out
         }
@@ -67,8 +76,6 @@ public class VictoryFeedback : MonoBehaviour
     {
         txt.text = "Hey! You don't own that pet yet! Try to convince them to join!";
         textFeedBackButton.onClick.AddListener(CatchPanel);
-
-
     }
 
     public void SaySomethingNice()
@@ -83,6 +90,10 @@ public class VictoryFeedback : MonoBehaviour
         if(PetTempermentCheck("Nice"))
         {
             textFeedBackButton.onClick.AddListener(CatchSuccess);
+        }
+        else
+        {
+            textFeedBackButton.onClick.AddListener(CatchFail);
         }
 
 
@@ -102,7 +113,10 @@ public class VictoryFeedback : MonoBehaviour
         {
             textFeedBackButton.onClick.AddListener(CatchSuccess);
         }
-        //else 
+        else
+        {
+            textFeedBackButton.onClick.AddListener(CatchFail);
+        }
     }
 
     public void CatchSuccess()
@@ -111,7 +125,6 @@ public class VictoryFeedback : MonoBehaviour
 
         ClonePet();
 
-        Debug.Log(player.playerPets[1].animal);
         //end battle on click
 
     }
@@ -119,34 +132,27 @@ public class VictoryFeedback : MonoBehaviour
     public void ClonePet()
     {
         Pets pet = new Pets();
-
-        pet.name = enemyPet.name;
-        pet.animal = enemyPet.animal;
-        pet.image = enemyPet.image;
-        pet.health = enemyPet.health;
-        pet.currentHealth = enemyPet.currentHealth;
-
-        pet.maxAttack = enemyPet.maxAttack;
-        pet.attack = enemyPet.attack;
-
-        pet.maxDefense = enemyPet.maxDefense;
-        pet.defense = enemyPet.defense;
-
-        pet.special = enemyPet.special;
-        pet.speed = enemyPet.speed;
-        pet.moveNum = enemyPet.moveNum;
-        pet.moves = enemyPet.moves;
-
+        pet = Instantiate(enemyPet);
+        pet.name = "pet" + player.playerPets.Count;
+        pet.currentHealth = enemyPet.health;
+        pet.transform.parent = player.transform;
 
         player.playerPets.Add(pet);
-    }
+        textFeedBackButton.onClick.RemoveAllListeners();
+        textFeedBackButton.onClick.AddListener(EndBattle);
 
+    }
+    public void EndBattle()
+    {
+        enableVictoryScreen.EndBattle();
+    }
     public void CatchFail()
     {
         txt.text = "Wow, that was definitely not the right thing to say.The wild " + enemyPet.animal + " looks annoyed..\n\n<color=red>The wild " + enemyPet.animal + " ran off!</color>";
 
         //end battle on click
-
+        textFeedBackButton.onClick.RemoveAllListeners();
+        textFeedBackButton.onClick.AddListener(EndBattle);
     }
 
     public void CatchPanel()
@@ -167,11 +173,11 @@ public class VictoryFeedback : MonoBehaviour
         {
             playerPet.level++;
             StatsGain();
-            txt.text  += "\n\n " +playerPet.name +" is now level " +playerPet.level +"! ";
+            txt.text  += "\n\n " +playerPet.petName +" is now level " +playerPet.level +"! ";
         }
 
         // needs to be shown still
-        Debug.Log(playerPet.name + " gained " + xp + "xp!");
+        Debug.Log(playerPet.petName + " gained " + xp + "xp!");
         Debug.Log(playerPet.level);
 
         return xp;

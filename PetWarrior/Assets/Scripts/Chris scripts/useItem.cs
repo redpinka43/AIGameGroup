@@ -50,7 +50,6 @@ public class useItem : MonoBehaviour {
         itemnumber = getNextItem.i;
 
         itemName = player.items[itemnumber % player.items.Count];
-        Debug.Log(itemName);
     }
 
     public void Potion()
