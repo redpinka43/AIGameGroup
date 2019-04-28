@@ -91,6 +91,10 @@ public class VictoryFeedback : MonoBehaviour
         {
             textFeedBackButton.onClick.AddListener(CatchSuccess);
         }
+        else
+        {
+            textFeedBackButton.onClick.AddListener(CatchFail);
+        }
 
 
     }
@@ -109,7 +113,10 @@ public class VictoryFeedback : MonoBehaviour
         {
             textFeedBackButton.onClick.AddListener(CatchSuccess);
         }
-        //else 
+        else
+        {
+            textFeedBackButton.onClick.AddListener(CatchFail);
+        }
     }
 
     public void CatchSuccess()
