@@ -1076,8 +1076,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Ratt
-  animal: Dog
-  image: {fileID: 0}
+  animal: Ratt
+  image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
   health: 3
   currentHealth: 1
   maxAttack: 10
@@ -3875,9 +3876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 4
-  playerPet: {fileID: 0}
-  thisImage: {fileID: 0}
-  image: {fileID: 0}
 --- !u!114 &738543455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,9 +3958,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 3
-  playerPet: {fileID: 0}
-  thisImage: {fileID: 0}
-  image: {fileID: 0}
 --- !u!114 &746639892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4836,13 +4831,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 825076947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 90dba5e5d3afd7f47ab93e48f3efb042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 1
   playerPet: {fileID: 0}
-  thisImage: {fileID: 0}
-  image: {fileID: 0}
+  thisPet: {fileID: 0}
 --- !u!114 &825076950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6351,9 +6344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 2
-  playerPet: {fileID: 0}
-  thisImage: {fileID: 0}
-  image: {fileID: 0}
 --- !u!114 &998938251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7006,6 +6996,7 @@ MonoBehaviour:
   name: Decko
   animal: Gecko
   image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 25
   currentHealth: 20
   maxAttack: 10
@@ -7137,6 +7128,7 @@ MonoBehaviour:
   name: rando
   animal: Turtle
   image: {fileID: 21300012, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -8901,9 +8893,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 5
-  playerPet: {fileID: 0}
-  thisImage: {fileID: 0}
-  image: {fileID: 0}
 --- !u!114 &1469097826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12637,6 +12626,7 @@ MonoBehaviour:
   name: Decko
   animal: Gecko
   image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
   health: 25
   currentHealth: 20
   maxAttack: 10
@@ -12695,6 +12685,7 @@ MonoBehaviour:
   name: rando
   animal: Turtle
   image: {fileID: 21300012, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
   health: 10
   currentHealth: 10
   maxAttack: 10
