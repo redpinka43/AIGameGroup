@@ -12,6 +12,10 @@ public class petLevelUI : MonoBehaviour
     void Start()
     {
         txt = GetComponentInChildren<Text>();
-        txt.text = "LVL:" +pet.level.ToString();
+    }
+
+    private void Update()
+    {
+        txt.text = "LVL:" + pet.level.ToString();
     }
 }

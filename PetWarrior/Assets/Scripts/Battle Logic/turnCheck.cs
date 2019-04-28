@@ -126,6 +126,8 @@ public class turnCheck : MonoBehaviour
     }
     public void feedBackTextButton_Click()
     {
+
+      
         enableVictoryScreen.DeathCheck();
         feedBackPanel.SetActive(false);
 
