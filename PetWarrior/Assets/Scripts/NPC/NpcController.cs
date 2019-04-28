@@ -16,7 +16,17 @@ public class NpcController : MonoBehaviour {
 		NERD,
 		SHOPKEEP
 	}
+
+	public enum FaceDirection
+	{
+		DOWN,
+		UP,
+		LEFT,
+		RIGHT
+	}
+
 	public NpcSkin npcSkin;
+	public FaceDirection faceDirection;
 	public string spriteSheetName;
 	private string[] spriteSheetNames;
 
@@ -40,8 +50,8 @@ public class NpcController : MonoBehaviour {
 
 	// Challenging to battle
 	public float personalBubbleRadius;  // This determines how far away from you the NPC 
-							// stops when they walk up to you. 
-							// Your personal space "bubble"
+										// stops when they walk up to you. 
+										// Your personal space "bubble"
 	public bool challengeable = false;
 	public int startBattleDialogueNode;
 	bool aboutToBattle = false;
@@ -49,6 +59,7 @@ public class NpcController : MonoBehaviour {
 	// Debug
 	public bool testingMovement = false;
 	public Vector2 testVector;
+	public bool drawDebugRays = false;
 
 
 	#region MONOBEHAVIOR
@@ -76,6 +87,31 @@ public class NpcController : MonoBehaviour {
 		myRigidbody = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		npcStartPosition = new Vector2(transform.position.x, transform.position.y);
+
+		// Initialize facing direction
+		Vector2 NpcDirection;
+
+		switch(faceDirection) {
+			case FaceDirection.RIGHT:
+				NpcDirection = new Vector2(1f, 0f);
+				break;
+			case FaceDirection.UP:
+				NpcDirection = new Vector2(0f, 1f);
+				break;
+			case FaceDirection.LEFT:
+				NpcDirection = new Vector2(-1f, 0f);
+				break;
+			case FaceDirection.DOWN:
+				NpcDirection = new Vector2(0f, -1f);
+				break;
+
+			default:
+				NpcDirection = new Vector2(0f, 0f);
+				break;
+		}
+
+		anim.SetFloat("LastMoveX", NpcDirection.x);
+		anim.SetFloat("LastMoveY", NpcDirection.y);
 	
 	}
 
@@ -122,6 +158,10 @@ public class NpcController : MonoBehaviour {
 			wander();
 		}
 
+		if (drawDebugRays) {
+			drawRays();
+		}
+		
 	}
 
 	// This is where the spritesheet is swapped out to fit the type of NPC
@@ -234,15 +274,83 @@ public class NpcController : MonoBehaviour {
 				// If it's not in wanderBoundsRadius though, it doesn't count
 				if ( (Mathf.Abs(newWanderTarget.x - npcStartPosition.x) < wanderBoundsRadius) 
 				  && (Mathf.Abs(newWanderTarget.y - npcStartPosition.y) < wanderBoundsRadius)) {
-					// It counts!
-					newWanderTargetFound = true;
-					walk( new Vector2(transform.position.x - newWanderTarget.x, transform.position.y - newWanderTarget.y) );
+					
+					// Check if the player is in the way; if they are, then try another vector
+					if ( !playerIsInWay(newWanderTarget) ) {
+
+						newWanderTargetFound = true;
+						walk( new Vector2(transform.position.x - newWanderTarget.x, transform.position.y - newWanderTarget.y) );
+					}
+					else
+						Debug.Log("Try creating another target");
+				}
+				else {
+					float wanderDistance = wanderRadius;
+
+					// Make a vector out of this distance
+					Vector2 centerTarget = new Vector2(npcStartPosition.x - transform.position.x, npcStartPosition.y - transform.position.y);
+					newWanderTarget = new Vector2(centerTarget.normalized.x * wanderDistance, centerTarget.normalized.y * wanderDistance);
+
+					if ( playerIsInWay(newWanderTarget) ) {
+						// Do nothing
+						Debug.Log("NPC's path to center blocked by player. Standing still.");
+						newWanderTargetFound = true;
+					}
+
+					else 
+					{
+						Debug.Log("Sending NPC back towards center");
+						walk(newWanderTarget);
+						newWanderTargetFound = true;
+					}
+
 				}
 
 			}
 
 		}
 	}
+
+	// Checks if the given wanderTarget would end up bumping into the player character
+	bool playerIsInWay(Vector2 wanderTarget) {
+
+		return false;
+		
+		/*
+		Vector2 playerPosition = PlayerManager.instance.playerObject.transform.position;
+		bool xCollides = false;
+		bool yCollides = false;
+
+		// Check if x collides
+		if ((transform.position.x - wanderRadius > playerPosition.x - personalBubbleRadius && 
+			 transform.position.x - wanderRadius < playerPosition.x + personalBubbleRadius) ||
+			(transform.position.x + wanderRadius > playerPosition.x - personalBubbleRadius && 
+			 transform.position.x + wanderRadius < playerPosition.x + personalBubbleRadius)) {
+
+				xCollides = true;
+		}
+
+		// Check if y collides
+		if ((transform.position.y - wanderRadius > playerPosition.y - personalBubbleRadius && 
+			 transform.position.y - wanderRadius < playerPosition.y + personalBubbleRadius) ||
+			(transform.position.y + wanderRadius > playerPosition.y - personalBubbleRadius && 
+			 transform.position.y + wanderRadius < playerPosition.y + personalBubbleRadius)) {
+
+				yCollides = true;
+		}
+
+		if (xCollides && yCollides) {
+			Debug.Log("playerIsInWay returns true");
+			return true;
+		}
+
+		else {
+			Debug.Log("playerIsInWay returns false");
+			return false;
+		}
+		*/
+	}
+
 	#endregion
 
 	#region CHALLENGE_TO_BATTLE
@@ -265,7 +373,52 @@ public class NpcController : MonoBehaviour {
 	}
 	#endregion
 
-	
+	void drawRays() {
+		
+		// NPC's start position vector
+		Vector3 startPosition = new Vector3(npcStartPosition.x, npcStartPosition.y, transform.position.z);
+
+		/*  Wander radius */
+		// Left ray
+		Vector3 start = new Vector3(transform.position.x - wanderRadius, transform.position.y - wanderRadius, transform.position.z);
+		Vector3 direction = new Vector3(0f, wanderRadius * 2, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Bottom ray
+		direction = new Vector3(wanderRadius * 2, 0f, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Right ray
+		start = new Vector3(transform.position.x + wanderRadius, transform.position.y + wanderRadius, transform.position.z);
+		direction = new Vector3(0f, wanderRadius * -2, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Top ray
+		direction = new Vector3(wanderRadius * -2, 0f, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+
+		/* The larger wander boundaries */
+		// Left ray
+		start = new Vector3(startPosition.x - wanderBoundsRadius, startPosition.y - wanderBoundsRadius, transform.position.z);
+		direction = new Vector3(0f, wanderBoundsRadius * 2, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Bottom ray
+		direction = new Vector3(wanderBoundsRadius * 2, 0f, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Right ray
+		start = new Vector3(startPosition.x + wanderBoundsRadius, startPosition.y + wanderBoundsRadius, transform.position.z);
+		direction = new Vector3(0f, wanderBoundsRadius * -2, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Top ray
+		direction = new Vector3(wanderBoundsRadius * -2, 0f, 0f);
+		Debug.DrawRay(start, direction, Color.green);
+
+		// Player's personal bubble?
+	}
 
 
 

@@ -77,7 +77,7 @@ TextureImporter:
     21300144: trainer_gentleman_left0
     21300146: trainer_gentleman_right0
     21300148: trainer_gentleman_down1
-    21300150: trainer_gentleman_2
+    21300150: trainer_gentleman_down2
     21300152: trainer_gentleman_up1
     21300154: trainer_gentleman_left1
     21300156: trainer_gentleman_left2
@@ -1596,7 +1596,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trainer_gentleman_2
+      name: trainer_gentleman_down2
       rect:
         serializedVersion: 2
         x: 90

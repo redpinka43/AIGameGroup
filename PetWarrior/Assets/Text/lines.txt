@@ -1,6 +1,6 @@
 Hi, howie doin'. This is a sample spreadsheet which I'm using to test dialogue.												
 												
-ID	Speaker	Text	Links to	Dialogue Options	Notes	Switch to Scene	Dialog Type	Animation/Event	Thumbnail	Text type	Text sound	Box type
+ID	Speaker	Text	Links to	Dialogue Options	Notes	Call function	Dialog Type	Animation/Event	Thumbnail	Text type	Text sound	Box type
 0	Chad	Hi, how's it going.	1									
 1	Chad	Nice day, isn't it?	2					 				
 2	Chad	Lol this is line 3. The end. s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	3									
@@ -11,12 +11,12 @@ ID	Speaker	Text	Links to	Dialogue Options	Notes	Switch to Scene	Dialog Type	Anim
 7	Chad	Well, it was a really delicious pie. Here's the recipe: *writes it on your hand*	8		Yes							
 8	Chad	Lmao this sheet is really hard to follow. I'll get used to it, though.	End		No							
 9	Chad	Well, I don't wanna be friends with you anyway. >:(	End									
-10					playersHouse_basement							
+10					playersHouse basement							
 11	Bed	It's a bed. Can't be yours though. Too clean. ...Oh wait, it's stained.	12									
 12		Yep, checks out.	End									
 13	Desk	Never do homework.	End									
 14	Lamp	Weird lamp.	End									
-15					playersHouse_firstFloor							
+15					playersHouse firstFloor							
 16	Mom	Hi honey! Did you have a good sleep?	17									
 17	Mom	What would you like for breakfast?	18 | 19	Toast | Waffles								
 18	Mom	Oh. It seems we don't have a kitchen. Uh...	20		Toast							
@@ -27,7 +27,7 @@ ID	Speaker	Text	Links to	Dialogue Options	Notes	Switch to Scene	Dialog Type	Anim
 23	TV	...There's nothing on. Literally. 	24									
 24	TV	Why are they sitting and staring at the TV then?	End									
 25	Plant	Plant.	End									
-26					town_1							
+26					town 1							
 27	2 benches	What are these benches doing backwards? No one wants to stare into the forest.	End									
 28	Duck on house	Hello, Frederick. 	29									
 29		Quack.	End									
@@ -44,26 +44,121 @@ ID	Speaker	Text	Links to	Dialogue Options	Notes	Switch to Scene	Dialog Type	Anim
 40	fence	Nope. Can't go further. You're trapped here forever.	End									
 41	Tortoise	Is that... a turtle? A Flirtle?? A free pet???	42									
 42		...No it's a tortoise.	End									
-43					town_1_petStore							
+43					town 1 petStore							
 44	Rival	Hey, we should battle!	45									
 45		...	46									
-46		I mean, right now.	End			battleScreen						
+46		I mean, right now.	End			battleScreen1						
 47	Pets	Assorted pets. You'll be able to adopt one eventually.	End									
 48	Poster	Ratt is empirically the best pet. 	49									
 49		Long live Ratt.	End									
-50	Turn back no pet	You don't have any pets. You're going to die out there.	51		town_1							
+50	Turn back no pet	You don't have any pets. You're going to die out there.	51		town 1							
 51		Go like, find a pet or something. Hint: go to the petstore.	End									
-52					Battle texts							
-53	Generic NPC	Your smell filled me with the need to BATTLE!	End			battleScreen						
+52												
+53												
 54												
 55												
-56												
-57												
-58												
-59												
-60												
-61												
-62												
-63												
-64												
-65												
+56					town 1 NPCs							
+57	Mary	There's quite the influx of ducks this time of year. Back in my home country, the ducks would stop eating for an entire month; it was quite bizarre. 	58									
+58		Oh! Wait a second... Is that you? Oh I'm so glad to see you're back!	59									
+59		I'm busy walking around aimlessly right now, so I can't talk much now. 	60									
+60		However, I can remind you what pet-fighting is, in case you forgot. Would you like to hear about it?	61 | 65	Yes | No								
+61		You may have heard about pet-fighting; I know you just woke up from your coma, so allow me to explain it to you again.	62		Yes							
+62		Basically, the local youths befriend animals and make them their pets, and then they have friendly play-fights.	63									
+63		The animals definitely like it, they don't actually get hurt (despite what any battle text says). Please be careful when playing with animals, we don't want to hurt them.	64									
+64		Anyway, gotta go--it's so nice to have you back. 	End									
+65		Oh, okay. It's so nice to have you back. 	End		No							
+66	Gentleman	Good weather today. Harumph. Good weather.	70									
+67	Gentleman approach	Young lady, the petstore owner told me he has something for you. I'd head there immediately, if I were you.	68									
+68		Don't go out of this town. Otherwise I will be mildly perturbed.	69									
+69		And you won't like it when I'm mildly perturbed. Harumph.	70									
+70		Oh, by the way: would you like an explanation of the controls for this game?	72 | 71	Yes | No								
+71		Oh, ok. (Typical young person, not listening to their elders, harumph...)	End		No							
+72		Excellent! There are 2 primary keys you'll use: Z, which submits, and X, which cancels or skips text. Alternatively, you can use J and K, or even Enter and Shift.	73		Yes							
+73		Pressing Escape will pull up some more useful hints. However, I've given you the best hints already. 	74									
+74		If I catch you opening the hints panel with Escape, I will be mildly hurt. Mildly hurt, I say.	75									
+75		So don't open the hints panel with Escape. Do I need to say it again?	76 | 77	Yes | No								
+76		Don't open the hints panel with Escape.	78		Yes							
+77		I'll say it anyway. Don't open the hints panel with Escape.	78		No							
+78		... Okay I'm done.	End									
+79												
+80					Petstore and rival texts?							
+81												
+82												
+83												
+84												
+85												
+86												
+87												
+88					Route 1							
+89												
+90												
+91												
+92												
+93												
+94												
+95	Nerd 1 approach	Hey watch out, all the people on this route are itching to walk up to you and talk about who knows what.	96									
+96		They're all freaks, if you ask me. Who just stops someone and walks up to them, forcing conversation?	97									
+97		I bet you're glad I warned you. See ya later! (Please)	End									
+98	Nerd 2 approach	Hi! Hi! Hello! Good even-oops, I mean morning! 	99									
+99		I'd like to tell you about the EXCITING world of catching wild pets!	100									
+100		Is "wild pet" an oxymoron? I don't know, I don't care, and frankly anyone who DOES care is not worth my time.	101									
+101		Are you worth my time?	102 | 103	Yes | God yes								
+102		Of course. Okay so what you're gonna do--ARE YOU READY FOR THIS? -- is you're gonna walk to that grass over there	104									
+103		Of course. Okay so what you're gonna do--ARE YOU READY FOR THIS? -- is you're gonna walk to that grass over there	104									
+104		and a wild pet is going to ATTAC-- try to say hi to you! At that point, you can try to recruit the pet and add it to your party.	105									
+105		Or you can make it, um, faint from exhaustion (yes that's the phrase) and your pet will grow more powerful.	106									
+106		Wow! Oh, but I don't want to hold your hand with this. Go try it out yourself.	End									
+107												
+108												
+109												
+110												
+111												
+112												
+113												
+114												
+115												
+116												
+117												
+118												
+119												
+120												
+121												
+122												
+123												
+124												
+125												
+126												
+127												
+128												
+129												
+130												
+131												
+132												
+133												
+134												
+135												
+136												
+137												
+138												
+139												
+140												
+141												
+142												
+143												
+144												
+145												
+146												
+147												
+148												
+149												
+150												
+151												
+152												
+153												
+154												
+155												
+156					Battle texts							
+157	Generic NPC	Your smell filled me with the need to BATTLE!	End			battleScreen2						
+158	Non-battle NPC	I am not designed to battle. Go away.	End									
+159	Test text	Hi we're gonna print a debug function	End			debugFunction						
+160												
