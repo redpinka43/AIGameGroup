@@ -13108,6 +13108,7 @@ GameObject:
   - component: {fileID: 2012843262}
   - component: {fileID: 2012843263}
   - component: {fileID: 2012843264}
+  - component: {fileID: 2012843265}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -13193,13 +13194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b967ce966cf10eb49bb5b41ffe6bf3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPet: {fileID: 0}
-  petButton1: {fileID: 1738318257}
-  petButton2: {fileID: 878720440}
-  petButton3: {fileID: 1546012218}
-  petButton4: {fileID: 2124144306}
-  petButton5: {fileID: 994598949}
-  petButton6: {fileID: 1284670441}
+  pressedButton: 0
 --- !u!114 &2012843264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13216,6 +13211,17 @@ MonoBehaviour:
   feedbackpanel: {fileID: 1198332084}
   startpanel: {fileID: 916987452}
   txt: {fileID: 1187306605}
+--- !u!114 &2012843265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012843258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6081f5c79cccffa40a8575a84e3ef92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020472632
 GameObject:
   m_ObjectHideFlags: 0
