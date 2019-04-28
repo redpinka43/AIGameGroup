@@ -157,9 +157,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2432672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c2c945bdf76bd4bac1640d1717573e, type: 3}
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  i: 0
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!114 &2432675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,12 +742,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 115050248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b81cb84698ae546a7cdd1d98b6ff58, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisImage: {fileID: 0}
-  image: {fileID: 0}
-  playerPet: {fileID: 0}
+  i: 0
 --- !u!114 &115050251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,9 +1317,9 @@ MonoBehaviour:
   petName: 
   animal: Dog
   image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
+  panelImage: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
-  currentHealth: 10
+  currentHealth: 5
   maxAttack: 10
   attack: 10
   maxDefense: 10
@@ -1326,7 +1327,7 @@ MonoBehaviour:
   special: 10
   speed: 10
   currentSpeed: 0
-  level: 0
+  level: 8
   currentXP: 0
   xpNeeded: 0
   hasAdvanatage: 0
@@ -1768,11 +1769,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 326736707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccb4fedd4631bd42983614422bb3e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   i: 0
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &336056690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,11 +2647,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 518737285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccb4fedd4631bd42983614422bb3e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   i: 5
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &542961882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,7 +2915,7 @@ MonoBehaviour:
   petName: 
   animal: Cat
   image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
+  panelImage: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -5269,11 +5272,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 825076947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dba5e5d3afd7f47ab93e48f3efb042, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d3d385650ed66a4699b63c5cefeaa5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPet: {fileID: 0}
-  thisPet: {fileID: 0}
+  i: 1
 --- !u!114 &825076950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5706,6 +5708,7 @@ GameObject:
   - component: {fileID: 878720442}
   - component: {fileID: 878720441}
   - component: {fileID: 878720440}
+  - component: {fileID: 878720444}
   m_Layer: 5
   m_Name: topRight
   m_TagString: Untagged
@@ -5822,6 +5825,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 878720438}
   m_CullTransparentMesh: 0
+--- !u!114 &878720444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878720438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c163c69250f494689bee366c5499bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petTwo: {fileID: 878720440}
+  SwapPets: {fileID: 2012843263}
 --- !u!1 &880848533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6641,12 +6657,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 994598946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ea07be67a59bb443afa4341f0947f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 5
-  playerPet: {fileID: 0}
-  name: {fileID: 0}
+  petFive: {fileID: 994598949}
+  SwapPets: {fileID: 2012843263}
 --- !u!114 &994598949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8277,6 +8292,7 @@ GameObject:
   - component: {fileID: 1284670443}
   - component: {fileID: 1284670442}
   - component: {fileID: 1284670441}
+  - component: {fileID: 1284670445}
   m_Layer: 5
   m_Name: bottomRight
   m_TagString: Untagged
@@ -8393,6 +8409,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1284670439}
   m_CullTransparentMesh: 0
+--- !u!114 &1284670445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1284670439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122dba93bb8d904096f88490857ec59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petSix: {fileID: 1284670441}
+  SwapPets: {fileID: 2012843263}
 --- !u!1 &1290437333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8965,7 +8994,7 @@ MonoBehaviour:
   petName: 
   animal: Rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
+  panelImage: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -9534,11 +9563,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480424313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccb4fedd4631bd42983614422bb3e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   i: 4
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &1487560205
 GameObject:
   m_ObjectHideFlags: 0
@@ -9918,6 +9948,7 @@ GameObject:
   - component: {fileID: 1546012220}
   - component: {fileID: 1546012219}
   - component: {fileID: 1546012218}
+  - component: {fileID: 1546012222}
   m_Layer: 5
   m_Name: midLeft
   m_TagString: Untagged
@@ -10034,6 +10065,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1546012216}
   m_CullTransparentMesh: 0
+--- !u!114 &1546012222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546012216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1a99e552f1b134ba911de048904fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petThree: {fileID: 1546012218}
+  SwapPets: {fileID: 2012843263}
 --- !u!1 &1547695410
 GameObject:
   m_ObjectHideFlags: 0
@@ -10467,11 +10511,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1563304500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccb4fedd4631bd42983614422bb3e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   i: 2
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &1574351244
 GameObject:
   m_ObjectHideFlags: 0
@@ -10556,11 +10601,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1574351244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccb4fedd4631bd42983614422bb3e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   i: 3
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &1594865833
 GameObject:
   m_ObjectHideFlags: 0
@@ -10643,11 +10689,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608070555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00a80f70dbd52142aea34b522b0c072, type: 3}
+  m_Script: {fileID: 11500000, guid: 49d0a29271a09da46bdf3473451245fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fillAmount: 0
   filler: {fileID: 1788961022}
+  i: 0
 --- !u!114 &1608070558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11919,11 +11966,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790596771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccb4fedd4631bd42983614422bb3e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d4799753bb75146896cff1aa3385e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   i: 1
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!1 &1822839553
 GameObject:
   m_ObjectHideFlags: 0
@@ -12692,7 +12740,7 @@ MonoBehaviour:
   petName: 
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -13781,6 +13829,7 @@ GameObject:
   - component: {fileID: 2124144308}
   - component: {fileID: 2124144307}
   - component: {fileID: 2124144306}
+  - component: {fileID: 2124144310}
   m_Layer: 5
   m_Name: midRight
   m_TagString: Untagged
@@ -13897,6 +13946,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2124144304}
   m_CullTransparentMesh: 0
+--- !u!114 &2124144310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2124144304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2bd381f6c700647997b088f46c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petFour: {fileID: 2124144306}
+  SwapPets: {fileID: 2012843263}
 --- !u!1 &2126854171
 GameObject:
   m_ObjectHideFlags: 0
