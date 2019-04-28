@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
+  petName: e
   animal: Bird
   image: {fileID: 0}
   panelImage: {fileID: 0}
@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
+  petName: 1
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
@@ -4563,7 +4563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
+  petName: 3
   animal: Dog
   image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
@@ -7580,31 +7580,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
+  petName: 1
   animal: Gecko
-  image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 25
-  currentHealth: 20
+  image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
+  health: 10
+  currentHealth: 10
   maxAttack: 10
   attack: 10
   maxDefense: 10
   defense: 10
   special: 10
-  speed: 15
+  speed: 10
   currentSpeed: 0
-  level: 3
+  level: 0
   currentXP: 0
-  xpNeeded: 5
+  xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
   owned: 0
   statusEffects: []
   moves:
-  - {fileID: 1170620978}
-  - {fileID: 1170620981}
-  - {fileID: 1170620978}
-  - {fileID: 1170620980}
+  - {fileID: 342203089}
   moveNum: 0
 --- !u!4 &1170620975
 Transform:
@@ -11251,7 +11248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
+  petName: 2
   animal: Cat
   image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
@@ -13403,6 +13400,11 @@ MonoBehaviour:
   playerPetParty: {fileID: 0}
   playerPet: {fileID: 0}
   pressedButton: 0
+  feedbackPanel: {fileID: 1198332084}
+  feedbackPanelButton: {fileID: 151631495}
+  txt: {fileID: 1187306605}
+  turncheck: {fileID: 2012843261}
+  petPanel: {fileID: 62835268}
 --- !u!114 &2012843264
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,11 @@ public class SwapPets : MonoBehaviour {
     public Pets playerPet;
     private Player player;
 	public int pressedButton;
-
+    public GameObject feedbackPanel;
+    public Button feedbackPanelButton;
+    public Text txt;
+    public turnCheck turncheck;
+    public GameObject petPanel;
     // Use this for initialization
     void Start () {
 		
@@ -66,7 +70,21 @@ public class SwapPets : MonoBehaviour {
 		player.playerPets[newPetIndex] = temp;
         ChangePet(newPetIndex);
 		Debug.Log("swapped pets");
+        petPanel.SetActive(false);
+        feedbackPanel.SetActive(true);
+        txt.text = "You sent out a new pet! I really hope the game doesn't crash!";
+        feedbackPanelButton.onClick.RemoveAllListeners();
+        feedbackPanelButton.onClick.AddListener(EnemyTurn);
+
 	}
+
+    public void EnemyTurn()
+    {
+        feedbackPanelButton.onClick.RemoveAllListeners();
+        turncheck.turnState = 1;
+        feedbackPanel.SetActive(false);
+        turncheck.EnemyTurn();
+    }
 
     public void ChangePet(int newPetIndex)
     {
@@ -111,8 +129,6 @@ public class SwapPets : MonoBehaviour {
         thisPet.moveNum = otherPet.moveNum;
         thisPet.moves = otherPet.moves;
         thisPet.statusEffects.Clear();
-
-        thisPet.moves[0].moveName = "Shell";
 
         return thisPet;
     }

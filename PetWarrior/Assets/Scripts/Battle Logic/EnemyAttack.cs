@@ -380,7 +380,7 @@ public class EnemyAttack : MonoBehaviour
                 break;
 
         }
-        txt.text += enemyPet.petName + " will be reeling from that burn!";
+        txt.text += playerPet.petName + " will be reeling from that burn!";
     }
 
     public int StickySlap()
