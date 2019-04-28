@@ -13581,7 +13581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPets:
-  - {fileID: 342203090}
+  - {fileID: 1924430599}
   - {fileID: 1679566403}
   - {fileID: 755316353}
   items:
