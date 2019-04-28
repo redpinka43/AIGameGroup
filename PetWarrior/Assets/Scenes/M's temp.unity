@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!222 &64105290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!222 &141216439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!222 &231404373
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 284968869}
   - component: {fileID: 284968868}
   - component: {fileID: 284968871}
+  - component: {fileID: 284968872}
   m_Layer: 5
   m_Name: midRight
   m_TagString: Untagged
@@ -671,6 +672,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &284968872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 284968866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2bd381f6c700647997b088f46c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petFour: {fileID: 284968871}
+  SwapPets: {fileID: 721672911}
 --- !u!1 &322551611
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +839,8 @@ GameObject:
   - component: {fileID: 345021179}
   - component: {fileID: 345021181}
   - component: {fileID: 345021180}
+  - component: {fileID: 345021182}
+  - component: {fileID: 345021183}
   m_Layer: 5
   m_Name: petPanel
   m_TagString: Untagged
@@ -886,6 +902,38 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 345021178}
   m_CullTransparentMesh: 0
+--- !u!114 &345021182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 345021178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c6528546e85cf459be0ab6cfc1e758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPet: {fileID: 0}
+  thisObject: {fileID: 0}
+  pet1: {fileID: 1092276881}
+  pet2: {fileID: 1214112560}
+  pet3: {fileID: 1560994953}
+  pet4: {fileID: 284968866}
+  pet5: {fileID: 390574254}
+  pet6: {fileID: 1720188785}
+  i: 0
+--- !u!114 &345021183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 345021178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88729a0b7baeda542944dfeb82dfb135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 1092276881}
 --- !u!1 &349649302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,12 +1215,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 390574254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ea07be67a59bb443afa4341f0947f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 5
-  playerPet: {fileID: 0}
-  name: {fileID: 0}
+  petFive: {fileID: 390574259}
+  SwapPets: {fileID: 721672911}
 --- !u!1 &394335330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!222 &411061653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1496,68 +1543,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595629229}
   m_CullTransparentMesh: 0
---- !u!1 &670599421
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 670599422}
-  - component: {fileID: 670599423}
-  m_Layer: 0
-  m_Name: Squirle (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &670599422
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670599421}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 671524706}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &670599423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670599421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Squirle
-  animal: Squirle
-  image: {fileID: 21300024, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 90
-  currentHealth: 48
-  maxAttack: 0
-  attack: 0
-  maxDefense: 0
-  defense: 0
-  special: 0
-  speed: 0
-  currentSpeed: 0
-  level: 3
-  currentXP: 0
-  xpNeeded: 0
-  hasAdvanatage: 0
-  hasDisadvantage: 0
-  owned: 0
-  statusEffects: []
-  moves: []
-  moveNum: 0
 --- !u!1 &671524704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,7 +1576,6 @@ MonoBehaviour:
   - {fileID: 1696418893}
   - {fileID: 2025703837}
   - {fileID: 322551613}
-  - {fileID: 670599423}
   items: []
 --- !u!4 &671524706
 Transform:
@@ -1608,7 +1592,7 @@ Transform:
   - {fileID: 1696418892}
   - {fileID: 2025703836}
   - {fileID: 322551612}
-  - {fileID: 670599422}
+  - {fileID: 1761086914}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1898,6 +1882,47 @@ MonoBehaviour:
   fillAmount: 0.5
   filler: {fileID: 1658196397}
   i: 0
+--- !u!1 &721672910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721672912}
+  - component: {fileID: 721672911}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &721672911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721672910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967ce966cf10eb49bb5b41ffe6bf3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedButton: 0
+--- !u!4 &721672912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721672910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 436.2456, y: 302.74164, z: -5.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763060430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2787,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!222 &1007532641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3014,6 +3039,7 @@ GameObject:
   - component: {fileID: 1214112563}
   - component: {fileID: 1214112562}
   - component: {fileID: 1214112565}
+  - component: {fileID: 1214112566}
   m_Layer: 5
   m_Name: topRight
   m_TagString: Untagged
@@ -3130,6 +3156,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1214112566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214112560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c163c69250f494689bee366c5499bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petTwo: {fileID: 1214112565}
+  SwapPets: {fileID: 721672911}
 --- !u!1 &1252036585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,6 +3561,7 @@ GameObject:
   - component: {fileID: 1560994956}
   - component: {fileID: 1560994955}
   - component: {fileID: 1560994958}
+  - component: {fileID: 1560994959}
   m_Layer: 5
   m_Name: midLeft
   m_TagString: Untagged
@@ -3638,6 +3678,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1560994959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560994953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1a99e552f1b134ba911de048904fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petThree: {fileID: 1560994958}
+  SwapPets: {fileID: 721672911}
 --- !u!1 &1572956936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3953,6 +4006,7 @@ GameObject:
   - component: {fileID: 1720188788}
   - component: {fileID: 1720188787}
   - component: {fileID: 1720188790}
+  - component: {fileID: 1720188791}
   m_Layer: 5
   m_Name: bottomRight
   m_TagString: Untagged
@@ -4069,6 +4123,47 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1720188791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720188785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122dba93bb8d904096f88490857ec59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petSix: {fileID: 1720188790}
+  SwapPets: {fileID: 721672911}
+--- !u!1 &1761086913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761086914}
+  m_Layer: 0
+  m_Name: playerPet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761086914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1761086913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 671524706}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1762004336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,7 +4301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!222 &1763805429
 CanvasRenderer:
   m_ObjectHideFlags: 0
