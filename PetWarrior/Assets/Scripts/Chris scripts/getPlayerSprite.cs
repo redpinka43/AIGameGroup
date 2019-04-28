@@ -8,7 +8,6 @@ public class getPlayerSprite : MonoBehaviour {
     Image myImageComponent;
     public Sprite thisImage;
     public Sprite image;
-    public GameObject enemyPetObject;
     public Pets playerPet;
 
     // Use this for initialization

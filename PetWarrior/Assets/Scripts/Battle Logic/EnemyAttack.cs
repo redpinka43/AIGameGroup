@@ -32,7 +32,8 @@ public class EnemyAttack : MonoBehaviour
     private void OnEnable()
     {
         callFlag = false;
-        moveName = enemyPet.moves[UnityEngine.Random.Range(0, 3)].moveName;
+
+        moveName = enemyPet.moves[UnityEngine.Random.Range(0, enemyPet.moves.Count - 1)].moveName;
 
 
     }
@@ -118,7 +119,7 @@ public class EnemyAttack : MonoBehaviour
         if (callFlag == false)
         {
             callFlag = true;
-            moveName = enemyPet.moves[UnityEngine.Random.Range(0, 3)].moveName;
+            moveName = enemyPet.moves[UnityEngine.Random.Range(0, enemyPet.moves.Count - 1)].moveName;
 
             CheckStatus();
 

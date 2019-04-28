@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class getEnemyPet : MonoBehaviour
 {
 
@@ -9,17 +9,20 @@ public class getEnemyPet : MonoBehaviour
     public Pets enemyPet;
     public Pets thisPet;
     bool petFlag = false;
+
+
     // Use this for initialization
     void Start()
     {
         enemies = GameObject.Find("Enemy Pets").GetComponent<Enemies>();
         thisPet = GameObject.Find("enemyPet").GetComponent<Pets>();
         Debug.Log(thisPet.name);
-
+      
         enemyPet = enemies.enemyPets[Random.Range(0, 7)];
+        
         thisPet = getPet(enemyPet);
 
-
+        Debug.Log(enemyPet.moves[0].moveName);
     }
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class getEnemyPet : MonoBehaviour
         thisPet.moves = enemyPet.moves;
         thisPet.statusEffects.Clear();
 
+        thisPet.moves[0].moveName = "Shell";
 
         RandomizeStatsForPet(thisPet);
 
