@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +15,17 @@ public class DialogueNode {
 	public int[] nextNodes;
 	public string[] dialogueOptions;
 	public string nextScene;
+	public delegate void functionCallHandler();
+	public event functionCallHandler functionCall;
 
 	public bool isEndNode;
 	public bool hasDialogueOptions;
 	public bool hasNextScene;
+	public bool hasFunctionCall;
 
 
     public DialogueNode(string id, string speaker, string text, string nextNodeStr, 
-			   			string dialogueOptionsStr, string nextSceneStr) {
+			   			string dialogueOptionsStr, string functionCallStr) {
 		int.TryParse(id, out this.id);
 		
 		this.speaker = speaker;
@@ -63,12 +67,32 @@ public class DialogueNode {
 		}
 
 		// Switch to scene
-		if (String.IsNullOrEmpty( nextSceneStr.Replace(" ", String.Empty) )) {
+		if (String.IsNullOrEmpty( functionCallStr.Replace(" ", String.Empty) )) {
 			hasNextScene = false;
 		}
 		else {
 			hasNextScene = true;
-			nextScene = nextSceneStr;
+			nextScene = functionCallStr;
+		}
+
+
+		// See if there's a function call associated with this
+		if (String.IsNullOrEmpty( functionCallStr.Replace(" ", String.Empty) )) {
+			hasFunctionCall = false;
+		}
+		else {
+			hasFunctionCall = true;
+			
+			if (hasFunctionCall) {
+				parseFunctionCall(functionCallStr);
+			}
+			
+
+			// functionCall += debugFunction;
+
+			// MethodInfo theMethod = this.GetType().GetMethod(functionCallStr);
+			// functionCall = Delegate.CreateDelegate(typeof(void), theMethod);
+			// functionCall += theMethod;
 		}
 
 	}
@@ -101,7 +125,6 @@ public class DialogueNode {
 
 		return newText;
 	}
-
 
 	// Finds the string that contains the most whole words in the next line
 	string findNextLineChars(string text, int maxCharsPerLine) {
@@ -141,5 +164,56 @@ public class DialogueNode {
 		// The last character of the line is a space ' ', so return the string before that space
 		return text.Substring(0, maxCharsPerLine);
 	}
+
+
+	// Parses the functionCallStr
+	void parseFunctionCall(string functionStr) {
+
+		switch (functionStr) {			
+
+			case "debugFunction":
+				functionCall += debugFunction;
+				break;
+
+			case "battleScreen1":
+				functionCall += battleScreen1;
+				break;
+
+			case "battleScreen2":
+				functionCall += battleScreen1;
+				break;
+
+			default:
+				break;
+
+		}
+
+	}
+
+
+	#region FUNCTION_CALLS
+
+	public void callFunctionCall() {
+		functionCall();
+	}
+
+	void debugFunction() {
+		Debug.Log("DialogueNode's debugFunction function call was called.");
+	}	
+
+	void battleScreen1() {
+
+		MySceneManager.instance.loadBattleScene();
+	}
+
+	void battleScreen2() {
+
+		MySceneManager.instance.loadBattleScene();
+	}
+	
+
+
+
+	#endregion
 
 }

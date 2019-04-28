@@ -122,8 +122,6 @@ public class DialogueManager : MonoBehaviour {
 			else {
 				// Only update stuff if the user presses Space.using UnityEngine.SceneManagement;
 				if ( InputManager.instance.getKeyDown("A") ) {
-					Debug.Log("Current normal text = " + dialogueNormal_text.GetComponent<Text>().text);
-					Debug.Log("Current question text = " + dialogueChoice2_questionText.GetComponent<Text>().text);
 					continueDialogue( true );
 					resetPrintingVariables();
 				}
@@ -152,8 +150,6 @@ public class DialogueManager : MonoBehaviour {
 		else {
 			setGUIState();
 
-			Debug.Log("goddem");
-
 			// Check GUI State, and run the type of Dialogue Box that is called for.
 			switch (GUIManager.instance.guiState) {
 				case GUIState.DIALOGUE_NORMAL:
@@ -161,7 +157,6 @@ public class DialogueManager : MonoBehaviour {
 					// dialogueNormal_text.GetComponent<Text>().text = currentNode.text;
 
 					if (!currentNode.isEndNode) {
-						Debug.Log("line 164: current node text = " + dialogueNormal_text.GetComponent<Text>().text );
 						currentNode = dialogueNodes[currentNode.nextNodes[0]];
 					}
 
@@ -438,6 +433,7 @@ public class DialogueManager : MonoBehaviour {
 
 		GUIManager.instance.call_OnDialogueEnd();
 
+		/* 
 		// Change scene, if necessary
 		if (currentNode.hasNextScene) {
 			// If changing to battle scene
@@ -446,9 +442,17 @@ public class DialogueManager : MonoBehaviour {
 			}
 			else {
 				SceneManager.LoadScene( currentNode.nextScene );
-			}
-			
+			}	
 		}
+		*/
+
+		// Call a function, if necessary
+		if (currentNode.hasFunctionCall) {
+
+			currentNode.callFunctionCall();
+
+		} 
+
 
 		// Set dialoguebox to empty
 		dialogueNormal_text.GetComponent<Text>().text = "";
