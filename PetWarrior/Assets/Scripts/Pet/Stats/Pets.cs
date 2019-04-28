@@ -9,6 +9,7 @@ public class Pets : MonoBehaviour
     public string animal;
 
     public Sprite image;
+	public Sprite panelImage;
 
     public int health;
     public int currentHealth;
