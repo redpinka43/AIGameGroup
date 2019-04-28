@@ -11,7 +11,7 @@ public class getPlayerSprite : MonoBehaviour {
     public Pets playerPet;
 
     // Use this for initialization
-    void Start()
+    void Update()
     {
 
         myImageComponent = GetComponent<Image>(); //Our image component is the one attached to this gameObject.

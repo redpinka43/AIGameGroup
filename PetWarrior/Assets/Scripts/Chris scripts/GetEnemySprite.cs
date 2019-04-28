@@ -12,7 +12,7 @@ public class GetEnemySprite : MonoBehaviour {
     public Pets enemyPet;
 
     // Use this for initialization
-    void Start () {
+    void Update () {
 
         myImageComponent = GetComponent<Image>(); //Our image component is the one attached to this gameObject.
 

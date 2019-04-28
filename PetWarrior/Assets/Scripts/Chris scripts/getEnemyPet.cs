@@ -58,8 +58,6 @@ public class getEnemyPet : MonoBehaviour
         thisPet.moves = enemyPet.moves;
         thisPet.statusEffects.Clear();
 
-        thisPet.moves[0].moveName = "Shell";
-
         RandomizeStatsForPet(thisPet);
 
         return thisPet;
