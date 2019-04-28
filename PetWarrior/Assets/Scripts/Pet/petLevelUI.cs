@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class petLevelUI : MonoBehaviour
 {
-    Text txt;
-    public Pets pet;
+    public int i;
+	Text myText;
+	private Player player;
+	public Pets playerPet;
+	public Text name;
 
     // Start is called before the first frame update
     void Start()
     {
-        txt = GetComponentInChildren<Text>();
-        txt.text = "LVL:" +pet.level.ToString();
+		player = GameObject.Find("Player").GetComponent<Player>();
+		
+		// i indicated the placeholder for pet array
+		playerPet = player.playerPets[i];
+		
+		myText = GetComponentInChildren<Text>();
+		myText.text =  "Level:" + playerPet.level.ToString();
     }
 }
