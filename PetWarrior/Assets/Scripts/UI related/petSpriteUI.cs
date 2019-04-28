@@ -9,9 +9,7 @@ public class petSpriteUI : MonoBehaviour {
 	public int i;
 	Image myImage;
 	private Player player;
-	public Pets playerPet;
-	public Sprite thisImage;
-    public Sprite image;
+	private Pets playerPet;
 	
 	// Use this for initialization
 	void Start () 
@@ -22,7 +20,7 @@ public class petSpriteUI : MonoBehaviour {
 		playerPet = player.playerPets[i];
 		
 		myImage = GetComponent<Image>();
-        myImage.sprite = playerPet.image;
+        myImage.sprite = playerPet.panelImage;
 		
 	}
 	
