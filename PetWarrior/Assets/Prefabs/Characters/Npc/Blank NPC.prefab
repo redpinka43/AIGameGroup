@@ -191,18 +191,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcSkin: 0
+  faceDirection: 0
   spriteSheetName: 
   moveSpeed: 70
   isWandering: 0
   minWaitTime: 0
   maxWaitTime: 5
   wanderRadius: 5
-  wanderBoundsRadius: 50
+  wanderBoundsRadius: 30
   personalBubbleRadius: 17
   challengeable: 0
   startBattleDialogueNode: 53
   testingMovement: 0
   testVector: {x: 0, y: 50}
+  drawDebugRays: 0
 --- !u!114 &114161459382455168
 MonoBehaviour:
   m_ObjectHideFlags: 1
