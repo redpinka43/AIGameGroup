@@ -589,8 +589,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7137255}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -724,7 +724,6 @@ RectTransform:
   m_Children:
   - {fileID: 1006967482}
   - {fileID: 763060431}
-  - {fileID: 812828811}
   m_Father: {fileID: 509372659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1023,8 +1022,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7137255}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1170,7 +1169,6 @@ MonoBehaviour:
   name: fight
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 1
   maxAttack: 10
@@ -1179,12 +1177,19 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
-  moveNum: 0
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  statusEffects: []
   moves:
-  - Nip
-  - Dance
-  - Sticky Slap
-  - Shed Skin
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveNum: 0
 --- !u!1 &411061650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,12 +1940,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 345021179}
-  m_RootOrder: 2
+  m_Father: {fileID: 1006967482}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000014424324, y: 0}
+  m_AnchoredPosition: {x: 0.000032424927, y: -0}
   m_SizeDelta: {x: 250, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812828812
@@ -2589,6 +2594,7 @@ RectTransform:
   - {fileID: 284968867}
   - {fileID: 390574255}
   - {fileID: 1720188786}
+  - {fileID: 812828811}
   m_Father: {fileID: 345021179}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3043,8 +3049,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7137255}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3276,8 +3282,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7137255}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3396,7 +3402,6 @@ MonoBehaviour:
   name: Decko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 20
   maxAttack: 10
@@ -3405,12 +3410,19 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
-  moveNum: 0
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  statusEffects: []
   moves:
-  - Nip
-  - Dance
-  - Sticky Slap
-  - Shed Skin
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveNum: 0
 --- !u!4 &1297538056
 Transform:
   m_ObjectHideFlags: 0
@@ -3704,7 +3716,6 @@ MonoBehaviour:
   name: Yeet
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 1
   maxAttack: 10
@@ -3713,12 +3724,19 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
-  moveNum: 0
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  statusEffects: []
   moves:
-  - Nip
-  - Dance
-  - Sticky Slap
-  - Shed Skin
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveNum: 0
 --- !u!1 &1560994953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,8 +3845,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7137255}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4120,7 +4138,6 @@ MonoBehaviour:
   name: cute
   animal: rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 10
   maxAttack: 10
@@ -4129,8 +4146,15 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
-  moveNum: 0
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  statusEffects: []
   moves: []
+  moveNum: 0
 --- !u!1 &1720188785
 GameObject:
   m_ObjectHideFlags: 0
@@ -4239,8 +4263,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7137255}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4462,7 +4486,6 @@ MonoBehaviour:
   name: Rattata
   animal: rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 10
   maxAttack: 10
@@ -4471,8 +4494,15 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
-  moveNum: 0
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  statusEffects: []
   moves: []
+  moveNum: 0
 --- !u!1 &1808459623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,7 +4948,6 @@ MonoBehaviour:
   name: Ratt
   animal: rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  species: 0
   health: 25
   currentHealth: 10
   maxAttack: 10
@@ -4927,8 +4956,15 @@ MonoBehaviour:
   defense: 10
   special: 10
   speed: 10
-  moveNum: 0
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  statusEffects: []
   moves: []
+  moveNum: 0
 --- !u!1 &2101030448
 GameObject:
   m_ObjectHideFlags: 0
