@@ -14,19 +14,21 @@ public class turnCheck : MonoBehaviour
     public moveThreeButtonText moveThreeButtonText;
     public moveFourButtonText moveFourButtonText;
     public enableVictoryScreen enableVictoryScreen;
-
     public Button feedBackTextButton;
     public Button enemyFeedBackTextButton;
+    public Button petPanelButton;
+    public Button petPanelBackButton;
     public GameObject fightPanel;
     public GameObject feedBackPanel;
     public GameObject enemyFeedBackPanel;
     public GameObject startBattlePanel;
-
+    public GameObject petPanel;
     private void Start()
     {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
-
+        petPanelButton.onClick.AddListener(petPanel_Click);
+        petPanelBackButton.onClick.AddListener(petPanelBack_Click);
         feedBackTextButton.onClick.AddListener(feedBackTextButton_Click);
         enemyFeedBackTextButton.onClick.AddListener(enemyFeedBackTextButton_Click);
 
@@ -129,6 +131,18 @@ public class turnCheck : MonoBehaviour
 
         if (turnState == 1)
             enableVictoryScreen.LiveCheck();
+    }
+    public void petPanel_Click()
+    {
+        startBattlePanel.SetActive(false);
+        petPanel.SetActive(true);
+
+    }
+    public void petPanelBack_Click()
+    {
+        petPanel.SetActive(false);
+        startBattlePanel.SetActive(true);
+
     }
     public void EndTurn()
     {
