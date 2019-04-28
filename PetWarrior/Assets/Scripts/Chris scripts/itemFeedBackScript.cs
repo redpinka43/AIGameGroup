@@ -42,7 +42,7 @@ public class itemFeedBackScript : MonoBehaviour
         if (callFlag == false)
         {
             if (itemName == "Potion")
-                txt.text = "You healed " + playerPet.name + " for 10 health points! Woopdie doo!";
+                txt.text = "You healed " + playerPet.petName + " for 10 health points! Woopdie doo!";
             if (itemName == "Antidote")
                 txt.text = "This item doesn't do anything. You weren't even poisoned. Why are you like this?";
             if (itemName == "Gun")

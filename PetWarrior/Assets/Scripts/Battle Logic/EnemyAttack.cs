@@ -60,6 +60,8 @@ public class EnemyAttack : MonoBehaviour
 
     public void CheckStatus()
     {
+        if (enemyPet.statusEffects.Count < 1)
+            return;
 
         foreach (StatusEffects status in enemyPet.statusEffects)
         {
@@ -69,21 +71,78 @@ public class EnemyAttack : MonoBehaviour
                 if (status.endAfter < 1)
                 {
                     moveName = "";
-                    txt.text = enemyPet.name + " completely forgets why it was cringing.";
+                    txt.text = enemyPet.petName + " completely forgets why it was cringing.";
                     StatusRemoved();
                     enemyPet.statusEffects.Remove(status);
-                    break;
                 }
-
-                if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
                 {
                     moveName = "";
-                    txt.text = "Oh god..." + enemyPet.name + " remembers the cringe. It can't move!";
+                    txt.text = "Oh god..." + enemyPet.petName + " remembers the cringe. It can't move!";
                     StatusEffectOccurs();
                 }
             }
+
+            if (status.effectType == "Burn")
+            {
+                // Lower the timer
+                status.endAfter--;
+
+                // End of status effect
+                if (status.endAfter < 1)
+                {
+                    Debug.Log("burnremove");
+                    moveName = "";
+                    txt.text = enemyPet.petName + " No longer feels the burn.";
+                    enemyPet.statusEffects.Remove(status);
+
+                    StartCoroutine(BurnEffect(false));
+
+                }
+                else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
+                {
+                    Debug.Log("burn");
+
+                    moveName = "";
+                    txt.text = enemyPet.petName + " gets stung by the burn!";
+                    StartCoroutine(BurnEffect(true));
+                }
+            }
+
         }
     }
+
+    public IEnumerator BurnEffect(bool damage)
+    {
+        enemyFeedBackTextButton.interactable = false;
+
+        if (damage == true)
+        {
+
+            yield return new WaitForSeconds(1.0f);
+
+            EnemyMove();
+
+            yield return new WaitForSeconds(1.0f);
+            enemyFeedBackTextButton.interactable = true;
+
+        }
+        else
+        {
+            yield return new WaitForSeconds(1.0f);
+
+
+            yield return new WaitForSeconds(1.0f);
+
+            EnemyMove();
+
+            yield return new WaitForSeconds(1.0f);
+            enemyFeedBackTextButton.interactable = true;
+
+        }
+    }
+
+
 
     public void StatusEffectOccurs()
     {
@@ -131,25 +190,25 @@ public class EnemyAttack : MonoBehaviour
 
 
             if (moveName == "Nip")
-                txt.text = enemyPet.name + " nipped " + playerPet.name + " for " + Nip() + " damage! ";
+                txt.text = enemyPet.petName + " nipped " + playerPet.petName + " for " + Nip() + " damage! ";
             if (moveName == "Dance")
-                txt.text = enemyPet.name + " did a little dance! Enemy Defense lowered by: " + Dance();
+                txt.text = enemyPet.petName + " did a little dance! Enemy Defense lowered by: " + Dance();
             if (moveName == "Sticky Slap")
             {
                 int ssDam = StickySlap();
                 if (ssDam != 0)
                 {
-                    txt.text = enemyPet.name + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+                    txt.text = enemyPet.petName + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
                 }
                 else
                 {
-                    txt.text = enemyPet.name + "'s Sticky Slap missed! Bet that feels bad.";
+                    txt.text = enemyPet.petName + "'s Sticky Slap missed! Bet that feels bad.";
                 }
 
             }
             if (moveName == "Shed Skin")
             {
-                txt.text = enemyPet.name + " feels restored!";
+                txt.text = enemyPet.petName + " feels restored!";
             }
             if (moveName == "Acorn Throw")
             {
@@ -164,7 +223,7 @@ public class EnemyAttack : MonoBehaviour
             }
             if (moveName == "Shell")
             {
-                txt.text = enemyPet.name + " hid inside it's shell! It's defense rose by " + Shell();
+                txt.text = enemyPet.petName + " hid inside it's shell! It's defense rose by " + Shell();
             }
 
             if (moveName == "Cringe")
@@ -174,7 +233,7 @@ public class EnemyAttack : MonoBehaviour
                 {
                     if (status.effectType == "Cringe")
                     {
-                        txt.text = "The enemy " + enemyPet.name + " tries to make " + playerPet.name + " cringe, but " + playerPet.name + " is still cringing from the last time..";
+                        txt.text = "The enemy " + enemyPet.petName + " tries to make " + playerPet.petName + " cringe, but " + playerPet.petName + " is still cringing from the last time..";
                         hasStatus = true;
                     }
                 }
@@ -188,7 +247,30 @@ public class EnemyAttack : MonoBehaviour
 
                 hasStatus = false;
             }
+
+            if (moveName == "Burn")
+            {
+                // already has Burn effect
+                foreach (StatusEffects status in playerPet.statusEffects)
+                {
+                    if (status.effectType == "Burn")
+                    {
+                        txt.text = enemyPet +" Tries to reapply a burn! What a poorly programmed idiot! ";
+                        hasStatus = true;
+                    }
+                }
+
+                if (hasStatus == false)
+                {
+                    Burn();
+                    BurnText();
+                }
+
+                hasStatus = false;
+            }
         }
+
+        
         if (enemyPet.hasAdvanatage == true)
         {
 
@@ -243,33 +325,62 @@ public class EnemyAttack : MonoBehaviour
         playerPet.statusEffects.Add(effect);
 
     }
+    public void Burn()
+    {
+        effect = new StatusEffects();
+        effect.effectType = "Burn";
+        effect.endAfter = 3;
+        playerPet.statusEffects.Add(effect);
+    }
+
     public void CringeText()
     {
         int rngval = RNG(1, 4);
 
-
         switch (rngval)
         {
             case (1):
-                txt.text = enemyPet.name + " says \"#all lives matter\"...\n\n";
+                txt.text = enemyPet.petName + " says \"#all lives matter\"...\n\n";
                 break;
             case (2):
-                txt.text = enemyPet.name + " reminds " + playerPet.name + " they responded \"you too\" to a waiter that said to enjoy their meal.\n\n";
+                txt.text = enemyPet.petName + " reminds " + playerPet.petName + " they responded \"you too\" to a waiter that said to enjoy their meal.\n\n";
                 break;
             case (3):
-                txt.text = enemyPet.name + " tells a bad joke. It wasn't even close to being funny.\n\n";
+                txt.text = enemyPet.petName + " tells a bad joke. It wasn't even close to being funny.\n\n";
                 break;
             case (4):
-                txt.text = enemyPet.name + " says that they honestly believe the moon landing was faked.\n\n";
+                txt.text = enemyPet.petName + " says that they honestly believe the moon landing was faked.\n\n";
                 break;
             default:
                 break;
 
         }
+        txt.text += playerPet.petName + " can't help but cringe for a few turns.";
+    }
 
-        txt.text += playerPet.name + " can't help but cringe for a few turns.";
+    public void BurnText()
+    {
+        int rngval = RNG(1, 4);
 
+        switch (rngval)
+        {
+            case (1):
+                txt.text = enemyPet.petName + " says \"Yo momma is so fat, I took a picture of her last Christmas and it's still printing.\"...\n\n";
+                break;
+            case (2):
+                txt.text = enemyPet.petName + " says \"Yo momma is so stupid she brought a spoon to the super bowl.\"...\n\n";
+                break;
+            case (3):
+                txt.text = enemyPet.petName + " says \"Yo momma is so stupid she took a ruler to bed to see how long she slept.\"...\n\n";
+                break;
+            case (4):
+                txt.text = enemyPet.petName + " says \"Yo mamma is so ugly when she took a bath the water jumped out.\"...\n\n";
+                break;
+            default:
+                break;
 
+        }
+        txt.text += enemyPet.petName + " will be reeling from that burn!";
     }
 
     public int StickySlap()
@@ -320,20 +431,20 @@ public class EnemyAttack : MonoBehaviour
         enemyFeedBackTextButton.interactable = false;
 
 
-        txt.text = enemyPet.name + " begins throwing acorns!";
+        txt.text = enemyPet.petName + " begins throwing acorns!";
 
         // first acorn
         yield return new WaitForSeconds(1.0f);
 
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " First acorn dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " First acorn dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
 
         else
-            txt.text = enemyPet.name + " First acorn missed!";
+            txt.text = enemyPet.petName + " First acorn missed!";
 
         if (playerPet.currentHealth < 1)
         {
@@ -345,12 +456,12 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " Second acorn dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " Second acorn dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = enemyPet.name + " Second acorn missed!";
+            txt.text = enemyPet.petName + " Second acorn missed!";
 
         if (playerPet.currentHealth < 1)
         {
@@ -362,12 +473,12 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " 's Third acorn dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " 's Third acorn dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = enemyPet.name + " 's Third acorn missed!";
+            txt.text = enemyPet.petName + " 's Third acorn missed!";
 
         if (playerPet.currentHealth < 1)
         {
@@ -379,16 +490,16 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " 's Fourth acorn dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " 's Fourth acorn dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = enemyPet.name + " 's Fourth acorn missed!";
+            txt.text = enemyPet.petName + " 's Fourth acorn missed!";
 
         // total damage
         yield return new WaitForSeconds(1.0f);
-        txt.text = enemyPet.name + " dealt " + total + " total damage!";
+        txt.text = enemyPet.petName + " dealt " + total + " total damage!";
         if (enemyPet.hasAdvanatage == true)
         {
 
@@ -421,20 +532,20 @@ public class EnemyAttack : MonoBehaviour
         enemyFeedBackTextButton.interactable = false;
 
 
-        txt.text = enemyPet.name + " begins throwing swiping with it's claws!";
+        txt.text = enemyPet.petName + " begins throwing swiping with it's claws!";
 
         // first acorn
         yield return new WaitForSeconds(1.0f);
 
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " 's First swipe dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " 's First swipe dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
 
         else
-            txt.text = enemyPet.name + " 's First swipe missed!";
+            txt.text = enemyPet.petName + " 's First swipe missed!";
 
         if (playerPet.currentHealth < 1)
         {
@@ -446,12 +557,12 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " 's Second swipe dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " 's Second swipe dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = enemyPet.name + " 's Second swipe missed!";
+            txt.text = enemyPet.petName + " 's Second swipe missed!";
 
         if (playerPet.currentHealth < 1)
         {
@@ -463,12 +574,12 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " 's Third swipe dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " 's Third swipe dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = enemyPet.name + " 's Third swipe missed!";
+            txt.text = enemyPet.petName + " 's Third swipe missed!";
 
         if (playerPet.currentHealth < 1)
         {
@@ -480,16 +591,16 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         if (RNG(1, 2) == 1)
         {
-            txt.text = enemyPet.name + " 's Fourth swipe dealt " + damage + " damage!";
+            txt.text = enemyPet.petName + " 's Fourth swipe dealt " + damage + " damage!";
             playerPet.currentHealth -= damage;
             total += damage;
         }
         else
-            txt.text = enemyPet.name + " 's Fourth swipe missed!";
+            txt.text = enemyPet.petName + " 's Fourth swipe missed!";
 
         // total damage
         yield return new WaitForSeconds(1.0f);
-        txt.text = enemyPet.name + " dealt " + total + " total damage!";
+        txt.text = enemyPet.petName + " dealt " + total + " total damage!";
         if (enemyPet.hasAdvanatage == true)
         {
 
@@ -637,5 +748,85 @@ public class EnemyAttack : MonoBehaviour
         }
 
         return newVal;
+    }
+
+    public void EnemyMove()
+    {
+        moveName = enemyPet.moves[UnityEngine.Random.Range(0, enemyPet.moves.Count - 1)].moveName;
+
+        if (moveName == "Nip")
+            txt.text = enemyPet.petName + " nipped " + playerPet.petName + " for " + Nip() + " damage! ";
+        if (moveName == "Dance")
+            txt.text = enemyPet.petName + " did a little dance! Enemy Defense lowered by: " + Dance();
+        if (moveName == "Sticky Slap")
+        {
+            int ssDam = StickySlap();
+            if (ssDam != 0)
+            {
+                txt.text = enemyPet.petName + " dealt " + ssDam + " damage. Oh god, what was on it's hand?";
+            }
+            else
+            {
+                txt.text = enemyPet.petName + "'s Sticky Slap missed! Bet that feels bad.";
+            }
+
+        }
+        if (moveName == "Shed Skin")
+        {
+            txt.text = enemyPet.petName + " feels restored!";
+        }
+        if (moveName == "Acorn Throw")
+        {
+            Debug.Log("here");
+            AcornThrow();
+        }
+        if (moveName == "Fury Swipes")
+        {
+            Debug.Log("here");
+
+            FurySwipes();
+        }
+        if (moveName == "Shell")
+        {
+            txt.text = enemyPet.petName + " hid inside it's shell! It's defense rose by " + Shell();
+        }
+
+        if (moveName == "Cringe")
+        {
+            // already has cringe effect
+            foreach (StatusEffects status in playerPet.statusEffects)
+            {
+                if (status.effectType == "Cringe")
+                {
+                    txt.text = "The enemy " + enemyPet.petName + " tries to make " + playerPet.petName + " cringe, but " + playerPet.petName + " is still cringing from the last time..";
+                    hasStatus = true;
+                }
+            }
+
+            if (hasStatus == false)
+            {
+
+                Cringe();
+                CringeText();
+            }
+
+            hasStatus = false;
+        }
+
+
+        if (enemyPet.hasAdvanatage == true)
+        {
+
+            txt.text += "\n\n<color=green>(btw..." + enemyPet.animal + "s are <i>obviously</i> strong against " + playerPet.animal + "s " + "so that attack dealt more damage than usual.)</color>";
+            enemyPet.hasAdvanatage = false;
+
+        }
+        if (enemyPet.hasDisadvantage == true)
+        {
+
+            txt.text += "\n\n<color=red>(btw..." + enemyPet.animal + "s are <i>obviously</i> weak against " + playerPet.animal + "s " + "so that attack dealt less damage than usual.)</color>";
+            enemyPet.hasDisadvantage = false;
+
+        }
     }
 }

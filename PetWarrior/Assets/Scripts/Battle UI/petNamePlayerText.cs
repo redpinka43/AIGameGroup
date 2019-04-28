@@ -14,6 +14,6 @@ public class petNamePlayerText : MonoBehaviour
     {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         txt = GetComponentInChildren<Text>();
-		txt.text = playerPet.name;
+		txt.text = playerPet.petName;
     }
 }

@@ -16,7 +16,7 @@ public class getEnemyPet : MonoBehaviour
     {
         enemies = GameObject.Find("Enemy Pets").GetComponent<Enemies>();
         thisPet = GameObject.Find("enemyPet").GetComponent<Pets>();
-        Debug.Log(thisPet.name);
+        Debug.Log(thisPet.petName);
       
         enemyPet = enemies.enemyPets[Random.Range(0, 7)];
         
@@ -40,7 +40,7 @@ public class getEnemyPet : MonoBehaviour
     // Grab the stats of the enemy pet that is chosen(specifically it's moves and sprite)
     public Pets getPet(Pets enemyPet)
     {
-        thisPet.name = enemyPet.name;
+        thisPet.petName = enemyPet.petName;
         thisPet.animal = enemyPet.animal;
         thisPet.image = enemyPet.image;
         thisPet.health = enemyPet.health;
@@ -89,7 +89,7 @@ public class getEnemyPet : MonoBehaviour
                 thisPet.maxAttack = thisPet.attack = med;
                 thisPet.defense = thisPet.maxDefense = high;
                 thisPet.special = med;
-                thisPet.health = high;
+                thisPet.health =  thisPet.currentHealth = high;
                 thisPet.speed = low;
                 break;
             case ("Squirrel"):

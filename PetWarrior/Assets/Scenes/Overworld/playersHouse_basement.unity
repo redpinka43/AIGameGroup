@@ -249,12 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPets:
   - {fileID: 137175396}
-  - {fileID: 402902893}
-  - {fileID: 1061795832}
-  - {fileID: 560592974}
-  - {fileID: 1113864150}
-  - {fileID: 1451106920}
-  - {fileID: 353461731}
   items:
   - Potion
   - Antidote
@@ -314,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Squirrel
+  petName: 
   animal: Squirrel
   image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -331,6 +325,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 130588332}
@@ -363,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Decko
+  petName: 
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -380,6 +375,7 @@ MonoBehaviour:
   xpNeeded: 5
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 137175397}
@@ -469,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Turtle
+  petName: 
   animal: Turtle
   image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -486,6 +482,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 151544945}
@@ -599,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Rat
+  petName: 
   animal: Rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -616,6 +613,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 353461733}
@@ -786,7 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Turtle
+  petName: 
   animal: Turtle
   image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -803,6 +801,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 402902894}
@@ -985,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Sparrow
+  petName: 
   animal: Sparrow
   image: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1002,6 +1001,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 560592975}
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Squirrel
+  petName: 
   animal: Squirrel
   image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1165,6 +1165,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1061795833}
@@ -1224,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Dog
+  petName: 
   animal: Dog
   image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1113864151}
@@ -1358,7 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Sparrow
+  petName: 
   animal: Sparrow
   image: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1375,6 +1377,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1217603468}
@@ -1479,7 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Ratt
+  petName: 
   animal: Rat
   image: {fileID: 0}
   health: 3
@@ -1496,6 +1499,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 0}
@@ -1557,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Rat
+  petName: 
   animal: Rat
   image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1574,6 +1578,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1336939672}
@@ -1633,7 +1638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Gecko
+  petName: 
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1650,6 +1655,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1355346755}
@@ -1695,7 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cat
+  petName: 
   animal: Cat
   image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1712,6 +1718,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1451106921}
@@ -1937,7 +1944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Dog
+  petName: 
   animal: Dog
   image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -1954,6 +1961,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 1969590146}
@@ -2070,7 +2078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Gecko
+  petName: 
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -2087,6 +2095,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 2067431723}
@@ -2160,7 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cat
+  petName: 
   animal: Cat
   image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
@@ -2177,6 +2186,7 @@ MonoBehaviour:
   xpNeeded: 0
   hasAdvanatage: 0
   hasDisadvantage: 0
+  owned: 0
   statusEffects: []
   moves:
   - {fileID: 2104390666}
