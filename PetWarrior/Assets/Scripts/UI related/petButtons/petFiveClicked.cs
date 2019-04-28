@@ -19,5 +19,6 @@ public class petFiveClicked : MonoBehaviour {
     public void petFive_Click()
     {
         SwapPets.pressedButton = 5;
+		SwapPets.switchPet();
     }
 }

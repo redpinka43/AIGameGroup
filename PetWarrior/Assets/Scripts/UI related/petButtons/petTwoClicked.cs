@@ -19,5 +19,7 @@ public class petTwoClicked : MonoBehaviour {
     public void petTwo_Click()
     {
         SwapPets.pressedButton = 2;
+		Debug.Log("swap pet 2 with pet 1");
+		SwapPets.switchPet();
     }
 }

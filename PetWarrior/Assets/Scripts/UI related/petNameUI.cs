@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// meaghan
 public class petNameUI : MonoBehaviour {
 
 	public int i;
@@ -15,16 +16,15 @@ public class petNameUI : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.Find("Player").GetComponent<Player>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
 		
 		// i indicated the placeholder for pet array
 		playerPet = player.playerPets[i];
 		
 		myText = GetComponentInChildren<Text>();
 		myText.text = playerPet.name;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
