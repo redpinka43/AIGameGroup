@@ -1118,6 +1118,11 @@ Prefab:
       propertyPath: startBattleDialogueNode
       value: 157
       objectReference: {fileID: 0}
+    - target: {fileID: 114086912623132896, guid: 95abea9271148465cb54ec7fc592e7bc,
+        type: 2}
+      propertyPath: challengeable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
   m_IsPrefabAsset: 0
