@@ -261,10 +261,10 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 20
-  currentHealth: 20
-  maxAttack: 30
-  attack: 30
+  health: 25
+  currentHealth: 25
+  maxAttack: 50
+  attack: 50
   maxDefense: 20
   defense: 20
   special: 20
@@ -543,8 +543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Fury Swipes
-  ppMax: 0
-  ppCurrent: 0
+  ppMax: 10
+  ppCurrent: 10
 --- !u!114 &353461736
 MonoBehaviour:
   m_ObjectHideFlags: 0

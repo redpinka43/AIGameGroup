@@ -1210,6 +1210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPet: {fileID: 0}
   thisPet: {fileID: 0}
+  petFlag: 0
 --- !u!114 &169310799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveName: 
+  moveName: Cringe
   ppMax: 0
   ppCurrent: 0
 --- !u!114 &169310802
@@ -7603,6 +7604,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 342203089}
+  - {fileID: 342203089}
+  - {fileID: 1170620980}
+  - {fileID: 1170620979}
   moveNum: 0
 --- !u!4 &1170620975
 Transform:
@@ -7642,9 +7646,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveName: 
-  ppMax: 0
-  ppCurrent: 0
+  moveName: Burn
+  ppMax: 10
+  ppCurrent: 10
 --- !u!114 &1170620980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7656,7 +7660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveName: ShedSkin
+  moveName: Cringe
   ppMax: 15
   ppCurrent: 15
 --- !u!114 &1170620981
@@ -13345,6 +13349,7 @@ MonoBehaviour:
   backButton: {fileID: 1788054860}
   playerController: {fileID: 0}
   startBattlePanel: {fileID: 916987452}
+  getpet: {fileID: 0}
 --- !u!114 &2012843261
 MonoBehaviour:
   m_ObjectHideFlags: 0
