@@ -1,6 +1,36 @@
 # AIGameGroup
 <h1>Week 15: </h1>
 
+<h2> Iteration Implemented this Week </h2>
+<h3> Blue UI for Player in Battle </h3>
+<img src = "/Images and Artwork/bluePlayerUI.PNG">
+We changed the player health menu in battle to blue so that new players would better understand which healthbar goes to who.
+
+<h3> Helper NPCs </h3>
+<img src = "/Images and Artwork/controlNPC.PNG">
+This NPC explains the dialogue controls to the player.
+<img src = "/Images and Artwork/wildEncounterNPC.PNG">
+This NPC explains wild encounters to the player.
+
+There are more helper NPCs that explain the story of pet battling and how to get your pets healed. All of these NPCs are meant to help the player learn the game easier than the play testers did a few weeks ago.
+
+<h2> New Fully Implemented Features </h2>
+
+<h3> Random Encounters Allow You to Be Naughty or Nice </h3>
+<img src = "/Images and Artwork/wildEncounter.PNG">
+Some pets, as detailed in a post made in earlier weeks, respond to nice words while others prefer tough love. We have added the ability to choose how to treat your new pet after you defeat them in a wild encounter. If the pet likes you it can join your party.
+
+<h3> Players can View their Party in the Overworld </h3>
+<img src = "/Images and Artwork/petPartyInGame.PNG">
+This panel (which can be opened by pressing "p") will tell the player what pets they currently have in their party as well as their level and hp.
+
+<h3> Players can Swap Pets in Battle </h3>
+This helps the battle be more interesting because the player can strategize with which pet they would like to use during battle.
+
+<h3> More Enemy Trainters </h3>
+<img src = "/Images and Artwork/moreEnemyTrainers.PNG">
+We added more enemy trainers to give the player more to do. These trainers will provide a challenge and incentivize the player to go out and level up their pets.
+
 <h1>Week 14: </h1>
 
 <h2> AI Presentation </h2>
