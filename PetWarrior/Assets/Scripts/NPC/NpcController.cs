@@ -25,8 +25,20 @@ public class NpcController : MonoBehaviour {
 		RIGHT
 	}
 
+	public enum NpcId {
+	
+		DEFAULT, 	// Do nothing
+		TOWN_1_GENTLEMAN,
+		ROUTE_1_NERD1,
+		ROUTE_1_NERD2,
+		ROUTE_1_LADY,
+		TOWN_2_NERD,
+		TOWN_2_BOY
+	}
+
 	public NpcSkin npcSkin;
 	public FaceDirection faceDirection;
+	public NpcId npcId;
 	public string spriteSheetName;
 	private string[] spriteSheetNames;
 
@@ -38,6 +50,7 @@ public class NpcController : MonoBehaviour {
 	Vector2 currentWalkDistance;
 	Vector2 walkStartPosition;
 	public bool isWandering = false;
+	public bool tempStoppedWandering = false;
 
 	// Wander
 	Vector2 npcStartPosition;
@@ -63,6 +76,16 @@ public class NpcController : MonoBehaviour {
 
 
 	#region MONOBEHAVIOR
+
+	void OnEnable() {
+
+		GUIManager.OnDialogueEnd += enableWander;
+	}
+
+	void OnDisable() {
+
+		GUIManager.OnDialogueEnd -= enableWander;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -112,6 +135,12 @@ public class NpcController : MonoBehaviour {
 
 		anim.SetFloat("LastMoveX", NpcDirection.x);
 		anim.SetFloat("LastMoveY", NpcDirection.y);
+
+		if (npcId != NpcId.DEFAULT) {
+			if (NPCManager.instance.NPCsThatHaveApproachedPlayer[(int) npcId]) {
+				challengeable = false;
+			}
+		}
 	
 	}
 
@@ -152,9 +181,11 @@ public class NpcController : MonoBehaviour {
 			DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startBattleDialogueNode];
 			DialogueManager.instance.ActivateDialogue();
 			aboutToBattle = false;
+			tempStoppedWandering = true;
+			challengeable = false;
 		}
 
-		else if (isWandering) {
+		else if (isWandering && !tempStoppedWandering) {
 			wander();
 		}
 
@@ -370,6 +401,9 @@ public class NpcController : MonoBehaviour {
 		walk(newMoveToPlayerVector);
 		aboutToBattle = true;
 
+		// Save that this NPC has approached the player before
+		NPCManager.instance.NPCsThatHaveApproachedPlayer[(int) npcId] = true;
+
 	}
 	#endregion
 
@@ -420,6 +454,9 @@ public class NpcController : MonoBehaviour {
 		// Player's personal bubble?
 	}
 
-
+	// Enable wander upon dialogue box being disabled
+	void enableWander() {
+		tempStoppedWandering = false;
+	}
 
 }

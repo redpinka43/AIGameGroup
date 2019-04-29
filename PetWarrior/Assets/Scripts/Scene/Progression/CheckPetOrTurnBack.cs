@@ -18,7 +18,7 @@ public class CheckPetOrTurnBack : MonoBehaviour {
 		if(other.gameObject == PlayerManager.instance.playerObject)
 		{
 
-			if (PartyManager.instance.petParty[0] == null) {
+			if (!EventManager.haveBattledRivalInPetstore) {
 
 				Vector3 endPosition = new Vector3 (playerObject.transform.position.x, playerObject.transform.position.y + pushDistance, playerObject.transform.position.z);
 				Vector3 startPosition = new Vector3 (playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z);

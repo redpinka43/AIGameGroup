@@ -18,6 +18,9 @@ public class duckJesus : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             if (Input.GetKeyDown("space"))
+
+
+            if (InputManager.instance.getKeyDown("a"))
                 HealPets();
 
         }

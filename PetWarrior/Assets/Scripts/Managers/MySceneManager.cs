@@ -25,7 +25,14 @@ public class MySceneManager : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
-	
+	void Start() {
+
+		// Assigne lastOverworldScene if it's null 
+		if ( string.IsNullOrEmpty(lastOverworldScene) ) {
+			lastOverworldScene = "town_1_petStore";
+		}
+	}
+
 	// Whenever scene is loaded, the event OnSceneChange is triggered
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 
@@ -38,6 +45,11 @@ public class MySceneManager : MonoBehaviour {
 	// Loads a battle scene while saving important variables about the player
 	public void loadBattleScene() {
 		
+		// Saving bool about rival in petstore
+		if(SceneManager.GetActiveScene().name == "town_1_petStore") {
+			EventManager.haveBattledRivalInPetstore = true;
+		}
+
 		// Save current scene. Player direction and player position should stay the same, I'm pretty sure.
 		lastOverworldScene = SceneManager.GetActiveScene().name;
 		SceneManager.LoadScene("battleScreen");
