@@ -16,8 +16,10 @@ public class VictoryFeedback : MonoBehaviour
     public Button naughty;
     private bool playerOwned;
     public enableVictoryScreen enableVictoryScreen;
-
+    public EnemyPetChanger enemyPetChanger;
     public GameObject playerParty;
+    public GameObject startBattlePanel;
+    public GameObject thisPanel;
     // Use this for initialization
     void Start()
     {
@@ -84,9 +86,24 @@ public class VictoryFeedback : MonoBehaviour
         if (enemyPet.owned == true)
         {
             // battle either ends or next trainer pet comes out
+            enemyPetChanger.petFlag = false;
+            enemyPetChanger.i++;
+            txt.text = "The Enemy trainer sends out the next pet!";
+            textFeedBackButton.onClick.RemoveAllListeners();
+            textFeedBackButton.onClick.AddListener(StartPanel);
+            Debug.Log("well at least you got here");
         }
 
         // battle could end here
+
+
+    }
+
+    public void StartPanel()
+    {
+        textFeedBackButton.onClick.RemoveAllListeners();
+        startBattlePanel.SetActive(true);
+        thisPanel.SetActive(false);
 
 
     }
