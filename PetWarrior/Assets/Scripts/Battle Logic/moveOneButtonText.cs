@@ -53,14 +53,14 @@ public class moveOneButtonText : MonoBehaviour
 
     public void SpeedSwap()
     {
-        int temp = playerPet.speed;
-        playerPet.speed = enemyPet.speed;
-        enemyPet.speed = temp;
+        int temp = playerPet.currentSpeed;
+        playerPet.currentSpeed = enemyPet.currentSpeed;
+        enemyPet.currentSpeed = temp;
     }
 
     public int Nip()
     {
-        int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
+        int damage = (int)(Math.Ceiling((double)playerPet.attack / (double)enemyPet.defense));
         damage = AnimalAdvantage(damage);
         return damage;
     }
@@ -129,7 +129,7 @@ public class moveOneButtonText : MonoBehaviour
     public int Growl()
     {
         int val = (int)Math.Ceiling(((double)enemyPet.defense * .1) + ((double)playerPet.special * .1));
-        enemyPet.defense -= val;
+        enemyPet.attack -= val;
         return val;
     }
 

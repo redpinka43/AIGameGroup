@@ -178,7 +178,7 @@ public class EnemyAttack : MonoBehaviour
         if (callFlag == false)
         {
             callFlag = true;
-            moveName = enemyPet.moves[UnityEngine.Random.Range(0, enemyPet.moves.Count - 1)].moveName;
+            moveName = enemyPet.moves[UnityEngine.Random.Range(0, enemyPet.moves.Count)].moveName;
 
             CheckStatus();
 
@@ -225,7 +225,19 @@ public class EnemyAttack : MonoBehaviour
             {
                 txt.text = enemyPet.petName + " hid inside it's shell! It's defense rose by " + Shell();
             }
-
+            if (moveName == "Growl")
+            {
+                txt.text = enemyPet.petName + " growled at " + playerPet.petName + " it's attack decreased by " + Growl();
+            }
+            if (moveName == "Hiss")
+            {
+                txt.text = enemyPet.petName + " hissed at " + playerPet.petName + " it's attack decreased by " + Growl();
+            }
+            if (moveName == "Speed Swap")
+            {
+                SpeedSwap();
+                txt.text = enemyPet.petName + " swapped speeds with the enemy! I hope it knows what it's doing! \n\n<b>(speed determines which pet goes first!)</b>";
+            }
             if (moveName == "Cringe")
             {
                 // already has cringe effect
@@ -287,13 +299,25 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-
+    public int Growl()
+    {
+        int val = (int)Math.Ceiling(((double)playerPet.defense * .1) + ((double)enemyPet.special * .1));
+        playerPet.attack -= val;
+        return val;
+    }
     public int Nip()
     {
         int damage = (int)(Math.Ceiling((double)enemyPet.attack / (double)playerPet.defense));
         damage = AnimalAdvantage(damage);
         playerPet.currentHealth -= damage;
         return damage;
+    }
+
+    public void SpeedSwap()
+    {
+        int temp = enemyPet.currentSpeed;
+        enemyPet.currentSpeed = playerPet.currentSpeed;
+        playerPet.currentSpeed = temp;
     }
 
     public int Dance()
@@ -789,6 +813,19 @@ public class EnemyAttack : MonoBehaviour
         if (moveName == "Shell")
         {
             txt.text = enemyPet.petName + " hid inside it's shell! It's defense rose by " + Shell();
+        }
+        if (moveName == "Growl")
+        {
+            txt.text = enemyPet.petName + " growled at " + playerPet.petName + " it's attack decreased by " + Growl();
+        }
+        if (moveName == "Hiss")
+        {
+            txt.text = enemyPet.petName + " hissed at " + playerPet.petName + " it's attack decreased by " + Growl();
+        }
+        if (moveName == "Speed Swap")
+        {
+            SpeedSwap();
+            txt.text = enemyPet.petName + " swapped speeds with the enemy! I hope it knows what it's doing! \n\n<b>(speed determines which pet goes first!)</b>";
         }
 
         if (moveName == "Cringe")

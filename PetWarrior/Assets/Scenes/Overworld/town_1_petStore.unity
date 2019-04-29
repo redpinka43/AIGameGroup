@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 149880618}
   - component: {fileID: 149880620}
   - component: {fileID: 149880619}
+  - component: {fileID: 149880621}
   m_Layer: 0
   m_Name: Enemy Squirrel
   m_TagString: Untagged
@@ -326,11 +327,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149880617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 326.7346, y: -48.21448, z: 16.9375}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1531686510}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &149880619
 MonoBehaviour:
@@ -357,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 3
+  petName: Sqrlboi
   animal: Squirrel
   image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
@@ -379,7 +380,22 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 149880619}
+  - {fileID: 149880621}
   moveNum: 0
+--- !u!114 &149880621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 149880617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Acorn Throw
+  ppMax: 10
+  ppCurrent: 10
 --- !u!1 &340523946
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +421,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 176.3346, y: 84.28552, z: 16.9375}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 940270690}
   m_Father: {fileID: 80786679}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -537,6 +554,7 @@ GameObject:
   - component: {fileID: 634702773}
   - component: {fileID: 634702775}
   - component: {fileID: 634702774}
+  - component: {fileID: 634702776}
   m_Layer: 0
   m_Name: Enemy Gecko
   m_TagString: Untagged
@@ -555,7 +573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1531686510}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &634702774
 MonoBehaviour:
@@ -582,14 +600,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Gecko
+  petName: Gex
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
+  health: 8
+  currentHealth: 8
+  maxAttack: 15
+  attack: 15
   maxDefense: 10
   defense: 10
   special: 10
@@ -604,7 +622,22 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 634702774}
+  - {fileID: 634702776}
   moveNum: 0
+--- !u!114 &634702776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634702772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Growl
+  ppMax: 10
+  ppCurrent: 10
 --- !u!4 &678270159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4995082832751640, guid: 554653d2c29fb4620bf5a51c8155b37c,
@@ -901,10 +934,10 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
+  health: 20
+  currentHealth: 20
   maxAttack: 10
-  attack: 10
+  attack: 50
   maxDefense: 10
   defense: 10
   special: 10
@@ -943,12 +976,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940270687}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -326.7346, y: 48.214478, z: -16.9375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 340523947}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954168305
 GameObject:
@@ -1581,6 +1614,7 @@ Transform:
   m_LocalPosition: {x: 175.63458, y: 46.18552, z: 16.9375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 149880618}
   - {fileID: 634702773}
   - {fileID: 1576370358}
   m_Father: {fileID: 1396417515}
@@ -1736,6 +1770,7 @@ GameObject:
   - component: {fileID: 1576370358}
   - component: {fileID: 1576370360}
   - component: {fileID: 1576370359}
+  - component: {fileID: 1576370361}
   m_Layer: 0
   m_Name: Enemy Turtle
   m_TagString: Untagged
@@ -1754,7 +1789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1531686510}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576370359
 MonoBehaviour:
@@ -1781,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 2
+  petName: Flirtle
   animal: Turtle
   image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
@@ -1803,7 +1838,22 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 1576370359}
+  - {fileID: 1576370361}
   moveNum: 0
+--- !u!114 &1576370361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1576370357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shell
+  ppMax: 10
+  ppCurrent: 10
 --- !u!1 &1705396211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,10 +2053,10 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
+  health: 20
+  currentHealth: 20
   maxAttack: 10
-  attack: 10
+  attack: 50
   maxDefense: 10
   defense: 10
   special: 10

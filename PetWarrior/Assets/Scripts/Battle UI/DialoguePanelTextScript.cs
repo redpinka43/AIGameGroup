@@ -53,7 +53,7 @@ public class DialoguePanelTextScript : MonoBehaviour
         if (playerPet.statusEffects.Count < 1)
             return;
 
-        foreach (StatusEffects status in playerPet.statusEffects)
+        foreach (var status in playerPet.statusEffects)
         {
             if (status.effectType == "Cringe")
             {
@@ -100,6 +100,7 @@ public class DialoguePanelTextScript : MonoBehaviour
                     Debug.Log("burn");
 
                     moveName = "";
+                    playerPet.currentHealth -= (int)Math.Ceiling( ((double)enemyPet.special * .3));
                     txt.text = playerPet.petName + " gets stung by the burn!";
                     StartCoroutine(BurnEffect(true));
                 }
