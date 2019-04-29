@@ -4746,6 +4746,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 140.15332
       objectReference: {fileID: 0}
+    - target: {fileID: 114659459381656058, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
+        type: 2}
+      propertyPath: startNode
+      value: 115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778aea9a0a5604d89bbc4ae8a1c490b7, type: 2}
   m_IsPrefabAsset: 0
