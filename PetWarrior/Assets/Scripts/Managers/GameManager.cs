@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject eventManPrefab;
 	public GameObject GUIManPrefab;
 	public GameObject inputManPrefab;
+	public GameObject NPCManPrefab;
 	public GameObject playerManPrefab;
 	public GameObject sceneManPrefab;
 	
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour {
 		if (EventManager.instance == null)  	{ Instantiate(eventManPrefab, gameObject.transform); }
 		if (GUIManager.instance == null)  		{ Instantiate(GUIManPrefab, gameObject.transform); }
 		if (InputManager.instance == null)  	{ Instantiate(inputManPrefab, gameObject.transform); }
+		if (NPCManager.instance == null)  		{ Instantiate(NPCManPrefab, gameObject.transform); }
 		if (PlayerManager.instance == null)  	{ Instantiate(playerManPrefab, gameObject.transform); }
 		if (MySceneManager.instance == null)  	{ Instantiate(sceneManPrefab, gameObject.transform); }
 		
