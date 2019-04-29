@@ -87,10 +87,13 @@ public class enableVictoryScreen : MonoBehaviour
 
             foreach(var pet in player.playerPets)
             {
-                if(pet.currentHealth > 1)
-                {
-                    //a pet still lives
-                    isAPetStillAlive = true;
+                if (pet.petName != playerPet.petName)
+                    {
+                    if (pet.currentHealth > 1)
+                    {
+                        //a pet still lives
+                        isAPetStillAlive = true;
+                    }
                 }
             }
             if(isAPetStillAlive)
@@ -142,6 +145,7 @@ public class enableVictoryScreen : MonoBehaviour
     {
         NormalizePets();
         getpet.petFlag = false;
+ 
         // Return to overworld
         Debug.Log("In EndBattle(), loading scene " + MySceneManager.instance.lastOverworldScene);
         PlayerController.instance.GetComponent<Animator>().SetFloat("MoveX", MySceneManager.instance.lastFacingDirection.x);

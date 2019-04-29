@@ -764,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Decko
+  petName: booyah
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Sqrlboi
+  petName: Squirrel
   animal: Squirrel
   image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
@@ -1325,11 +1325,6 @@ MonoBehaviour:
   - {fileID: 218285573}
   - {fileID: 218285572}
   moveNum: 0
---- !u!4 &223152786 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1177486118}
 --- !u!1 &235262023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1209413986559350, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
@@ -1411,6 +1406,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
+--- !u!1 &292375589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1529576717}
+--- !u!114 &292375596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292375589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dbf08ee0ffe5e45902f86e5115ed8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &302061318
 Prefab:
   m_ObjectHideFlags: 0
@@ -1496,7 +1507,7 @@ Transform:
   - {fileID: 875105445}
   - {fileID: 1421419452}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327474612
 GameObject:
@@ -1687,6 +1698,132 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 82.888794, y: 2.6910858}
   m_EdgeRadius: 0
+--- !u!1 &362454498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362454499}
+  - component: {fileID: 362454504}
+  - component: {fileID: 362454503}
+  - component: {fileID: 362454502}
+  - component: {fileID: 362454501}
+  - component: {fileID: 362454500}
+  m_Layer: 0
+  m_Name: Enemy Rat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &362454499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362454498}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362454500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362454498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Burn
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &362454501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362454498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &362454502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362454498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Hiss
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &362454503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362454498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!114 &362454504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362454498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Rat
+  animal: Rat
+  image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 362454503}
+  - {fileID: 362454502}
+  - {fileID: 362454501}
+  - {fileID: 362454500}
+  moveNum: 0
 --- !u!1001 &362724829
 Prefab:
   m_ObjectHideFlags: 0
@@ -2138,15 +2275,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1421419452}
+    m_TransformParent: {fileID: 1529576718}
     m_Modifications:
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 387
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -483
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2170,7 +2307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_Name
@@ -2225,6 +2362,133 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da89d298fc501c44d9da54df18bf9490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+--- !u!1 &412786695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412786696}
+  - component: {fileID: 412786701}
+  - component: {fileID: 412786700}
+  - component: {fileID: 412786699}
+  - component: {fileID: 412786698}
+  - component: {fileID: 412786697}
+  m_Layer: 0
+  m_Name: Enemy Cat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412786696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412786695}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412786697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412786695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Sticky Slap
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &412786698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412786695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &412786699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412786695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Hiss
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &412786700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412786695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &412786701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412786695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Cat
+  animal: Cat
+  image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 412786700}
+  - {fileID: 412786699}
+  - {fileID: 412786698}
+  - {fileID: 412786697}
+  moveNum: 0
 --- !u!1001 &436109026
 Prefab:
   m_ObjectHideFlags: 0
@@ -3724,132 +3988,6 @@ Transform:
   m_Father: {fileID: 401937142}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &764278206
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 764278207}
-  - component: {fileID: 764278212}
-  - component: {fileID: 764278211}
-  - component: {fileID: 764278210}
-  - component: {fileID: 764278209}
-  - component: {fileID: 764278208}
-  m_Layer: 0
-  m_Name: Enemy Cat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &764278207
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764278206}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1067077356}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &764278208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764278206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Sticky Slap
-  ppMax: 10
-  ppCurrent: 10
---- !u!114 &764278209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764278206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Fury Swipes
-  ppMax: 10
-  ppCurrent: 10
---- !u!114 &764278210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764278206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Hiss
-  ppMax: 5
-  ppCurrent: 5
---- !u!114 &764278211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764278206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Nip
-  ppMax: 10
-  ppCurrent: 10
---- !u!114 &764278212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764278206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  petName: Cat
-  animal: Cat
-  image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
-  level: 1
-  currentXP: 0
-  xpNeeded: 10
-  hasAdvanatage: 0
-  hasDisadvantage: 0
-  owned: 0
-  statusEffects: []
-  moves:
-  - {fileID: 764278211}
-  - {fileID: 764278210}
-  - {fileID: 764278209}
-  - {fileID: 764278208}
-  moveNum: 0
 --- !u!1 &798064784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3954,15 +4092,15 @@ MonoBehaviour:
   animal: Dog
   image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
+  health: 30
+  currentHealth: 30
+  maxAttack: 30
+  attack: 30
+  maxDefense: 30
+  defense: 30
+  special: 30
+  speed: 30
+  currentSpeed: 30
   level: 1
   currentXP: 0
   xpNeeded: 10
@@ -4100,7 +4238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Gex
+  petName: Gecko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
@@ -4463,6 +4601,132 @@ MonoBehaviour:
   - {fileID: 864567406}
   - {fileID: 864567405}
   moveNum: 0
+--- !u!1 &873341065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873341066}
+  - component: {fileID: 873341071}
+  - component: {fileID: 873341070}
+  - component: {fileID: 873341069}
+  - component: {fileID: 873341068}
+  - component: {fileID: 873341067}
+  m_Layer: 0
+  m_Name: Enemy Squirrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &873341066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873341065}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873341067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873341065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &873341068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873341065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Dance
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &873341069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873341065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Acorn Throw
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &873341070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873341065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &873341071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873341065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Squirrel
+  animal: Squirrel
+  image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 873341070}
+  - {fileID: 873341069}
+  - {fileID: 873341068}
+  - {fileID: 873341067}
+  moveNum: 0
 --- !u!1 &875105444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,6 +4769,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
     type: 2}
   m_PrefabInternal: {fileID: 436765713}
+--- !u!1 &936633584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936633585}
+  - component: {fileID: 936633587}
+  - component: {fileID: 936633586}
+  m_Layer: 0
+  m_Name: enemyPet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936633585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936633584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 441.68134, y: 416.68964, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1784839006}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936633586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936633584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3345e4d14aea60749b73d0b35ccf8ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPet: {fileID: 0}
+  thisPet: {fileID: 0}
+  petFlag: 0
+--- !u!114 &936633587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936633584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: 
+  animal: Rat
+  image: {fileID: 0}
+  panelImage: {fileID: 0}
+  health: 3
+  currentHealth: 3
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveNum: 0
 --- !u!1 &940291406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4914,132 +5258,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
     type: 2}
   m_PrefabInternal: {fileID: 1043060646}
---- !u!1 &1047065205
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1047065206}
-  - component: {fileID: 1047065211}
-  - component: {fileID: 1047065210}
-  - component: {fileID: 1047065209}
-  - component: {fileID: 1047065208}
-  - component: {fileID: 1047065207}
-  m_Layer: 0
-  m_Name: Enemy Rat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1047065206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047065205}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1067077356}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1047065207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047065205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Burn
-  ppMax: 5
-  ppCurrent: 5
---- !u!114 &1047065208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047065205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Fury Swipes
-  ppMax: 10
-  ppCurrent: 10
---- !u!114 &1047065209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047065205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Hiss
-  ppMax: 5
-  ppCurrent: 5
---- !u!114 &1047065210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047065205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
---- !u!114 &1047065211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047065205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  petName: Rat
-  animal: Rat
-  image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
-  level: 1
-  currentXP: 0
-  xpNeeded: 10
-  hasAdvanatage: 0
-  hasDisadvantage: 0
-  owned: 0
-  statusEffects: []
-  moves:
-  - {fileID: 1047065210}
-  - {fileID: 1047065209}
-  - {fileID: 1047065208}
-  - {fileID: 1047065207}
-  moveNum: 0
 --- !u!1 &1067077355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,8 +5289,6 @@ Transform:
   - {fileID: 437673029}
   - {fileID: 1662312714}
   - {fileID: 798064785}
-  - {fileID: 764278207}
-  - {fileID: 1047065206}
   m_Father: {fileID: 1180685706}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5088,14 +5304,140 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPets:
-  - {fileID: 1047065211}
-  - {fileID: 764278212}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 798064790}
   - {fileID: 1662312719}
   - {fileID: 437673034}
   - {fileID: 1492417219}
   - {fileID: 2076374073}
   items: []
+--- !u!1 &1091824473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091824479}
+  - component: {fileID: 1091824474}
+  - component: {fileID: 1091824478}
+  - component: {fileID: 1091824477}
+  - component: {fileID: 1091824476}
+  - component: {fileID: 1091824475}
+  m_Layer: 0
+  m_Name: p0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1091824474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1091824473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Decko
+  animal: Gecko
+  image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 20
+  currentHealth: 20
+  maxAttack: 30
+  attack: 30
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 2107511402}
+  - {fileID: 2107511401}
+  - {fileID: 2107511400}
+  - {fileID: 2107511397}
+  moveNum: 0
+--- !u!114 &1091824475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1091824473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1091824476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1091824473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1091824477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1091824473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shed Skin
+  ppMax: 3
+  ppCurrent: 3
+--- !u!114 &1091824478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1091824473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!4 &1091824479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1091824473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1817963518}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1100568166
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,62 +5756,146 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171209159}
   m_Mesh: {fileID: 4300000, guid: af7ef0d55781147799206f1316ae974f, type: 3}
---- !u!1001 &1177486118
-Prefab:
+--- !u!1 &1175308654
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -982
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
-  m_IsPrefabAsset: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175308655}
+  - component: {fileID: 1175308660}
+  - component: {fileID: 1175308659}
+  - component: {fileID: 1175308658}
+  - component: {fileID: 1175308657}
+  - component: {fileID: 1175308656}
+  m_Layer: 0
+  m_Name: Enemy Dog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1175308655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175308654}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175308656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175308654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Growl
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1175308657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175308654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1175308658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175308654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Dance
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1175308659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175308654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1175308660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175308654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Dog
+  animal: Dog
+  image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 1175308659}
+  - {fileID: 1175308658}
+  - {fileID: 1175308657}
+  - {fileID: 1175308656}
+  moveNum: 0
 --- !u!1001 &1180685705
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1421419452}
+    m_TransformParent: {fileID: 1529576718}
     m_Modifications:
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 339.3
+      value: 51.299988
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -460.3
+      value: 25.700012
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5493,7 +5919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_Name
@@ -6089,6 +6515,132 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a222eefb9fbbc42a7a4750b1053b420d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1370997867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370997868}
+  - component: {fileID: 1370997873}
+  - component: {fileID: 1370997872}
+  - component: {fileID: 1370997871}
+  - component: {fileID: 1370997870}
+  - component: {fileID: 1370997869}
+  m_Layer: 0
+  m_Name: Enemy Gecko
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370997868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370997867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370997869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370997867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1370997870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370997867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1370997871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370997867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shed Skin
+  ppMax: 3
+  ppCurrent: 3
+--- !u!114 &1370997872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370997867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1370997873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370997867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Decko
+  animal: Gecko
+  image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 20
+  currentHealth: 20
+  maxAttack: 20
+  attack: 20
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 1370997872}
+  - {fileID: 1370997871}
+  - {fileID: 1370997870}
+  - {fileID: 1370997869}
+  moveNum: 0
 --- !u!1 &1405704123
 GameObject:
   m_ObjectHideFlags: 0
@@ -6159,7 +6711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Flirtle
+  petName: Turtle
   animal: Turtle
   image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
@@ -6366,9 +6918,6 @@ Transform:
   - {fileID: 508414858}
   - {fileID: 1552630461}
   - {fileID: 1318139214}
-  - {fileID: 1529576718}
-  - {fileID: 406351256}
-  - {fileID: 1180685706}
   m_Father: {fileID: 323311556}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8322,7 +8871,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1421419452}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8354,7 +8903,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_Name
@@ -11940,6 +12489,62 @@ PolygonCollider2D:
       - {x: 220, y: -1421}
       - {x: 220, y: -1424}
       - {x: 228, y: -1424}
+--- !u!1 &1784838999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1807718835732874, guid: 21614fad1a348425f8c35e91da4a0ae3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2084231246}
+--- !u!114 &1784839000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1784838999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3616e2b09a54c874fbc31fd2981774ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPets:
+  - {fileID: 1091824474}
+  items:
+  - Potion
+  - Antidote
+  - Gun
+--- !u!4 &1784839006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2084231246}
+--- !u!1 &1817963517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817963518}
+  m_Layer: 0
+  m_Name: Player Pets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817963518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817963517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 204.43459, y: 55.485516, z: 16.9375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1091824479}
+  m_Father: {fileID: 1784839006}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822187767
 GameObject:
   m_ObjectHideFlags: 0
@@ -12393,72 +12998,62 @@ Transform:
   m_Father: {fileID: 401937142}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1925900909
+--- !u!1 &1914472530
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1925900910}
-  - component: {fileID: 1925900912}
+  - component: {fileID: 1914472531}
+  - component: {fileID: 1914472532}
   m_Layer: 0
-  m_Name: playerPet
+  m_Name: Enemy Pets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1925900910
+--- !u!4 &1914472531
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925900909}
+  m_GameObject: {fileID: 1914472530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 236.08133, y: 1707.9896, z: 10}
+  m_LocalPosition: {x: 204.43459, y: 55.485516, z: 16.9375}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 223152786}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 1370997868}
+  - {fileID: 2035889304}
+  - {fileID: 873341066}
+  - {fileID: 1975178834}
+  - {fileID: 1175308655}
+  - {fileID: 412786696}
+  - {fileID: 362454499}
+  m_Father: {fileID: 1784839006}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1925900912
+--- !u!114 &1914472532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925900909}
+  m_GameObject: {fileID: 1914472530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2df78ae72c23ad646bcc1b2928c0ab16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
-  animal: Gecko
-  image: {fileID: 21300006, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
-  health: 25
-  currentHealth: 1
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
-  level: 0
-  currentXP: 0
-  xpNeeded: 0
-  hasAdvanatage: 0
-  hasDisadvantage: 0
-  owned: 0
-  statusEffects: []
-  moves:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  moveNum: 0
+  enemyPets:
+  - {fileID: 362454504}
+  - {fileID: 412786701}
+  - {fileID: 1175308660}
+  - {fileID: 1975178839}
+  - {fileID: 873341071}
+  - {fileID: 2035889309}
+  - {fileID: 1370997873}
+  items: []
 --- !u!1 &1964267509
 GameObject:
   m_ObjectHideFlags: 0
@@ -12548,6 +13143,258 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1964267509}
   m_Mesh: {fileID: 4300000, guid: 3909837f927ba4b7389d06c76a2c8017, type: 3}
+--- !u!1 &1975178833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975178834}
+  - component: {fileID: 1975178839}
+  - component: {fileID: 1975178838}
+  - component: {fileID: 1975178837}
+  - component: {fileID: 1975178836}
+  - component: {fileID: 1975178835}
+  m_Layer: 0
+  m_Name: Enemy Sparrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1975178834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975178833}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1975178835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975178833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1975178836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975178833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Burn
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1975178837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975178833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Dance
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1975178838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975178833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1975178839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975178833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Sparrow
+  animal: Sparrow
+  image: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 1975178838}
+  - {fileID: 1975178837}
+  - {fileID: 1975178836}
+  - {fileID: 1975178835}
+  moveNum: 0
+--- !u!1 &2035889303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2035889304}
+  - component: {fileID: 2035889309}
+  - component: {fileID: 2035889308}
+  - component: {fileID: 2035889307}
+  - component: {fileID: 2035889306}
+  - component: {fileID: 2035889305}
+  m_Layer: 0
+  m_Name: Enemy Turtle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2035889304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035889303}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1914472531}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2035889305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035889303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Burn
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &2035889306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035889303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Speed Swap
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &2035889307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035889303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shell
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &2035889308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035889303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Sticky Slap
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &2035889309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035889303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Turtle
+  animal: Turtle
+  image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 2035889308}
+  - {fileID: 2035889307}
+  - {fileID: 2035889306}
+  - {fileID: 2035889305}
+  moveNum: 0
 --- !u!1 &2040610859
 GameObject:
   m_ObjectHideFlags: 0
@@ -12857,7 +13704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Decko
+  petName: Gecko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
@@ -12883,6 +13730,63 @@ MonoBehaviour:
   - {fileID: 2076374070}
   - {fileID: 2076374069}
   moveNum: 0
+--- !u!1001 &2084231246
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -609.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818155887611270, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61110755008108132, guid: 21614fad1a348425f8c35e91da4a0ae3,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 61110755008108132, guid: 21614fad1a348425f8c35e91da4a0ae3,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556160993012470, guid: 21614fad1a348425f8c35e91da4a0ae3,
+        type: 2}
+      propertyPath: viewAngle
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21614fad1a348425f8c35e91da4a0ae3, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &2086087914
 Prefab:
   m_ObjectHideFlags: 0
@@ -12976,6 +13880,132 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
     type: 2}
   m_PrefabInternal: {fileID: 2086087914}
+--- !u!1 &2107511396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2107511399}
+  - component: {fileID: 2107511398}
+  - component: {fileID: 2107511402}
+  - component: {fileID: 2107511401}
+  - component: {fileID: 2107511400}
+  - component: {fileID: 2107511397}
+  m_Layer: 0
+  m_Name: playerPet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2107511397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107511396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &2107511398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107511396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Decko
+  animal: Gecko
+  image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  health: 25
+  currentHealth: 25
+  maxAttack: 50
+  attack: 50
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
+  level: 1
+  currentXP: 0
+  xpNeeded: 10
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 0
+  statusEffects: []
+  moves:
+  - {fileID: 2107511402}
+  - {fileID: 2107511401}
+  - {fileID: 2107511400}
+  - {fileID: 2107511397}
+  moveNum: 0
+--- !u!4 &2107511399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107511396}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 441.68134, y: 416.68964, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1784839006}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2107511400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107511396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &2107511401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107511396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shed Skin
+  ppMax: 3
+  ppCurrent: 3
+--- !u!114 &2107511402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107511396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 10
+  ppCurrent: 10
 --- !u!1 &2131404865
 GameObject:
   m_ObjectHideFlags: 0
