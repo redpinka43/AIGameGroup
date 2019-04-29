@@ -231,7 +231,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 9663040}
@@ -1406,22 +1406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
---- !u!1 &292375589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1529576717}
---- !u!114 &292375596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 292375589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2dbf08ee0ffe5e45902f86e5115ed8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &302061318
 Prefab:
   m_ObjectHideFlags: 0
@@ -1507,7 +1491,7 @@ Transform:
   - {fileID: 875105445}
   - {fileID: 1421419452}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327474612
 GameObject:
@@ -2229,7 +2213,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 398901541}
@@ -2275,15 +2259,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1529576718}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 99
+      value: 419.2
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: -529.9
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2307,7 +2291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_Name
@@ -2346,23 +2330,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc,
     type: 2}
   m_PrefabInternal: {fileID: 406351255}
---- !u!1 &406351257 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 406351255}
---- !u!114 &406351258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 406351257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da89d298fc501c44d9da54df18bf9490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instance: {fileID: 0}
 --- !u!1 &412786695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +2751,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 437673033}
@@ -4106,7 +4073,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 798064789}
@@ -5586,7 +5553,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1131003964}
@@ -5887,15 +5854,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1529576718}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 51.299988
+      value: 339.3
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25.700012
+      value: -460.3
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5919,7 +5886,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_Name
@@ -6241,7 +6208,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1291688588}
@@ -6711,19 +6678,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Turtle
+  petName: SquirtShell
   animal: Turtle
   image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
+  health: 15
+  currentHealth: 15
+  maxAttack: 20
+  attack: 20
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
   level: 1
   currentXP: 0
   xpNeeded: 0
@@ -8732,7 +8699,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1483763920}
@@ -8858,7 +8825,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1492417218}
@@ -8875,11 +8842,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 288
+      value: 272.1
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -486
+      value: -523.1
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8903,7 +8870,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829583095680914, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1259326059066398, guid: 95abea9271148465cb54ec7fc592e7bc, type: 2}
       propertyPath: m_Name
@@ -11878,7 +11845,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1662312718}
@@ -12663,7 +12630,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1822187772}
@@ -12789,7 +12756,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 1838389721}
@@ -13722,7 +13689,7 @@ MonoBehaviour:
   xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
-  owned: 0
+  owned: 1
   statusEffects: []
   moves:
   - {fileID: 2076374072}
