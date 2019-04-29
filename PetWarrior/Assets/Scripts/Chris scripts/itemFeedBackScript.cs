@@ -23,8 +23,6 @@ public class itemFeedBackScript : MonoBehaviour
         useItem = GameObject.Find("useItemButton").GetComponent<useItem>();
 
         itemName = useItem.itemName;
-
-
     }
 
     private void OnEnable()

@@ -43,6 +43,7 @@ public class getEnemyPet : MonoBehaviour
         thisPet.petName = enemyPet.petName;
         thisPet.animal = enemyPet.animal;
         thisPet.image = enemyPet.image;
+        thisPet.panelImage = enemyPet.panelImage;
         thisPet.health = enemyPet.health;
         thisPet.currentHealth = enemyPet.currentHealth;
 
@@ -54,8 +55,13 @@ public class getEnemyPet : MonoBehaviour
 
         thisPet.special = enemyPet.special;
         thisPet.speed = enemyPet.speed;
+        thisPet.currentSpeed = enemyPet.currentSpeed;
+        thisPet.level = enemyPet.level;
+        thisPet.xpNeeded = enemyPet.xpNeeded;
+
         thisPet.moveNum = enemyPet.moveNum;
         thisPet.moves = enemyPet.moves;
+        
         thisPet.statusEffects.Clear();
 
         RandomizeStatsForPet(thisPet);
@@ -81,49 +87,49 @@ public class getEnemyPet : MonoBehaviour
                 thisPet.defense = thisPet.maxDefense = low;
                 thisPet.special = med;
                 thisPet.health = thisPet.currentHealth = low;
-                thisPet.speed = high;
+                thisPet.speed = thisPet.currentSpeed = high;
                 break;
             case ("Turtle"):
                 thisPet.maxAttack = thisPet.attack = med;
                 thisPet.defense = thisPet.maxDefense = high;
                 thisPet.special = med;
                 thisPet.health =  thisPet.currentHealth = high;
-                thisPet.speed = low;
+                thisPet.speed = thisPet.currentSpeed = low;
                 break;
             case ("Squirrel"):
                 thisPet.maxAttack = thisPet.attack = high;
                 thisPet.defense = thisPet.maxDefense = high;
                 thisPet.special = low;
                 thisPet.health = thisPet.currentHealth = med;
-                thisPet.speed = med;
+                thisPet.speed = thisPet.currentSpeed = med;
                 break;
             case ("Bird"):
                 thisPet.maxAttack = thisPet.attack = low;
                 thisPet.defense = thisPet.maxDefense = low;
                 thisPet.special = high;
                 thisPet.health = thisPet.currentHealth = med;
-                thisPet.speed = med;
+                thisPet.speed = thisPet.currentSpeed = med;
                 break;
             case ("Dog"):
                 thisPet.maxAttack = thisPet.attack = med;
                 thisPet.defense = thisPet.maxDefense = med;
                 thisPet.special = med;
                 thisPet.health = thisPet.currentHealth = med;
-                thisPet.speed = med;
+                thisPet.speed = thisPet.currentSpeed = med;
                 break;
             case ("Cat"):
                 thisPet.maxAttack = thisPet.attack = veryLow;
                 thisPet.defense = thisPet.maxDefense = veryLow;
                 thisPet.special = veryHigh;
                 thisPet.health = thisPet.currentHealth = med;
-                thisPet.speed = med;
+                thisPet.speed = thisPet.currentSpeed = med;
                 break;
             case ("Rat"):
                 thisPet.maxAttack = thisPet.attack = high;
                 thisPet.defense = thisPet.maxDefense = low;
                 thisPet.special = med;
                 thisPet.health = thisPet.currentHealth = low;
-                thisPet.speed = high;
+                thisPet.speed = thisPet.currentSpeed = high;
                 break;
 
             default:

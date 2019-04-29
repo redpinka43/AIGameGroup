@@ -71,6 +71,7 @@ public class EnemyPetChanger : MonoBehaviour
         thisPet.petName = enemyPet.petName;
         thisPet.animal = enemyPet.animal;
         thisPet.image = enemyPet.image;
+        thisPet.panelImage = enemyPet.panelImage;
         thisPet.health = enemyPet.health;
         thisPet.currentHealth = enemyPet.currentHealth;
 
@@ -82,8 +83,13 @@ public class EnemyPetChanger : MonoBehaviour
 
         thisPet.special = enemyPet.special;
         thisPet.speed = enemyPet.speed;
+        thisPet.currentSpeed = enemyPet.currentSpeed;
+        thisPet.level = enemyPet.level;
+        thisPet.xpNeeded = enemyPet.xpNeeded;
+
         thisPet.moveNum = enemyPet.moveNum;
         thisPet.moves = enemyPet.moves;
+           
         thisPet.statusEffects.Clear();
 
 
