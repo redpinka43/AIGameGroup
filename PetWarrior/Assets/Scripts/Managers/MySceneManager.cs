@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
 
 public class MySceneManager : MonoBehaviour {
@@ -10,6 +9,9 @@ public class MySceneManager : MonoBehaviour {
 
 	public delegate void OnSceneChangeHandler();
 	public static event OnSceneChangeHandler OnSceneChange;
+
+	public List<GameObject> destroyableObjects;
+	public List<string> destroyableObjectsSourceScene;
 
 	// Battle scene saving variables
 	public string lastOverworldScene;
@@ -31,6 +33,8 @@ public class MySceneManager : MonoBehaviour {
 		if ( string.IsNullOrEmpty(lastOverworldScene) ) {
 			lastOverworldScene = "town_1_petStore";
 		}
+
+		destroyableObjects = new List<GameObject>();
 	}
 
 	// Whenever scene is loaded, the event OnSceneChange is triggered
@@ -39,6 +43,20 @@ public class MySceneManager : MonoBehaviour {
 		if (OnSceneChange != null) {
 			GameManager.instance.onSceneChangePrep();
 			OnSceneChange();
+		}
+
+		if(GameManager.instance.gameState == GameState.OVERWORLD) {
+
+			// Destroy any trainer objects added to the object list	
+			for(int i = 0; i < destroyableObjects.Count; i++) {
+
+				if(destroyableObjectsSourceScene[i] != SceneManager.GetActiveScene().name) {
+					Destroy(destroyableObjects[i]);
+				}	
+			}
+			
+			destroyableObjects = new List<GameObject>();
+			destroyableObjectsSourceScene = new List<string>();
 		}
 	}
 

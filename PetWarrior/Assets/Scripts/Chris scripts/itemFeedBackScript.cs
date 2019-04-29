@@ -12,6 +12,7 @@ public class itemFeedBackScript : MonoBehaviour
     public string itemName;
     private Player player;
     private Pets playerPet;
+    private Pets enemyPet;
     private useItem useItem;
 
     public bool callFlag = false;
@@ -19,12 +20,12 @@ public class itemFeedBackScript : MonoBehaviour
     private void Awake()
     {
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
+        enemyPet = GameObject.Find("enemyPet").GetComponent<Pets>();
+
         player = GameObject.Find("Player").GetComponent<Player>();
         useItem = GameObject.Find("useItemButton").GetComponent<useItem>();
 
         itemName = useItem.itemName;
-
-
     }
 
     private void OnEnable()
@@ -47,8 +48,16 @@ public class itemFeedBackScript : MonoBehaviour
                 txt.text = "This item doesn't do anything. You weren't even poisoned. Why are you like this?";
             if (itemName == "Gun")
             {
-                string upper = playerPet.animal.ToUpper();
-                txt.text = " BLAT. BLAT. A " + upper + " WITH A GAT";
+                if(enemyPet.owned == true)
+                {
+                    txt.text = "Woah! You can't just shoot someone elses pet! Not only is it illegal it's also not very fair...";
+                }
+                else
+                {
+                    string upper = playerPet.animal.ToUpper();
+                    txt.text = " BLAT. BLAT. A " + upper + " WITH A GAT";
+                }
+                
             }
                 
 

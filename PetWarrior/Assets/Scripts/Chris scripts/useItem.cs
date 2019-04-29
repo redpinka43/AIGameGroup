@@ -66,8 +66,13 @@ public class useItem : MonoBehaviour {
 
     public void Gun()
     {
-       
+        if (enemyPet.owned == false)
+        {
             enemyPet.currentHealth = 0;
-        
+        }
+
+        enemyPet.currentHealth = 0;
+
+
     }
 }
