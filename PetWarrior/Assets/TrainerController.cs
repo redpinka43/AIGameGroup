@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 
 public class TrainerController : MonoBehaviour {
-
+    public TrainerController instance = null;
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        // Object singleton
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 }

@@ -28,6 +28,10 @@ public class RunAway : MonoBehaviour {
     public void EndBattle()
     {
         // Return to overworld
+           if(GameObject.Find("Trainer Pets") != null)
+        {
+            Destroy(GameObject.Find("Trainer Pets"));
+        }
         SceneManager.LoadScene(MySceneManager.instance.lastOverworldScene);
 
         // SceneManager.LoadScene("startMenu");
