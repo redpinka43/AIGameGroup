@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
+public class TrainerLoadOnEnter : MonoBehaviour {
 
 
-public class TrainerController : MonoBehaviour {
-    public TrainerController instance = null;
+
+
+    public static TrainerLoadOnEnter instance = null;
     void Awake()
     {
         // Object singleton
