@@ -30,13 +30,13 @@ public class VictoryFeedback : MonoBehaviour
         enableVictoryScreen = GameObject.Find("BattleManager").GetComponent<enableVictoryScreen>();
         txt.text = "The enemy " + enemyPet.petName + " has fainted!";
         playerParty = GameObject.Find("Player Pets");
-        textFeedBackButton.onClick.AddListener(ShowXP);
+
     }
 
     // Update is called once per frame
     void OnEnable()
     {
-        if(enemyPet.currentHealth < 1)
+        if (enemyPet.currentHealth < 1)
         {
             txt.text = "The enemy " + enemyPet.petName + " has fainted!";
             textFeedBackButton.onClick.AddListener(ShowXP);
@@ -76,22 +76,26 @@ public class VictoryFeedback : MonoBehaviour
         }
         else if (enemyPet.owned == false)
         {
-            
+
             textFeedBackButton.onClick.RemoveAllListeners();
             textFeedBackButton.onClick.AddListener(EndBattle);
 
         }
-           
+
         // check if there's more pets to fight, you're in a trainer battle
         if (enemyPet.owned == true)
         {
             // battle either ends or next trainer pet comes out
-            enemyPetChanger.petFlag = false;
-            enemyPetChanger.i++;
-            txt.text = "The Enemy trainer sends out the next pet!";
-            textFeedBackButton.onClick.RemoveAllListeners();
-            textFeedBackButton.onClick.AddListener(StartPanel);
-            Debug.Log("well at least you got here");
+            if (enemyPetChanger.i < enemyPetChanger.enemyPetParty.transform.childCount)
+            {
+                enemyPetChanger.petFlag = false;
+                enemyPetChanger.i++;
+                textFeedBackButton.onClick.AddListener(NextPet);
+            }
+            else
+            {
+                textFeedBackButton.onClick.AddListener(VictoryText);
+            }
         }
 
         // battle could end here
@@ -99,6 +103,21 @@ public class VictoryFeedback : MonoBehaviour
 
     }
 
+    void NextPet()
+    {
+        txt.text = "The Enemy trainer sends out the next pet!";
+        textFeedBackButton.onClick.RemoveAllListeners();
+        textFeedBackButton.onClick.AddListener(StartPanel);
+        Debug.Log("well at least you got here");
+
+    }
+
+    void VictoryText()
+    {
+        textFeedBackButton.onClick.RemoveAllListeners();
+        txt.text = "Holy moly you won the battle! ";
+        textFeedBackButton.onClick.AddListener(EndBattle);
+    }
     public void StartPanel()
     {
         textFeedBackButton.onClick.RemoveAllListeners();
