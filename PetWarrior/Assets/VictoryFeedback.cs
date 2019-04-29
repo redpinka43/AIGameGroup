@@ -80,7 +80,7 @@ public class VictoryFeedback : MonoBehaviour
             textFeedBackButton.onClick.RemoveAllListeners();
             textFeedBackButton.onClick.AddListener(EndBattle);
         }
-         if (enemyPet.owned == false)
+         if (enemyPet.owned == false && playerOwned == true) 
         {
 
             textFeedBackButton.onClick.RemoveAllListeners();
