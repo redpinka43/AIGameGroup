@@ -147,8 +147,11 @@ public class enableVictoryScreen : MonoBehaviour
         PlayerController.instance.GetComponent<Animator>().SetFloat("MoveX", MySceneManager.instance.lastFacingDirection.x);
         PlayerController.instance.GetComponent<Animator>().SetFloat("MoveY", MySceneManager.instance.lastFacingDirection.y);
         
-        SceneManager.LoadScene(MySceneManager.instance.lastOverworldScene);
+        // Update defeated NPCs
+        NPCManager.instance.updateDefeatedNPCs((int) NPCManager.instance.currentBattlingNpc);
 
+        SceneManager.LoadScene(MySceneManager.instance.lastOverworldScene);
+ 
         // SceneManager.LoadScene("startMenu");
         // float newX = 122.3F;
         // float newY = -103.7F;

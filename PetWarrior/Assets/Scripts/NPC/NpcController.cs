@@ -33,7 +33,8 @@ public class NpcController : MonoBehaviour {
 		ROUTE_1_NERD2,
 		ROUTE_1_LADY,
 		TOWN_2_NERD,
-		TOWN_2_BOY
+		TOWN_2_BOY,
+		TOWN_2_TRISH
 	}
 
 	public NpcSkin npcSkin;
@@ -177,12 +178,18 @@ public class NpcController : MonoBehaviour {
 		}
 
 		else if (aboutToBattle) {
+
+			// Set currentBattlingNpc
+			NPCManager.instance.currentBattlingNpc = npcId;
+			Debug.Log("Set NPCManager's currentBattlingNpc to " + npcId);
+
 			// Start battle dialogue
 			DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startBattleDialogueNode];
 			DialogueManager.instance.ActivateDialogue();
 			aboutToBattle = false;
 			tempStoppedWandering = true;
 			challengeable = false;
+
 		}
 
 		else if (isWandering && !tempStoppedWandering) {

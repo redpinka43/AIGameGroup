@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RunAway : MonoBehaviour {
+
     private getEnemyPet getenemypet;
     public Button runButton;
     public Button feedbackbutton;
@@ -28,6 +29,7 @@ public class RunAway : MonoBehaviour {
     public void EndBattle()
     {
         // Return to overworld
+        NPCManager.instance.updateDefeatedNPCs((int) NPCManager.instance.currentBattlingNpc);
         SceneManager.LoadScene(MySceneManager.instance.lastOverworldScene);
 
         // SceneManager.LoadScene("startMenu");

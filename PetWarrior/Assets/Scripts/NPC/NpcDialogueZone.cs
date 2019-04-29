@@ -33,6 +33,11 @@ public class NpcDialogueZone : DialogHolder {
 						DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startNode];
 						DialogueManager.instance.ActivateDialogue();
 
+						// Set currentBattlingNpc
+						NPCManager.instance.currentBattlingNpc = transform.parent.gameObject.GetComponent<NpcController>().npcId;
+						Debug.Log("Set NPCManager's currentBattlingNpc to " + NPCManager.instance.currentBattlingNpc);
+						NPCManager.instance.updateDefeatedNPCs( (int) NPCManager.instance.currentBattlingNpc );
+
 						// Stop NPC movement
 						npcController.tempStoppedWandering = true;
 					}

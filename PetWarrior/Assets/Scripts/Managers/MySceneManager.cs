@@ -61,6 +61,7 @@ public class MySceneManager : MonoBehaviour {
 		}
 	}
 
+
 	// Loads a battle scene while saving important variables about the player
 	public void loadBattleScene() {
 		
