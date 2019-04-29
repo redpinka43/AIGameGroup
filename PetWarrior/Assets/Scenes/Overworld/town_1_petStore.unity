@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1396417507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da89d298fc501c44d9da54df18bf9490, type: 3}
+  m_Script: {fileID: 11500000, guid: d2dbf08ee0ffe5e45902f86e5115ed8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1396417515 stripped
@@ -2212,6 +2212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPet: {fileID: 0}
   thisPet: {fileID: 0}
+  petFlag: 0
 --- !u!114 &2096665196
 MonoBehaviour:
   m_ObjectHideFlags: 0

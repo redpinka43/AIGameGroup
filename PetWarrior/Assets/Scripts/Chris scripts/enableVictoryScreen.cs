@@ -87,10 +87,13 @@ public class enableVictoryScreen : MonoBehaviour
 
             foreach(var pet in player.playerPets)
             {
-                if(pet.currentHealth > 1)
-                {
-                    //a pet still lives
-                    isAPetStillAlive = true;
+                if (pet.petName != playerPet.petName)
+                    {
+                    if (pet.currentHealth > 1)
+                    {
+                        //a pet still lives
+                        isAPetStillAlive = true;
+                    }
                 }
             }
             if(isAPetStillAlive)
