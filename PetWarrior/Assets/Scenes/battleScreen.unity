@@ -955,7 +955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.5, y: 0.33}
-  m_AnchoredPosition: {x: 284, y: -58.919067}
+  m_AnchoredPosition: {x: 284, y: -58.91913}
   m_SizeDelta: {x: 568, y: 117.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151631494
@@ -978,7 +978,10 @@ MonoBehaviour:
   nice: {fileID: 179863767}
   naughty: {fileID: 1941011493}
   enableVictoryScreen: {fileID: 0}
+  enemyPetChanger: {fileID: 2012843265}
   playerParty: {fileID: 0}
+  startBattlePanel: {fileID: 916987452}
+  thisPanel: {fileID: 1198332084}
 --- !u!114 &151631495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,6 +1532,84 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 209591075}
   m_CullTransparentMesh: 0
+--- !u!1 &222804674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222804675}
+  - component: {fileID: 222804677}
+  - component: {fileID: 222804676}
+  m_Layer: 0
+  m_Name: Enemy Dog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222804675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222804674}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455894299}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222804676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222804674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!114 &222804677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222804674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: 5
+  animal: Dog
+  image: {fileID: 21300018, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 1
+  statusEffects: []
+  moves:
+  - {fileID: 222804676}
+  moveNum: 0
 --- !u!1 &252782992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2372,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &455894298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455894299}
+  - component: {fileID: 455894300}
+  m_Layer: 0
+  m_Name: Trainer Pets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &455894299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 455894298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 175.63458, y: 46.18552, z: 16.9375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 730684164}
+  - {fileID: 967119509}
+  - {fileID: 2115204342}
+  - {fileID: 222804675}
+  - {fileID: 1952238808}
+  m_Father: {fileID: 1965084927}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &455894300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 455894298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df78ae72c23ad646bcc1b2928c0ab16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPets:
+  - {fileID: 0}
+  - {fileID: 1952238810}
+  - {fileID: 222804677}
+  - {fileID: 2115204344}
+  - {fileID: 967119511}
+  - {fileID: 730684166}
+  - {fileID: 0}
+  items: []
 --- !u!1 &484679378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,7 +2907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.5, y: 0.33}
-  m_AnchoredPosition: {x: 284, y: -58.919067}
+  m_AnchoredPosition: {x: 284, y: -58.91913}
   m_SizeDelta: {x: 568, y: 117.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554838660
@@ -4275,6 +4410,84 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &730684163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 730684164}
+  - component: {fileID: 730684166}
+  - component: {fileID: 730684165}
+  m_Layer: 0
+  m_Name: Enemy Turtle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &730684164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730684163}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455894299}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &730684165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730684163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!114 &730684166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730684163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: 2
+  animal: Turtle
+  image: {fileID: 21300010, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 1
+  statusEffects: []
+  moves:
+  - {fileID: 730684165}
+  moveNum: 0
 --- !u!1 &738543452
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,6 +6817,84 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941177101}
   m_CullTransparentMesh: 0
+--- !u!1 &967119508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967119509}
+  - component: {fileID: 967119511}
+  - component: {fileID: 967119510}
+  m_Layer: 0
+  m_Name: Enemy Squirrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &967119509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967119508}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455894299}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967119510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967119508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!114 &967119511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967119508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: 3
+  animal: Squirrel
+  image: {fileID: 21300022, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 1
+  statusEffects: []
+  moves:
+  - {fileID: 967119510}
+  moveNum: 0
 --- !u!1 &992909275
 GameObject:
   m_ObjectHideFlags: 0
@@ -8605,7 +8896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.495, y: 0.33}
-  m_AnchoredPosition: {x: 567.99976, y: -52.454956}
+  m_AnchoredPosition: {x: 567.99976, y: -52.455017}
   m_SizeDelta: {x: 11.36, y: 104.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309942425
@@ -10846,7 +11137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.5, y: 0.33}
-  m_AnchoredPosition: {x: 284, y: -58.919067}
+  m_AnchoredPosition: {x: 284, y: -58.91913}
   m_SizeDelta: {x: 568, y: 117.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613109102
@@ -11687,6 +11978,175 @@ Transform:
   m_Father: {fileID: 725496722}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1756506644
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 151.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -94.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232369976132918, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_Name
+      value: Rival
+      objectReference: {fileID: 0}
+    - target: {fileID: 212291770788942146, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 3c52ffcc976e94b96aff34270f30c80c,
+        type: 3}
+    - target: {fileID: 95325190083680818, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50183828695267340, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865965863108664, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401280757731620, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401280757731620, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981983014181316, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: startNode
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
+      value: -13.028069
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
+      value: -5.1697235
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
+      value: -13.595657
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
+      value: 0.11376953
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].x
+      value: 9.001816
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
+      value: -3.1450348
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].x
+      value: 9.269684
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].y
+      value: -0.77867126
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].x
+      value: 7.895172
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].y
+      value: 3.154602
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[12].x
+      value: 5.091034
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[12].y
+      value: 3.6094055
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].y
+      value: -12.874321
+      objectReference: {fileID: 0}
+    - target: {fileID: 60867885905262366, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].x
+      value: 6.051193
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401280757731620, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20d6ad7c889504a498c5b4b9a0862f0c, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1773115144
 GameObject:
   m_ObjectHideFlags: 0
@@ -13023,6 +13483,120 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1941011491}
   m_CullTransparentMesh: 0
+--- !u!1 &1952238807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952238808}
+  - component: {fileID: 1952238810}
+  - component: {fileID: 1952238809}
+  m_Layer: 0
+  m_Name: Enemy Cat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1952238808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952238807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455894299}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1952238809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952238807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!114 &1952238810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952238807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: 6
+  animal: Cat
+  image: {fileID: 21300026, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 0
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 1
+  statusEffects: []
+  moves:
+  - {fileID: 1952238809}
+  moveNum: 0
+--- !u!1 &1965084919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1232369976132918, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1756506644}
+--- !u!114 &1965084920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965084919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da89d298fc501c44d9da54df18bf9490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1965084921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965084919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db9bfb90f3df47259dfa0c829a182ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  moveWhenCollide: 0
+  timeBetweenMove: 0
+  timeToMove: 0
+--- !u!4 &1965084927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4073260778635886, guid: 20d6ad7c889504a498c5b4b9a0862f0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1756506644}
 --- !u!1 &1970800557
 GameObject:
   m_ObjectHideFlags: 0
@@ -13200,7 +13774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.5, y: 0.33}
-  m_AnchoredPosition: {x: 284, y: -58.919067}
+  m_AnchoredPosition: {x: 284, y: -58.91913}
   m_SizeDelta: {x: 568, y: 117.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978216561
@@ -13430,6 +14004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPetParty: {fileID: 0}
   enemyPet: {fileID: 0}
+  petFlag: 0
   i: 0
 --- !u!1 &2020472632
 GameObject:
@@ -13977,9 +14552,87 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.165}
   m_AnchorMax: {x: 0.5, y: 0.33}
-  m_AnchoredPosition: {x: 284, y: -58.919067}
+  m_AnchoredPosition: {x: 284, y: -58.91913}
   m_SizeDelta: {x: 568, y: 117.84}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2115204341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115204342}
+  - component: {fileID: 2115204344}
+  - component: {fileID: 2115204343}
+  m_Layer: 0
+  m_Name: Enemy Sparrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2115204342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115204341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455894299}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115204343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115204341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Nip
+  ppMax: 30
+  ppCurrent: 30
+--- !u!114 &2115204344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115204341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: 4
+  animal: Sparrow
+  image: {fileID: 21300014, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
+  panelImage: {fileID: 0}
+  health: 10
+  currentHealth: 10
+  maxAttack: 10
+  attack: 10
+  maxDefense: 10
+  defense: 10
+  special: 10
+  speed: 10
+  currentSpeed: 0
+  level: 1
+  currentXP: 0
+  xpNeeded: 0
+  hasAdvanatage: 0
+  hasDisadvantage: 0
+  owned: 1
+  statusEffects: []
+  moves:
+  - {fileID: 2115204343}
+  moveNum: 0
 --- !u!1 &2124144304
 GameObject:
   m_ObjectHideFlags: 0

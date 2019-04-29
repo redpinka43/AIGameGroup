@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyPetChanger : MonoBehaviour
 {
     public GameObject enemyPetParty;
+    public GameObject dialoguezone;
     public Pets enemyPet;
     public bool petFlag = false;
     public int i;
@@ -13,6 +14,11 @@ public class EnemyPetChanger : MonoBehaviour
     {
         if (GameObject.Find("Trainer Pets") != null)
         {
+            dialoguezone = GameObject.Find("dialogueZone");
+            if(dialoguezone != null)
+            {
+                Destroy(dialoguezone);
+            }
             Debug.Log("you're fighting a trainer");
 
             enemyPetParty = GameObject.Find("Trainer Pets");
@@ -25,7 +31,7 @@ public class EnemyPetChanger : MonoBehaviour
             Pets firstPet = firstChild.GetComponent<Pets>();
 
             enemyPet = getPet(enemyPet, firstPet);
-
+            i = 1;
             // if there's a pet out, the flag is true
             petFlag = true;
         }
@@ -64,7 +70,7 @@ public class EnemyPetChanger : MonoBehaviour
             Debug.Log("Send out the next pet!");
 
             //iterate through the number of pets in the party object
-            if(i < enemyPetParty.transform.childCount)
+            if(i <= enemyPetParty.transform.childCount)
             {
                 ChangePet(i);
                 petFlag = true;
