@@ -8,7 +8,7 @@ public class getEnemyPet : MonoBehaviour
     private Enemies enemies;
     public Pets enemyPet;
     public Pets thisPet;
-    bool petFlag = false;
+    public bool petFlag = false;
 
 
     // Use this for initialization
@@ -63,7 +63,7 @@ public class getEnemyPet : MonoBehaviour
         thisPet.moves = enemyPet.moves;
         
         thisPet.statusEffects.Clear();
-
+        thisPet.owned = false;
         RandomizeStatsForPet(thisPet);
 
         return thisPet;

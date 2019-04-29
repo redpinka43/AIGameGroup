@@ -19,7 +19,6 @@ public class ShowPetParty : MonoBehaviour {
 
     public int i;
 
-    
     // Use this for initialization
     void Awake()
     {
@@ -28,7 +27,7 @@ public class ShowPetParty : MonoBehaviour {
         pet4.SetActive(false);
         pet5.SetActive(false);
         pet6.SetActive(false);
-
+        
         player = GameObject.Find("Player").GetComponent<Player>();
 
         if(player.playerPets.Count > 1)
@@ -58,4 +57,6 @@ public class ShowPetParty : MonoBehaviour {
         }
 
     }
+
+    
 }

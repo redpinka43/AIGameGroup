@@ -15,7 +15,7 @@ public class EnemyPetChanger : MonoBehaviour
         if (GameObject.Find("Trainer Pets") != null)
         {
             dialoguezone = GameObject.Find("dialogueZone");
-            if(dialoguezone != null)
+            if (dialoguezone != null)
             {
                 Destroy(dialoguezone);
             }
@@ -36,7 +36,7 @@ public class EnemyPetChanger : MonoBehaviour
             petFlag = true;
         }
         else
-            Debug.Log("you're not fighting a trainer");
+            petFlag = true;
 
     }
 

@@ -121,7 +121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28717478}
-  - component: {fileID: 28717479}
   m_Layer: 0
   m_Name: Player Pets
   m_TagString: Untagged
@@ -143,26 +142,6 @@ Transform:
   m_Father: {fileID: 127759130}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &28717479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 28717477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df78ae72c23ad646bcc1b2928c0ab16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1355346756}
-  items: []
 --- !u!1001 &127759128
 Prefab:
   m_ObjectHideFlags: 0
@@ -257,6 +236,9 @@ GameObject:
   - component: {fileID: 137175398}
   - component: {fileID: 137175396}
   - component: {fileID: 137175397}
+  - component: {fileID: 137175401}
+  - component: {fileID: 137175400}
+  - component: {fileID: 137175399}
   m_Layer: 0
   m_Name: playerPet
   m_TagString: Untagged
@@ -279,15 +261,15 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
+  health: 20
+  currentHealth: 20
+  maxAttack: 30
+  attack: 30
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
   level: 1
   currentXP: 0
   xpNeeded: 10
@@ -297,9 +279,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 137175397}
-  - {fileID: 137175397}
-  - {fileID: 137175397}
-  - {fileID: 137175397}
+  - {fileID: 137175401}
+  - {fileID: 137175400}
+  - {fileID: 137175399}
   moveNum: 0
 --- !u!114 &137175397
 MonoBehaviour:
@@ -313,8 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  ppMax: 10
+  ppCurrent: 10
 --- !u!4 &137175398
 Transform:
   m_ObjectHideFlags: 0
@@ -328,6 +310,48 @@ Transform:
   m_Father: {fileID: 127759130}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &137175399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137175395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &137175400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137175395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &137175401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137175395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shed Skin
+  ppMax: 3
+  ppCurrent: 3
 --- !u!4 &240562859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
@@ -419,6 +443,9 @@ GameObject:
   - component: {fileID: 353461732}
   - component: {fileID: 353461731}
   - component: {fileID: 353461733}
+  - component: {fileID: 353461736}
+  - component: {fileID: 353461735}
+  - component: {fileID: 353461734}
   m_Layer: 0
   m_Name: Enemy Rat
   m_TagString: Untagged
@@ -459,9 +486,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 353461733}
-  - {fileID: 353461733}
-  - {fileID: 353461733}
-  - {fileID: 353461733}
+  - {fileID: 353461736}
+  - {fileID: 353461735}
+  - {fileID: 353461734}
   moveNum: 0
 --- !u!4 &353461732
 Transform:
@@ -490,6 +517,48 @@ MonoBehaviour:
   moveName: Nip
   ppMax: 30
   ppCurrent: 30
+--- !u!114 &353461734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353461730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Burn
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &353461735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353461730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 0
+  ppCurrent: 0
+--- !u!114 &353461736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353461730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Hiss
+  ppMax: 5
+  ppCurrent: 5
 --- !u!1001 &361173162
 Prefab:
   m_ObjectHideFlags: 0
@@ -598,6 +667,9 @@ GameObject:
   - component: {fileID: 402902892}
   - component: {fileID: 402902893}
   - component: {fileID: 402902894}
+  - component: {fileID: 402902897}
+  - component: {fileID: 402902896}
+  - component: {fileID: 402902895}
   m_Layer: 0
   m_Name: Enemy Turtle
   m_TagString: Untagged
@@ -651,9 +723,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 402902894}
-  - {fileID: 402902894}
-  - {fileID: 402902894}
-  - {fileID: 402902894}
+  - {fileID: 402902897}
+  - {fileID: 402902896}
+  - {fileID: 402902895}
   moveNum: 0
 --- !u!114 &402902894
 MonoBehaviour:
@@ -666,9 +738,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  moveName: Sticky Slap
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &402902895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402902891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Burn
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &402902896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402902891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Speed Swap
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &402902897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402902891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shell
+  ppMax: 5
+  ppCurrent: 5
 --- !u!1001 &427212671
 Prefab:
   m_ObjectHideFlags: 0
@@ -802,6 +916,9 @@ GameObject:
   - component: {fileID: 560592973}
   - component: {fileID: 560592974}
   - component: {fileID: 560592975}
+  - component: {fileID: 560592978}
+  - component: {fileID: 560592977}
+  - component: {fileID: 560592976}
   m_Layer: 0
   m_Name: Enemy Sparrow
   m_TagString: Untagged
@@ -855,9 +972,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 560592975}
-  - {fileID: 560592975}
-  - {fileID: 560592975}
-  - {fileID: 560592975}
+  - {fileID: 560592978}
+  - {fileID: 560592977}
+  - {fileID: 560592976}
   moveNum: 0
 --- !u!114 &560592975
 MonoBehaviour:
@@ -871,8 +988,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &560592976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560592972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &560592977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560592972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Burn
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &560592978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560592972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Dance
+  ppMax: 5
+  ppCurrent: 5
 --- !u!4 &721918258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4209027343079228, guid: 778aea9a0a5604d89bbc4ae8a1c490b7,
@@ -970,6 +1129,9 @@ GameObject:
   - component: {fileID: 1061795831}
   - component: {fileID: 1061795832}
   - component: {fileID: 1061795833}
+  - component: {fileID: 1061795836}
+  - component: {fileID: 1061795835}
+  - component: {fileID: 1061795834}
   m_Layer: 0
   m_Name: Enemy Squirrel
   m_TagString: Untagged
@@ -1023,9 +1185,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 1061795833}
-  - {fileID: 1061795833}
-  - {fileID: 1061795833}
-  - {fileID: 1061795833}
+  - {fileID: 1061795836}
+  - {fileID: 1061795835}
+  - {fileID: 1061795834}
   moveNum: 0
 --- !u!114 &1061795833
 MonoBehaviour:
@@ -1039,8 +1201,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1061795834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1061795830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1061795835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1061795830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Dance
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1061795836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1061795830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Acorn Throw
+  ppMax: 5
+  ppCurrent: 5
 --- !u!1 &1113864148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1255,9 @@ GameObject:
   - component: {fileID: 1113864149}
   - component: {fileID: 1113864150}
   - component: {fileID: 1113864151}
+  - component: {fileID: 1113864154}
+  - component: {fileID: 1113864153}
+  - component: {fileID: 1113864152}
   m_Layer: 0
   m_Name: Enemy Dog
   m_TagString: Untagged
@@ -1104,9 +1311,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 1113864151}
-  - {fileID: 1113864151}
-  - {fileID: 1113864151}
-  - {fileID: 1113864151}
+  - {fileID: 1113864154}
+  - {fileID: 1113864153}
+  - {fileID: 1113864152}
   moveNum: 0
 --- !u!114 &1113864151
 MonoBehaviour:
@@ -1120,8 +1327,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1113864152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113864148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Growl
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1113864153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113864148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1113864154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113864148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Dance
+  ppMax: 5
+  ppCurrent: 5
 --- !u!1 &1181372726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPet: {fileID: 0}
   thisPet: {fileID: 0}
+  petFlag: 0
 --- !u!114 &1233398911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1551,9 @@ GameObject:
   - component: {fileID: 1355346754}
   - component: {fileID: 1355346756}
   - component: {fileID: 1355346755}
+  - component: {fileID: 1355346759}
+  - component: {fileID: 1355346758}
+  - component: {fileID: 1355346757}
   m_Layer: 0
   m_Name: p0
   m_TagString: Untagged
@@ -1350,15 +1603,15 @@ MonoBehaviour:
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
+  health: 20
+  currentHealth: 20
+  maxAttack: 30
+  attack: 30
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
   level: 1
   currentXP: 0
   xpNeeded: 10
@@ -1368,10 +1621,52 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 137175397}
-  - {fileID: 137175397}
-  - {fileID: 137175397}
-  - {fileID: 137175397}
+  - {fileID: 137175401}
+  - {fileID: 137175400}
+  - {fileID: 137175399}
   moveNum: 0
+--- !u!114 &1355346757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355346753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1355346758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355346753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &1355346759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355346753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shed Skin
+  ppMax: 3
+  ppCurrent: 3
 --- !u!1 &1451106918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,6 +1677,9 @@ GameObject:
   - component: {fileID: 1451106919}
   - component: {fileID: 1451106920}
   - component: {fileID: 1451106921}
+  - component: {fileID: 1451106924}
+  - component: {fileID: 1451106923}
+  - component: {fileID: 1451106922}
   m_Layer: 0
   m_Name: Enemy Cat
   m_TagString: Untagged
@@ -1435,9 +1733,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 1451106921}
-  - {fileID: 1451106921}
-  - {fileID: 1451106921}
-  - {fileID: 1451106921}
+  - {fileID: 1451106924}
+  - {fileID: 1451106923}
+  - {fileID: 1451106922}
   moveNum: 0
 --- !u!114 &1451106921
 MonoBehaviour:
@@ -1451,8 +1749,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1451106922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451106918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Sticky Slap
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1451106923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451106918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &1451106924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451106918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Hiss
+  ppMax: 5
+  ppCurrent: 5
 --- !u!1001 &1798510754
 Prefab:
   m_ObjectHideFlags: 0
@@ -1686,6 +2026,9 @@ GameObject:
   - component: {fileID: 2067431721}
   - component: {fileID: 2067431722}
   - component: {fileID: 2067431723}
+  - component: {fileID: 2067431726}
+  - component: {fileID: 2067431725}
+  - component: {fileID: 2067431724}
   m_Layer: 0
   m_Name: Enemy Gecko
   m_TagString: Untagged
@@ -1717,19 +2060,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Gecko
+  petName: Decko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  health: 10
-  currentHealth: 10
-  maxAttack: 10
-  attack: 10
-  maxDefense: 10
-  defense: 10
-  special: 10
-  speed: 10
-  currentSpeed: 0
+  health: 20
+  currentHealth: 20
+  maxAttack: 20
+  attack: 20
+  maxDefense: 20
+  defense: 20
+  special: 20
+  speed: 20
+  currentSpeed: 20
   level: 1
   currentXP: 0
   xpNeeded: 10
@@ -1739,9 +2082,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 2067431723}
-  - {fileID: 2067431723}
-  - {fileID: 2067431723}
-  - {fileID: 2067431723}
+  - {fileID: 2067431726}
+  - {fileID: 2067431725}
+  - {fileID: 2067431724}
   moveNum: 0
 --- !u!114 &2067431723
 MonoBehaviour:
@@ -1755,8 +2098,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveName: Nip
-  ppMax: 30
-  ppCurrent: 30
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &2067431724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067431720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Fury Swipes
+  ppMax: 10
+  ppCurrent: 10
+--- !u!114 &2067431725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067431720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Cringe
+  ppMax: 5
+  ppCurrent: 5
+--- !u!114 &2067431726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067431720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3b7de8b483a04a858e1dc99cd7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveName: Shed Skin
+  ppMax: 3
+  ppCurrent: 3
 --- !u!20 &2126119791 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20592824660814368, guid: b2f4f239e30e54735a50abfa0f3695a0,

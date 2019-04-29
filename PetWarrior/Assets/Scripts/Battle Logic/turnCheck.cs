@@ -36,7 +36,7 @@ public class turnCheck : MonoBehaviour
 
     public void speedCheck()
     {
-        if (playerPet.speed >= enemyPet.speed)
+        if (playerPet.currentSpeed >= enemyPet.currentSpeed)
         {
             PlayerTurn();
         }
@@ -148,6 +148,10 @@ public class turnCheck : MonoBehaviour
     }
     public void EndTurn()
     {
-        startBattlePanel.SetActive(true);
+        if(playerPet.currentHealth > 1)
+        {
+            startBattlePanel.SetActive(true);
+
+        }
     }
 }
