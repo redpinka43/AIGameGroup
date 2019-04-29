@@ -6,7 +6,7 @@ public class EnemyPetChanger : MonoBehaviour
 {
     public GameObject enemyPetParty;
     public Pets enemyPet;
-    bool petFlag = false;
+    public bool petFlag = false;
     public int i;
     Transform[] t;
     private void Awake()
@@ -25,6 +25,9 @@ public class EnemyPetChanger : MonoBehaviour
             Pets firstPet = firstChild.GetComponent<Pets>();
 
             enemyPet = getPet(enemyPet, firstPet);
+
+            // if there's a pet out, the flag is true
+            petFlag = true;
         }
         else
             Debug.Log("you're not fighting a trainer");
@@ -42,6 +45,7 @@ public class EnemyPetChanger : MonoBehaviour
 
         // Swap all of the variables into our enemy pet object
         enemyPet = getPet(enemyPet, pet);
+        
     }
 
     // Use this for initialization
@@ -54,14 +58,19 @@ public class EnemyPetChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // check if an enemy pet has been chosen, if not get one and randomize it's stats
+        // check every frame if there's a pet out currently, if not then we need to get the next one
         if (petFlag == false)
         {
+            Debug.Log("Send out the next pet!");
 
-            //get next pet
-            //enemyPet = enemies.enemyPets[Random.Range(0, 7)];
-            //thisPet = getPet(enemyPet);
-            //petFlag = true;
+            //iterate through the number of pets in the party object
+            if(i < enemyPetParty.transform.childCount)
+            {
+                ChangePet(i);
+                petFlag = true;
+            }
+
+            //if we reach the end, the battle is over
         }
 
     }
@@ -71,6 +80,7 @@ public class EnemyPetChanger : MonoBehaviour
         thisPet.petName = enemyPet.petName;
         thisPet.animal = enemyPet.animal;
         thisPet.image = enemyPet.image;
+        thisPet.panelImage = enemyPet.panelImage;
         thisPet.health = enemyPet.health;
         thisPet.currentHealth = enemyPet.currentHealth;
 
@@ -82,8 +92,13 @@ public class EnemyPetChanger : MonoBehaviour
 
         thisPet.special = enemyPet.special;
         thisPet.speed = enemyPet.speed;
+        thisPet.currentSpeed = enemyPet.currentSpeed;
+        thisPet.level = enemyPet.level;
+        thisPet.xpNeeded = enemyPet.xpNeeded;
+        thisPet.owned = enemyPet.owned;
         thisPet.moveNum = enemyPet.moveNum;
         thisPet.moves = enemyPet.moves;
+           
         thisPet.statusEffects.Clear();
 
 
