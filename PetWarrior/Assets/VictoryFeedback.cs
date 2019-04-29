@@ -63,6 +63,7 @@ public class VictoryFeedback : MonoBehaviour
                     playerOwned = true;
                 }
             }
+            
 
             // if the pet is not owned yet, you attempt to catch it
             if (enemyPet.owned == false && playerOwned == false)
@@ -74,7 +75,12 @@ public class VictoryFeedback : MonoBehaviour
             Debug.Log("player owns" + playerOwned);
             Debug.Log("owned by enemy" + enemyPet.owned);
         }
-        else if (enemyPet.owned == false)
+        else
+        {
+            textFeedBackButton.onClick.RemoveAllListeners();
+            textFeedBackButton.onClick.AddListener(EndBattle);
+        }
+         if (enemyPet.owned == false)
         {
 
             textFeedBackButton.onClick.RemoveAllListeners();

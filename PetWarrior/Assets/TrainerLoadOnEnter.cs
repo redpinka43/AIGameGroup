@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class TrainerLoadOnEnter : MonoBehaviour {
 
-    public static bool triggerCheck;
 
-    void OnTriggerEnter2D(Collider2D col)
+
+
+    public static TrainerLoadOnEnter instance = null;
+    void Awake()
     {
-
-        
-            // Object singleton
-            if (triggerCheck == false)
-            {
-                DontDestroyOnLoad(gameObject);
-                triggerCheck = true;
-            }
-            
+        // Object singleton
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        triggerCheck = false;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 }
