@@ -24,13 +24,17 @@ public class NpcDialogueZone : DialogHolder {
 				{
 					if(!DialogueManager.instance.dialogueIsRunning)
 					{
+						NpcController npcController = transform.parent.gameObject.GetComponent<NpcController>();
 						
 						// Turn NPC to face the player
 						float playerAngle = findPlayerAngle();
-						transform.parent.gameObject.GetComponent<NpcController>().setNpcAngle( (playerAngle + 180) % 360 );
+						npcController.setNpcAngle( (playerAngle + 180) % 360 );
 
 						DialogueManager.instance.currentNode = DialogueManager.instance.dialogueNodes[startNode];
 						DialogueManager.instance.ActivateDialogue();
+
+						// Stop NPC movement
+						npcController.tempStoppedWandering = true;
 					}
 				}
 			}

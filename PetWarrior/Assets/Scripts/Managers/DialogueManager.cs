@@ -186,7 +186,6 @@ public class DialogueManager : MonoBehaviour {
 
 					// If the text has been set and we're just waiting for the submit button
 					else {
-						Debug.Log("we're true!!!");
 
 						// Set next node based off the selected option in DialogueOptions.cs
 						if (InputManager.instance.getKeyDown("A"))

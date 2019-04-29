@@ -183,6 +183,10 @@ public class DialogueNode {
 				functionCall += battleScreen1;
 				break;
 
+			case "battleScreen_trish":
+				functionCall += battleScreen_trish;
+				break;
+
 			default:
 				break;
 
@@ -207,6 +211,14 @@ public class DialogueNode {
 	}
 
 	void battleScreen2() {
+
+		MySceneManager.instance.loadBattleScene();
+	}
+
+	void battleScreen_trish() {
+
+		// Change battleScreen music
+		
 
 		MySceneManager.instance.loadBattleScene();
 	}
