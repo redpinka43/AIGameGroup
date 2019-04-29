@@ -978,7 +978,10 @@ MonoBehaviour:
   nice: {fileID: 179863767}
   naughty: {fileID: 1941011493}
   enableVictoryScreen: {fileID: 0}
+  enemyPetChanger: {fileID: 0}
   playerParty: {fileID: 0}
+  startBattlePanel: {fileID: 0}
+  thisPanel: {fileID: 0}
 --- !u!114 &151631495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,9 +1158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: e
+  petName: Enemy
   animal: Bird
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 0}
   health: 44
   currentHealth: 44
@@ -1904,7 +1907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 1
+  petName: Decko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
@@ -6159,7 +6162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.6901961, b: 0.6901961, a: 1}
+  m_Color: {r: 0.22352938, g: 0.5540291, b: 0.8901961, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7957,9 +7960,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1204517630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c2c945bdf76bd4bac1640d1717573e, type: 3}
+  m_Script: {fileID: 11500000, guid: 990f145ae489ded4ca36cba4eaae6662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  i: 0
+  playerPet: {fileID: 0}
+  name: {fileID: 0}
 --- !u!114 &1204517633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12517,7 +12523,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LVL
+  m_Text: 
 --- !u!222 &1842410128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12888,7 +12894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec871b3ecf2ce4686ac6932c973f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: 
+  petName: Decko
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
@@ -13430,6 +13436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPetParty: {fileID: 0}
   enemyPet: {fileID: 0}
+  petFlag: 0
   i: 0
 --- !u!1 &2020472632
 GameObject:
@@ -13577,7 +13584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPets:
-  - {fileID: 1924430599}
+  - {fileID: 342203090}
   - {fileID: 1679566403}
   - {fileID: 755316353}
   - {fileID: 755316353}
