@@ -12,22 +12,34 @@ public class NpcTrish : MonoBehaviour {
 	*/
 	public int battleStartNode = 132;
 
+	public static GameObject npcTrishObj;
+
 	public static bool readyToBattle = false;
-	public bool callMakeTrishReadyToBattle;
+	public static bool callMakeTrishReadyToBattle;
 	
+	void Start() {
+
+		if (npcTrishObj == null) {
+
+			npcTrishObj = gameObject;
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 		
 		if (callMakeTrishReadyToBattle) {
 			callMakeTrishReadyToBattle = false;
-			makeTrishReadyToBattle();
+			npcTrishObj.GetComponent<NpcTrish>().makeTrishReadyToBattle();
 			readyToBattle = true;
+
+			Debug.Log("making Trish ready to battle.");
 		}
 	}
 
 	void makeTrishReadyToBattle() {
 
-		readyToBattle = true;
 		GetComponent<NpcDialogueZone>().startNode = battleStartNode;
 	}
 }
