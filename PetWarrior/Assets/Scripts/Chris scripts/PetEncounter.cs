@@ -7,6 +7,9 @@ public class PetEncounter : MonoBehaviour {
 
     public Collider2D coll;
     public int min, max;
+
+    public static bool justEncounteredAPet;
+
     // Use this for initialization
     void Start()
     {
@@ -14,12 +17,16 @@ public class PetEncounter : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Player")
+        if (justEncounteredAPet) {
+            justEncounteredAPet = false;
+        }
+        else if (other.gameObject.name == "Player")
         {
             Debug.Log("Entered Trigger");
 
             if (RNG(min, max) == 1)
             {
+                justEncounteredAPet = true;
                 MySceneManager.instance.loadBattleScene();
             }
         }

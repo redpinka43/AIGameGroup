@@ -15,6 +15,7 @@ public class PlayerStartPoint : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
+		
 		pointName = this.name;
 
 		thePlayer = PlayerController.instance;
