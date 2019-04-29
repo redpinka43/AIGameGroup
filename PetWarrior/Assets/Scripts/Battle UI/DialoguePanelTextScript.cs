@@ -65,8 +65,7 @@ public class DialoguePanelTextScript : MonoBehaviour
                 {
                     moveName = "";
                     txt.text = playerPet.petName + " completely forgets why it was cringing.";
-                    StatusRemoved();
-                    playerPet.statusEffects.Remove(status);
+                    StatusRemoved(status);
 
                 }
                 else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
@@ -90,9 +89,8 @@ public class DialoguePanelTextScript : MonoBehaviour
                     Debug.Log("burnremove");
                     moveName = "";
                     txt.text = playerPet.petName + " No longer feels the burn.";
-                    playerPet.statusEffects.Remove(status);
 
-                    StartCoroutine(BurnEffect(false));
+                    StartCoroutine(BurnEffect(false,status));
 
                 }
                 else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
@@ -102,13 +100,13 @@ public class DialoguePanelTextScript : MonoBehaviour
                     moveName = "";
                     playerPet.currentHealth -= (int)Math.Ceiling( ((double)enemyPet.special * .3));
                     txt.text = playerPet.petName + " gets stung by the burn!";
-                    StartCoroutine(BurnEffect(true));
+                    StartCoroutine(BurnEffect(true,status));
                 }
             }
         }
     }
 
-    public IEnumerator BurnEffect(bool damage)
+    public IEnumerator BurnEffect(bool damage, StatusEffects status)
     {
         feedBackTextButton.interactable = false;
 
@@ -134,19 +132,20 @@ public class DialoguePanelTextScript : MonoBehaviour
 
             yield return new WaitForSeconds(1.0f);
             feedBackTextButton.interactable = true;
+            playerPet.statusEffects.Remove(status);
 
         }
     }
 
     public void StatusEffectOccurs()
     {
-        StartCoroutine(StatusFeedback(2));
+        StartCoroutine(StatusFeedback(2,null));
     }
-    public void StatusRemoved()
+    public void StatusRemoved(StatusEffects status)
     {
-        StartCoroutine(StatusFeedback(3));
+        StartCoroutine(StatusFeedback(3,status));
     }
-    public IEnumerator StatusFeedback(int val)
+    public IEnumerator StatusFeedback(int val, StatusEffects status)
     {
         // Status Effect occuring
         if (val == 2)
@@ -167,6 +166,8 @@ public class DialoguePanelTextScript : MonoBehaviour
             callFlag = false;
 
             feedBackTextButton.interactable = true;
+            playerPet.statusEffects.Remove(status);
+
         }
     }
 

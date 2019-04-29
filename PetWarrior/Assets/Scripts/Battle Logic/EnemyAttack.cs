@@ -72,8 +72,7 @@ public class EnemyAttack : MonoBehaviour
                 {
                     moveName = "";
                     txt.text = enemyPet.petName + " completely forgets why it was cringing.";
-                    StatusRemoved();
-                    enemyPet.statusEffects.Remove(status);
+                    StatusRemoved(status);
                 }
                 else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
                 {
@@ -94,9 +93,8 @@ public class EnemyAttack : MonoBehaviour
                     Debug.Log("burnremove");
                     moveName = "";
                     txt.text = enemyPet.petName + " No longer feels the burn.";
-                    enemyPet.statusEffects.Remove(status);
 
-                    StartCoroutine(BurnEffect(false));
+                    StartCoroutine(BurnEffect(false,status));
 
                 }
                 else if (status.endAfter >= 1 && (RNG(1, 2) == 2))
@@ -104,15 +102,16 @@ public class EnemyAttack : MonoBehaviour
                     Debug.Log("burn");
 
                     moveName = "";
+                    enemyPet.currentHealth -= (int)Math.Ceiling(((double)playerPet.special * .3));
                     txt.text = enemyPet.petName + " gets stung by the burn!";
-                    StartCoroutine(BurnEffect(true));
+                    StartCoroutine(BurnEffect(true,status));
                 }
             }
 
         }
     }
 
-    public IEnumerator BurnEffect(bool damage)
+    public IEnumerator BurnEffect(bool damage, StatusEffects status)
     {
         enemyFeedBackTextButton.interactable = false;
 
@@ -138,6 +137,8 @@ public class EnemyAttack : MonoBehaviour
 
             yield return new WaitForSeconds(1.0f);
             enemyFeedBackTextButton.interactable = true;
+            enemyPet.statusEffects.Remove(status);
+
 
         }
     }
@@ -146,13 +147,13 @@ public class EnemyAttack : MonoBehaviour
 
     public void StatusEffectOccurs()
     {
-        StartCoroutine(StatusFeedback(2));
+        StartCoroutine(StatusFeedback(2,null));
     }
-    public void StatusRemoved()
+    public void StatusRemoved(StatusEffects status)
     {
-        StartCoroutine(StatusFeedback(3));
+        StartCoroutine(StatusFeedback(3,status));
     }
-    public IEnumerator StatusFeedback(int val)
+    public IEnumerator StatusFeedback(int val,StatusEffects status)
     {
         if (val == 2)
         {
@@ -170,6 +171,7 @@ public class EnemyAttack : MonoBehaviour
             callFlag = false;
 
             enemyFeedBackTextButton.interactable = true;
+            enemyPet.statusEffects.Remove(status);
         }
     }
     private void Update()

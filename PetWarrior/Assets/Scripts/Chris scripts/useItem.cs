@@ -71,8 +71,5 @@ public class useItem : MonoBehaviour {
             enemyPet.currentHealth = 0;
         }
 
-        enemyPet.currentHealth = 0;
-
-
     }
 }
