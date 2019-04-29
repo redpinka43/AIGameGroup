@@ -143,6 +143,10 @@ public class enableVictoryScreen : MonoBehaviour
         NormalizePets();
         getpet.petFlag = false;
         // Return to overworld
+        Debug.Log("In EndBattle(), loading scene " + MySceneManager.instance.lastOverworldScene);
+        PlayerController.instance.GetComponent<Animator>().SetFloat("MoveX", MySceneManager.instance.lastFacingDirection.x);
+        PlayerController.instance.GetComponent<Animator>().SetFloat("MoveY", MySceneManager.instance.lastFacingDirection.y);
+        
         SceneManager.LoadScene(MySceneManager.instance.lastOverworldScene);
 
         // SceneManager.LoadScene("startMenu");

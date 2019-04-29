@@ -15,6 +15,7 @@ public class MySceneManager : MonoBehaviour {
 
 	// Battle scene saving variables
 	public string lastOverworldScene;
+	public Vector2 lastFacingDirection;
 
 	void Awake() {
 		// Singleton Pattern
@@ -70,6 +71,13 @@ public class MySceneManager : MonoBehaviour {
 
 		// Save current scene. Player direction and player position should stay the same, I'm pretty sure.
 		lastOverworldScene = SceneManager.GetActiveScene().name;
+		Debug.Log("lastOverworldScene = " + lastOverworldScene);
+		PlayerController.instance.startPoint = "";
+		
+		// Save player facing position
+		Animator anim = PlayerController.instance.GetComponent<Animator>();
+		lastFacingDirection = new Vector2(anim.GetFloat("MoveX"), anim.GetFloat("MoveY"));
+
 		SceneManager.LoadScene("battleScreen");
 	}
 
