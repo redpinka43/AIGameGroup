@@ -16,6 +16,8 @@ public class VictoryFeedback : MonoBehaviour
     public Button naughty;
     private bool playerOwned;
     public enableVictoryScreen enableVictoryScreen;
+
+    public GameObject playerParty;
     // Use this for initialization
     void Start()
     {
@@ -25,13 +27,19 @@ public class VictoryFeedback : MonoBehaviour
         playerPet = GameObject.Find("playerPet").GetComponent<Pets>();
         enableVictoryScreen = GameObject.Find("BattleManager").GetComponent<enableVictoryScreen>();
         txt.text = "The enemy " + enemyPet.petName + " has fainted!";
+        playerParty = GameObject.Find("Player Pets");
         textFeedBackButton.onClick.AddListener(ShowXP);
     }
 
     // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
+        if(enemyPet.currentHealth < 1)
+        {
+            txt.text = "The enemy " + enemyPet.petName + " has fainted!";
+            textFeedBackButton.onClick.AddListener(ShowXP);
 
+        }
     }
 
     private void ShowXP()
@@ -41,26 +49,37 @@ public class VictoryFeedback : MonoBehaviour
         XPGain();
 
 
-        
-        // check if you own that particular animal yet
-        foreach (var pet in player.playerPets)
+        if (player.playerPets.Count < 6)
         {
-            if (enemyPet.animal == pet.animal)
+
+
+            // check if you own that particular animal yet
+            foreach (var pet in player.playerPets)
             {
-               playerOwned = true;
+                if (enemyPet.animal == pet.animal)
+                {
+                    playerOwned = true;
+                }
             }
-        }
 
-        // if the pet is not owned yet, you attempt to catch it
-        if (enemyPet.owned == false && playerOwned == false)
+            // if the pet is not owned yet, you attempt to catch it
+            if (enemyPet.owned == false && playerOwned == false)
+            {
+                Debug.Log("Catch turned on");
+                textFeedBackButton.onClick.AddListener(CatchAttempt);
+            }
+
+            Debug.Log("player owns" + playerOwned);
+            Debug.Log("owned by enemy" + enemyPet.owned);
+        }
+        else if (enemyPet.owned == false)
         {
-            Debug.Log("Catch turned on");
-            textFeedBackButton.onClick.AddListener(CatchAttempt);
+            
+            textFeedBackButton.onClick.RemoveAllListeners();
+            textFeedBackButton.onClick.AddListener(EndBattle);
+
         }
-
-        Debug.Log("player owns" +playerOwned);
-        Debug.Log("owned by enemy" +enemyPet.owned);
-
+           
         // check if there's more pets to fight, you're in a trainer battle
         if (enemyPet.owned == true)
         {
@@ -135,7 +154,7 @@ public class VictoryFeedback : MonoBehaviour
         pet = Instantiate(enemyPet);
         pet.name = "pet" + player.playerPets.Count;
         pet.currentHealth = enemyPet.health;
-        pet.transform.parent = player.transform;
+        pet.transform.parent = playerParty.transform;
 
         player.playerPets.Add(pet);
         textFeedBackButton.onClick.RemoveAllListeners();

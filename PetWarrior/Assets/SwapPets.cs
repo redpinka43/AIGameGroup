@@ -111,10 +111,11 @@ public class SwapPets : MonoBehaviour {
     }
 
     public Pets getPet(Pets thisPet, Pets otherPet)
-    { 
+    {
         thisPet.petName = otherPet.petName;
         thisPet.animal = otherPet.animal;
         thisPet.image = otherPet.image;
+        thisPet.panelImage = otherPet.panelImage;
         thisPet.health = otherPet.health;
         thisPet.currentHealth = otherPet.currentHealth;
 
@@ -126,6 +127,10 @@ public class SwapPets : MonoBehaviour {
 
         thisPet.special = otherPet.special;
         thisPet.speed = otherPet.speed;
+        thisPet.currentSpeed = otherPet.currentSpeed;
+        thisPet.level = otherPet.level;
+        thisPet.xpNeeded = otherPet.xpNeeded;
+
         thisPet.moveNum = otherPet.moveNum;
         thisPet.moves = otherPet.moves;
         thisPet.statusEffects.Clear();

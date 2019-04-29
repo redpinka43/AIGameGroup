@@ -978,6 +978,7 @@ MonoBehaviour:
   nice: {fileID: 179863767}
   naughty: {fileID: 1941011493}
   enableVictoryScreen: {fileID: 0}
+  playerParty: {fileID: 0}
 --- !u!114 &151631495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,7 +1907,7 @@ MonoBehaviour:
   petName: 1
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -1916,14 +1917,17 @@ MonoBehaviour:
   special: 10
   speed: 10
   currentSpeed: 0
-  level: 0
+  level: 1
   currentXP: 0
-  xpNeeded: 0
+  xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
   owned: 0
   statusEffects: []
   moves:
+  - {fileID: 342203089}
+  - {fileID: 342203089}
+  - {fileID: 342203089}
   - {fileID: 342203089}
   moveNum: 0
 --- !u!1 &359358720
@@ -3191,7 +3195,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591672495}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df78ae72c23ad646bcc1b2928c0ab16, type: 3}
   m_Name: 
@@ -4584,6 +4588,9 @@ MonoBehaviour:
   owned: 0
   statusEffects: []
   moves:
+  - {fileID: 755316352}
+  - {fileID: 755316352}
+  - {fileID: 755316352}
   - {fileID: 755316352}
   moveNum: 0
 --- !u!1 &766468636
@@ -7557,7 +7564,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1170620975}
   - component: {fileID: 1170620974}
-  - component: {fileID: 1170620976}
   - component: {fileID: 1170620978}
   - component: {fileID: 1170620981}
   - component: {fileID: 1170620980}
@@ -7583,7 +7589,7 @@ MonoBehaviour:
   petName: 1
   animal: Gecko
   image: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
-  panelImage: {fileID: 0}
+  panelImage: {fileID: 21300004, guid: 136a0b523bb40334ca0fc1501edffc0a, type: 3}
   health: 10
   currentHealth: 10
   maxAttack: 10
@@ -7593,9 +7599,9 @@ MonoBehaviour:
   special: 10
   speed: 10
   currentSpeed: 0
-  level: 0
+  level: 1
   currentXP: 0
-  xpNeeded: 0
+  xpNeeded: 10
   hasAdvanatage: 0
   hasDisadvantage: 0
   owned: 0
@@ -7616,19 +7622,6 @@ Transform:
   m_Father: {fileID: 2026757753}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1170620976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1170620973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dba5e5d3afd7f47ab93e48f3efb042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPet: {fileID: 0}
-  thisPet: {fileID: 0}
 --- !u!114 &1170620978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11270,6 +11263,9 @@ MonoBehaviour:
   statusEffects: []
   moves:
   - {fileID: 1679566402}
+  - {fileID: 1679566402}
+  - {fileID: 1679566402}
+  - {fileID: 1679566402}
   moveNum: 0
 --- !u!1 &1704529138
 GameObject:
@@ -13583,6 +13579,11 @@ MonoBehaviour:
   playerPets:
   - {fileID: 1924430599}
   - {fileID: 1679566403}
+  - {fileID: 755316353}
+  - {fileID: 755316353}
+  - {fileID: 755316353}
+  - {fileID: 755316353}
+  - {fileID: 755316353}
   - {fileID: 755316353}
   items:
   - Potion
