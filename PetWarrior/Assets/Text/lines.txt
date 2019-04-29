@@ -45,97 +45,97 @@ ID	Speaker	Text	Links to	Dialogue Options	Notes	Call function	Dialog Type	Animat
 41	Tortoise	Is that... a turtle? A Flirtle?? A free pet???	42									
 42		...No it's a tortoise.	End									
 43					town 1 petStore							
-44	Rival	Hey, we should battle!	45									
+44	Rival	Hey, I've been waiting for you! We should battle!	45									
 45		...	46									
 46		I mean, right now.	End			battleScreen1						
 47	Pets	Assorted pets. You'll be able to adopt one eventually.	End									
 48	Poster	Ratt is empirically the best pet. 	49									
 49		Long live Ratt.	End									
-50	Turn back no pet	You don't have any pets. You're going to die out there.	51		town 1							
-51		Go like, find a pet or something. Hint: go to the petstore.	End									
-52												
-53												
-54												
-55												
+50	Turn back no pet	Old man told you to go to the pet store.	51		town 1							
+51		Listen to your elders, dagnabbit.	End									
+52	Shopkeep	You see these pets? THEY'RE MINE. All mine. Go get your own in the wild.	53									
+53		Oh, but also: if you find your pets are low on energy after a battle, you can pay a visit to	54									
+54		Duck Jesus and the power of faith healing will restore your party to full health.	55									
+55		You may call it quackery, but just remember to visit the duck when your pets need help. 	End									
 56					town 1 NPCs							
-57	Mary	There's quite the influx of ducks this time of year. Back in my home country, the ducks would stop eating for an entire month; it was quite bizarre. 	58									
-58		Oh! Wait a second... Is that you? Oh I'm so glad to see you're back!	59									
-59		I'm busy walking around aimlessly right now, so I can't talk much now. 	60									
-60		However, I can remind you what pet-fighting is, in case you forgot. Would you like to hear about it?	61 | 65	Yes | No								
-61		You may have heard about pet-fighting; I know you just woke up from your coma, so allow me to explain it to you again.	62		Yes							
-62		Basically, the local youths befriend animals and make them their pets, and then they have friendly play-fights.	63									
-63		The animals definitely like it, they don't actually get hurt (despite what any battle text says). Please be careful when playing with animals, we don't want to hurt them.	64									
-64		Anyway, gotta go--it's so nice to have you back. 	End									
-65		Oh, okay. It's so nice to have you back. 	End		No							
-66	Gentleman	Good weather today. Harumph. Good weather.	70									
-67	Gentleman approach	Young lady, the petstore owner told me he has something for you. I'd head there immediately, if I were you.	68									
-68		Don't go out of this town. Otherwise I will be mildly perturbed.	69									
-69		And you won't like it when I'm mildly perturbed. Harumph.	70									
-70		Oh, by the way: would you like an explanation of the controls for this game?	72 | 71	Yes | No								
-71		Oh, ok. (Typical young person, not listening to their elders, harumph...)	End		No							
-72		Excellent! There are 2 primary keys you'll use: Z, which submits, and X, which cancels or skips text. Alternatively, you can use J and K, or even Enter and Shift.	73		Yes							
-73		Pressing Escape will pull up some more useful hints. However, I've given you the best hints already. 	74									
-74		If I catch you opening the hints panel with Escape, I will be mildly hurt. Mildly hurt, I say.	75									
-75		So don't open the hints panel with Escape. Do I need to say it again?	76 | 77	Yes | No								
-76		Don't open the hints panel with Escape.	78		Yes							
-77		I'll say it anyway. Don't open the hints panel with Escape.	78		No							
-78		... Okay I'm done.	End									
-79												
-80					Petstore and rival texts?							
+57	Mary	There's quite the influx of ducks this time of year. Back in my home country, the ducks would	58									
+58		stop eating for an entire month; it was quite bizarre. 	59									
+59		Oh! Wait a second... Is that you? Oh I'm so glad to see you're back!	60									
+60		I'm busy walking around aimlessly right now, so I can't talk much now. 	61									
+61		However, I can remind you what pet-fighting is, in case you forgot. 	62									
+62		Would you like to hear about it?	63 | 70	Yes | No								
+63		You may have heard about pet-fighting; I know you just woke up from your coma, so allow me	64		Yes							
+64		to explain it to you again.	65									
+65		Basically, the local youths befriend animals and make them their pets, and then they have	66									
+66		friendly play-fights. The animals definitely like it, they don't actually get hurt (despite what any	67									
+67		battle text says).	68									
+68		Even so, please be careful when playing with animals, we don't want to hurt them.	69									
+69		Anyway, gotta go--it's so nice to have you back. 	End									
+70		Oh, okay. It's so nice to have you back. 	End		No							
+71												
+72	Gentleman	Good weather today. Harumph. Good weather.	75									
+73	Gentleman approach	Young lady, the petstore owner told me he has a visitor who wants to see you.	74									
+74		I'd head there immediately, if I were you. 	75									
+75		Would you like an explanation of the controls for this game?	77 | 76	Yes | No								
+76		Oh, ok. (Typical young person, not listening to their elders, harumph...)	End		No							
+77		Excellent! There are 2 primary keys you'll use: Z, which submits, and X, which cancels or 	78		Yes							
+78		skips text. Alternatively, you can use J and K, or even Enter and Shift.	79									
+79		Very hip and jive, am I right?	End									
+80												
 81												
 82												
-83												
-84												
-85												
-86												
-87												
-88					Route 1							
-89												
-90												
-91												
-92												
-93												
-94												
-95	Nerd 1 approach	Hey watch out, all the people on this route are itching to walk up to you and talk about who knows what.	96									
-96		They're all freaks, if you ask me. Who just stops someone and walks up to them, forcing conversation?	97									
-97		I bet you're glad I warned you. See ya later! (Please)	End									
-98	Nerd 2 approach	Hi! Hi! Hello! Good even-oops, I mean morning! 	99									
-99		I'd like to tell you about the EXCITING world of catching wild pets!	100									
-100		Is "wild pet" an oxymoron? I don't know, I don't care, and frankly anyone who DOES care is not worth my time.	101									
-101		Are you worth my time?	102 | 103	Yes | God yes								
-102		Of course. Okay so what you're gonna do--ARE YOU READY FOR THIS? -- is you're gonna walk to that grass over there	104									
-103		Of course. Okay so what you're gonna do--ARE YOU READY FOR THIS? -- is you're gonna walk to that grass over there	104									
-104		and a wild pet is going to ATTAC-- try to say hi to you! At that point, you can try to recruit the pet and add it to your party.	105									
-105		Or you can make it, um, faint from exhaustion (yes that's the phrase) and your pet will grow more powerful.	106									
-106		Wow! Oh, but I don't want to hold your hand with this. Go try it out yourself.	End									
+83					Route 1							
+84	Nerd 1 approach	Hey watch out, all the people on this route are itching to walk up to you and talk about 	85									
+85		who knows what. They're all freaks, if you ask me. 	86									
+86		Who just stops someone and walks up to them, forcing conversation?	87									
+87		I bet you're glad I warned you. See ya later! (Please)	End									
+88	Nerd 2 approach	Hi! Hi! Hello! Good even-oops, I mean morning! 	89									
+89		I'd like to tell you about the EXCITING world of befriending wild pets!	90									
+90		Is "wild pet" an oxymoron? I don't know, I don't care, and frankly anyone who DOES care	91									
+91		is not worth my time.	92									
+92		Are you worth my time?	93 | 94 	Yes | Absolutely								
+93		Of course. Okay so what you're gonna do--ARE YOU READY FOR THIS? -- is you're gonna 	95									
+94		Of course. Okay so what you're gonna do--ARE YOU READY FOR THIS? -- is you're gonna 	95									
+95		walk to that grass over there, and a wild pet is going to ATTAC-- try to say hi to you!	96									
+96		When you defeat it, you can try to befriend it by saying mean or nice things to it.	97									
+97		Isn't that neat? 	98									
+98		I would hold your hand more through this, but I wouldn't want you to get the wrong idea.	99									
+99		Let's stay friends, for now. Ohoho.	End									
+100	Warning lady	See that girl over there? She's gonna challenge you to a battle. If your pets are weary,	101									
+101		remember to visit Duck Jesus in the town you came from.	102									
+102		Just spreading the good word. Quack.	End									
+103	Battle lady approach	Hi! I like skorts. They're comfy and easy to wear!	104									
+104		Also, let's battle.	End			battleScreen1						
+105	Battle lady	I'm sure you're convinced of how great skorts are now.	End									
+106												
 107												
-108												
-109												
-110												
-111												
-112												
-113												
-114												
-115												
-116												
-117												
-118												
-119												
-120												
-121												
-122												
-123												
-124												
-125												
-126												
-127												
-128												
-129												
-130												
-131												
-132												
+108					town 2							
+109	door 1	Knock knock.	110									
+110		(Why won't anyone let me into their houses?)	End									
+111	door 2	Knock knock. 	112									
+112		Ah, a visitor! I would absolutely let you into my house, stranger, but it's a mess in here.	113									
+113		Come back another day when I'm feeling more inviting. And bring food.	End									
+114	door 3	(I'm tired of harassing people.)	End									
+115	unused space	Wow! Look at all this unused space! 	116									
+116		It almost feels like more was planned here but was never built.	117									
+117		As much as we hate them, taxes are important.	End									
+118	shopkeep	Look, Duck Jesus has appeared in our town. I feel so blessed.	119									
+119		...However, he's blocking the entrance to my shop. I wish I could get in.	End									
+120	duck jesus	Oh, it's Duck Jesus again. Your party has been healed.	121									
+121		Quack.	End									
+122	gentleman	Seems that these 3 youngsters are itching to battle. I don't care about that, though.	123									
+123		I like collecting shells. Shells are all that I need now.	124									
+124		That and money. But saying that makes me feel a bit shellfish.	End									
+125	Nerd	Hi, would you like to battle me? Can't battle Trish until you beat me and the other trainer.	126									
+126		Are you ready?	127 | 128	Yes | No								
+127		Let's go!	End			battleScreen1						
+128		Okay, take your time neighbor. 	End									
+129	Boy	Time to battle! I won't let you battle Trish, 'cause I'm her bodyguard!	End			battleScreen1						
+130	Trish, not ready	Don'ta talk to me. I have ze no use for weaklings such as yourself.	131									
+131		Battle my underlings first, zen we can talk about a real match.	End									
+132	Trish, ready	Impressive, you've beaten both of zem. Now time for ze real challenge.	End			battleScreen_trish						
 133												
-134												
+134							 					
 135												
 136												
 137												

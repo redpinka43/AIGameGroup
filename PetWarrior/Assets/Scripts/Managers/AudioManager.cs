@@ -74,11 +74,16 @@ public class AudioManager : MonoBehaviour {
 	// New scene function. Changes background music when scene is changed
 	void checkSceneChange () {
 
-		string newBgMusic = GameObject.Find("Scene Info").GetComponent<SceneInfo>().bgMusic;
-		// Change bg music
-		changeBgMusic(newBgMusic);
-
-
+		// Trish has special boss music
+		if (NpcTrish.readyToBattle) {
+			changeBgMusic("battle_final");
+		}
+		else {
+			string newBgMusic = GameObject.Find("Scene Info").GetComponent<SceneInfo>().bgMusic;
+			// Change bg music
+			changeBgMusic(newBgMusic);
+		}
+	
 	}
 
 	// Changes background music to the music matching the string newBgMusic. 

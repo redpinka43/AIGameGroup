@@ -8,6 +8,8 @@ public class EventManager : MonoBehaviour {
 	
 	public static EventManager instance = null;
 
+	public static bool haveBattledRivalInPetstore;
+
 	void Awake () {
 		// Singleton Pattern
 		if (instance == null) {
@@ -17,6 +19,5 @@ public class EventManager : MonoBehaviour {
 
 		// Assign events
 	}
-
 
 }
