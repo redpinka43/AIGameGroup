@@ -1,7 +1,7 @@
 # AIGameGroup
 <h1>PetWarrior Game Demo</h1>
- Links to Youtube Video:
- [![](http://img.youtube.com/vi/6Bj-qiIJwDw/0.jpg)](http://www.youtube.com/watch?v=6Bj-qiIJwDw)
+Links to Youtube Video:
+[![Demo Video](http://img.youtube.com/vi/6Bj-qiIJwDw/0.jpg)](http://www.youtube.com/watch?v=6Bj-qiIJwDw)
 
 <h1>Week 15: </h1>
 
